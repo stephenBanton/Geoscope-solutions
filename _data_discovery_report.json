@@ -1,0 +1,2601 @@
+{
+  "csv_count": 451,
+  "shp_count": 60,
+  "geojson_count": 0,
+  "gdb_count": 0,
+  "kml_count": 6,
+  "other_count": 0,
+  "csv_files": [
+    {
+      "path": "Air_Quality.csv",
+      "size": "2.13",
+      "name": "Air_Quality.csv"
+    },
+    {
+      "path": "ar40ar39_USGS_data_release_v4.csv",
+      "size": "56.19",
+      "name": "ar40ar39_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "asbestos\\main.csv",
+      "size": "0.14",
+      "name": "main.csv"
+    },
+    {
+      "path": "asbestos\\minerals.csv",
+      "size": "0.07",
+      "name": "minerals.csv"
+    },
+    {
+      "path": "asbestos\\ref.csv",
+      "size": "0.13",
+      "name": "ref.csv"
+    },
+    {
+      "path": "asbestos\\reflink.csv",
+      "size": "0.07",
+      "name": "reflink.csv"
+    },
+    {
+      "path": "be10al26_USGS_data_release_v4.csv",
+      "size": "0.08",
+      "name": "be10al26_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "c14_USGS_data_release_v4.csv",
+      "size": "5.37",
+      "name": "c14_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "cesm_t2max_o3.csv",
+      "size": "4.16",
+      "name": "cesm_t2max_o3.csv"
+    },
+    {
+      "path": "DataLinks.csv",
+      "size": "0.41",
+      "name": "DataLinks.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_BenMap.csv",
+      "size": "0.04",
+      "name": "DNC_BenMap.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_BG_Pop.csv",
+      "size": "0.02",
+      "name": "DNC_BG_Pop.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_DWDemand.csv",
+      "size": "0.00",
+      "name": "DNC_DWDemand.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_EduLowGS.csv",
+      "size": "0.01",
+      "name": "DNC_EduLowGS.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_historical_places.csv",
+      "size": "0.01",
+      "name": "DNC_historical_places.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_iTree.csv",
+      "size": "0.29",
+      "name": "DNC_iTree.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_LCSum.csv",
+      "size": "0.02",
+      "name": "DNC_LCSum.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_NrRd_Pop.csv",
+      "size": "0.01",
+      "name": "DNC_NrRd_Pop.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_Park_Pop.csv",
+      "size": "0.01",
+      "name": "DNC_Park_Pop.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_RB_LC.csv",
+      "size": "0.03",
+      "name": "DNC_RB_LC.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_TreeWV.csv",
+      "size": "0.00",
+      "name": "DNC_TreeWV.csv"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\DNC_WaterWV.csv",
+      "size": "0.00",
+      "name": "DNC_WaterWV.csv"
+    },
+    {
+      "path": "EF_ACRES.csv",
+      "size": "8.49",
+      "name": "EF_ACRES.csv"
+    },
+    {
+      "path": "EF_ICIS_AIR (1).csv",
+      "size": "49.42",
+      "name": "EF_ICIS_AIR (1).csv"
+    },
+    {
+      "path": "EF_ICIS_AIR.csv",
+      "size": "49.42",
+      "name": "EF_ICIS_AIR.csv"
+    },
+    {
+      "path": "EF_NPDES.csv",
+      "size": "210.20",
+      "name": "EF_NPDES.csv"
+    },
+    {
+      "path": "EF_NPL.csv",
+      "size": "0.38",
+      "name": "EF_NPL.csv"
+    },
+    {
+      "path": "EF_RCRA.csv",
+      "size": "309.06",
+      "name": "EF_RCRA.csv"
+    },
+    {
+      "path": "EF_TRI (1).csv",
+      "size": "13.44",
+      "name": "EF_TRI (1).csv"
+    },
+    {
+      "path": "EF_TRI.csv",
+      "size": "13.44",
+      "name": "EF_TRI.csv"
+    },
+    {
+      "path": "EMRI_Data.csv",
+      "size": "33.58",
+      "name": "EMRI_Data.csv"
+    },
+    {
+      "path": "EPA_SmartLocationDatabase_V3_Jan_2021_Final (1).csv",
+      "size": "192.23",
+      "name": "EPA_SmartLocationDatabase_V3_Jan_2021_Final (1).csv"
+    },
+    {
+      "path": "EPA_SmartLocationDatabase_V3_Jan_2021_Final.csv",
+      "size": "192.23",
+      "name": "EPA_SmartLocationDatabase_V3_Jan_2021_Final.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_BenMap.csv",
+      "size": "0.08",
+      "name": "FCA_BenMap.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_BG_Pop.csv",
+      "size": "0.05",
+      "name": "FCA_BG_Pop.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_DWDemand.csv",
+      "size": "0.01",
+      "name": "FCA_DWDemand.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_EduLowGS.csv",
+      "size": "0.01",
+      "name": "FCA_EduLowGS.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_Floodplain.csv",
+      "size": "0.04",
+      "name": "FCA_Floodplain.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_historical_places.csv",
+      "size": "0.02",
+      "name": "FCA_historical_places.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_iTree.csv",
+      "size": "0.73",
+      "name": "FCA_iTree.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_LCSum.csv",
+      "size": "0.04",
+      "name": "FCA_LCSum.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_NrRd_Pop.csv",
+      "size": "0.03",
+      "name": "FCA_NrRd_Pop.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_Park_Pop.csv",
+      "size": "0.02",
+      "name": "FCA_Park_Pop.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_RB_LC.csv",
+      "size": "0.04",
+      "name": "FCA_RB_LC.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_TreeWV.csv",
+      "size": "0.01",
+      "name": "FCA_TreeWV.csv"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\FCA_WaterWV.csv",
+      "size": "0.01",
+      "name": "FCA_WaterWV.csv"
+    },
+    {
+      "path": "fissiontrack_USGS_data_release_v4.csv",
+      "size": "2.62",
+      "name": "fissiontrack_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "geochem(1).csv",
+      "size": "60.29",
+      "name": "geochem(1).csv"
+    },
+    {
+      "path": "geochem.csv",
+      "size": "60.29",
+      "name": "geochem.csv"
+    },
+    {
+      "path": "geodata\\205003268.csv",
+      "size": "3.18",
+      "name": "205003268.csv"
+    },
+    {
+      "path": "geodata\\AFS_ACTIONS.csv",
+      "size": "385.00",
+      "name": "AFS_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\AFS_AIR_PRG_HIST_COMPLIANCE.csv",
+      "size": "272.50",
+      "name": "AFS_AIR_PRG_HIST_COMPLIANCE.csv"
+    },
+    {
+      "path": "geodata\\AFS_FACILITIES.csv",
+      "size": "35.38",
+      "name": "AFS_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\AFS_HPV_HISTORY.csv",
+      "size": "4.60",
+      "name": "AFS_HPV_HISTORY.csv"
+    },
+    {
+      "path": "geodata\\aim_triggering_events.csv",
+      "size": "1.06",
+      "name": "aim_triggering_events.csv"
+    },
+    {
+      "path": "geodata\\AIR_PROGRAM.csv",
+      "size": "62.36",
+      "name": "AIR_PROGRAM.csv"
+    },
+    {
+      "path": "geodata\\ALL_CSO_DOWNLOADS.csv",
+      "size": "4.11",
+      "name": "ALL_CSO_DOWNLOADS.csv"
+    },
+    {
+      "path": "geodata\\all_together_deltas.csv",
+      "size": "5.18",
+      "name": "all_together_deltas.csv"
+    },
+    {
+      "path": "geodata\\ATTAINS_AU_CATCHMENTS.csv",
+      "size": "0.00",
+      "name": "ATTAINS_AU_CATCHMENTS.csv"
+    },
+    {
+      "path": "geodata\\BLM_ID_Areas_of_Critical_Environmental_Concern_ACEC_Historical.csv",
+      "size": "0.01",
+      "name": "BLM_ID_Areas_of_Critical_Environmental_Concern_ACEC_Historical.csv"
+    },
+    {
+      "path": "geodata\\BLM_Montana_Dakotas_GRSG_ROD_ARMPA_Oil_and_Gas_Allocations_-4588857342569810748.csv",
+      "size": "0.07",
+      "name": "BLM_Montana_Dakotas_GRSG_ROD_ARMPA_Oil_and_Gas_Allocations_-4588857342569810748.csv"
+    },
+    {
+      "path": "geodata\\BR_REPORTING_2023_0.csv",
+      "size": "444.40",
+      "name": "BR_REPORTING_2023_0.csv"
+    },
+    {
+      "path": "geodata\\BR_REPORTING_2023_1.csv",
+      "size": "340.09",
+      "name": "BR_REPORTING_2023_1.csv"
+    },
+    {
+      "path": "geodata\\CASE_DEFENDANTS.csv",
+      "size": "11.20",
+      "name": "CASE_DEFENDANTS.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENTS.csv",
+      "size": "87.19",
+      "name": "CASE_ENFORCEMENTS.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_CONCLUSIONS.csv",
+      "size": "15.90",
+      "name": "CASE_ENFORCEMENT_CONCLUSIONS.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_CONCLUSION_COMPLYING_ACTIONS.csv",
+      "size": "23.13",
+      "name": "CASE_ENFORCEMENT_CONCLUSION_COMPLYING_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_CONCLUSION_DOLLARS.csv",
+      "size": "6.70",
+      "name": "CASE_ENFORCEMENT_CONCLUSION_DOLLARS.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_CONCLUSION_FACILITIES.csv",
+      "size": "16.44",
+      "name": "CASE_ENFORCEMENT_CONCLUSION_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_CONCLUSION_POLLUTANTS.csv",
+      "size": "7.09",
+      "name": "CASE_ENFORCEMENT_CONCLUSION_POLLUTANTS.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_CONCLUSION_SEP.csv",
+      "size": "1.90",
+      "name": "CASE_ENFORCEMENT_CONCLUSION_SEP.csv"
+    },
+    {
+      "path": "geodata\\CASE_ENFORCEMENT_TYPE.csv",
+      "size": "9.53",
+      "name": "CASE_ENFORCEMENT_TYPE.csv"
+    },
+    {
+      "path": "geodata\\CASE_FACILITIES.csv",
+      "size": "23.97",
+      "name": "CASE_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\CASE_LAW_SECTIONS.csv",
+      "size": "21.99",
+      "name": "CASE_LAW_SECTIONS.csv"
+    },
+    {
+      "path": "geodata\\CASE_MILESTONES.csv",
+      "size": "35.40",
+      "name": "CASE_MILESTONES.csv"
+    },
+    {
+      "path": "geodata\\CASE_PENALTIES.csv",
+      "size": "6.04",
+      "name": "CASE_PENALTIES.csv"
+    },
+    {
+      "path": "geodata\\CASE_POLLUTANTS.csv",
+      "size": "4.14",
+      "name": "CASE_POLLUTANTS.csv"
+    },
+    {
+      "path": "geodata\\CASE_PRIORITIES.csv",
+      "size": "1.70",
+      "name": "CASE_PRIORITIES.csv"
+    },
+    {
+      "path": "geodata\\CASE_PROGRAMS.csv",
+      "size": "30.16",
+      "name": "CASE_PROGRAMS.csv"
+    },
+    {
+      "path": "geodata\\CASE_REGIONAL_DOCKETS.csv",
+      "size": "3.93",
+      "name": "CASE_REGIONAL_DOCKETS.csv"
+    },
+    {
+      "path": "geodata\\CASE_RELATED_ACTIVITIES.csv",
+      "size": "2.70",
+      "name": "CASE_RELATED_ACTIVITIES.csv"
+    },
+    {
+      "path": "geodata\\CASE_RELIEF_SOUGHT.csv",
+      "size": "2.43",
+      "name": "CASE_RELIEF_SOUGHT.csv"
+    },
+    {
+      "path": "geodata\\CASE_VIOLATIONS.csv",
+      "size": "7.25",
+      "name": "CASE_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\CE_REPORTING_0.csv",
+      "size": "405.21",
+      "name": "CE_REPORTING_0.csv"
+    },
+    {
+      "path": "geodata\\CE_REPORTING_1.csv",
+      "size": "397.12",
+      "name": "CE_REPORTING_1.csv"
+    },
+    {
+      "path": "geodata\\CE_REPORTING_2.csv",
+      "size": "300.30",
+      "name": "CE_REPORTING_2.csv"
+    },
+    {
+      "path": "geodata\\collection_system_permits.csv",
+      "size": "0.41",
+      "name": "collection_system_permits.csv"
+    },
+    {
+      "path": "geodata\\ECHO_DEMOGRAPHICS.csv",
+      "size": "1672.82",
+      "name": "ECHO_DEMOGRAPHICS.csv"
+    },
+    {
+      "path": "geodata\\ECHO_EXPORTER.csv",
+      "size": "1981.14",
+      "name": "ECHO_EXPORTER.csv"
+    },
+    {
+      "path": "geodata\\EF_ACRES.csv",
+      "size": "8.49",
+      "name": "EF_ACRES.csv"
+    },
+    {
+      "path": "geodata\\EF_NPL (1).csv",
+      "size": "0.38",
+      "name": "EF_NPL (1).csv"
+    },
+    {
+      "path": "geodata\\EF_NPL.csv",
+      "size": "0.38",
+      "name": "EF_NPL.csv"
+    },
+    {
+      "path": "geodata\\EF_TRI (1).csv",
+      "size": "13.44",
+      "name": "EF_TRI (1).csv"
+    },
+    {
+      "path": "geodata\\EF_TRI.csv",
+      "size": "13.44",
+      "name": "EF_TRI.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_0.csv",
+      "size": "467.33",
+      "name": "EM_MANIFEST_0.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_1.csv",
+      "size": "467.74",
+      "name": "EM_MANIFEST_1.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_10.csv",
+      "size": "463.26",
+      "name": "EM_MANIFEST_10.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_11.csv",
+      "size": "462.94",
+      "name": "EM_MANIFEST_11.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_12.csv",
+      "size": "461.70",
+      "name": "EM_MANIFEST_12.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_13.csv",
+      "size": "417.37",
+      "name": "EM_MANIFEST_13.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_2.csv",
+      "size": "461.18",
+      "name": "EM_MANIFEST_2.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_3.csv",
+      "size": "475.60",
+      "name": "EM_MANIFEST_3.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_4.csv",
+      "size": "468.25",
+      "name": "EM_MANIFEST_4.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_5.csv",
+      "size": "473.35",
+      "name": "EM_MANIFEST_5.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_6.csv",
+      "size": "473.80",
+      "name": "EM_MANIFEST_6.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_7.csv",
+      "size": "475.68",
+      "name": "EM_MANIFEST_7.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_8.csv",
+      "size": "468.84",
+      "name": "EM_MANIFEST_8.csv"
+    },
+    {
+      "path": "geodata\\EM_MANIFEST_9.csv",
+      "size": "467.26",
+      "name": "EM_MANIFEST_9.csv"
+    },
+    {
+      "path": "geodata\\EPA_INFORMAL_ENFORCEMENT_ACTIONS.csv",
+      "size": "2.33",
+      "name": "EPA_INFORMAL_ENFORCEMENT_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\ERMN_StreamsideBirds_2315071_PointCount.csv",
+      "size": "18.19",
+      "name": "ERMN_StreamsideBirds_2315071_PointCount.csv"
+    },
+    {
+      "path": "geodata\\ERMN_VegetationSummary_2298542_Seedlings.csv",
+      "size": "3.55",
+      "name": "ERMN_VegetationSummary_2298542_Seedlings.csv"
+    },
+    {
+      "path": "geodata\\facility_tribal_spatial.csv",
+      "size": "402.58",
+      "name": "facility_tribal_spatial.csv"
+    },
+    {
+      "path": "geodata\\Floodplain_Base_Flood_Elevations.csv",
+      "size": "0.10",
+      "name": "Floodplain_Base_Flood_Elevations.csv"
+    },
+    {
+      "path": "geodata\\Floodplain_Cross_Sections.csv",
+      "size": "0.23",
+      "name": "Floodplain_Cross_Sections.csv"
+    },
+    {
+      "path": "geodata\\FRS_FACILITIES.csv",
+      "size": "360.32",
+      "name": "FRS_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\FRS_NAICS_CODES.csv",
+      "size": "93.86",
+      "name": "FRS_NAICS_CODES.csv"
+    },
+    {
+      "path": "geodata\\FRS_PROGRAM_LINKS.csv",
+      "size": "578.58",
+      "name": "FRS_PROGRAM_LINKS.csv"
+    },
+    {
+      "path": "geodata\\FRS_SIC_CODES.csv",
+      "size": "40.76",
+      "name": "FRS_SIC_CODES.csv"
+    },
+    {
+      "path": "geodata\\geotracker_sites_2026-03-02.csv",
+      "size": "64.65",
+      "name": "geotracker_sites_2026-03-02.csv"
+    },
+    {
+      "path": "geodata\\HD_REPORTING_0.csv",
+      "size": "763.56",
+      "name": "HD_REPORTING_0.csv"
+    },
+    {
+      "path": "geodata\\HD_REPORTING_1.csv",
+      "size": "432.62",
+      "name": "HD_REPORTING_1.csv"
+    },
+    {
+      "path": "geodata\\Hospital_and_other.DATA.Q4_2025.csv",
+      "size": "49.05",
+      "name": "Hospital_and_other.DATA.Q4_2025.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_FACILITIES.csv",
+      "size": "60.14",
+      "name": "ICIS-AIR_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_FCES_PCES.csv",
+      "size": "210.16",
+      "name": "ICIS-AIR_FCES_PCES.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_FORMAL_ACTIONS.csv",
+      "size": "14.68",
+      "name": "ICIS-AIR_FORMAL_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_INFORMAL_ACTIONS.csv",
+      "size": "45.72",
+      "name": "ICIS-AIR_INFORMAL_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_POLLUTANTS.csv",
+      "size": "85.81",
+      "name": "ICIS-AIR_POLLUTANTS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_PROGRAMS.csv",
+      "size": "62.15",
+      "name": "ICIS-AIR_PROGRAMS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_PROGRAM_SUBPARTS.csv",
+      "size": "29.39",
+      "name": "ICIS-AIR_PROGRAM_SUBPARTS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_STACK_TESTS.csv",
+      "size": "60.11",
+      "name": "ICIS-AIR_STACK_TESTS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_TITLEV_CERTS.csv",
+      "size": "200.62",
+      "name": "ICIS-AIR_TITLEV_CERTS.csv"
+    },
+    {
+      "path": "geodata\\ICIS-AIR_VIOLATION_HISTORY.csv",
+      "size": "22.18",
+      "name": "ICIS-AIR_VIOLATION_HISTORY.csv"
+    },
+    {
+      "path": "geodata\\ICIS_FACILITIES.csv",
+      "size": "172.91",
+      "name": "ICIS_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\ICIS_FEC_EPA_INSPECTIONS.csv",
+      "size": "48.51",
+      "name": "ICIS_FEC_EPA_INSPECTIONS.csv"
+    },
+    {
+      "path": "geodata\\ICIS_PERMITS.csv",
+      "size": "342.12",
+      "name": "ICIS_PERMITS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_ATTAINS_AU_SUMMARIES.csv",
+      "size": "256.69",
+      "name": "NPDES_ATTAINS_AU_SUMMARIES.csv"
+    },
+    {
+      "path": "geodata\\NPDES_BIOSOLIDS_FORMAL_ACTIONS.csv",
+      "size": "0.03",
+      "name": "NPDES_BIOSOLIDS_FORMAL_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_BIOSOLIDS_INFML_ENF_ACTIONS.csv",
+      "size": "0.00",
+      "name": "NPDES_BIOSOLIDS_INFML_ENF_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_BIOSOLIDS_INSPECTIONS.csv",
+      "size": "0.40",
+      "name": "NPDES_BIOSOLIDS_INSPECTIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_BIOSOLIDS_PERMITS.csv",
+      "size": "2.96",
+      "name": "NPDES_BIOSOLIDS_PERMITS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_BIOSOLIDS_SEV_VIOLATIONS.csv",
+      "size": "0.20",
+      "name": "NPDES_BIOSOLIDS_SEV_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_CATCHMENTS.csv",
+      "size": "277.76",
+      "name": "NPDES_CATCHMENTS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_CS_VIOLATIONS.csv",
+      "size": "17.87",
+      "name": "NPDES_CS_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_DATA_GROUPS.csv",
+      "size": "118.39",
+      "name": "NPDES_DATA_GROUPS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_DMRS_FY2025.csv",
+      "size": "9227.23",
+      "name": "NPDES_DMRS_FY2025.csv"
+    },
+    {
+      "path": "geodata\\NPDES_DMRS_FY2026.csv",
+      "size": "3052.57",
+      "name": "NPDES_DMRS_FY2026.csv"
+    },
+    {
+      "path": "geodata\\NPDES_FORMAL_ENFORCEMENT_ACTIONS.csv",
+      "size": "11.76",
+      "name": "NPDES_FORMAL_ENFORCEMENT_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_INFORMAL_ENFORCEMENT_ACTIONS.csv",
+      "size": "119.13",
+      "name": "NPDES_INFORMAL_ENFORCEMENT_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_INSPECTIONS.csv",
+      "size": "172.84",
+      "name": "NPDES_INSPECTIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_LIMITS.csv",
+      "size": "6862.21",
+      "name": "NPDES_LIMITS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_NAICS.csv",
+      "size": "17.44",
+      "name": "NPDES_NAICS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_PERM_COMPONENTS.csv",
+      "size": "31.09",
+      "name": "NPDES_PERM_COMPONENTS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_PERM_FEATURE_COORDS.csv",
+      "size": "30.37",
+      "name": "NPDES_PERM_FEATURE_COORDS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_PS_VIOLATIONS.csv",
+      "size": "78.86",
+      "name": "NPDES_PS_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_QNCR_HISTORY.csv",
+      "size": "327.56",
+      "name": "NPDES_QNCR_HISTORY.csv"
+    },
+    {
+      "path": "geodata\\NPDES_SE_VIOLATIONS.csv",
+      "size": "62.34",
+      "name": "NPDES_SE_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_SICS.csv",
+      "size": "33.29",
+      "name": "NPDES_SICS.csv"
+    },
+    {
+      "path": "geodata\\NPDES_VIOLATION_ENFORCEMENTS.csv",
+      "size": "512.47",
+      "name": "NPDES_VIOLATION_ENFORCEMENTS.csv"
+    },
+    {
+      "path": "geodata\\OLYM_FisherMonitoring_HexStations.csv",
+      "size": "0.11",
+      "name": "OLYM_FisherMonitoring_HexStations.csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_CAA_00_COMPLETE.csv",
+      "size": "19.04",
+      "name": "PIPELINE_CAA_00_COMPLETE.csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_00_COMPLETE(1).csv",
+      "size": "126.17",
+      "name": "PIPELINE_RCRA_00_COMPLETE(1).csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_00_COMPLETE.csv",
+      "size": "126.17",
+      "name": "PIPELINE_RCRA_00_COMPLETE.csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_01_EVALUATIONS(1).csv",
+      "size": "28.87",
+      "name": "PIPELINE_RCRA_01_EVALUATIONS(1).csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_01_EVALUATIONS.csv",
+      "size": "28.87",
+      "name": "PIPELINE_RCRA_01_EVALUATIONS.csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_02_VIOLATIONS(1).csv",
+      "size": "48.79",
+      "name": "PIPELINE_RCRA_02_VIOLATIONS(1).csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_02_VIOLATIONS.csv",
+      "size": "48.79",
+      "name": "PIPELINE_RCRA_02_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_03_ENFORCEMENT_ACTIONS(1).csv",
+      "size": "20.94",
+      "name": "PIPELINE_RCRA_03_ENFORCEMENT_ACTIONS(1).csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_03_ENFORCEMENT_ACTIONS.csv",
+      "size": "20.94",
+      "name": "PIPELINE_RCRA_03_ENFORCEMENT_ACTIONS.csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_READ_ME(1).csv",
+      "size": "0.00",
+      "name": "PIPELINE_RCRA_READ_ME(1).csv"
+    },
+    {
+      "path": "geodata\\PIPELINE_RCRA_READ_ME.csv",
+      "size": "0.00",
+      "name": "PIPELINE_RCRA_READ_ME.csv"
+    },
+    {
+      "path": "geodata\\POLL_RPT_COMBINED_EMISSIONS.csv",
+      "size": "880.27",
+      "name": "POLL_RPT_COMBINED_EMISSIONS.csv"
+    },
+    {
+      "path": "geodata\\RCRA_ENFORCEMENTS(1).csv",
+      "size": "29.56",
+      "name": "RCRA_ENFORCEMENTS(1).csv"
+    },
+    {
+      "path": "geodata\\RCRA_ENFORCEMENTS.csv",
+      "size": "29.56",
+      "name": "RCRA_ENFORCEMENTS.csv"
+    },
+    {
+      "path": "geodata\\RCRA_EVALUATIONS(1).csv",
+      "size": "99.06",
+      "name": "RCRA_EVALUATIONS(1).csv"
+    },
+    {
+      "path": "geodata\\RCRA_EVALUATIONS.csv",
+      "size": "99.06",
+      "name": "RCRA_EVALUATIONS.csv"
+    },
+    {
+      "path": "geodata\\RCRA_FACILITIES(1).csv",
+      "size": "255.93",
+      "name": "RCRA_FACILITIES(1).csv"
+    },
+    {
+      "path": "geodata\\RCRA_FACILITIES.csv",
+      "size": "255.93",
+      "name": "RCRA_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\RCRA_NAICS(1).csv",
+      "size": "13.41",
+      "name": "RCRA_NAICS(1).csv"
+    },
+    {
+      "path": "geodata\\RCRA_NAICS.csv",
+      "size": "13.41",
+      "name": "RCRA_NAICS.csv"
+    },
+    {
+      "path": "geodata\\RCRA_VIOLATIONS(1).csv",
+      "size": "96.75",
+      "name": "RCRA_VIOLATIONS(1).csv"
+    },
+    {
+      "path": "geodata\\RCRA_VIOLATIONS.csv",
+      "size": "96.75",
+      "name": "RCRA_VIOLATIONS.csv"
+    },
+    {
+      "path": "geodata\\RCRA_VIOSNC_HISTORY(1).csv",
+      "size": "93.70",
+      "name": "RCRA_VIOSNC_HISTORY(1).csv"
+    },
+    {
+      "path": "geodata\\RCRA_VIOSNC_HISTORY.csv",
+      "size": "93.70",
+      "name": "RCRA_VIOSNC_HISTORY.csv"
+    },
+    {
+      "path": "geodata\\Recalls_Data.csv",
+      "size": "22.54",
+      "name": "Recalls_Data.csv"
+    },
+    {
+      "path": "geodata\\Releases_from_Federally_Regulated_Underground_Storage_Tank_Systems.csv",
+      "size": "0.82",
+      "name": "Releases_from_Federally_Regulated_Underground_Storage_Tank_Systems.csv"
+    },
+    {
+      "path": "geodata\\sample_b_table.csv",
+      "size": "0.02",
+      "name": "sample_b_table.csv"
+    },
+    {
+      "path": "geodata\\SDWA_EVENTS_MILESTONES.csv",
+      "size": "60.89",
+      "name": "SDWA_EVENTS_MILESTONES.csv"
+    },
+    {
+      "path": "geodata\\SDWA_FACILITIES.csv",
+      "size": "158.76",
+      "name": "SDWA_FACILITIES.csv"
+    },
+    {
+      "path": "geodata\\SDWA_GEOGRAPHIC_AREAS.csv",
+      "size": "38.81",
+      "name": "SDWA_GEOGRAPHIC_AREAS.csv"
+    },
+    {
+      "path": "geodata\\SDWA_LCR_SAMPLES.csv",
+      "size": "117.20",
+      "name": "SDWA_LCR_SAMPLES.csv"
+    },
+    {
+      "path": "geodata\\SDWA_PN_VIOLATION_ASSOC.csv",
+      "size": "45.30",
+      "name": "SDWA_PN_VIOLATION_ASSOC.csv"
+    },
+    {
+      "path": "geodata\\SDWA_PUB_WATER_SYSTEMS.csv",
+      "size": "123.00",
+      "name": "SDWA_PUB_WATER_SYSTEMS.csv"
+    },
+    {
+      "path": "geodata\\SDWA_REF_ANSI_AREAS.csv",
+      "size": "0.08",
+      "name": "SDWA_REF_ANSI_AREAS.csv"
+    },
+    {
+      "path": "geodata\\SDWA_REF_CODE_VALUES.csv",
+      "size": "0.12",
+      "name": "SDWA_REF_CODE_VALUES.csv"
+    },
+    {
+      "path": "geodata\\SDWA_SERVICE_AREAS.csv",
+      "size": "18.40",
+      "name": "SDWA_SERVICE_AREAS.csv"
+    },
+    {
+      "path": "geodata\\SDWA_SITE_VISITS.csv",
+      "size": "368.23",
+      "name": "SDWA_SITE_VISITS.csv"
+    },
+    {
+      "path": "geodata\\SDWA_VIOLATIONS_ENFORCEMENT.csv",
+      "size": "3838.18",
+      "name": "SDWA_VIOLATIONS_ENFORCEMENT.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_causes.csv",
+      "size": "0.25",
+      "name": "sewer_overflow_bypass_causes.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_columns_metadata.csv",
+      "size": "0.06",
+      "name": "sewer_overflow_bypass_columns_metadata.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_corrective_actions.csv",
+      "size": "0.34",
+      "name": "sewer_overflow_bypass_corrective_actions.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_impacts.csv",
+      "size": "0.26",
+      "name": "sewer_overflow_bypass_impacts.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_receiving_waters.csv",
+      "size": "0.07",
+      "name": "sewer_overflow_bypass_receiving_waters.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_report_events.csv",
+      "size": "1.22",
+      "name": "sewer_overflow_bypass_report_events.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_bypass_types.csv",
+      "size": "0.21",
+      "name": "sewer_overflow_bypass_types.csv"
+    },
+    {
+      "path": "geodata\\sewer_overflow_treatment_codes.csv",
+      "size": "0.05",
+      "name": "sewer_overflow_treatment_codes.csv"
+    },
+    {
+      "path": "geodata\\SNF_All_Owners_2026.03.02.csv",
+      "size": "46.53",
+      "name": "SNF_All_Owners_2026.03.02.csv"
+    },
+    {
+      "path": "geodata\\Underground_Storage_Tanks__USTs__-_Contact_Details.csv",
+      "size": "8.06",
+      "name": "Underground_Storage_Tanks__USTs__-_Contact_Details.csv"
+    },
+    {
+      "path": "geodata\\Underground_Storage_Tanks__USTs__-_Facility_and_Tank_Details.csv",
+      "size": "16.20",
+      "name": "Underground_Storage_Tanks__USTs__-_Facility_and_Tank_Details.csv"
+    },
+    {
+      "path": "geodata\\Underground_Storage_Tank__UST__Records_-_Residential.csv",
+      "size": "6.09",
+      "name": "Underground_Storage_Tank__UST__Records_-_Residential.csv"
+    },
+    {
+      "path": "geodata\\Wetland_Inventory.csv",
+      "size": "0.20",
+      "name": "Wetland_Inventory.csv"
+    },
+    {
+      "path": "geodata\\Wetland_Types.csv",
+      "size": "0.04",
+      "name": "Wetland_Types.csv"
+    },
+    {
+      "path": "geodata\\WT_AR_2024_0.csv",
+      "size": "75.69",
+      "name": "WT_AR_2024_0.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part001.csv",
+      "size": "159.92",
+      "name": "ECHO_EXPORTER_part001.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part002.csv",
+      "size": "159.89",
+      "name": "ECHO_EXPORTER_part002.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part003.csv",
+      "size": "159.84",
+      "name": "ECHO_EXPORTER_part003.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part004.csv",
+      "size": "159.91",
+      "name": "ECHO_EXPORTER_part004.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part005.csv",
+      "size": "159.93",
+      "name": "ECHO_EXPORTER_part005.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part006.csv",
+      "size": "159.84",
+      "name": "ECHO_EXPORTER_part006.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part007.csv",
+      "size": "159.87",
+      "name": "ECHO_EXPORTER_part007.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part008.csv",
+      "size": "159.79",
+      "name": "ECHO_EXPORTER_part008.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part009.csv",
+      "size": "159.78",
+      "name": "ECHO_EXPORTER_part009.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part010.csv",
+      "size": "159.94",
+      "name": "ECHO_EXPORTER_part010.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part011.csv",
+      "size": "159.73",
+      "name": "ECHO_EXPORTER_part011.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part012.csv",
+      "size": "159.83",
+      "name": "ECHO_EXPORTER_part012.csv"
+    },
+    {
+      "path": "geodata\\_chunks_echo\\ECHO_EXPORTER_part013.csv",
+      "size": "65.84",
+      "name": "ECHO_EXPORTER_part013.csv"
+    },
+    {
+      "path": "GLWD_Legend_v2_0.csv",
+      "size": "0.00",
+      "name": "GLWD_Legend_v2_0.csv"
+    },
+    {
+      "path": "HydroWASTE_v10.csv",
+      "size": "8.40",
+      "name": "HydroWASTE_v10.csv"
+    },
+    {
+      "path": "kar_USGS_data_release_v4.csv",
+      "size": "18.89",
+      "name": "kar_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "luhf_USGS_data_release_v4.csv",
+      "size": "0.20",
+      "name": "luhf_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "luminescence_USGS_data_release_v4.csv",
+      "size": "0.41",
+      "name": "luminescence_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "mineplant.csv",
+      "size": "0.68",
+      "name": "mineplant.csv"
+    },
+    {
+      "path": "ngdbconc\\bestvalue.csv",
+      "size": "244.42",
+      "name": "bestvalue.csv"
+    },
+    {
+      "path": "ngdbconc\\chemistry.csv",
+      "size": "216.79",
+      "name": "chemistry.csv"
+    },
+    {
+      "path": "ngdbconc\\datadxny.csv",
+      "size": "0.01",
+      "name": "datadxny.csv"
+    },
+    {
+      "path": "ngdbconc\\main.csv",
+      "size": "39.64",
+      "name": "main.csv"
+    },
+    {
+      "path": "ngdbsed\\bestvalue.csv",
+      "size": "612.93",
+      "name": "bestvalue.csv"
+    },
+    {
+      "path": "ngdbsed\\chemistry.csv",
+      "size": "633.38",
+      "name": "chemistry.csv"
+    },
+    {
+      "path": "ngdbsed\\datadxny.csv",
+      "size": "0.01",
+      "name": "datadxny.csv"
+    },
+    {
+      "path": "ngdbsed\\main.csv",
+      "size": "71.04",
+      "name": "main.csv"
+    },
+    {
+      "path": "ngdbsoil\\bestvalue.csv",
+      "size": "216.29",
+      "name": "bestvalue.csv"
+    },
+    {
+      "path": "ngdbsoil\\chemistry.csv",
+      "size": "224.61",
+      "name": "chemistry.csv"
+    },
+    {
+      "path": "ngdbsoil\\datadxny.csv",
+      "size": "0.02",
+      "name": "datadxny.csv"
+    },
+    {
+      "path": "ngdbsoil\\main.csv",
+      "size": "23.06",
+      "name": "main.csv"
+    },
+    {
+      "path": "ngdbsoil\\transpose.csv",
+      "size": "18.05",
+      "name": "transpose.csv"
+    },
+    {
+      "path": "nuresed.csv",
+      "size": "224.31",
+      "name": "nuresed.csv"
+    },
+    {
+      "path": "nurewtr.csv",
+      "size": "182.61",
+      "name": "nurewtr.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_BenMap.csv",
+      "size": "0.58",
+      "name": "PAZ_BenMap.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_BG_Pop.csv",
+      "size": "0.34",
+      "name": "PAZ_BG_Pop.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_DWDemand.csv",
+      "size": "0.05",
+      "name": "PAZ_DWDemand.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_EduLowGS.csv",
+      "size": "0.08",
+      "name": "PAZ_EduLowGS.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_Floodplain.csv",
+      "size": "0.28",
+      "name": "PAZ_Floodplain.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_hisotrical_places.csv",
+      "size": "0.11",
+      "name": "PAZ_hisotrical_places.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_iTree.csv",
+      "size": "3.97",
+      "name": "PAZ_iTree.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_LCSum.csv",
+      "size": "0.25",
+      "name": "PAZ_LCSum.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_NrRd_Pop.csv",
+      "size": "0.15",
+      "name": "PAZ_NrRd_Pop.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_Park_Pop.csv",
+      "size": "0.10",
+      "name": "PAZ_Park_Pop.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_RB_LC.csv",
+      "size": "0.24",
+      "name": "PAZ_RB_LC.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_TreeWV.csv",
+      "size": "0.06",
+      "name": "PAZ_TreeWV.csv"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\PAZ_WaterWV.csv",
+      "size": "0.05",
+      "name": "PAZ_WaterWV.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_BenMap.csv",
+      "size": "0.22",
+      "name": "PitPA_BenMap.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_BG_Pop.csv",
+      "size": "0.12",
+      "name": "PitPA_BG_Pop.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_DWDemand.csv",
+      "size": "0.02",
+      "name": "PitPA_DWDemand.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_EduLowGS.csv",
+      "size": "0.04",
+      "name": "PitPA_EduLowGS.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_Floodplain.csv",
+      "size": "0.12",
+      "name": "PitPA_Floodplain.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_historical_places.csv",
+      "size": "0.05",
+      "name": "PitPA_historical_places.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_iTree.csv",
+      "size": "1.96",
+      "name": "PitPA_iTree.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_LCSum.csv",
+      "size": "0.13",
+      "name": "PitPA_LCSum.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_NrRd_Pop.csv",
+      "size": "0.07",
+      "name": "PitPA_NrRd_Pop.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_Park_Pop.csv",
+      "size": "0.05",
+      "name": "PitPA_Park_Pop.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_RB_LC.csv",
+      "size": "0.12",
+      "name": "PitPA_RB_LC.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_TreeWV.csv",
+      "size": "0.03",
+      "name": "PitPA_TreeWV.csv"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\PitPA_WaterWV.csv",
+      "size": "0.02",
+      "name": "PitPA_WaterWV.csv"
+    },
+    {
+      "path": "rbsr_USGS_data_release_v4.csv",
+      "size": "9.70",
+      "name": "rbsr_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "reos_USGS_data_release_v4.csv",
+      "size": "0.47",
+      "name": "reos_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "samples_USGS_data_release_v4.csv",
+      "size": "31.59",
+      "name": "samples_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "SupplyChainGHGEmissionFactors_v1.2_NAICS_CO2e_USD2021.csv",
+      "size": "0.12",
+      "name": "SupplyChainGHGEmissionFactors_v1.2_NAICS_CO2e_USD2021.csv"
+    },
+    {
+      "path": "SupplyChainGHGEmissionFactors_v1.3.0_NAICS_CO2e_USD2022.csv",
+      "size": "0.12",
+      "name": "SupplyChainGHGEmissionFactors_v1.3.0_NAICS_CO2e_USD2022.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_BenMap.csv",
+      "size": "0.37",
+      "name": "TFL_BenMap.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_BG_Pop.csv",
+      "size": "0.23",
+      "name": "TFL_BG_Pop.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_DWDemand.csv",
+      "size": "0.04",
+      "name": "TFL_DWDemand.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_EduLowGS.csv",
+      "size": "0.07",
+      "name": "TFL_EduLowGS.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_Floodplain.csv",
+      "size": "0.21",
+      "name": "TFL_Floodplain.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_historical_places.csv",
+      "size": "0.08",
+      "name": "TFL_historical_places.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_iTree.csv",
+      "size": "3.32",
+      "name": "TFL_iTree.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_LCsum.csv",
+      "size": "0.26",
+      "name": "TFL_LCsum.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_NrRd_PFor.csv",
+      "size": "0.00",
+      "name": "TFL_NrRd_PFor.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_NrRd_Pop.csv",
+      "size": "0.11",
+      "name": "TFL_NrRd_Pop.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_Park_Pop.csv",
+      "size": "0.08",
+      "name": "TFL_Park_Pop.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_RB_LC.csv",
+      "size": "0.19",
+      "name": "TFL_RB_LC.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_TreeWV.csv",
+      "size": "0.04",
+      "name": "TFL_TreeWV.csv"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\TFL_WaterWV.csv",
+      "size": "0.05",
+      "name": "TFL_WaterWV.csv"
+    },
+    {
+      "path": "useriessolution_USGS_data_release_v4.csv",
+      "size": "1.05",
+      "name": "useriessolution_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Dep_Model.csv",
+      "size": "0.01",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Descr_Sum.csv",
+      "size": "0.06",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\GeolMinOcc.csv",
+      "size": "0.02",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\History.csv",
+      "size": "0.01",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Loc_Pt.csv",
+      "size": "0.02",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Production.csv",
+      "size": "0.01",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\References.csv",
+      "size": "0.03",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Resources.csv",
+      "size": "0.09",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Cobalt_US_CSV\\Site.csv",
+      "size": "0.01",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Data_Dictionary.csv",
+      "size": "0.01",
+      "name": "Data_Dictionary.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Descr_Sum.csv",
+      "size": "0.00",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.00",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\History.csv",
+      "size": "0.00",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Loc_Pt.csv",
+      "size": "0.00",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Production.csv",
+      "size": "0.00",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\References.csv",
+      "size": "0.00",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Resources.csv",
+      "size": "0.02",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Gallium_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Data_Dictionary.csv",
+      "size": "0.02",
+      "name": "Data_Dictionary.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Descr_Sum.csv",
+      "size": "0.00",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.00",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\History.csv",
+      "size": "0.00",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Loc_Pt.csv",
+      "size": "0.00",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Production.csv",
+      "size": "0.00",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\References.csv",
+      "size": "0.00",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Resources.csv",
+      "size": "0.00",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Germanium_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Conversions.csv",
+      "size": "0.00",
+      "name": "Conversions.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Data_Dictionary.csv",
+      "size": "0.01",
+      "name": "Data_Dictionary.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Descr_Sum.csv",
+      "size": "0.01",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\GeolMinOcc.csv",
+      "size": "0.00",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\History.csv",
+      "size": "0.01",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Loc_Pt.csv",
+      "size": "0.00",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Production.csv",
+      "size": "0.00",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\References.csv",
+      "size": "0.01",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Resources.csv",
+      "size": "0.00",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Graphite_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Conversions.csv",
+      "size": "0.00",
+      "name": "Conversions.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Data Dictionary.csv",
+      "size": "0.02",
+      "name": "Data Dictionary.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Descr_Sum.csv",
+      "size": "0.01",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.01",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\History.csv",
+      "size": "0.01",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Loc_Pt.csv",
+      "size": "0.01",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Production.csv",
+      "size": "0.01",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\References.csv",
+      "size": "0.01",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Resources.csv",
+      "size": "0.02",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Indium_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Descr_Sum.csv",
+      "size": "0.02",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.01",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\History.csv",
+      "size": "0.01",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Loc_Pt.csv",
+      "size": "0.02",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Production.csv",
+      "size": "0.01",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\References.csv",
+      "size": "0.02",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Resources.csv",
+      "size": "0.02",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Lithium_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Data_Dictionary.csv",
+      "size": "0.01",
+      "name": "Data_Dictionary.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Descr_Sum.csv",
+      "size": "0.01",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.01",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\History.csv",
+      "size": "0.01",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Loc_Pt.csv",
+      "size": "0.01",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Production.csv",
+      "size": "0.00",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\References.csv",
+      "size": "0.01",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Resources.csv",
+      "size": "0.06",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Niobium_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Dep_Model.csv",
+      "size": "0.03",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Descr_Sum.csv",
+      "size": "0.16",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\GeolMinOcc.csv",
+      "size": "0.07",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\History.csv",
+      "size": "0.03",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Loc_Poly.csv",
+      "size": "0.01",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Loc_Pt.csv",
+      "size": "0.09",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Production.csv",
+      "size": "0.01",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\References.csv",
+      "size": "0.07",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Resources.csv",
+      "size": "0.10",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_REE_US_CSV\\Site.csv",
+      "size": "0.03",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Dep_Model.csv",
+      "size": "0.01",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Descr_Sum.csv",
+      "size": "0.06",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.03",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\History.csv",
+      "size": "0.02",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Loc_Poly.csv",
+      "size": "0.01",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Loc_Pt.csv",
+      "size": "0.03",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Production.csv",
+      "size": "0.04",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\References.csv",
+      "size": "0.05",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Resources.csv",
+      "size": "0.06",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Rhenium_US_CSV\\Site.csv",
+      "size": "0.01",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_SGMC_Tables_CSV\\SGMC_Age.csv",
+      "size": "1.92",
+      "name": "SGMC_Age.csv"
+    },
+    {
+      "path": "USGS_SGMC_Tables_CSV\\SGMC_Lithology.csv",
+      "size": "2.70",
+      "name": "SGMC_Lithology.csv"
+    },
+    {
+      "path": "USGS_SGMC_Tables_CSV\\SGMC_References.csv",
+      "size": "0.36",
+      "name": "SGMC_References.csv"
+    },
+    {
+      "path": "USGS_SGMC_Tables_CSV\\SGMC_Units.csv",
+      "size": "3.42",
+      "name": "SGMC_Units.csv"
+    },
+    {
+      "path": "USGS_SGMC_Tables_CSV\\SGMC_Unit_Ref_Link.csv",
+      "size": "3.36",
+      "name": "SGMC_Unit_Ref_Link.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Dep_Model.csv",
+      "size": "0.01",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Descr_Sum.csv",
+      "size": "0.03",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\GeolMinOcc.csv",
+      "size": "0.02",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\History.csv",
+      "size": "0.01",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Loc_Pt.csv",
+      "size": "0.03",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Production.csv",
+      "size": "0.01",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\References.csv",
+      "size": "0.01",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Resources.csv",
+      "size": "0.01",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Sn_US_CSV\\Site.csv",
+      "size": "0.01",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Data_Dictionary.csv",
+      "size": "0.01",
+      "name": "Data_Dictionary.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Descr_Sum.csv",
+      "size": "0.00",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\GeolMinOcc.csv",
+      "size": "0.01",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\History.csv",
+      "size": "0.00",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Loc_Pt.csv",
+      "size": "0.01",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Production.csv",
+      "size": "0.00",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\References.csv",
+      "size": "0.01",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Resources.csv",
+      "size": "0.05",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Tantalum_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Dep_Model.csv",
+      "size": "0.00",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Descr_Sum.csv",
+      "size": "0.00",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\GeolMinOcc.csv",
+      "size": "0.00",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\History.csv",
+      "size": "0.00",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Loc_Poly.csv",
+      "size": "0.00",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Loc_Pt.csv",
+      "size": "0.00",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Production.csv",
+      "size": "0.01",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\References.csv",
+      "size": "0.00",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Resources.csv",
+      "size": "0.00",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Tellurium_US_CSV\\Site.csv",
+      "size": "0.00",
+      "name": "Site.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Data_Dictionary.csv",
+      "size": "0.02",
+      "name": "Data_Dictionary.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Dep_Model.csv",
+      "size": "0.02",
+      "name": "Dep_Model.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Descr_Sum.csv",
+      "size": "0.01",
+      "name": "Descr_Sum.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\GeolMinOcc.csv",
+      "size": "0.03",
+      "name": "GeolMinOcc.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\History.csv",
+      "size": "0.03",
+      "name": "History.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Loc_Poly.csv",
+      "size": "0.01",
+      "name": "Loc_Poly.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Loc_Poly_Sw.csv",
+      "size": "0.00",
+      "name": "Loc_Poly_Sw.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Loc_Pt.csv",
+      "size": "0.06",
+      "name": "Loc_Pt.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Production.csv",
+      "size": "0.03",
+      "name": "Production.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\References.csv",
+      "size": "0.05",
+      "name": "References.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Resources.csv",
+      "size": "0.04",
+      "name": "Resources.csv"
+    },
+    {
+      "path": "USGS_Tungsten_ver2_CSV\\Site.csv",
+      "size": "0.01",
+      "name": "Site.csv"
+    },
+    {
+      "path": "uthhe_USGS_data_release_v4.csv",
+      "size": "1.89",
+      "name": "uthhe_USGS_data_release_v4.csv"
+    },
+    {
+      "path": "uthpbinsitu_USGS_data_release_v4.csv",
+      "size": "218.09",
+      "name": "uthpbinsitu_USGS_data_release_v4.csv"
+    }
+  ],
+  "shp_files": [
+    {
+      "path": "ardf.shp",
+      "size": "0.20",
+      "name": "ardf.shp"
+    },
+    {
+      "path": "asbestos\\asbestos.shp",
+      "size": "0.02",
+      "name": "asbestos.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_BG.shp",
+      "size": "0.61",
+      "name": "DNC_BG.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_GreenProx.shp",
+      "size": "67.40",
+      "name": "DNC_GreenProx.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_ImpProx.shp",
+      "size": "18.39",
+      "name": "DNC_ImpProx.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_NrRd_PFor.shp",
+      "size": "3.15",
+      "name": "DNC_NrRd_PFor.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_Park_Prox.shp",
+      "size": "0.62",
+      "name": "DNC_Park_Prox.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_RB15m_For.shp",
+      "size": "12.09",
+      "name": "DNC_RB15m_For.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_RB15m_Vege.shp",
+      "size": "11.22",
+      "name": "DNC_RB15m_Vege.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_RB51m_For.shp",
+      "size": "9.69",
+      "name": "DNC_RB51m_For.shp"
+    },
+    {
+      "path": "DNC_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\DNC_RB51m_Vege.shp",
+      "size": "9.21",
+      "name": "DNC_RB51m_Vege.shp"
+    },
+    {
+      "path": "ds898.shp",
+      "size": "0.27",
+      "name": "ds898.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_BG.shp",
+      "size": "0.66",
+      "name": "FCA_BG.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_Bnd.shp",
+      "size": "0.03",
+      "name": "FCA_Bnd.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_GreenProx.shp",
+      "size": "84.05",
+      "name": "FCA_GreenProx.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_ImpProx.shp",
+      "size": "26.47",
+      "name": "FCA_ImpProx.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_NrRd_PFor.shp",
+      "size": "1.50",
+      "name": "FCA_NrRd_PFor.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_Park_Prox.shp",
+      "size": "0.73",
+      "name": "FCA_Park_Prox.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_RB15m_For.shp",
+      "size": "0.98",
+      "name": "FCA_RB15m_For.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_RB15m_Vege.shp",
+      "size": "1.02",
+      "name": "FCA_RB15m_Vege.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_RB51m_For.shp",
+      "size": "0.58",
+      "name": "FCA_RB51m_For.shp"
+    },
+    {
+      "path": "FCA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\FCA_RB51m_Vege.shp",
+      "size": "0.63",
+      "name": "FCA_RB51m_Vege.shp"
+    },
+    {
+      "path": "geodata\\wss_gsmsoil_US_[2016-10-13]\\spatial\\gsmsoilmu_a_us.shp",
+      "size": "450.16",
+      "name": "gsmsoilmu_a_us.shp"
+    },
+    {
+      "path": "kbf.shp",
+      "size": "2.07",
+      "name": "kbf.shp"
+    },
+    {
+      "path": "kbge.shp",
+      "size": "15.68",
+      "name": "kbge.shp"
+    },
+    {
+      "path": "ngdbconc\\ngdbconc.shp",
+      "size": "3.83",
+      "name": "ngdbconc.shp"
+    },
+    {
+      "path": "ngdbsed\\ngdbsed.shp",
+      "size": "8.95",
+      "name": "ngdbsed.shp"
+    },
+    {
+      "path": "ngdbsoil\\ngdbsoil.shp",
+      "size": "2.78",
+      "name": "ngdbsoil.shp"
+    },
+    {
+      "path": "nurewtr-fUS02.shp",
+      "size": "1.72",
+      "name": "nurewtr-fUS02.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_BG.shp",
+      "size": "3.15",
+      "name": "PAZ_BG.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_Bnd.shp",
+      "size": "0.12",
+      "name": "PAZ_Bnd.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_GreenProx.shp",
+      "size": "445.32",
+      "name": "PAZ_GreenProx.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_ImpProx.shp",
+      "size": "156.83",
+      "name": "PAZ_ImpProx.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_NrRd_PFor.shp",
+      "size": "7.90",
+      "name": "PAZ_NrRd_PFor.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_Park_Prox.shp",
+      "size": "4.59",
+      "name": "PAZ_Park_Prox.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_RB15m_For.shp",
+      "size": "21.03",
+      "name": "PAZ_RB15m_For.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_RB15m_Vege.shp",
+      "size": "38.57",
+      "name": "PAZ_RB15m_Vege.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_RB51m_For.shp",
+      "size": "14.79",
+      "name": "PAZ_RB51m_For.shp"
+    },
+    {
+      "path": "PAZ_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PAZ_RB51m_Vege.shp",
+      "size": "17.28",
+      "name": "PAZ_RB51m_Vege.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_BG.shp",
+      "size": "3.34",
+      "name": "PitPA_BG.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_Bnd.shp",
+      "size": "0.08",
+      "name": "PitPA_Bnd.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_GreenProx.shp",
+      "size": "163.15",
+      "name": "PitPA_GreenProx.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_ImpProx.shp",
+      "size": "46.19",
+      "name": "PitPA_ImpProx.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_NrRd_PFor.shp",
+      "size": "9.83",
+      "name": "PitPA_NrRd_PFor.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_Park_Prox.shp",
+      "size": "2.33",
+      "name": "PitPA_Park_Prox.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_RB15m_For.shp",
+      "size": "13.87",
+      "name": "PitPA_RB15m_For.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_RB15m_Vege.shp",
+      "size": "10.86",
+      "name": "PitPA_RB15m_Vege.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_RB51m_For.shp",
+      "size": "8.88",
+      "name": "PitPA_RB51m_For.shp"
+    },
+    {
+      "path": "PitPA_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\PitPA_RB51m_Vege.shp",
+      "size": "7.67",
+      "name": "PitPA_RB51m_Vege.shp"
+    },
+    {
+      "path": "site.shp",
+      "size": "0.13",
+      "name": "site.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_BG.shp",
+      "size": "2.48",
+      "name": "TFL_BG.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_GreenProx.shp",
+      "size": "522.43",
+      "name": "TFL_GreenProx.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_ImpProx.shp",
+      "size": "192.35",
+      "name": "TFL_ImpProx.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_NrRd_PFor.shp",
+      "size": "10.79",
+      "name": "TFL_NrRd_PFor.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_Park_Prox.shp",
+      "size": "3.73",
+      "name": "TFL_Park_Prox.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_RB15m_For.shp",
+      "size": "11.78",
+      "name": "TFL_RB15m_For.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_RB15m_Vege.shp",
+      "size": "8.69",
+      "name": "TFL_RB15m_Vege.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_RB51m_For.shp",
+      "size": "8.08",
+      "name": "TFL_RB51m_For.shp"
+    },
+    {
+      "path": "TFL_metrics_Apr2020_CSV_Shapes\\ShapeFiles\\TFL_RB51m_Vege.shp",
+      "size": "7.07",
+      "name": "TFL_RB51m_Vege.shp"
+    },
+    {
+      "path": "ussoils.shp",
+      "size": "0.04",
+      "name": "ussoils.shp"
+    }
+  ],
+  "gdb_files": [],
+  "geojson_files": [],
+  "kml_files": [
+    {
+      "path": "acres_frs (1).kmz",
+      "size": "2.86",
+      "name": "acres_frs (1).kmz"
+    },
+    {
+      "path": "acres_frs.kmz",
+      "size": "2.86",
+      "name": "acres_frs.kmz"
+    },
+    {
+      "path": "geodata\\acres_frs.kmz",
+      "size": "2.86",
+      "name": "acres_frs.kmz"
+    },
+    {
+      "path": "geodata\\national_frs.kmz",
+      "size": "5.16",
+      "name": "national_frs.kmz"
+    },
+    {
+      "path": "national_frs (2).kmz",
+      "size": "5.16",
+      "name": "national_frs (2).kmz"
+    },
+    {
+      "path": "national_frs.kmz",
+      "size": "5.16",
+      "name": "national_frs.kmz"
+    }
+  ]
+}

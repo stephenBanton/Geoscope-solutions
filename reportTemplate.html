@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoScope Government Records Report</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Avenir Next', 'Segoe UI', 'Aptos', 'Calibri', sans-serif;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      line-height: 1.52;
+      font-size: 11px;
+      background: #ffffff;
+    }
+
+    /* ── COVER PAGE ───────────────────────────────────── */
+    .cover {
+      page-break-after: always;
+      padding: 0;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: #edf2f7;
+      color: #0f172a;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(180deg, rgba(241, 245, 249, 0.92), rgba(248, 250, 252, 0.95)),
+        url('{{mapImage}}');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      filter: grayscale(0.22) contrast(0.95);
+    }
+
+    .cover-inner {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 54px 56px 44px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-brand-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .cover-brand-bar {
+      width: 8px;
+      height: 190px;
+      border-radius: 3px;
+      background: linear-gradient(180deg, #02253f 0%, #02253f 52%, #22d3ee 52%, #22d3ee 100%);
+      box-shadow: 0 5px 16px rgba(15, 23, 42, 0.2);
+    }
+
+    .cover-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .cover-logo-img {
+      width: 68px;
+      height: auto;
+      filter: drop-shadow(0 4px 10px rgba(2, 6, 23, 0.16));
+    }
+
+    .cover-brand {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: #02253f;
+      line-height: 0.95;
+      margin: 0;
+    }
+
+    .cover-brand-sub {
+      font-size: 15px;
+      font-weight: 500;
+      color: #1f2937;
+      margin: 0;
+    }
+
+    .cover-brand-subline {
+      font-size: 11px;
+      color: #2563eb;
+      margin-top: 4px;
+    }
+
+    .cover-bottom {
+      margin-top: auto;
+      max-width: 620px;
+      color: #1f2937;
+    }
+
+    .cover-client-block {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 12px;
+      padding: 16px 18px;
+      backdrop-filter: blur(1.5px);
+    }
+
+    .cover-client-property {
+      font-size: 31px;
+      font-weight: 700;
+      color: #1f2937;
+      line-height: 1.08;
+      margin: 0 0 6px;
+    }
+
+    .cover-client-address {
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #334155;
+      margin: 0 0 16px;
+    }
+
+    .cover-client-meta {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 3px 10px;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .cover-client-meta .label {
+      font-weight: 700;
+      color: #475569;
+    }
+
+    .cover-client-meta .value {
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    .cover-prepared {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 10px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #475569;
+    }
+
+    .cover-prepared strong {
+      font-size: 14px;
+      color: #0f172a;
+      letter-spacing: 0.02em;
+    }
+
+    .cover-rule {
+      width: 100%;
+      height: 3px;
+      border-radius: 3px;
+      margin-top: 16px;
+      background: linear-gradient(90deg, #22d3ee 0%, #0ea5e9 60%, rgba(14, 165, 233, 0.35) 100%);
+    }
+
+    .map-caption {
+      font-size: 9px;
+      color: #64748b;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .legend-box {
+      border: 1px solid #dbe7f3;
+      background: #f8fbff;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-size: 10px;
+    }
+
+    .legend-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ── TOC PAGE ───────────────────────────────────── */
+    .toc {
+      page-break-after: always;
+      padding: 32px 48px;
+    }
+
+    .toc h2 {
+      font-size: 16px;
+      color: #025f85;
+      border-bottom: 2px solid #025f85;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+
+    .toc table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .toc td {
+      border: none;
+      padding: 5px 4px;
+      font-size: 11px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    .toc td:first-child { font-weight: 600; }
+    .toc td:last-child { text-align: right; color: #025f85; font-weight: 700; }
+
+    /* ── SECTION PAGES ───────────────────────────────── */
+    .section {
+      padding: 34px 52px;
+      page-break-inside: avoid;
+    }
+
+    .section-header {
+      background: linear-gradient(90deg, #0f172a, #025f85 72%, #38bdf8);
+      color: #fff;
+      padding: 11px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 0.4px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(2, 95, 133, 0.12);
+    }
+
+    .section-subheader {
+      background: #e8f0f7;
+      color: #025f85;
+      padding: 7px 11px;
+      font-size: 11.5px;
+      font-weight: 700;
+      border-left: 4px solid #025f85;
+      margin: 16px 0 10px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .section-intro {
+      border: 1px solid #dbe7f3;
+      background: linear-gradient(180deg, #fbfdff, #f4f8fc);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      color: #334155;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+    }
+
+    .page-break { page-break-before: always; }
+
+    /* ── RISK CHIPS ───────────────────────────────────── */
+    .risk-chip {
+      display: inline-block;
+      border-radius: 2px;
+      padding: 1px 7px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .risk-high   { background: #fee2e2; color: #b91c1c; border: 1px solid #f5c0c0; }
+    .risk-medium { background: #fef3c7; color: #92400e; border: 1px solid #f5dcac; }
+    .risk-low    { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+
+    .premium-panel {
+      border: 1px solid #d6e2ef;
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .legend-card {
+      border: 1px solid #dbe7f3;
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+      min-height: 108px;
+    }
+
+    .risk-pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .risk-pill-high { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    .risk-pill-medium { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .risk-pill-low { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+
+    .legend-metric {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .legend-copy {
+      font-size: 10.2px;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    .icon-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .icon-chip {
+      border: 1px solid #dbe7f3;
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 10px;
+      color: #1f2937;
+      white-space: nowrap;
+    }
+
+    /* ── SUMMARY BOXES ────────────────────────────────── */
+    .info-box {
+      border: 1px solid #d0dce8;
+      background: #f9fbfd;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+
+    .info-box p { margin: 3px 0; }
+
+    .stat-row {
+      display: flex;
+      gap: 12px;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-cell {
+      flex: 1;
+      min-width: 120px;
+      border: 1px solid #d0dce8;
+      padding: 8px 12px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .stat-cell .stat-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: #025f85;
+    }
+
+    .stat-cell .stat-label {
+      font-size: 9px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── PROPERTY INFO TABLE ─────────────────────────── */
+    .prop-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5px;
+    }
+
+    .prop-table td {
+      border: 1px solid #d0dce8;
+      padding: 5px 8px;
+      vertical-align: top;
+    }
+
+    .prop-table td.label {
+      font-weight: 700;
+      background: #eef3fa;
+      width: 160px;
+      color: #333;
+    }
+
+    /* ── MAP FINDINGS TABLE ──────────────────────────── */
+    .findings-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin: 8px 0;
+    }
+
+    .findings-table th {
+      background: #025f85;
+      color: #fff;
+      padding: 6px 7px;
+      text-align: left;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
+    .findings-table td {
+      border: 1px solid #d0dce8;
+      padding: 5px 7px;
+      vertical-align: top;
+    }
+
+    .findings-table tr:nth-child(even) td {
+      background: #f7fafd;
+    }
+
+    /* ── GENERIC TABLE ───────────────────────────────── */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5px;
+      margin: 8px 0;
+    }
+
+    table.data-table th {
+      background: #eef3fa;
+      border: 1px solid #d0dce8;
+      padding: 6px 8px;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    table.data-table td {
+      border: 1px solid #d0dce8;
+      padding: 5px 8px;
+      vertical-align: top;
+    }
+
+    table.data-table tr:nth-child(even) td {
+      background: #fafcfe;
+    }
+
+    /* ── MAP IMAGE ───────────────────────────────────── */
+    .map-image {
+      width: 100%;
+      max-width: 860px;
+      border: 1px solid #d0dce8;
+      display: block;
+      margin: 10px auto;
+      border-radius: 12px;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+    }
+
+    .cover-visual-card {
+      margin-top: 18px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(148,163,184,0.35);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 16px 36px rgba(15,23,42,0.12);
+    }
+
+    .cover-visual-card img {
+      display: block;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .cover-visual-meta {
+      padding: 12px 14px 14px;
+    }
+
+    .cover-visual-meta-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0369a1;
+      margin-bottom: 6px;
+    }
+
+    .cover-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .cover-badge {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(226,232,240,0.84);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: #0f172a;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .map-panel {
+      border: 1px solid #dbe7f3;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    .map-panel-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .map-panel-subtitle {
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .map-exhibit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .map-exhibit-card {
+      border: 1px solid #dbe7f3;
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .map-exhibit-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid #dbe7f3;
+    }
+
+    .map-exhibit-body {
+      padding: 12px 14px 14px;
+    }
+
+    .map-exhibit-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0284c7;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .map-exhibit-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .map-exhibit-text {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .single-map-exhibit {
+      margin-top: 14px;
+    }
+
+    .summary-banner {
+      border-left: 5px solid #0ea5e9;
+      background: linear-gradient(90deg, #eff8ff, #f8fbff);
+      padding: 12px 14px;
+      border-radius: 0 10px 10px 0;
+      margin: 10px 0 14px;
+    }
+
+    .callout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .callout-card {
+      border: 1px solid #dbe7f3;
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: #fff;
+    }
+
+    .callout-card h4 {
+      margin: 0 0 8px;
+      color: #0f172a;
+      font-size: 12px;
+    }
+
+    /* ── HISTORICAL TOPO MAP PAGES ───────────────────── */
+    .histo-page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #0369a1;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    .histo-page-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0c2d48;
+      letter-spacing: 0.02em;
+    }
+    .histo-page-badge {
+      background: #0369a1;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .histo-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .histo-meta-cell {
+      background: #f1f5f9;
+      border: 1px solid #dbe7f3;
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+    .histo-meta-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0369a1;
+      margin-bottom: 3px;
+    }
+    .histo-meta-value {
+      font-size: 11px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .histo-img-wrap {
+      border: 2px solid #0369a1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(3,105,161,0.18);
+      margin-bottom: 14px;
+    }
+    .histo-img-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 400px;
+      object-fit: cover;
+    }
+    .histo-img-caption {
+      background: #0c2d48;
+      color: #e2e8f0;
+      font-size: 9.5px;
+      padding: 7px 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .histo-footnote {
+      font-size: 9.5px;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .histo-summary-section {
+      margin-bottom: 20px;
+    }
+    .histo-summary-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0369a1;
+
+    .section-hidden {
+      display: none !important;
+    }
+      border-bottom: 1px solid #dbe7f3;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+    }
+    .histo-timeline-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-bottom: 12px;
+    }
+    .histo-timeline-year {
+      background: #0369a1;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      min-width: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px 0 0 8px;
+      padding: 6px 8px;
+    }
+    .histo-timeline-body {
+      flex: 1;
+      border: 1px solid #dbe7f3;
+      border-left: none;
+      border-radius: 0 8px 8px 0;
+      padding: 6px 10px;
+      background: #f8fbff;
+      font-size: 10.5px;
+    }
+    .histo-timeline-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .histo-timeline-meta {
+      color: #64748b;
+      font-size: 9.5px;
+      margin-top: 2px;
+    }
+
+    /* ── LEGAL BOX ───────────────────────────────────── */
+    .legal-box {
+      border: 1px solid #d0dce8;
+      background: #fffdf5;
+      padding: 10px 14px;
+      font-size: 9.5px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* ── REPORT FOOTER (repeated on each page via @page) */
+    @page {
+      margin: 0.55in 0.5in 0.6in;
+      @bottom-center {
+        content: "GeoScope Environmental Intelligence  |  Confidential  |  " attr(data-report-id);
+        font-size: 8px;
+        color: #888;
+      }
+    }
+
+    h3 { font-size: 12px; color: #025f85; margin: 12px 0 5px; }
+    p  { margin: 4px 0; }
+    ul { margin: 4px 0 8px; padding-left: 18px; }
+    li { margin: 2px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       COVER PAGE
+  ════════════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-inner">
+      <div class="cover-brand-wrap">
+        <div class="cover-brand-bar"></div>
+        <div>
+          <div class="cover-logo-row">
+            <img src="{{logoImage}}" alt="GeoScope" class="cover-logo-img" />
+            <div>
+              <h1 class="cover-brand">GEOSCOPE</h1>
+              <p class="cover-brand-sub">Government Records Report</p>
+              <p class="cover-brand-subline">with GeoScope Environmental Intelligence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-client-block">
+          <p class="cover-client-property">{{project_name}}</p>
+          <p class="cover-client-address">{{address}}</p>
+
+          <div class="cover-client-meta">
+            <span class="label">Order Number:</span><span class="value">{{order_id}}</span>
+            <span class="label">Report Generated:</span><span class="value">{{report_date}}</span>
+            <span class="label">Project Number:</span><span class="value">{{project_number}}</span>
+            <span class="label">Coordinates:</span><span class="value">{{latitude}}, {{longitude}}</span>
+            <span class="label">Search Radius:</span><span class="value">{{radius}}</span>
+          </div>
+
+          <div class="cover-prepared">
+            This report has been prepared for<br />
+            <strong>{{company_name}}</strong> <span style="font-weight:500; color:#64748b;">{{client_name}}</span>
+          </div>
+
+          <div class="cover-rule"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       TABLE OF CONTENTS
+  ════════════════════════════════════════════════ -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <table>
+      <tr><td>Section</td><td>Page</td></tr>
+      <tr><td>1. Executive Summary (Upgraded)</td><td>3</td></tr>
+      <tr><td>2. Property &amp; Buffer Overview</td><td>4</td></tr>
+      <tr><td>3. Environmental Setting</td><td>5</td></tr>
+      <tr><td>4. Address-Level Intelligence</td><td>6</td></tr>
+      <tr><td>5. Contaminant &amp; Dataset Analysis</td><td>7</td></tr>
+      <tr><td>6. Advanced Map Analysis</td><td>8</td></tr>
+      <tr><td>7. Historical Land Use</td><td>9</td></tr>
+      <tr><td>8. Risk Scoring System</td><td>10</td></tr>
+      <tr><td>9. Address Dossier Pages</td><td>11</td></tr>
+      <tr><td>10. Final Conclusion</td><td>12</td></tr>
+      <tr><td>Appendix A. Database Descriptions</td><td>13</td></tr>
+      <tr><td>Appendix B. Disclaimer</td><td>14</td></tr>
+    </table>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 1 — SUBJECT PROPERTY INFORMATION
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">2. Property &amp; Buffer Overview</div>
+
+    <div>{{property_buffer_overview_html}}</div>
+
+    <div class="section-subheader">Three Buffer Zone Breakdown</div>
+    <div>{{buffer_zone_analysis_html}}</div>
+
+    <div class="section-subheader">Address &amp; Identification</div>
+    <table class="prop-table">
+      <tr>
+        <td class="label">Address</td>
+        <td><strong>{{address}}</strong></td>
+        <td class="label">Order Number</td>
+        <td>{{order_id}}</td>
+      </tr>
+      <tr>
+        <td class="label">Project Name</td>
+        <td>{{project_name}}</td>
+        <td class="label">Report Date</td>
+        <td>{{report_date}}</td>
+      </tr>
+      <tr>
+        <td class="label">Company</td>
+        <td>{{company_name}}</td>
+        <td class="label">Client</td>
+        <td>{{client_name}}</td>
+      </tr>
+      <tr>
+        <td class="label">Search Radius</td>
+        <td>{{radius}}</td>
+        <td class="label">Coverage Focus</td>
+        <td>{{countries_covered}}</td>
+      </tr>
+    </table>
+
+    <div class="section-subheader">Coordinates &amp; Location</div>
+    <table class="prop-table">
+      <tr>
+        <td class="label">Latitude (North)</td>
+        <td>{{latitude}}</td>
+        <td class="label">Longitude (West)</td>
+        <td>{{longitude}}</td>
+      </tr>
+      <tr>
+        <td class="label">Elevation</td>
+        <td>{{elevation}}</td>
+        <td class="label">Zoning</td>
+        <td>{{zoning}}</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 2 — EXECUTIVE SUMMARY
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">1. Executive Summary (Upgraded)</div>
+
+    <div class="info-box">
+      <p>
+        GeoScope has conducted a search of reasonably ascertainable records in accordance with
+        EPA's AAI (40 CFR Part 312) requirements and the ASTM E-1527-21 Environmental Site
+        Assessments standard for the subject property located at <strong>{{address}}</strong>.
+      </p>
+      <p style="margin-top: 8px;">
+        A total of <strong>{{total_records}}</strong> environmental records were identified within
+        a <strong>{{radius}}</strong> radius for <strong>{{company_name}}</strong>. This section summarizes location context and database coverage.
+      </p>
+      <p style="margin-top: 8px; font-style: italic; color: #333;">
+        <strong>AI Overview:</strong> {{ai_summary}}
+      </p>
+    </div>
+
+    <div class="summary-banner">
+      <strong>Client Readout:</strong> This section is intended to summarize the screening result in plain language before the detailed maps, grouped findings, and location-by-location evidence that follow.
+    </div>
+
+    <div class="section-subheader">Risk Interpretation Guide</div>
+    <div class="premium-panel">
+      <div style="font-size:10.5px; color:#334155; margin-bottom:6px;">
+        The risk color system below translates database hits and proximity into clear decision language for underwriting, acquisition review, and due diligence planning.
+      </div>
+      <div class="legend-grid">
+        <div class="legend-card">
+          <div class="risk-pill risk-pill-high">High Risk</div>
+          <div class="legend-metric">{{high_risk}}</div>
+          <div class="legend-copy">Strong indicators of contamination potential, active regulated operations, or close-proximity hazardous records. Immediate file-level review is recommended.</div>
+        </div>
+        <div class="legend-card">
+          <div class="risk-pill risk-pill-medium">Moderate Risk</div>
+          <div class="legend-metric">{{medium_risk}}</div>
+          <div class="legend-copy">Material environmental signals exist, but concentration or distance is lower. Targeted follow-up and source-document validation are advised.</div>
+        </div>
+        <div class="legend-card">
+          <div class="risk-pill risk-pill-low">Low Risk</div>
+          <div class="legend-metric">{{low_risk}}</div>
+          <div class="legend-copy">Limited mapped concern within the selected radius. Maintain baseline diligence while prioritizing any record-quality gaps or unmappable sources.</div>
+        </div>
+      </div>
+      <div class="icon-chip-row">
+        <span class="icon-chip">&#9875; UST / Fuel Systems</span>
+        <span class="icon-chip">&#127754; Floodplain / Hydrology</span>
+        <span class="icon-chip">&#9763; Waste / Hazard Records</span>
+        <span class="icon-chip">&#9968; Industrial / Manufacturing</span>
+        <span class="icon-chip">&#127979; Sensitive Receptors</span>
+      </div>
+    </div>
+
+    <div>{{executive_summary_enhanced}}</div>
+
+    <div class="section-subheader">Top 3 High-Risk Findings</div>
+    <div>{{top3_high_risk_findings}}</div>
+
+    <div class="section-subheader">Final Recommendation</div>
+    <div class="info-box"><p><strong>{{final_recommendation}}</strong></p></div>
+
+    <div class="section-subheader">Coverage Overview</div>
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-num" style="color:#1d4ed8;">{{total_records}}</div>
+        <div class="stat-label">Mapped Records</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num" style="color:#0f766e;">{{total_databases}}</div>
+        <div class="stat-label">Databases Reviewed</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num" style="color:#0891b2;">{{countries_covered}}</div>
+        <div class="stat-label">Coverage Region</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">{{total_addresses}}</div>
+        <div class="stat-label">Locations Analysed</div>
+      </div>
+    </div>
+
+    <div class="section-subheader">Site Category Breakdown</div>
+    <table class="data-table">
+      <tr>
+        <th>Category</th>
+        <th>Count</th>
+      </tr>
+      <tr><td>Fuel / UST Sites</td><td>{{fuel_count}}</td></tr>
+      <tr><td>Waste / Hazardous Generators</td><td>{{waste_count}}</td></tr>
+      <tr><td>Industrial / Manufacturing</td><td>{{industrial_count}}</td></tr>
+      <tr><td>Government Listed</td><td>{{government_count}}</td></tr>
+      <tr><td>Schools / Sensitive Receptors</td><td>{{schools_count}}</td></tr>
+    </table>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 3 — EXECUTIVE SUMMARY BY DISTANCE
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">3. Environmental Setting</div>
+    <div class="section-intro">
+      <p><strong>Search Design:</strong> GeoScope screened the subject property and surrounding address context using a {{radius}} buffer, dataset-to-address matching, and location-based environmental intelligence.</p>
+      <p><strong>Coverage:</strong> The screening engine evaluates contamination sources, PFAS indicators, flood and wetland features, geological hazards, pipelines, sensitive receptors, industrial records, and related public environmental datasets.</p>
+      <p><strong>Interpretation:</strong> Findings are grouped by nearby address, summarized by database coverage, and translated into narrative language intended for client and consulting review.</p>
+    </div>
+
+    <div class="section-subheader">Flood Analysis</div>
+    <div>{{flood_analysis_html}}</div>
+
+    <div class="section-subheader">Wetlands</div>
+    <div>{{wetlands_regulatory_html}}</div>
+
+    <div class="section-subheader">Soil &amp; Geology</div>
+    <div>{{soil_geology_html}}</div>
+
+    <div class="section-subheader">Pathway Analysis</div>
+    <div>{{pathway_analysis_html}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 4 — EXECUTIVE SUMMARY BY DATABASE
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">5. Contaminant &amp; Dataset Analysis</div>
+    <div>{{dataset_intelligence_html}}</div>
+    <div class="section-subheader">Dataset Crosswalk</div>
+    <div>{{executive_summary_by_database}}</div>
+    <div>{{address_database_summary}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 5 — PROPERTY PROXIMITY MAP
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">6. Advanced Map Analysis</div>
+    <div>{{map_analysis_html}}</div>
+    <div class="section-intro">
+      This exhibit pairs the primary screening map with satellite context so the reader can assess the subject property, nearby mapped records, surrounding development pattern, and the analysis extent in one visual sequence.
+    </div>
+    <div class="map-exhibit-grid">
+      <div class="map-exhibit-card">
+        <img src="{{mapImage}}" alt="Property Proximity Map" />
+        <div class="map-exhibit-body">
+          <div class="map-exhibit-label">Exhibit A</div>
+          <div class="map-exhibit-title">Subject Property and Screening Buffer</div>
+          <div class="map-exhibit-text">Shows the subject property marker, mapped environmental points, nearby address-linked features, and the screening radius used for the current analysis.</div>
+        </div>
+      </div>
+      <div class="map-exhibit-card">
+        <img src="{{satelliteImage}}" alt="Satellite Area Map" />
+        <div class="map-exhibit-body">
+          <div class="map-exhibit-label">Exhibit B</div>
+          <div class="map-exhibit-title">Satellite Context and Adjacency Review</div>
+          <div class="map-exhibit-text">Provides aerial context for surrounding land use, transportation corridors, nearby structures, open space, and potential environmental adjacency relationships.</div>
+        </div>
+      </div>
+    </div>
+    <div class="legend-box single-map-exhibit">
+      <strong>Map Legend</strong>
+      <div class="legend-row">
+        <div class="legend-item"><span class="legend-dot" style="background:#dc2626"></span> Subject / mapped database points</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#2563eb"></span> Buffer outline</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#16a34a"></span> Address / area features</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#eab308"></span> Sensitive receptors</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 6 — AREA MAP
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Additional Location Context</div>
+    <div class="map-panel">
+      <div class="map-panel-title">Street-Level Reference</div>
+      <div class="map-panel-subtitle">Street-view context supports understanding of frontage, site access, built form, and immediate visible land use near the subject location.</div>
+      <img class="map-image" src="{{streetViewImage}}" alt="Street View Reference" />
+      <p class="map-caption">Street-level imagery reference for subject property orientation and visible surrounding conditions.</p>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 7 — MAP FINDINGS SUMMARY
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">4. Address-Level Intelligence (Core Section)</div>
+    <p>{{map_findings_summary}}</p>
+    <div>{{map_findings_detailed}}</div>
+
+    <div class="callout-grid">
+      <div class="callout-card">
+        <h4>What This Section Shows</h4>
+        <p>Each nearby mapped address or feature is reviewed individually, with linked findings translated into client-facing environmental meaning.</p>
+      </div>
+      <div class="callout-card">
+        <h4>Why It Matters</h4>
+        <p>This makes it possible to separate the subject property from surrounding influence points and understand which nearby locations drive the screening result.</p>
+      </div>
+    </div>
+
+    <div class="section-subheader">Location-by-Location Overview</div>
+    <div>{{address_blocks}}</div>
+
+    <div class="section-subheader">Analyst Narrative</div>
+    <div>{{address_level_analysis}}</div>
+    <div>{{address_analysis}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 8 — MAP FINDINGS (SITE TABLE)
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Detailed Mapped Findings</div>
+
+    <table class="findings-table">
+      <thead>
+        <tr>
+          <th>MAP ID</th>
+          <th>SITE NAME</th>
+          <th>ADDRESS</th>
+          <th>DATABASE(S)</th>
+          <th>DIRECTION / DISTANCE</th>
+          <th>PROFILE</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{database_rows}}
+      </tbody>
+    </table>
+
+    <div class="section-subheader">Expanded Facility Records</div>
+    <div>{{expanded_site_records}}</div>
+
+    <div class="section-subheader">Ownership &amp; Parcel Context</div>
+    <div>{{ownership_enrichment_summary}}</div>
+  </div>
+
+
+    <!-- ════════════════════════════════════════════════
+      SECTION 9 — FINDINGS BY CATEGORY
+    ════════════════════════════════════════════════ -->
+    <div class="section page-break">
+      <div class="section-header">Findings by Category</div>
+      <div class="section-intro">
+        Findings are grouped below into consulting-style categories so the reader can quickly distinguish contamination drivers from hydrologic features, receptor sensitivity, and geological constraints.
+      </div>
+      <div class="category-grid">{{findings_by_category}}</div>
+    </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 10 — UNMAPPABLE SUMMARY
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Unmappable Summary</div>
+    <p>The following records could not be geocoded or mapped due to incomplete address data.</p>
+    <div>{{unmappable_records_log}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 11 — ENVIRONMENTAL RECORDS SEARCHED
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">8. Risk Scoring System</div>
+    <div>{{risk_scoring_system_html}}</div>
+
+    <div class="section-subheader">Environmental Records Searched</div>
+    <div>{{database_coverage_html}}</div>
+
+    <div class="section-subheader">Area Features (Selected Radius)</div>
+    <table class="data-table">
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th>Nearby Profile</th>
+      </tr>
+      {{feature_rows}}
+    </table>
+
+    <div class="section-subheader">Summary of Identified Locations</div>
+    <table class="data-table">
+      <tr>
+        <th>Address</th>
+        <th>Profile Level</th>
+        <th>Key Issue</th>
+      </tr>
+      {{summary_rows}}
+    </table>
+
+    <div class="section-subheader">Address-to-Address Comparative Ranking</div>
+    <div>{{comparative_ranking_html}}</div>
+
+    <div class="section-subheader">Data Confidence &amp; Limitations</div>
+    <div>{{data_confidence_html}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 12 — GEOLOGICAL LANDSCAPE
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Geological Landscape Section</div>
+
+    <div class="section-subheader">Soil &amp; Subsurface Profile</div>
+    <table class="prop-table">
+      <tr>
+        <td class="label">Soil Type</td>
+        <td>{{soil_type}}</td>
+        <td class="label">Drainage</td>
+        <td>{{drainage}}</td>
+      </tr>
+      <tr>
+        <td class="label">Geology</td>
+        <td colspan="3">{{geology}}</td>
+      </tr>
+      <tr>
+        <td class="label">Climate Zone</td>
+        <td>{{climate_zone}}</td>
+        <td class="label">Elevation</td>
+        <td>{{elevation}}</td>
+      </tr>
+    </table>
+
+    <div class="section-subheader">Geological Landscape — Soil Map</div>
+    <img class="map-image" src="{{soil_map_url}}" alt="Soil Map" />
+
+    <div class="section-subheader">Geological Landscape — Summary</div>
+    <p>{{geological_summary}}</p>
+    <div>{{geological_advanced}}</div>
+    <div>{{geological_soil}}</div>
+
+    <div class="section-subheader">Geological Landscape — Map Findings</div>
+    <div>{{address_level_analysis}}</div>
+
+    <div class="section-subheader">Geological Landscape — Radon</div>
+    <p>{{radon_data}}</p>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 13 — WETLAND & FLOOD ANALYSIS
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Wetland &amp; Flood Analysis</div>
+
+    <div class="section-subheader">Flood &amp; Hydrology Overview</div>
+    <p>{{flood_data}}</p>
+    <div>{{flood_wetland_detail_html}}</div>
+
+    <div class="section-subheader">Wetland Analysis</div>
+    <div>{{wetland_analysis}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 14 — SENSITIVE RECEPTORS
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Sensitive Receptors</div>
+    <div>{{sensitive_receptors}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 15 — HISTORICAL LAND USE
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">7. Historical Land Use</div>
+    <p>{{historical_analysis}}</p>
+    <div>{{historical_land_use_analysis}}</div>
+    <div>{{historical_aerial}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 16 — HISTORICAL TOPOGRAPHIC MAPS
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break {{topo_section_class}}">
+    <div class="section-header">Historical Topographic Map Analysis</div>
+    <p>
+      Historical topographic maps were reviewed to assess terrain, drainage patterns,
+      elevation gradients, and land-use characteristics across multiple time periods
+      at the subject property location. Maps are sourced from the USGS National Map
+      Historical Topographic Map Collection and represent the best available public
+      cartographic record for the subject area.
+    </p>
+    <div class="histo-summary-section">
+      <div class="histo-summary-label">Maps Identified for Subject Location</div>
+      <div id="histo-summary-table-wrap">{{histo_summary_table}}</div>
+    </div>
+  </div>
+
+{{topo_maps}}
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 17 — ADDRESS DOSSIER PAGES
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">9. Address Dossier Pages (Consulting Grade)</div>
+    <div class="section-intro">
+      Each mapped address is presented as a standalone dossier with dataset stacking,
+      contaminant profile, regulatory interpretation, risk score logic, and source traceability.
+      This section is intended for audit-ready due diligence review.
+    </div>
+
+    <div class="section-subheader">Address Dossier Registry</div>
+    <div>{{address_intelligence_core}}</div>
+
+    <div class="section-subheader">Database Depth by Address</div>
+    <div>{{address_database_summary}}</div>
+
+    <div class="section-subheader">Legal and Due Diligence Interpretation</div>
+    <div>{{legal_compliance_language}}</div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+       SECTION 17 — CONCLUSION & RECOMMENDATIONS
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">10. Final Conclusion</div>
+
+    <div>{{client_conclusion}}</div>
+
+    <div class="info-box">
+      <p>
+        Based on available public records, the subject property at
+        <strong>{{address}}</strong> presents an overall
+        <strong class="risk-chip {{risk_level_class}}">{{risk_level}}</strong> profile class.
+      </p>
+      <p style="margin-top: 6px;">{{data_density_statement}}</p>
+    </div>
+
+    <div class="section-subheader">Recommendations</div>
+    <div>{{recommendations}}</div>
+  </div>
+
+
+    <!-- ════════════════════════════════════════════════
+      SECTION 19 — DATABASE DESCRIPTIONS & TERMINOLOGY
+    ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Database Descriptions &amp; Report Terminology</div>
+
+    <div>{{database_descriptions}}</div>
+
+    <div class="section-subheader">Common Database Abbreviations</div>
+    <table class="data-table">
+      <tr><th>Term</th><th>Description</th></tr>
+      <tr><td>EPA UST</td><td>Facilities listed in the EPA Underground Storage Tank Finder database.</td></tr>
+      <tr><td>RCRA SQG</td><td>Resource Conservation and Recovery Act — Small Quantity Generators.</td></tr>
+      <tr><td>RCRA VSQG</td><td>Resource Conservation and Recovery Act — Very Small Quantity Generators.</td></tr>
+      <tr><td>SHWS</td><td>State Hazardous Waste Site listing (Superfund / remediation sites).</td></tr>
+      <tr><td>ECHO</td><td>EPA Enforcement and Compliance History Online (CAA, CWA, RCRA, SDWA).</td></tr>
+      <tr><td>FRS</td><td>Facility Registry Service records.</td></tr>
+      <tr><td>HMIRS (DOT)</td><td>Hazardous material spills reported by the Department of Transportation.</td></tr>
+      <tr><td>NPL</td><td>National Priorities List (EPA Superfund cleanup sites).</td></tr>
+      <tr><td>PFAS</td><td>Per- and polyfluoroalkyl substance contamination screening sites.</td></tr>
+      <tr><td>BROWNFIELDS</td><td>EPA Brownfields program sites targeted for assessment and cleanup.</td></tr>
+      <tr><td>EJ TOXIC RELEASE</td><td>Toxic Release Inventory records — Environmental Justice screening.</td></tr>
+      <tr><td>BEA</td><td>Brownfields and Environmental Assessments listing.</td></tr>
+      <tr><td>DOCKET / ICIS</td><td>Federal civil enforcement action tracking systems.</td></tr>
+      <tr><td>AFS</td><td>Air Facility System quarterly extract.</td></tr>
+      <tr><td>STORMWATER</td><td>Permitted stormwater discharge sites.</td></tr>
+    </table>
+
+    <p style="margin-top:12px;"><strong>Screen Date:</strong> {{report_date}}</p>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════
+      SECTION 19 — DISCLAIMER
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break">
+    <div class="section-header">Disclaimer — Copyright and Trademark Notice</div>
+
+    <div class="legal-box">
+      <p>
+        All information contained in this report is based on data available from various public,
+        government, and other sources and is based upon the best data available from those sources.
+        The information in this report may be available from other sources and is not the exclusive
+        property of GeoScope Environmental Intelligence.
+      </p>
+      <p style="margin-top:8px;">
+        <strong>NO WARRANTY, EXPRESSED OR IMPLIED, IS MADE IN CONNECTION WITH THIS REPORT</strong>,
+        including without limitation, merchantability or fitness for a particular purpose. All risk
+        is assumed by the user. GeoScope assumes no liability for faulty or inaccurate information.
+        GeoScope cannot and does not assure, warrant, guarantee, or assume any liability for the
+        correctness, comprehensiveness, timeliness, or completeness of any information, nor is the
+        information in any report to be construed as legal advice with respect to environmental
+        risks associated with any property.
+      </p>
+      <p style="margin-top:8px;">
+        GeoScope shall not be liable for any claims, causes of action, suits, damages, losses, costs,
+        or expenses arising out of or caused by this report. Any damages shall be limited to the
+        purchase price of the report.
+      </p>
+      <p style="margin-top:8px;">
+        The purchaser of this report accepts it "As Is". This report is intended only to provide
+        information and should not be considered as providing legal advice, prediction, forecast, or
+        fact as to the environmental risk for any specific property. This report contains copyrighted
+        material and trademarks of GeoScope Environmental Intelligence. All rights reserved.
+      </p>
+      <p style="margin-top:8px;">
+        GeoScope has conducted a search of all reasonably ascertainable records in accordance with
+        EPA's AAI (40 CFR Part 312) requirements and the ASTM E-1527-21 Environmental Site
+        Assessments standard.
+      </p>
+      <p style="margin-top:8px; font-size:9px;">{{legal_compliance_language}}</p>
+    </div>
+  </div>
+
+</body>
+</html>
