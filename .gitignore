@@ -41,3 +41,9 @@ Thumbs.db
 npm init -y
 npm install*
 _import_run_*.log
+
+# Accidental/legacy template artifacts
+REPORT TEMPLETE.HTM.html
+
+# Vercel local/project metadata
+.vercel/

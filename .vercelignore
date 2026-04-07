@@ -1,0 +1,26 @@
+# Dependencies and local data
+node_modules/
+.data/
+auth_data/
+
+# Generated and heavy artifacts
+reports/
+downloads/
+*.pdf
+*.log
+REPORT TEMPLETE.HTM.html
+
+# Dev/test/docs not required at runtime
+scripts/
+test-*.js
+verify-*.js
+final-*.js
+check-setup.js
+production-readiness-check.js
+ANALYST_SOP.md
+BULK_DOWNLOAD_STATUS.md
+BULK_IMPORT_EXECUTION_PLAN.md
+MISSING_DATASETS_SOURCES.md
+REPORTING_STUDIO_GUIDE.md
+_data_discovery_report.json
+_discover_all_data.js
