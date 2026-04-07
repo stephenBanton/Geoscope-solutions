@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "installCommand": "PUPPETEER_SKIP_DOWNLOAD=1 npm ci --no-audit --no-fund",
+  "env": {
+    "PUPPETEER_SKIP_DOWNLOAD": "1"
+  },
   "builds": [
     {
       "src": "server.js",
