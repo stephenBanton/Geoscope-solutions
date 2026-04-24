@@ -6,7 +6,21 @@ const crypto = require('crypto');
 const { buildUSStateDatasetSeeds, buildEPAAndUSTStateDatasetSeeds } = require('./usStateDatasets');
 const METERS_PER_MILE = 1609.344;
 
-const DATA_DIR = path.join(__dirname, '..', '.data');
+const PRIMARY_DATA_DIR = path.join(__dirname, '..', '.data');
+const FALLBACK_DATA_DIR = path.join('/tmp', 'geoscope-data');
+
+function resolveWritableDataDir() {
+  try {
+    fs.mkdirSync(PRIMARY_DATA_DIR, { recursive: true });
+    return PRIMARY_DATA_DIR;
+  } catch (err) {
+    // Vercel serverless uses a read-only /var/task; /tmp is writable per invocation.
+    fs.mkdirSync(FALLBACK_DATA_DIR, { recursive: true });
+    return FALLBACK_DATA_DIR;
+  }
+}
+
+const DATA_DIR = resolveWritableDataDir();
 const STORE_FILE = path.join(DATA_DIR, 'global-data-store.json');
 
 const DATASET_SEEDS = [
