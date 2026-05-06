@@ -809,7 +809,10 @@
           <div class="cover-brand-sub">Environmental Intelligence Platform</div>
         </div>
       </div>
-      <div class="cover-report-label">Environmental Site Assessment Records Review</div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+        <div class="cover-report-label">Environmental Site Assessment Records Review</div>
+        <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.3); border-radius:4px; padding:3px 10px; font-size:8.5px; font-weight:700; letter-spacing:0.12em; color:#4fc3f7; text-transform:uppercase;">Confidential — Client Use Only</div>
+      </div>
     </div>
 
     <!-- Main content: left dark panel | right map image -->
@@ -817,7 +820,7 @@
 
       <!-- LEFT: dark navy info panel -->
       <div class="cover-left">
-        <div class="cover-report-type">Professional Screening Report</div>
+        <div class="cover-report-type">Environmental Screening Report</div>
         <div class="cover-main-title">Environmental<br/>Due Diligence<br/>Report</div>
         <div class="cover-main-subtitle">Address-level risk mapping, database evidence,<br/>and consulting-standard environmental screening.</div>
         <div class="cover-divider-line"></div>
@@ -834,6 +837,10 @@
           <div class="cover-meta-row">
             <div class="cover-meta-label">Prepared For</div>
             <div class="cover-meta-value">{{client_name}}</div>
+          </div>
+          <div class="cover-meta-row">
+            <div class="cover-meta-label">Prepared By</div>
+            <div class="cover-meta-value">GeoScope Solutions</div>
           </div>
           <div class="cover-meta-row">
             <div class="cover-meta-label">Report Date</div>
@@ -1058,6 +1065,8 @@
     <div class="section-header">1. Executive Summary</div>
 
     {{top3_intelligence_panel_html}}
+
+    {{key_findings_summary_html}}
 
     <div class="info-box">
       <p>
