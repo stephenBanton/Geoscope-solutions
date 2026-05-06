@@ -1,0 +1,1105 @@
+﻿ion Street Dept. | Albion Ci...1203 E NORTH ST | 1203 Ea...
+AUL - MI, 
+EPA LUST, EPA UST, LUST - MI, LUST...N/RNE / 0.993 mi., 5243 ft.
+Page 5 of 1547
+
+Executive Summary by Database2026
+SUBJECT PROPERTY SEARCH RESULTS:
+The subject property was identified in the following records. For more information on this property, see Map Findings 
+section on page 56.
+MAP IDSITEDATABASE(S)EPA IDPAGE
+A1208 SOUTH SUPERIOR 
+STREET 
+| Superior (208) 
+Street, South | 208 S. 
+Superior Street
+208 SOUTH SUPERIOR 
+STREET | 
+208 S. Superior 
+Street
+Albion | ALBION, MI 49224
+BEA - MI, BROWNFIELDS-
+ACRES, EJ BROWNFIELDS, 
+FED BROWNFIELDS, FRS, 
+HIST FED BROWNFIELDS, 
+SHWS RIDE - MI, SHWS SEC - 
+MI
+N/R56
+SHWS SEC - MI
+- ID: Facility ID 13000496Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000496Status: N/RDate: N/A
+HIST FED BROWNFIELDS
+- ID: 151721Status: N/ADate: Cleanup Completion 
+Date N/R
+- ID: 170281
+Status: N/ADate: Cleanup Completion 
+Date 
+N/R
+EJ BROWNFIELDS
+- ID: 110054147874Status: N/ADate: N/A
+A2118 AND 120 WEST 
+PORTER 
+ST | 118 & 120 
+West Porter Street | Porter 
+(118 & 120) Street, West
+118 AND 120 WEST 
+PORTER ST | 118 &120 
+West Porter Street
+ALBION | Albion, MI
+BEA - MI, BROWNFIELDS-
+ACRES, EJ BROWNFIELDS, 
+FED BROWNFIELDS, FRS, 
+HIST FED BROWNFIELDS
+N/R89
+HIST FED BROWNFIELDS
+- ID: 176182Status: N/ADate: Cleanup Completion 
+Date N/R
+EJ BROWNFIELDS
+- ID: 110063008481Status: N/ADate: N/A
+A3Superior (212 & 216) St., 
+S; 
+Center (111
+212 & 216 S. Superior; 
+107,111,117,119, 121 W. 
+Center & 108,112 W. 
+Porter
+Albion, MI 49224
+BEA - MIN/R114
+A4Center (107, 111, 117, 
+119, 121) St & | 212 & 
+216 S. Superior; 
+107,111,117,119, 121 W. 
+Center & 108,112 W. 
+Porter
+107, 111, 
+117, 119, 121 
+W Center; 212 | 212 & 
+216 S. Superior; 
+107,111,117,119
+Albion, MI
+BEA - MIN/R115
+Page 6 of 1547
+
+Executive Summary by Database2026
+MAP IDSITEDATABASE(S)EPA IDPAGE
+A5118 120 WEST PORTER 
+STREET
+118 120 West Porter 
+Street
+Albion, MI 49224
+SHWS RIDE 
+- MI, SHWS SEC - 
+MI
+N/R116
+SHWS SEC - MI
+- ID: Facility ID 13000460Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000460Status: N/RDate: N/A
+A6200 204 206 SOUTH 
+SUPERIOR STREET
+200 204 206South 
+Superior Street
+Albion, MI 49224
+SHWS RIDE - MI, SHWS SEC - 
+MI
+N/R117
+SHWS SEC - MI
+- ID: Facility ID 13000490
+Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000490Status: N/RDate: N/A
+A7212 216 S Superior St & 
+107 111 117 119 | 212 
+216 S SUPERIOR ST & 107 
+111 117 119 121 W 
+CENTER ST & 108 112 W 
+PORTER ST
+212 216 S 
+Superior & 107 
+111 117 119 121 W 
+Center & 108 112 W Porter
+Albion, MI 49224
+SHWS RIDE - MI, SHWS SEC - 
+MI
+N/R118
+SHWS SEC - MI
+- ID: Facility ID 13000497Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000497Status: N/RDate: N/A
+A8Superior (200, 204 & 206) 
+Street, 
+South | 200, 204 & 
+206 S. Superior
+200, 204 & 206 S. Superior
+Albion, MI 49224
+BEA - MIN/R119
+SURROUNDING PROPERTIES SEARCH RESULTS:
+Page 7 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS
+FEDERAL NPL SITE LIST
+NPL: List of 
+priority contaminated sites among identified releases or threatened releases of hazardous substances  pollutants  or 
+contaminants nationally 2 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU 
+| McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 
+5223 ft.1375
+- ID:MID005339676Status:FinalDate:Listing Date 1983-09-
+08
+R123COOPER INDUSTRIES LLC-
+GWCU 
+| McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 5238 ft.1412
+SEMS_FINAL NPL: All Included National Priority List Sites 2 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 5223 ft.1375
+- ID:0502254Status:N/ADate:NPL Status Date 1983-
+09-08
+R123COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 5238 ft.1412
+NPL EPA GIS: Geospatial data for Areas related to the US EPA National Priority List. 2 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 5223 ft.1375
+R123COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 5238 ft.1412
+FEDERAL CERCLIS LIST
+SEMS_8R_ACTIVE SITES: The Active Site Inventory Report displays site and 
+location information at active SEMS sites. An active site is 
+one at which site assessment, removal, remedial, enforcement, cost recovery, or oversight activities are being planned or conducted. 
+NPL sites include latitude and longitude information. For non-NPL sites, a brief site status is provided. 3 SITES FOUND WITHIN .5 
+MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+I86DALRYMPLE SCHOOL SITETHE INTERSECTION OF SOUTH 
+DALRYMPLE STREET AND 
+WEST ERIE STREET
+WSW / 0.312 mi., 1649 ft.
+756
+- ID:0510253Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:N/A
+Page 8 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL CERCLIS LIST (cont.)
+SEMS_8R_ACTIVE SITES: The Active Site Inventory Report displays site and 
+location information at active SEMS sites. An active site is 
+one at which site assessment, removal, remedial, enforcement, cost recovery, or oversight activities are being planned or conducted. 
+NPL sites include latitude and longitude information. For non-NPL sites, a brief site status is provided. 3 SITES FOUND WITHIN .5 
+MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+K92501 NORTH BERRIEN STREET 
+| MULBERRY ASBESTOS | 
+ALBION MYSTERY OIL SPILL
+501 NORTH BERRIEN STREET | 
+501 N BERRIEN ST
+NE / 0.383 mi., 2024 ft.793
+- ID:0510755Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:N/A
+- ID:0510749Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:N/A
+K95UNION STEEL PRODUCTS INC. 
+PLANT 1 | 500, NORTH 
+BERRIEN STREET, 515 
+CROWELL, AND 518 DIVISION 
+| 500 NORTH BERRIEN STREET
+500 NORTH BERRIEN STREET | 
+500 N BERRIEN ST | 500 N. 
+BERRIEN ST., BOX 60
+NE 
+/ 0.404 mi., 2132 ft.844
+- ID:0506775Status:Referred to Removal - 
+NFRAP
+Date:N/A
+CERCLIS-HIST: The CERCLIS program database contains information on the assessment and remediation of federal hazardous waste 
+sites. The Environmental Protection Agency decommissioned the CERCLIS data in 2014. The last update was November 12, 2013.3 
+SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+I86DALRYMPLE SCHOOL SITETHE INTERSECTION OF SOUTH 
+DALRYMPLE STREET AND 
+WEST ERIE STREET
+WSW / 0.312 mi., 1649 ft.
+756
+- ID:MIN000510253Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:2007-12-18
+K92501 NORTH BERRIEN STREET 
+| MULBERRY ASBESTOS | 
+ALBION MYSTERY OIL SPILL
+501 NORTH BERRIEN STREET | 
+501 N BERRIEN ST
+NE / 0.383 mi., 2024 ft.793
+- ID:MIN000510755Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:2012-04-11
+- ID:MIN000510749Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:2012-04-17
+K95UNION STEEL PRODUCTS INC. 
+PLANT 1 | 500, NORTH 
+BERRIEN STREET, 515 
+CROWELL, 
+AND 518 DIVISION 
+| 500 NORTH BERRIEN STREET
+500 NORTH BERRIEN STREET | 
+500 N BERRIEN ST | 500 N. 
+BERRIEN ST., BOX 60
+NE / 0.404 mi., 2132 ft.844
+- ID:MID005318522Status:Referred to Removal - 
+NFRAP
+Date:2000-01-26
+Page 9 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL RCRA GENERATORS LIST
+RCRA VSQG: Resource Conservation and Recovery Act listing of licensed very small quantity generators. 7 SITES FOUND WITHIN .
+25 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+B9MICHIGAN BELL TELEPHONE 
+COMPANY | SBC/AMERITECH-
+M49110
+210 S CLINTON STWSW / 0.008 mi., 40 ft.
+121
+- ID:MIT270011943Status:No Violation/InspectionsDate:N/A
+F75SEILER AUTO SALES218 E MICHIGAN AVE | 218 
+East Michigan Avenue
+NE / 0.223 mi., 1178 ft.682
+- ID:MI0000381087Status:No Violation/InspectionsDate:N/A
+F77CLARK #768 | CLARK OIL CO | 
+CLARK OIL & REFINERY
+219 E MICHIGAN AVENE / 0.226 mi., 1192 ft.
+692
+- ID:MIR000005561Status:No Violation/InspectionsDate:N/A
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+D34205 WEST CASS STREET | 
+ONE HOUR MARTINIZING 
+ALBION | 205 West Cass 
+Street, Albion MI 49224
+205 WEST CASS STREET | 205 
+W CASS ST
+NW / 0.061 mi., 323 ft.
+358
+- ID:MID016697054Status:No Violation/InspectionsDate:N/A
+F53Vacant | FINISHLINE 
+AUTOBODY | HELMAR 
+INVESTMENT INC
+206 PERRY STENE / 0.163 mi., 863 ft.498
+- ID:MIK361148570Status:No Violation/InspectionsDate:N/A
+G55THOMPSONS BRAKE SVC INC | 
+MI1320170
+210 E PORTER STE / 0.165 mi., 873 ft.524
+- ID:MIR000021907Status:No Violation/InspectionsDate:N/A
+E56Albion Shell | WDS VENTURES 
+LLC
+100 E MICHIGAN AVENNE / 0.166 mi., 875 ft.529
+- ID:MIK279492839Status:No Violation/InspectionsDate:N/A
+RCRA NONGEN: Resource Conservation and Recovery Act listing of licensed non-generators 5 SITES FOUND WITHIN .25 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C35Albion Service Center | 
+CONSUMERS ENERGY CO | 
+CONSUMERS POWER CO 
+ALBION SVC 
+CTR
+121 E ERIE ST | 121 East Erie 
+Street
+ESE / 0.063 mi., 332 ft.
+375
+- ID:MID981783137Status:No Violation/InspectionsDate:N/A
+C41CITY OF ALBION | ALBION 
+GRAIN MILL
+MARKET PLACE RDSE / 0.076 mi., 403 ft.412
+- ID:MIK559486220Status:No Violation/InspectionsDate:N/A
+Page 10 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL RCRA GENERATORS LIST (cont.)
+RCRA NONGEN
+: Resource Conservation and Recovery Act listing of licensed non-generators 5 SITES FOUND WITHIN .25 MILE
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C32CITY OF ALBION | ALBION 
+DEPARTMENT OF PUBLIC 
+SAFETY | MI0000100
+112 WEST CASS STREET | 112 
+W CASS ST
+N / 0.059 mi., 311 ft.334
+- ID:MIK178538719Status:No Violation/InspectionsDate:N/A
+E59Albion PS Mart | PS FOOD 
+MART | PS FOOD MART 
+(ALBION)
+101 E MICHIGAN AVENNE / 0.171 mi., 902 ft.546
+- ID:MID985629823Status:No Violation/InspectionsDate:N/A
+F65200 EAST MICHIGAN AVENUE 
+| DAVIDS CLEANER WORLD 
+DRYCLEANING CENTER | 
+Michigan (200) Avenue, East
+200 E MICHIGAN AVE | 200 
+EAST MICHIGAN AVENUE
+NE / 0.191 mi., 1007 ft.610
+- ID:MID085900504Status:No Violation/InspectionsDate:N/A
+STATE- AND TRIBAL - EQUIVALENT CERCLIS
+SHWS SEC - MI: Sites of Environmental Contamination (Part 201) 32 SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C23313 SOUTH SUPERIOR STREET313 SOUTH SUPERIOR STREETSE / 0.043 mi., 226 ft.278
+- ID:Facility ID 13000428Status:N/ADate:N/A
+C28315 SOUTH SUPERIOR 
+STREET | Superior (315) 
+Street, South
+315 South Superior StreetSE / 0.049 mi., 258 ft.329
+- ID:Facility ID 13000521Status:N/ADate:N/A
+C39Erie (106) Street, East | 106 
+EAST ERIE STREET | 106 E. 
+Erie 
+Street
+106 East Erie Street | 106 E. 
+Erie Street
+SE / 0.074 mi., 393 ft.409
+- ID:Facility ID 13000445Status:N/ADate:N/A
+D46SE MICHIGAN GAS - ALBION 
+MGP | Albion Division Office | 
+SE MICH. DEVELOP. & 
+GAS CO
+216 N EATON ST | 216 North 
+Eaton Street
+NW / 
+0.100 mi., 526 ft.456
+- ID:Facility ID 13000356Status:N/ADate:N/A
+D50SE MICHIGAN GAS - ALBION 
+MGP | 
+Albion Division Office | 
+SE MICH. DEVELOP. & GAS CO
+216 N EATON 
+ST | 216 North 
+Eaton Street
+NW / 0.126 mi., 663 ft.489
+D58SE MICHIGAN GAS - ALBION 
+MGP | 
+Albion Division Office | 
+SE MICH. DEVELOP. & GAS CO
+216 N EATON 
+ST | 216 North 
+Eaton Street
+NW / 0.169 mi., 895 ft.546
+E64WEST MICHIGAN AVENUE | 
+Young's Gas Service | 
+Michigan Avenue, West
+West Michigan Avenue | W 
+MICHIGAN AVE
+N / 0.190 mi., 1004 ft.607
+- ID:Facility ID 13000598Status:N/ADate:N/A
+E70301 NORTH CLINTON STREET 
+| Clinton (301) Street, North
+301 North Clinton Street | 301 
+N. Clinton Street
+NNW / 0.204 mi., 1076 ft.647
+- ID:Facility ID 13000515Status:N/ADate:N/A
+Page 11 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS SEC - MI: Sites of Environmental Contamination (Part 201) 32 SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+F80Clark #768 (Albion) 
+(00012186)
+N/RNE / 0.239 mi., 1264 ft.714
+- ID:Facility ID 13000390Status:N/ADate:N/A
+I89406 S ANN STREET & 407 S 
+DALRYMPLE S | Ann (406) St, 
+S & Dalrymple (407) St, S
+406 S Ann Street & 407 S 
+Dalrymple S
+W / 0.335 mi., 1766 ft.789
+- ID:Facility ID 13000527Status:N/ADate:N/A
+K91UNION STEEL PRODUCTS 
+PLANT #1
+500 N. Berrien | 500 NORTH 
+BERRIEN
+NE / 0.372 mi., 1967 ft.791
+- ID:Facility ID 13000320Status:N/ADate:N/A
+K98Huron (420) Street, North | 
+420 NORTH HURON STREET
+420 North Huron Street | 420 
+N Huron St
+ENE / 0.430 mi., 2271 ft.928
+- ID:Facility ID 13000529Status:N/ADate:N/A
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C12201 SOUTH SUPERIOR 
+STREET | Superior (201) 
+Street, South
+201 SOUTH SUPERIOR STREET 
+| 201 S Superior St
+ENE / 0.011 mi., 58 ft.154
+- ID:Facility ID 13000493Status:N/ADate:N/A
+C16ALBION COLLEGE207 South Superior StreetE / 0.031 mi., 166 ft.179
+- ID:Facility ID 13000607Status:N/ADate:N/A
+C19109 SOUTH SUPERIOR 
+STREET | Superior (109) 
+Street, South
+109 SOUTH SUPERIOR STREET 
+| 109 S Superior St
+NE / 0.035 mi., 184 ft.
+221
+- ID:Facility ID 13000448Status:N/ADate:N/A
+C21Superior (105) Street, South | 
+105 SOUTH SUPERIOR 
+STREET 
+| 105 S. Superior 
+Street
+105 S. Superior Street | 105 
+South Superior Street
+NE / 0.041 mi., 219 ft.262
+- ID:Facility ID 13000443Status:N/ADate:N/A
+C25101 AND 103 SOUTH 
+SUPERIOR STREET | Superior 
+(101 & 
+103) Street, South
+101 AND 103 SOUTH 
+SUPERIOR STREET | 101 & 103 
+S. Superior Street
+NE 
+/ 0.047 mi., 247 ft.300
+- ID:Facility ID 13000633Status:N/ADate:N/A
+C26104, 106 & 108 SOUTH 
+SUPERIOR ST. | Superior (104, 
+106 & 108) St., South
+104, 106 & 108 South 
+Superior St.
+NNE / 0.047 mi., 247 ft.326
+- ID:Facility ID 13000441Status:N/ADate:N/A
+C27105 - 107 SOUTH SUPERIOR 
+STREET 
+| Superior (105 - 107) 
+Street, South
+105 - 107 South Superior 
+Street
+NE 
+/ 0.049 mi., 257 ft.327
+- ID:Facility ID 13000442Status:N/ADate:N/A
+Page 12 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS SEC - MI: Sites of Environmental Contamination (Part 201) 32 SITES FOUND WITHIN .5 MILE
+LOWER ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C29103 SOUTH SUPERIOR 
+STREET, ALBION
+103 South Superior StreetNE / 0.055 mi., 290 ft.330
+- ID:Facility ID 13000633Status:N/ADate:N/A
+C30101 SOUTH SUPERIOR 
+STREET, ALBION
+101 South Superior StreetNE / 0.057 mi., 302 ft.331
+- ID:Facility ID 13000663Status:N/ADate:N/A
+D34205 WEST CASS STREET | 
+ONE 
+HOUR MARTINIZING 
+ALBION | 205 
+West Cass 
+Street, Albion MI 49224
+205 WEST CASS STREET | 205 
+W CASS 
+ST
+NW / 0.061 mi., 323 ft.
+358
+- ID:Facility ID 13000427Status:N/ADate:N/A
+C38Superior (101) Street, North | 
+101 NORTH SUPERIOR 
+STREET 
+| 101 N. Superior 
+Street
+101 N. Superior 
+Street | 101 
+North Superior Street
+NNE / 0.073 mi., 386 ft.407
+- ID:Facility ID 13000436Status:N/ADate:N/A
+G54101 SOUTH MONROE STREET 
+| Monroe (101) Street, South
+101 SOUTH MONROE STREET | 
+101 S Monroe St
+E / 0.165 mi., 872 ft.507
+- ID:Facility ID 13000437Status:N/ADate:N/A
+H61102 NORTH MONROE STREET 
+| Monroe (102) Street, North
+102 NORTH MONROE STREET | 
+102 N Monroe St
+ENE / 0.182 mi., 959 ft.566
+- ID:Facility ID 13000439Status:N/ADate:N/A
+F65200 EAST MICHIGAN AVENUE 
+| DAVIDS CLEANER WORLD 
+DRYCLEANING CENTER | 
+Michigan (200) Avenue, East
+200 E MICHIGAN AVE | 200 
+EAST MICHIGAN AVENUE
+NE / 0.191 mi., 1007 ft.610
+- ID:Facility ID 13000491Status:N/ADate:N/A
+F73217 EAST MICHIGAN AVENUE 
+| Michigan (217) Avenue, East
+217 EAST MICHIGAN AVENUE | 
+217 E Michigan Ave
+NE / 0.211 mi., 1114 ft.654
+- ID:Facility ID 13000499Status:N/ADate:N/A
+F74CLARK REFINING AND 
+MARKETING I | Clark #768 | 
+Clark #768 (Albion)
+219 E MICHIGAN | 219 East 
+Michigan
+NE / 0.219 mi., 1155 ft.676
+- ID:Facility ID 13000390Status:N/ADate:N/A
+SHWS RIDE - MI: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C15Consolidated Rail Corp308 S SUPERIOR STSE / 0.028 mi., 147 ft.174
+- ID:Facility ID 00037620Status:OpenDate:N/A
+C23313 SOUTH SUPERIOR STREET313 SOUTH SUPERIOR STREETSE / 0.043 mi., 226 ft.278
+- ID:Facility ID 13000428Status:N/RDate:N/A
+Page 13 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS RIDE - MI
+: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C28315 SOUTH SUPERIOR 
+STREET | Superior (315) 
+Street, South
+315 South Superior StreetSE / 0.049 mi., 258 ft.329
+- ID:Facility ID 13000521Status:N/RDate:N/A
+C35Albion Service Center | 
+CONSUMERS ENERGY CO | 
+CONSUMERS POWER CO 
+ALBION SVC 
+CTR
+121 E ERIE ST | 121 East Erie 
+Street
+ESE / 0.063 mi., 332 ft.375
+- ID:Facility ID 00017372Status:ClosedDate:N/A
+C39Erie (106) Street, East | 106 
+EAST ERIE STREET | 106 E. 
+Erie Street
+106 East Erie Street | 106 E. 
+Erie Street
+SE / 0.074 mi., 393 ft.409
+- ID:Facility ID 13000445Status:N/RDate:N/A
+D46SE MICHIGAN GAS - ALBION 
+MGP | Albion Division Office | 
+SE MICH. DEVELOP. & GAS CO
+216 N EATON ST | 216 North 
+Eaton Street
+NW / 0.100 mi., 526 ft.456
+- ID:Facility ID 00007270Status:ClosedDate:N/A
+- ID:Facility ID 13000356Status:N/RDate:N/A
+D50SE MICHIGAN GAS - ALBION 
+MGP | Albion Division Office | 
+SE MICH. DEVELOP. & GAS CO
+216 N EATON ST | 216 North 
+Eaton Street
+NW / 0.126 mi., 663 ft.489
+D52Margery Burstein | BURSTEIN, 
+VICTOR | MARGARIE BERSTEIN
+201 N CLINTON ST | 201 North 
+Clinton 
+Street
+NNW / 0.158 mi., 836 ft.
+491
+- ID:Facility ID 00035190Status:ClosedDate:N/A
+D58SE MICHIGAN GAS - ALBION 
+MGP | Albion Division Office | 
+SE MICH. DEVELOP. & GAS CO
+216 N EATON ST | 216 North 
+Eaton Street
+NW / 0.169 mi., 895 ft.546
+E64WEST MICHIGAN AVENUE | 
+Young's Gas Service | 
+Michigan Avenue, West
+West Michigan Avenue | W 
+MICHIGAN AVE
+N / 0.190 mi., 1004 ft.607
+- ID:Facility ID 13000598Status:N/RDate:N/A
+E70301 NORTH CLINTON STREET 
+| Clinton (301) Street, North
+301 North Clinton Street | 301 
+N. Clinton Street
+NNW / 0.204 mi., 1076 ft.
+647
+- ID:Facility ID 13000515Status:N/RDate:N/A
+72609 South Superior Street | 
+JIM'S STANDARD
+609 S SUPERIOR STSSE / 0.211 mi., 1112 ft.650
+- ID:Facility ID 00041219Status:OpenDate:N/A
+F75SEILER AUTO SALES218 E MICHIGAN AVE | 218 
+East Michigan Avenue
+NE / 0.223 mi., 1178 ft.682
+- ID:Facility ID 00013757Status:OpenDate:N/A
+F77CLARK #768 | CLARK OIL CO | 
+CLARK OIL & REFINERY
+219 E MICHIGAN AVENE / 0.226 mi., 1192 ft.692
+- ID:Facility ID 00012186Status:OpenDate:N/A
+E83116 WEST VINE STREET, 
+ALBION
+N/RN / 0.255 mi., 1345 ft.740
+- ID:Facility ID 13000685Status:N/RDate:N/A
+Page 14 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS RIDE - MI
+: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+87Albion College203 S HURON STE / 0.317 mi., 1673 ft.760
+- ID:Facility ID 00005041Status:ClosedDate:N/A
+I89406 S ANN STREET & 407 S 
+DALRYMPLE S | Ann (406) St, 
+S & Dalrymple (407) St, S
+406 S Ann Street & 407 S 
+Dalrymple S
+W / 0.335 
+mi., 1766 ft.789
+- ID:Facility ID 13000527Status:N/RDate:N/A
+K91UNION STEEL PRODUCTS 
+PLANT #1
+500 N. Berrien | 500 NORTH 
+BERRIEN
+NE / 0.372 mi., 1967 ft.
+791
+- ID:Facility ID 13000320Status:N/RDate:N/A
+93Halliburton ServicesPO BOX 331WNW / 0.384 mi., 2026 ft.832
+- ID:Facility ID 00009683Status:ClosedDate:N/A
+K98Huron (420) Street, North | 
+420 NORTH 
+HURON STREET
+420 North Huron Street | 420 
+N Huron St
+ENE / 0.430 mi., 2271 ft.
+928
+- ID:Facility ID 13000529Status:N/RDate:N/A
+N102City Of Albion Water Dept | 
+ALBION CITY OF, WATER 
+DEPT. | CITY OF ALBION
+507 N ALBION ST | 507 North 
+Albion Street
+WNW / 0.484 mi., 2558 ft.
+975
+- ID:Facility ID 00015059Status:ClosedDate:N/A
+N104Union Steel Products, Inc | 
+509 NORTH ALBION STREET | 
+UNION STEEL
+509 N ALBION ST | 509 NORTH 
+ALBION STREET
+WNW / 0.505 mi., 2669 ft.995
+- ID:Facility ID 00015157Status:OpenDate:N/A
+L105Donut Factory | 300 AUSTIN 
+AVE | FOLK OIL CO/DONUT 
+SHOP
+300 AUSTIN AVENNW / 0.511 mi., 2699 ft.1023
+- ID:Facility ID 00035925Status:ClosedDate:N/A
+106HAYES ALBION CORP | 
+HARVARD IND. (BLYVEIS 
+TANK) | Harvard Industries
+700 N ALBION 
+ST | 700 North 
+Albion Street
+NW / 0.521 mi., 2753 ft.1046
+- ID:Facility ID 50005970Status:ClosedDate:N/A
+N107HAYES-ALBION CORP | EGLE-
+RRD-HARVARD IND-ALBION | 
+HARVARD IND/HAYES-ALBION
+601 N ALBION ST | 601 NORTH 
+ALBION STREET
+WNW / 0.524 mi., 2767 ft.1051
+- ID:Facility ID 13000231Status:N/RDate:N/A
+- ID:Facility ID 00004995Status:OpenDate:N/A
+N108Hayes Albion Corp | EGLE-
+RRD-HARVARD IND-ALBION | 
+MI DEPT/NATURAL 
+RESOURCES & ENVIRONMENT 
+& US ENV PROTECTION 
+AGENCY
+601 N ALBION ST | 601 NORTH 
+ALBION STREET | 601 E 
+ALBION ST
+WNW / 0.529 mi., 2793 ft.1132
+- ID:Facility ID 13000231Status:N/RDate:N/A
+- ID:Facility ID 00004995Status:OpenDate:N/A
+Page 15 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS RIDE - MI
+: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+109Albion Health Services | 
+ALBION COMMUNITY 
+HOSPITAL | TRILLIUM 
+HOSPITAL
+809 W ERIE ST | 809 WEST 
+ERIE STREET 
+| 809 809 WEST 
+ERIE STREET
+WSW / 0.590 mi., 3117 ft.1143
+- ID:Facility ID 00008053Status:ClosedDate:N/A
+110702 NORTH ALBION STREET 
+AND 612 WASHINGTON PARK, 
+ALBION
+702 Albion StreetNW / 0.610 mi., 3221 ft.1155
+- ID:Facility ID 13000678Status:N/RDate:N/A
+111Bilicke Oldsmobile Sales, Inc | 
+BILICKE OLDS 
+SALES INC | 
+BILICKE OLDS
+525 AUSTIN AVENW / 0.615 mi., 3246 ft.1155
+- ID:Facility ID 00013759Status:OpenDate:N/A
+O113611, 617, AND 619 AUSTIN 
+AVENUE | 611 AUSTIN AVE. | 
+611 AUSTIN AVE. (10000437)
+611 AUSTIN AVE | 611, 617, 
+AND 619 AUSTIN AVENUE
+NW / 0.684 mi., 3610 ft.
+1168
+- ID:Facility ID 10000437Status:OpenDate:N/A
+O114619 AUSTIN AVE. | 619 Austin 
+Ave. (10000436) | 619 
+AUSTIN AVE, ALBION
+619 AUSTIN AVENW / 0.705 mi., 3723 ft.1183
+- ID:Facility ID 10000436Status:OpenDate:N/A
+115Bus Lot | HARRINGTON 
+ELEMENTARY SCHOOL
+100 S CLARK STE / 0.861 mi., 4546 ft.
+1187
+- ID:Facility ID 00035448Status:ClosedDate:N/A
+116Decker Manufacturing Corp703 N CLARK ST | 703 North 
+Clark Street
+ENE / 0.894 mi., 4721 ft.1193
+- ID:Facility ID 00001458Status:ClosedDate:N/A
+117Harvard Transportation Group 
+| 923 AUSTIN AVENUE | 
+CALHOUN COUNTY LAND 
+BANK AUTHORITY
+923 AUSTIN AVENW / 0.914 mi., 4825 ft.1200
+- ID:Facility ID 00004994Status:ClosedDate:N/A
+P118ALBION FLEET SERVICE INC | 
+PENSKE TRUCK LEASING CO 
+LP | MID MICH METAL PROD 
+ALBION
+900 BROOKS RD | 900-A 
+BROOKS RD
+N / 0.944 mi., 4984 ft.1235
+- ID:Facility ID 13000029Status:N/RDate:N/A
+Q119KNAUF INSULATION INC. | 
+Guardian Fiberglass Inc | 971-
+08
+1000 E NORTH ST | 1000 EAST 
+NORTH STREET | 1000 E N ST
+ENE / 0.956 mi., 5046 ft.1246
+- ID:Facility ID 00018988Status:ClosedDate:N/A
+P120Station #3690 | Albion Fuel 
+Mart LLC | MUSTANG 4, INC.
+1355 N EATON ST
+N / 0.980 mi., 5175 ft.1350
+- ID:Facility ID 00009973Status:ClosedDate:N/A
+- ID:Facility ID 00009973Status:CLosedDate:N/A
+Page 16 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS RIDE - MI
+: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 5223 ft.1375
+- ID:Facility ID 13000090Status:N/RDate:N/A
+R123COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 
+5238 ft.1412
+Q124City Of Albion Street Dept. | 
+Albion City Of Street Dept. | 
+CITY OF ALBION
+1203 E NORTH ST | 1203 East 
+North Street
+NE / 0.993 mi., 5243 ft.
+1413
+- ID:Facility ID 00015060Status:ClosedDate:N/A
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C12201 SOUTH SUPERIOR 
+STREET | Superior (201) 
+Street, South
+201 SOUTH SUPERIOR STREET 
+| 201 S Superior St
+ENE / 0.011 mi., 58 ft.
+154
+- ID:Facility ID 13000493Status:N/RDate:N/A
+C16ALBION COLLEGE207 South Superior StreetE / 0.031 mi., 166 ft.179
+- ID:Facility ID 13000607Status:N/RDate:N/A
+C19109 SOUTH SUPERIOR 
+STREET | Superior (109) 
+Street, South
+109 SOUTH SUPERIOR STREET 
+| 109 S Superior St
+NE / 0.035 mi., 184 ft.221
+- ID:Facility ID 13000448Status:N/RDate:N/A
+C21Superior (105) Street, South | 
+105 SOUTH SUPERIOR 
+STREET | 105 S. Superior 
+Street
+105 S. Superior Street | 105 
+South Superior Street
+NE / 0.041 mi., 219 ft.262
+- ID:Facility ID 13000443Status:N/RDate:N/A
+C25101 AND 103 SOUTH 
+SUPERIOR STREET | Superior 
+(101 & 103) Street, South
+101 AND 103 SOUTH 
+SUPERIOR STREET | 101 & 103 
+S. Superior Street
+NE / 0.047 mi., 247 ft.300
+- ID:Facility ID 13000633Status:N/RDate:N/A
+C26104, 106 & 108 SOUTH 
+SUPERIOR ST. | Superior (104, 
+106 & 108) St., South
+104, 106 & 108 South 
+Superior St.
+NNE / 0.047 mi., 247 ft.326
+- ID:Facility ID 13000441Status:N/RDate:N/A
+C27105 - 107 SOUTH SUPERIOR 
+STREET 
+| Superior (105 - 107) 
+Street, South
+105 - 107 South Superior 
+Street
+NE 
+/ 0.049 mi., 257 ft.327
+- ID:Facility ID 13000442Status:N/RDate:N/A
+C29103 SOUTH SUPERIOR 
+STREET, ALBION
+103 South Superior StreetNE / 0.055 mi., 290 ft.330
+- ID:Facility ID 13000633Status:N/RDate:N/A
+Page 17 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS RIDE - MI
+: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+LOWER ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C30101 SOUTH SUPERIOR 
+STREET, ALBION
+101 South Superior StreetNE / 0.057 mi., 302 ft.331
+- ID:Facility ID 13000663Status:N/RDate:N/A
+D34205 WEST CASS STREET | 
+ONE HOUR MARTINIZING 
+ALBION | 205 West Cass 
+Street, Albion MI 49224
+205 WEST CASS STREET | 205 
+W CASS ST
+NW / 0.061 mi., 323 ft.
+358
+- ID:Facility ID 13000427Status:N/RDate:N/A
+C38Superior (101) Street, North | 
+101 NORTH SUPERIOR 
+STREET 
+| 101 N. Superior 
+Street
+101 N. Superior Street | 101 
+North Superior Street
+NNE / 0.073 mi., 386 ft.407
+- ID:Facility ID 13000436Status:N/RDate:N/A
+F53Vacant | FINISHLINE 
+AUTOBODY | HELMAR 
+INVESTMENT INC
+206 PERRY STENE / 0.163 mi., 863 ft.498
+- ID:Facility ID 00037882Status:ClosedDate:N/A
+G54101 SOUTH MONROE STREET 
+| Monroe (101) Street, South
+101 SOUTH MONROE STREET | 
+101 S Monroe St
+E / 0.165 mi., 872 ft.507
+- ID:Facility ID 13000437Status:N/RDate:N/A
+E56Albion Shell | WDS VENTURES 
+LLC
+100 E MICHIGAN AVENNE / 0.166 mi., 875 ft.529
+- ID:Facility ID 00009952Status:OpenDate:N/A
+E57JIMS AUTO SERVICE | Jim's 
+Auto Service
+111 E MICHIGAN AVENNE / 0.167 mi., 881 ft.540
+- ID:Facility ID 50000399Status:OpenDate:N/A
+E59Albion PS Mart | PS FOOD 
+MART | PS FOOD MART 
+(ALBION)
+101 E MICHIGAN AVENNE / 0.171 mi., 902 ft.
+546
+- ID:Facility ID 00003482Status:ClosedDate:N/A
+F60Hardees Restaurant (vacant) | 
+HARDEES RESTURANT
+118 E MICHIGAN AVENE / 0.175 mi., 922 ft.562
+- ID:Facility ID 50002021Status:OpenDate:N/A
+H61102 NORTH MONROE STREET 
+| Monroe (102) Street, North
+102 NORTH MONROE STREET | 
+102 N Monroe St
+ENE / 0.182 mi., 959 ft.
+566
+- ID:Facility ID 13000439Status:N/RDate:N/A
+F65200 EAST MICHIGAN AVENUE 
+| DAVIDS CLEANER WORLD 
+DRYCLEANING CENTER | 
+Michigan 
+(200) Avenue, East
+200 E MICHIGAN AVE | 200 
+EAST MICHIGAN AVENUE
+NE / 0.191 mi., 1007 ft.
+610
+- ID:Facility ID 13000491Status:N/RDate:N/A
+F73217 EAST MICHIGAN AVENUE 
+| Michigan (217) 
+Avenue, East
+217 EAST MICHIGAN AVENUE | 
+217 E Michigan Ave
+NE / 0.211 mi., 1114 
+ft.654
+- ID:Facility ID 13000499Status:N/RDate:N/A
+Page 18 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE- AND TRIBAL - EQUIVALENT CERCLIS (cont.)
+SHWS RIDE - MI
+: State hazardous waste site listing from Remediation Information Data Exchange. 65 SITES FOUND WITHIN 1 MILE
+LOWER ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+112BROWN WELD SERVICE | 
+Brown Welding
+205 N Gale | 205 North GaleW / 0.639 mi., 3376 ft.1166
+- ID:Facility ID 13000061Status:N/RDate:N/A
+STATE RCRA GENERATORS LIST
+HWG - MI: Listing of permitted hazardous waste generators 10 SITES FOUND WITHIN .25 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+B9MICHIGAN BELL TELEPHONE 
+COMPANY 
+| SBC/AMERITECH-
+M49110
+210 S CLINTON STWSW / 0.008 mi., 40 ft.121
+C35Albion Service Center | 
+CONSUMERS ENERGY CO | 
+CONSUMERS POWER CO 
+ALBION SVC CTR
+121 E ERIE ST | 121 East Erie 
+Street
+ESE / 0.063 mi., 332 ft.375
+F75SEILER AUTO SALES218 E MICHIGAN AVE | 218 
+East Michigan Avenue
+NE / 0.223 mi., 1178 ft.682
+F77CLARK #768 | CLARK OIL CO | 
+CLARK OIL & REFINERY
+219 E MICHIGAN AVENE / 0.226 mi., 1192 ft.692
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+D34205 WEST CASS STREET | 
+ONE HOUR MARTINIZING 
+ALBION | 205 West Cass 
+Street, Albion MI 49224
+205 WEST CASS STREET | 205 
+W CASS ST
+NW / 0.061 mi., 323 ft.358
+E51ALBION SHELL100 E MICHIGAN AVE | 100 E 
+Michigan Ave 
+#4010
+NNE / 0.155 mi., 818 ft.
+489
+F53Vacant | FINISHLINE 
+AUTOBODY | HELMAR 
+INVESTMENT INC
+206 PERRY STENE / 0.163 mi., 863 ft.498
+G55THOMPSONS BRAKE SVC INC | 
+MI1320170
+210 E PORTER STE / 0.165 mi., 873 ft.524
+E59Albion PS Mart | PS FOOD 
+MART | PS FOOD MART 
+(ALBION)
+101 E MICHIGAN AVENNE / 0.171 mi., 902 ft.546
+F65200 EAST MICHIGAN AVENUE 
+| DAVIDS CLEANER WORLD 
+DRYCLEANING CENTER | 
+Michigan 
+(200) Avenue, East
+200 E MICHIGAN AVE | 200 
+EAST MICHIGAN AVENUE
+NE / 0.191 mi., 1007 ft.610
+FEDERAL, STATE, 
+AND TRIBAL LEAKING STORAGE TANK LISTS
+EPA LUST: Releases listed in the EPA UST Finder database 18 SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C14Consolidated Rail Corp308 SUPERIOR AVESE / 0.028 mi., 147 ft.173
+- ID:Facility ID MI00037620Status:N/ADate:N/A
+- ID:LUST ID MIC-0946-93Status:OpenDate:N/

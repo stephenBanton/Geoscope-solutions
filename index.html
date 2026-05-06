@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoScope Solutions – Environmental Risk Reports</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700;800&display=swap');
+
+    :root {
+      --ink: #0f1b2d;
+      --subtle: #475569;
+      --sky: #0c7fc2;
+      --mist: #d8ecff;
+      --paper: #f7fafc;
+      --line: #c8d7e6;
+      --accent: #ff9f1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(12, 127, 194, 0.12), transparent 32%),
+        radial-gradient(circle at 10% 18%, rgba(255, 159, 28, 0.12), transparent 30%),
+        var(--paper);
+      color: var(--ink);
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(15, 27, 45, 0.08);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.45rem;
+      letter-spacing: 0.04em;
+      color: var(--sky);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0.86;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--sky);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--sky), #0e9ae0);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 8px 20px rgba(12, 127, 194, 0.25);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--sky);
+      border-color: var(--line);
+    }
+
+    .hero {
+      min-height: 72vh;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 88px 24px 72px;
+      isolation: isolate;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.03);
+      z-index: -2;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(10, 25, 47, 0.78), rgba(12, 127, 194, 0.52));
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -120px -120px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 159, 28, 0.44), rgba(255, 159, 28, 0));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(920px, 100%);
+      text-align: center;
+      color: #f8fbff;
+      animation: fadeRise 700ms ease both;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      line-height: 1.06;
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+      color: rgba(247, 250, 255, 0.92);
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .stats {
+      max-width: 1100px;
+      margin: -34px auto 50px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .stat {
+      background: #ffffff;
+      border: 1px solid rgba(15, 27, 45, 0.08);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 25px rgba(15, 27, 45, 0.06);
+    }
+
+    .stat strong {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      display: block;
+      margin-bottom: 4px;
+      color: var(--sky);
+    }
+
+    .features {
+      max-width: 1100px;
+      margin: 0 auto 68px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 14px;
+      text-align: center;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 24px rgba(12, 127, 194, 0.12);
+    }
+
+    .feature i {
+      color: var(--sky);
+      font-size: 1.65rem;
+      margin-bottom: 10px;
+    }
+
+    .feature h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--subtle);
+      font-size: 0.92rem;
+    }
+
+    .visual-section {
+      max-width: 1100px;
+      margin: 0 auto 72px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .video-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(15, 27, 45, 0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card video {
+      width: 100%;
+      min-height: 240px;
+      object-fit: cover;
+    }
+
+    .video-card .caption {
+      padding: 14px 16px 18px;
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+
+    .visual-text {
+      background: linear-gradient(160deg, #ffffff, #edf5fc);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .visual-text h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      line-height: 1.15;
+    }
+
+    .visual-text p {
+      color: var(--subtle);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .testimonials {
+      background: linear-gradient(180deg, rgba(216, 236, 255, 0.5), rgba(216, 236, 255, 0.9));
+      border-top: 1px solid #d3e2f0;
+      border-bottom: 1px solid #d3e2f0;
+      padding: 56px 24px;
+    }
+
+    .testimonials-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .testimonial {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #c8d7e6;
+      padding: 18px;
+      color: #1b324d;
+      line-height: 1.5;
+    }
+
+    .testimonial-author {
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: #0b6ea9;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      background: #0f1b2d;
+      color: #f3f8ff;
+      padding: 44px 24px 22px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .footer-col {
+      min-width: 0;
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      color: #7cd1ff;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #d6e8f8;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-social a {
+      color: #7cd1ff;
+      margin-right: 14px;
+      font-size: 1.25rem;
+    }
+
+    .footer-copy {
+      text-align: center;
+      color: #99b7d5;
+      margin-top: 28px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeRise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .features {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .testimonials-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+        margin-top: -20px;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .visual-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: 66vh;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-logo">GeoScope</div>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn btn-outline">Log In</button>
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80">
+      <source src="https://videos.pexels.com/video-files/854176/854176-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <span class="eyebrow">Decision intelligence in motion</span>
+      <h1>Instant Environmental Risk Reports for Confident Decisions</h1>
+      <p>Mapped intelligence, regulatory clarity, and rapid turnaround for real estate, legal, and compliance teams.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary">Request a Report</button>
+        <button class="btn btn-outline">Watch Platform Tour</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <article class="stat"><strong>75+</strong>Clients served across real estate, legal, and compliance</article>
+    <article class="stat"><strong>1000+</strong>Reports delivered with executive-ready clarity</article>
+    <article class="stat"><strong>48h</strong>Typical turnaround for executive-ready reporting</article>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-map-marked-alt"></i>
+      <h3>Risk Clarity</h3>
+      <p>Visualize and understand site risks instantly with mapped overlays and clear findings.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-database"></i>
+      <h3>Data Precision</h3>
+      <p>Access authoritative, up-to-date environmental datasets for every report.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-bolt"></i>
+      <h3>Fast Turnaround</h3>
+      <p>Receive executive-ready reports in as little as 48 hours, guaranteed.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Compliance Ready</h3>
+      <p>Reports structured for regulatory review and decision-maker clarity.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-sliders-h"></i>
+      <h3>Customizable Reports</h3>
+      <p>Choose the data layers and report types you need for your project.</p>
+    </div>
+  </section>
+
+  <section class="visual-section">
+    <div class="video-card">
+      <video autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/8721931/8721931-hd_1920_1080_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="caption">Live map overlays and site buffers displayed in a report-ready workflow.</div>
+    </div>
+    <div class="visual-text">
+      <h2>See Your Site Like Never Before</h2>
+      <p>Our interactive platform lets you explore environmental risks, historical context, and regulatory overlays—all in one place. Make smarter, faster decisions with GeoScope’s visual intelligence tools.</p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonial">“GeoScope’s reports helped us close deals 30% faster and avoid costly surprises.”<span class="testimonial-author">Jane D., Real Estate Developer</span></div>
+      <div class="testimonial">“The turnaround time and clarity of the reports are unmatched. Highly recommended!”<span class="testimonial-author">Mark S., Environmental Consultant</span></div>
+      <div class="testimonial">“We rely on GeoScope for every property transaction. The data is always accurate and defensible.”<span class="testimonial-author">Lisa T., Lender</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-logo">GeoScope</div>
+        <div>Smart environmental & property intelligence powered by geospatial data.</div>
+      </div>
+      <div class="footer-col footer-links">
+        <strong>Quick Links</strong>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col footer-links">
+        <strong>Contact</strong>
+        <a href="mailto:support@geoscopesolutions.com">support@geoscopesolutions.com</a>
+        <a href="mailto:info@geoscopesolutions.com">info@geoscopesolutions.com</a>
+      </div>
+      <div class="footer-col footer-social">
+        <strong>Follow Us</strong><br>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 GeoScope Solutions. All rights reserved.</div>
+  </footer>
+</body>
+</html>

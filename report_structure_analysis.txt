@@ -1,0 +1,1061 @@
+EXEC_SUMMARY_BY_DATABASE
+============================================================
+ion Street Dept. | Albion Ci...1203 E NORTH ST | 1203 Ea...
+AUL - MI, 
+EPA LUST, EPA UST, LUST - MI, LUST...N/RNE / 0.993 mi., 5243 ft.
+Page 5 of 1547
+
+Executive Summary by Database2026
+SUBJECT PROPERTY SEARCH RESULTS:
+The subject property was identified in the following records. For more information on this property, see Map Findings 
+section on page 56.
+MAP IDSITEDATABASE(S)EPA IDPAGE
+A1208 SOUTH SUPERIOR 
+STREET 
+| Superior (208) 
+Street, South | 208 S. 
+Superior Street
+208 SOUTH SUPERIOR 
+STREET | 
+208 S. Superior 
+Street
+Albion | ALBION, MI 49224
+BEA - MI, BROWNFIELDS-
+ACRES, EJ BROWNFIELDS, 
+FED BROWNFIELDS, FRS, 
+HIST FED BROWNFIELDS, 
+SHWS RIDE - MI, SHWS SEC - 
+MI
+N/R56
+SHWS SEC - MI
+- ID: Facility ID 13000496Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000496Status: N/RDate: N/A
+HIST FED BROWNFIELDS
+- ID: 151721Status: N/ADate: Cleanup Completion 
+Date N/R
+- ID: 170281
+Status: N/ADate: Cleanup Completion 
+Date 
+N/R
+EJ BROWNFIELDS
+- ID: 110054147874Status: N/ADate: N/A
+A2118 AND 120 WEST 
+PORTER 
+ST | 118 & 120 
+West Porter Street | Porter 
+(118 & 120) Street, West
+118 AND 120 WEST 
+PORTER ST | 118 &120 
+West Porter Street
+ALBION | Albion, MI
+BEA - MI, BROWNFIELDS-
+ACRES, EJ BROWNFIELDS, 
+FED BROWNFIELDS, FRS, 
+HIST FED BROWNFIELDS
+N/R89
+HIST FED BROWNFIELDS
+- ID: 176182Status: N/ADate: Cleanup Completion 
+Date N/R
+EJ BROWNFIELDS
+- ID: 110063008481Status: N/ADate: N/A
+A3Superior (212 & 216) St., 
+S; 
+Center (111
+212 & 216 S. Superior; 
+107,111,117,119, 121 W. 
+Center & 108,112 W. 
+Porter
+Albion, MI 49224
+BEA - MIN/R114
+A4Center (107, 111, 117, 
+119, 121) St & | 212 & 
+216 S. Superior; 
+107,111,117,119, 121 W. 
+Center & 108,112 W. 
+Porter
+107, 111, 
+117, 119, 121 
+W Center; 212 | 212 & 
+216 S. Superior; 
+107,111,117,119
+Albion, MI
+BEA - MIN/R115
+Page 6 of 1547
+
+Executive Summary by Database2026
+MAP IDSITEDATABASE(S)EPA IDPAGE
+A5118 120 WEST PORTER 
+STREET
+118 120 West Porter 
+Street
+Albion, MI 49224
+SHWS RIDE 
+- MI, SHWS SEC - 
+MI
+N/R116
+SHWS SEC - MI
+- ID: Facility ID 13000460Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000460Status: N/RDate: N/A
+A6200 204 206 SOUTH 
+SUPERIOR STREET
+200 204 206South 
+Superior Street
+Albion, MI 49224
+SHWS RIDE - MI, SHWS SEC - 
+MI
+N/R117
+SHWS SEC - MI
+- ID: Facility ID 13000490
+Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000490Status: N/RDate: N/A
+A7212 216 S Superior St & 
+107 111 117 119 | 212 
+216 S SUPERIOR ST & 107 
+111 117 119 121 W 
+CENTER ST & 108 112 W 
+PORTER ST
+212 216 S 
+Superior & 107 
+111 117 119 121 W 
+Center & 108 112 W Porter
+Albion, MI 49224
+SHWS RIDE - MI, SHWS SEC - 
+MI
+N/R118
+SHWS SEC - MI
+- ID: Facility ID 13000497Status: N/ADate: N/A
+SHWS RIDE - MI
+- ID: Facility ID 13000497Status: N/RDate: N/A
+A8Superior (200, 204 & 206) 
+Street, 
+South | 200, 204 & 
+206 S. Superior
+200, 204 & 206 S. Superior
+Albion, MI 49224
+BEA - MIN/R119
+SURROUNDING PROPERTIES SEARCH RESULTS:
+Page 7 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS
+FEDERAL NPL SITE LIST
+NPL: List of 
+priority contaminated sites among identified releases or threatened releases of hazardous substances  pollutants  or 
+contaminants nationally 2 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU 
+| McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 
+5223 ft.1375
+- ID:MID005339676Status:FinalDate:Listing Date 1983-09-
+08
+R123COOPER INDUSTRIES LLC-
+GWCU 
+| McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 5238 ft.1412
+SEMS_FINAL NPL: All Included National Priority List Sites 2 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 5223 ft.1375
+- ID:0502254Status:N/ADate:NPL Status Date 1983-
+09-08
+R123COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 5238 ft.1412
+NPL EPA GIS: Geospatial data for Areas related to the US EPA National Priority List. 2 SITES FOUND WITHIN 1 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+R122COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.989 mi., 5223 ft.1375
+R123COOPER INDUSTRIES LLC-
+GWCU | McGraw Edison Corp. 
+| COOPER INDUSTRIES LLC
+704 NORTH CLARK STREET | 
+704 N CLARK ST
+ENE / 0.992 mi., 5238 ft.1412
+FEDERAL CERCLIS LIST
+SEMS_8R_ACTIVE SITES: The Active Site Inventory Report displays site and 
+location information at active SEMS sites. An active site is 
+one at which site assessment, removal, remedial, enforcement, cost recovery, or oversight activities are being planned or conducted. 
+NPL sites include latitude and longitude information. For non-NPL sites, a brief site status is provided. 3 SITES FOUND WITHIN .5 
+MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+I86DALRYMPLE SCHOOL SITETHE INTERSECTION OF SOUTH 
+DALRYMPLE STREET AND 
+WEST ERIE STREET
+WSW / 0.312 mi., 1649 ft.
+756
+- ID:0510253Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:N/A
+Page 8 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL CERCLIS LIST (cont.)
+SEMS_8R_ACTIVE SITES: The Active Site Inventory Report displays site and 
+location information at active SEMS sites. An active site is 
+one at which site assessment, removal, remedial, enforcement, cost recovery, or oversight activities are being planned or conducted. 
+NPL sites include latitude and longitude information. For non-NPL sites, a brief site status is provided. 3 SITES FOUND WITHIN .5 
+MILE
+EQUAL/HIGHER  ELEVATION (cont.)
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+K92501 NORTH BERRIEN STREET 
+| MULBERRY ASBESTOS | 
+ALBION MYSTERY OIL SPILL
+501 NORTH BERRIEN STREET | 
+501 N BERRIEN ST
+NE / 0.383 mi., 2024 ft.793
+- ID:0510755Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:N/A
+- ID:0510749Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:N/A
+K95UNION STEEL PRODUCTS INC. 
+PLANT 1 | 500, NORTH 
+BERRIEN STREET, 515 
+CROWELL, AND 518 DIVISION 
+| 500 NORTH BERRIEN STREET
+500 NORTH BERRIEN STREET | 
+500 N BERRIEN ST | 500 N. 
+BERRIEN ST., BOX 60
+NE 
+/ 0.404 mi., 2132 ft.844
+- ID:0506775Status:Referred to Removal - 
+NFRAP
+Date:N/A
+CERCLIS-HIST: The CERCLIS program database contains information on the assessment and remediation of federal hazardous waste 
+sites. The Environmental Protection Agency decommissioned the CERCLIS data in 2014. The last update was November 12, 2013.3 
+SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+I86DALRYMPLE SCHOOL SITETHE INTERSECTION OF SOUTH 
+DALRYMPLE STREET AND 
+WEST ERIE STREET
+WSW / 0.312 mi., 1649 ft.
+756
+- ID:MIN000510253Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:2007-12-18
+K92501 NORTH BERRIEN STREET 
+| MULBERRY ASBESTOS | 
+ALBION MYSTERY OIL SPILL
+501 NORTH BERRIEN STREET | 
+501 N BERRIEN ST
+NE / 0.383 mi., 2024 ft.793
+- ID:MIN000510755Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:2012-04-11
+- ID:MIN000510749Status:Removal Only Site (No 
+Site Assessment Work 
+Needed)
+Date:2012-04-17
+K95UNION STEEL PRODUCTS INC. 
+PLANT 1 | 500, NORTH 
+BERRIEN STREET, 515 
+CROWELL, 
+AND 518 DIVISION 
+| 500 NORTH BERRIEN STREET
+500 NORTH BERRIEN STREET | 
+500 N BERRIEN ST | 500 N. 
+BERRIEN ST., BOX 60
+NE / 0.404 mi., 2132 ft.844
+- ID:MID005318522Status:Referred to Removal - 
+NFRAP
+Date:2000-01-26
+Page 9 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL RCRA GENERATORS LIST
+RCRA VSQG: Resource Conservation and Recovery Act listing of licensed very small quantity generators. 7 SITES FOUND WITHIN .
+25 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+B9MICHIGAN BELL TELEPHONE 
+COMPANY | SBC/AMERITECH-
+M49110
+210 S CLINTON STWSW / 0.008 mi., 40 ft.
+121
+- ID:MIT270011943Status:No Violation/InspectionsDate:N/A
+F75SEILER AUTO SALES218 E MICHIGAN AVE | 218 
+East Michigan Avenue
+NE / 0.223 mi., 1178 ft.682
+- ID:MI0000381087Status:No Violation/InspectionsDate:N/A
+F77CLARK #768 | CLARK OIL CO | 
+CLARK OIL & REFINERY
+219 E MICHIGAN AVENE / 0.226 mi., 1192 ft.
+692
+- ID:MIR000005561Status:No Violation/InspectionsDate:N/A
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+D34205 WEST CASS STREET | 
+ONE HOUR MARTINIZING 
+ALBION | 205 West Cass 
+Street, Albion MI 49224
+205 WEST CASS STREET | 205 
+W CASS ST
+NW / 0.061 mi., 323 ft.
+358
+- ID:MID016697054Status:No Violation/InspectionsDate:N/A
+F53Vacant | FINISHLINE 
+AUTOBODY | HELMAR 
+INVESTMENT INC
+206 PERRY STENE / 0.163 mi., 863 ft.498
+- ID:MIK361148570Status:No Violation/InspectionsDate:N/A
+G55THOMPSONS BRAKE SVC INC | 
+MI1320170
+210 E PORTER STE / 0.165 mi., 873 ft.524
+- ID:MIR000021907Status:No Violation/InspectionsDate:N/A
+E56Albion Shell | WDS VENTURES 
+LLC
+100 E MICHIGAN AVENNE / 0.166 mi., 875 ft.529
+- ID:MIK279492839Status:No Violation/InspectionsDate:N/A
+RCRA NONGEN: Resource Conservation and Recovery Act listing of licensed non-generators 5 SITES FOUND WITHIN .25 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C35Albion Service Center | 
+CONSUMERS ENERGY CO | 
+CONSUMERS POWER CO 
+ALBION SVC 
+CTR
+121 E ERIE ST | 121 East Erie 
+Street
+ESE / 0.063 mi., 332 ft.
+375
+- ID:MID981783137Status:No Violation/InspectionsDate:N/A
+C41CITY OF ALBION | ALBION 
+GRAIN MILL
+MARKET PLACE RDSE / 0.076 mi., 403 ft.412
+- ID:MIK559486220Status:No Violation/InspectionsDate:N/A
+Page 10 of 1547
+
+Executive Summary by Database2026
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL RCRA GENERATORS LIST (cont.)
+RCRA NONGEN
+: Resource Conservation and Recovery Act listing of licensed non-generators 5 SITES FOUND WITHIN .25 MILE
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C32CITY OF ALBION | ALBION 
+DEPARTMENT OF PUBLIC 
+SAFETY | MI0000100
+112 WEST CASS STREET | 112 
+W CASS ST
+N / 0.059 mi., 311 ft.334
+- ID:MIK178538719Status:No Violation/InspectionsDate:N/A
+E59Albion PS Mart | PS FOOD 
+MART | PS FOOD MART 
+(ALBION)
+101 E MICHIGAN AVENNE / 0.171 mi., 902 ft.546
+- ID:MID985629823Status:No Violation/InspectionsDate:N/A
+F65200 EAST MICHIGAN AVENUE 
+| DAVIDS CLEANER WORLD 
+DRYCLEANING CENTER | 
+Michigan (200) Avenue, East
+200 E MICHIGAN AVE | 200 
+EAST MICHIGAN AVENUE
+NE / 0.191 mi., 1007 ft.610
+- ID:MID085900504Status:No Violation/InspectionsDate:N/A
+STATE- AND TRIBAL - EQUIVALENT CERCLIS
+SHWS SEC - MI: Sites of Environmental Contamination (Part 201) 32 SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C23313 SOUTH SUPERIOR STREET313 SOUTH SUPERIOR STREETSE / 0.043 mi., 226 ft.278
+- ID:Facility ID 
+
+BROWNFIELDS
+============================================================
+ | 216 North 
+Eaton Street
+NW / 0.169 mi., 895 ft.546
+N102City Of Albion Water Dept | 
+ALBION CITY OF, WATER 
+DEPT. | CITY OF ALBION
+507 N ALBION ST | 507 North 
+Albion Street
+WNW / 0.484 mi., 2558 ft.975
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+N100HALLIBURTON ENERGY | 
+Owens Propane Services Inc | 
+Halliburton Services - Albion
+404 N ALBION ST | 404 North 
+Albion Street
+WNW / 0.468 mi., 2470 ft.952
+STATE 
+AND TRIBAL BROWNFIELD SITES
+BROWNFIELDS 2 - MI: Brownfields Building and Land Sites 1 SITE FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+I82DALRYMPLE SCHOOL | 
+Dalrymple
+406 SOUTH ANN STREET | 406 
+S. Ann St
+WSW / 0.248 mi., 1309 ft.722
+Page 31 of 1547
+
+Executive Summary by Database2026
+ADDITIONAL ENVIRONMENTAL RECORDS
+LOCAL BROWNFIELD LISTS
+FED BROWNFIELDS: Federal brownfield remediation sites 36 SITES FOUND WITHIN .5 MILE
+EQUAL/HIGHER  ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C23313 SOUTH SUPERIOR STREET313 SOUTH SUPERIOR STREETSE / 0.043 mi., 226 ft.278
+B33114 WEST ERIE ST114 WEST ERIE STSSW / 0.060 mi., 319 ft.345
+C43112 EAST ERIE STREET112 EAST ERIE STREETSE / 0.081 mi., 429 ft.424
+62214, 218, 220, 222 SOUTH 
+PEARL STREET
+214, 218, 220, 222 SOUTH 
+PEARL STREET
+W / 0.182 mi., 959 ft.587
+E79116 WEST VINE STREET116 WEST VINE STREETN / 0.235 mi., 1242 ft.706
+E81116 AND 118 W VINE STREET116 AND 118 W VINE STREETN / 0.242 mi., 1276 ft.715
+I82DALRYMPLE SCHOOL | 
+Dalrymple
+406 SOUTH ANN STREET | 406 
+S. Ann St
+WSW / 0.248 mi., 1309 ft.722
+J84404 EAST MICHIGAN AVENUE404 EAST MICHIGAN AVENUEENE / 0.300 mi., 1584 ft.741
+J88ALBION PUBLIC SCHOOLS | 
+401 EAST MICHIGAN AVENUE 
+| Michigan (401) Avenue, East
+401 E MICHIGAN AVEENE / 0.321 mi., 1695 ft.768
+K92501 NORTH BERRIEN STREET 
+| MULBERRY ASBESTOS | 
+ALBION MYSTERY OIL SPILL
+501 NORTH BERRIEN STREET | 
+501 N BERRIEN ST
+NE / 0.383 mi., 2024 ft.793
+K95UNION STEEL PRODUCTS INC. 
+PLANT 1 | 500, NORTH 
+BERRIEN STREET, 515 
+CROWELL, 
+AND 518 DIVISION 
+| 500 NORTH BERRIEN STREET
+500 NORTH BERRIEN STREET | 
+500 N BERRIEN ST | 500 N. 
+BERRIEN ST., BOX 60
+NE / 0.404 mi., 2132 ft.844
+M96201 PINE STREET201 PINE STREETNNE / 0.407 mi., 2150 ft.903
+M97203 PINE STREET203 PINE STREETNNE / 0.417 mi., 2200 ft.914
+L99709, 709.5, 717, 719 NORTH 
+CLINTON STREET AND 205 
+AND 207 AUSTIN AVENUE
+709, 709.5, 717, 719 NORTH 
+CLINTON STREET AND 205 
+AND 207 AUSTIN AVENUE
+N / 0.461 mi., 2432 ft.930
+LOWER ELEVATION
+MAP IDSITE NAMESITE ADDRESSDIRECTION/DISTANCEPAGE
+C10215 SOUTH SUPERIOR STREET215 SOUTH SUPERIOR STREETE / 0.010 mi., 52 ft.125
+C11213 SOUTH SUPERIOR STREET213 SOUTH SUPERIOR STREETE / 0.010 mi., 52 ft.139
+C12201 SOUTH SUPERIOR 
+STREET | Superior (201) 
+Street, South
+201 SOUTH SUPERIOR STREET 
+| 201 S Superior St
+ENE / 0.011 mi., 58 ft.154
+C17105 AND 107 SOUTH 
+SUPERIOR STREET
+105 AND 107 SOUTH 
+SUPERIOR STREET
+NE / 0.032 mi., 171 ft.179
+C18111, 113, 115, 117, AND 119 
+SOUTH SUPERIOR STREET
+111, 113, 115, 117, AND 119 
+SOUTH SUP
+
+MAP_FINDINGS_SUMMARY
+============================================================
+Map Findings Summary2026
+DATABASE
+SUBJECT  
+PROPERTY
+SEARCH
+DISTANCE 
+(MILES)<1/81/8-1/41/4-1/21/2-1>1
+TOTAL 
+MAPPED
+STANDARD ENVIRONMENTAL RECORDS
+FEDERAL NPL SITE LIST
+NPL1.0000002--2
+PART NPL1.0000000--0
+SEMS_FINAL NPL1.0000002--2
+SEMS_PROPOSED NPL1.0000000--0
+PROPOSED NPL1.0000000--0
+NPL EPA GIS1.0000002--2
+NPL LIENSSP0-----0
+FEDERAL DELISTED NPL SITE LIST
+DELISTED NPL1.0000000--0
+DELISTED PROPOSED NPL1.0000000--0
+SEMS_DELETED NPL1.0000000--0
+FEDERAL 
+CERCLIS LIST
+SEMS_8R_ACTIVE SITES0.5000030--3
+FEDERAL FACILITY1.0000000--0
+CERCLIS NFRAP0.5000000--0
+CERCLIS-HIST0.5000030--3
+SEMS_8R_ARCHIVED SITES0.5000000--0
+EPA SAA0.5000000--0
+FEDERAL RCRA CORRACTS FACILITIES LIST
+CORRACTS1.0000000--0
+HIST CORRACTS 21.0000000--0
+FEDERAL RCRA NON-CORRACTS TSD FACILITIES LIST
+RCRA TSDF0.5000000--0
+ARCHIVED RCRA TSDF0.5000000--0
+FEDERAL RCRA GENERATORS LIST
+RCRA LQG0.250000---0
+RCRA SQG0.250000---0
+RCRA VSQG0.250250---7
+RCRA NONGEN0.250320---5
+HIST RCRA LQG0.250000---0
+HIST RCRA SQG0.250000---0
+HIST RCRA CESQG0.250000---0
+HIST RCRA NONGEN0.250000---0
+EJ HAZ WASTE0.250000---0
+Page 50 of 1547
+
+Map Findings Summary2026
+DATABASE
+SUBJECT  
+PROPERTY
+SEARCH
+DISTANCE 
+(MILES)<1/81/8-1/41/4-1/21/2-1>1
+TOTAL 
+MAPPED
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+FEDERAL INSTITUTIONAL CONTROLS / ENGINEERING CONTROLS REGISTRIES
+LUCIS0.5000000--0
+LUCIS 20.5000000--0
+FED E C0.5000000--0
+FED I C0.5000000--0
+RCRA IC EC0.250000---0
+FEDERAL ERNS LIST
+ERNSSP0-----0
+STATE- AND TRIBAL - EQUIVALENT CERCLIS
+SHWS SEC - MI40.500151030--32
+SHWS RIDE - MI41.0001717720--65
+SHWS - MI1.0000000--0
+DEL SHWS - MI1.0000000--0
+STATE RCRA GENERATORS LIST
+HWG - MI0.250370---10
+TSD - MI0.5000000--0
+STATE AND TRIBAL LANDFILL AND/OR SOLID WASTE DISPOSAL SITE LISTS
+SWF/LF - MI0.5000000--0
+HIST LF - MI0.5000000--0
+FEDERAL, STATE, AND TRIBAL LEAKING STORAGE TANK LISTS
+EPA LUST0.50031140--18
+LUST 2 - MI0.50041140--19
+LUST - MI0.50041140--19
+INDIAN LUST R50.5000000--0
+FEDERAL, STATE, 
+AND TRIBAL REGISTERED STORAGE TANK LISTS
+FEMA UST0.250000---0
+EPA UST0.2503110---14
+AST PBS0.250000---0
+UST - MI0.2503140---17
+AST - MI0.250020---2
+HIST AST - MI0.250010---1
+INDIAN UST R50.250000---0
+STATE 
+INSTITUTIONAL CONTROLS / ENGINEERING CONTROLS REGISTRIES
+AUL - MI0.5002320--7
+Page 51 of 1547
+
+Map Findings Summary2026
+DATABASE
+SUBJECT  
+PROPERTY
+SEARCH
+DISTANCE 
+(MILES)<1/81/8-1/41/4-1/21/2-1>1
+TOTAL 
+MAPPED
+STANDARD ENVIRONMENTAL RECORDS (cont.)
+STATE AND TRIBAL BROWNFIELD SITES
+BROWNFIELDS - MI0.5000000--0
+BROWNFIELDS 2 - MI0.5000100--1
+TRIBAL BROWNFIELDS0.5000000--0
+ADDITIONAL ENVIRONMENTAL RECORDS
+LOCAL BROWNFIELD LISTS
+FED BROWNFIELDS20.50017980--36
+HIST FED BROWNFIELDS20.50016790--34
+BROWNFIELDS-ACRES20.50017990--37
+EJ BROWNFIELDS20.50016660--30
+LOCAL LISTS OF LANDFILL / SOLID WASTE DISPOSAL SITES
+EPA LF MOP0.5000000--0
+ODI0.5000000--0
+WDS - MI0.5000000--0
+SWTIRE - MI0.5000000--0
+SWRCY - MI0.5000000--0
+TRIBAL ODI0.5000000--0
+LOCAL LISTS OF HAZARDOUS WASTE / CONTAMINATED SITES
+FED CDLSP0-----0
+US HIST CDLSP0-----0
+LOCAL LAND RECORDS
+LIENS 2SP0-----0
+LIENS - MISP0-----0
+RECORDS 
+OF EMERGENCY RELEASE REPORTS
+HMIRS (DOT)SP0-----0
+PEAS - MI0.12510----1
+HIST PEAS - MI0.12510----1
+OTHER 
+ASCERTAINABLE RECORDS
+NPL AOC1.0000000--0
+FUDS1.0000000--0
+FUDS MRA1.0000000--0
+FUDS MRS1.0000000--0
+DOD1.0000000--0
+HIST DOD1.0000000--0
+Page 52 of 1547
+
+Map Findings Summary2026
+DATABASE
+SUBJECT  
+PROPERTY
+SEARCH
+DISTANCE 
+(MILES)<1/81/8-1/41/4-1/21/2-1>1
+TOTAL 
+MAPPED
+ADDITIONAL ENVIRONMENTAL RECORDS (cont.)
+OTHER ASCERTAINABLE RECORDS (cont.)
+FEDLAND1.0000000--0
+CDC HAZDAT1.0000001--1
+COAL GAS1.0000000--0
+MGP1.0000000--0
+PIPELINES1.0000000--0
+ROD1.0000000--0
+CONSENT (DECREES)1.0000002--2
+BRSSP0-----0
+INDIAN RESERVATION1.0000000--0
+EPA WATCHSP0-----0
+CORRECTIVE ACTIONS 20200.5000000--0
+COAL ASH DOE0.5000000--0
+COAL ASH EPA0.5000000--0
+DEBRIS EPA LF0.5000000--0
+DEBRIS EPA SWRCY0.5000000--0
+PFAS FED SITES0.5000000--0
+PFAS INDUSTRY0.5000010--1
+PFAS MANIFEST0.5000000--0
+PFAS NPL0.5000000--0
+PFAS PROD0.5000000--0
+PFAS SPILLS0.5000000--0
+PFAS TRIS0.5000000--0
+PFAS UCMR30.5000000--0
+PFAS WQP0.5000000--0
+UMTRA0.5000000--0
+VAPOR0.5000000--0
+SCRD DRYCLEANERS0.250000---0
+ALT FUELING0.250100---1
+MINES USGS0.250000---0
+MINE OPERATIONS0.250000---0
+MINES0.250100---1
+ASBESTOS NOA0.250000---0
+HIST ASBESTOS NOA0.250000---0
+RMP0.250000---0
+MANIFEST EPA0.250110---2
+EPA OSC0.12500----0
+Page 53 of 1547
+
+Map Findings Summary2026
+DATABASE
+SUBJECT  
+PROPERTY
+SEARCH
+DISTANCE 
+(MILES)<1/81/8-1/41/4-1/21/2-1>1
+TOTAL 
+MAPPED
+ADDITIONAL ENVIRONMENTAL RECORDS (cont.)
+OTHER ASCERTAINABLE RECORDS (cont.)
+RAATSSP0-----0
+TRISSP0-----0
+SSTSSP0-----0
+HIST SSTSSP0-----0
+EJ TOXIC RELEASESP0-----0
+FA HWFSP0-----0
+PADSSP0-----0
+ICISSP0-----0
+FTTSSP0-----0
+FTTS INSPSP0-----0
+MLTSSP0-----0
+HIST MLTSSP0-----0
+RADINFOSP0-----0
+PCB TRANSFORMERSP0-----0
+HIST PCB TRANSSP0-----0
+DOT OPSSP0-----0
+SEMS_SMELTERSP0-----0
+HIST LEAD_SMELTERSP0-----0
+TOSCA-PLANTSP0-----0
+HWC DOCKETSP0-----0
+AFSSP0-----0
+HIST AFSSP0-----0
+HIST AFS 2SP0-----0
+FRS2SP0-----2
+
+
+ENV_RECORDS_SEARCHED
+============================================================
+Environmental Records Searched2026
+STANDARD 
+ENVIRONMENTAL RECORDS
+FEDERAL NPL SITE LIST
+NPL: List 
+of priority contaminated sites among identified releases or threatened releases of hazardous substances  pollutants  or 
+contaminants nationally
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+PART NPL: Sites that are a part of an National Priority List site referred to as the parent site
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+SEMS_FINAL NPL: All Included National Priority List Sites
+Agency 
+Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned 
+Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+SEMS_PROPOSED NPL: All Proposed National Priority List Sites
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+PROPOSED NPL: Sites that have been proposed for the National Priority List
+Agency Version Date: 08/13/2025
+Agency 
+Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+NPL EPA GIS: Geospatial data for Areas related to the US EPA National Priority List.
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 202-566-2132
+Most Recent Contact: 02/03/2026
+NPL LIENS: National Priority List of sites with Liens
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Varies
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+FEDERAL DELISTED 
+NPL SITE LIST
+DELISTED NPL: National Priority List of sites that were delisted and no longer require action
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+DELISTED 
+PROPOSED NPL: Sites that have been delisted from the proposed National Priority List
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned 
+Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+Page 1420 of 1547
+
+Environmental Records Searched2026
+STANDARD 
+ENVIRONMENTAL RECORDS (cont.)
+FEDERAL DELISTED NPL SITE LIST (cont.)
+SEMS_DELETED NPL: All Deleted National Priority List Sties
+Agency Version Date: 08/13/2025
+Agency Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+FEDERAL CERCLIS LIST
+SEMS_8R_ACTIVE 
+SITES: The Active Site Inventory Report displays site and location information at active SEMS sites. An active 
+site is one at which site assessment, removal, remedial, enforcement, cost recovery, or oversight activities are being planned or 
+conducted. NPL sites include latitude and longitude information. For non-NPL sites, a brief site status is provided.
+Agency Version Date: 08/13/2025
+Agency 
+Update Frequency: Quarterly
+Planned Next Contact: 04/30/2026
+Agency: U.S. Environmental Protection Agency
+Agency Contact: 703-603-8867
+Most Recent Contact: 02/03/2026
+FEDERAL FACILITY: Sites where Federal Facilities Restoration and Reuse Office (FFRRO) arranged cleanup for Base Closure and 
+Property Transfer at Federal Facilities
+Agency Version Date: 08/13/2025
+Agency 
+Update Frequency: Varies
+Planned Next Cont
+
+GEO_LANDSCAPE
+============================================================
+Geological Landscape Section2026
+SUBJECT PROPERTY ADDRESS:
+Commercial Property
+200 S Superior St
+Albion, MI 49224
+SUBJECT PROPERTY COORDINATES:
+Latitude(North):42.244174 - 42°14'39"
+Longitude(West):-84.753846 - -84°45'13.8"
+Universal Transverse Mercator:Zone 16N
+UTM X (Meters):
+685312.95
+UTM Y (Meters):4679329.85
+State Plane Coordinates:2113 - Michigan South (US Survey Feet)
+X Coordinate (Feet):13018497.406 E
+Y Coordinate (Feet):271440.231 N
+ELEVATION:
+Elevation:947 ft. above sea level
+USGS TOPOGRAPHIC MAP:
+Subject Property Map:
+Most Recent Revision:
+42084-B7 Southwest Albion, MI
+2019
+GEOHYDROLOGY DATA:
+SUBJECT PROPERTY TOPOGRAPHY:
+Topographic Gradient: North
+DFIRM FLOOD ZONE:
+DFIRM Flood
+Subject Property County:Electronic Data:
+CALHOUNYes - refer to the PROPERTY PROXIMITY MAP and AREA MAP
+Flood Plain Panel at Subject Property:26025C0407C (Eff. date 4/4/2011)
+Additional Panels in search area:26025C0290C (Eff. date 4/4/2011)
+26075C0150D (Eff. date 5/3/2010)
+26025C0426C (Eff. date 4/4/2011)
+26075C0275D (Eff. date 5/3/2010)
+26025C0269C (Eff. date 4/4/2011)
+FEMA FLOOD ZONE:
+FEMA Flood
+Subject Property County:Electronic Data:
+CALHOUNYes - refer to the PROPERTY PROXIMITY MAP and AREA MAP
+Flood Plain Panel at Subject Property:2600500001B
+Additional Panels in search area:2606390010B
+2606490010A
+Page 1441 of 1547
+
+Geological Landscape Section2026
+NATIONAL WETLAND INVENTORY:
+NWI Electronic
+NWI Quad at Subject Property:Data Coverage:
+Southwest AlbionYes - refer to the Geological Findings Map
+LITHOSTRATIGRAPHIC INFORMATION:
+ROCK STRATIGRAPHIC 
+UNIT:GEOLOGIC AGE IDENTIFICATION
+Era: PaleozoicCategory: 100 M2 Meramecian Series
+System: Mississippian
+Series: Meramecian Series
+Code: M2
+Page 1442 of 1547
+
+Geological Landscape Section2026
+SURROUNDING ELEVATION PROFILES:
+Page 1443 of 1547
+
+Geological Landscape Section Soil Map2026
+SUBJECT NAME: Commercial Property
+PREPARED FOR: Darcy Environmental Consultants LLC
+ADDRESS: 200 S Superior St, Albion, MI, 49224
+ORDER #: 115368
+LAT/LONG: 
+42.244174 / -84.753846REPORT DATE: February 18, 2026
+A
+B
+6
+8
+4
+2
+1
+9
+7
+5
+14
+12
+11
+3
+13
+10
+Subject Property SSURGO STATSGO 
+Page 1444 of 1547
+
+Geological Landscape Section Summary2026
+SOIL COMPOSITION IN GENERAL AREA OF SUBJECT PROPERTY:
+Agency source: Soil Conservation Service, US Department of Agriculture
+SOIL MAP ID 1
+SSURGO
+USDA Soil NameUrban land,Miscellaneous 
+area
+USDA Soil TextureNot Reported
+Hydrologic Soil GroupD
+Soil Drainage ClassNot Reported
+Hydric Classification0
+Corrosion Potential - Uncoated SteelNot Reported
+SOIL MAP ID 2SSURGO
+USDA Soil NameUrban land,Miscellaneous 
+area
+USDA Soil TextureNot Reported
+Hydrologic Soil GroupD
+Soil Drainage ClassNot Reported
+Hydric Classification0
+Corrosion Potential - Uncoated SteelNot Reported
+SOIL MAP ID 3
+SSURGO
+USDA Soil NameUrban land,Miscellaneous 
+area
+USDA Soil TextureNot Reported
+Hydrologic Soil GroupNot Reported
+Soil Drainage ClassNot Reported
+Hydric Classification0
+Corrosion Potential - Uncoated SteelNot Reported
+LayerDepth 
+(i
+
+GEO_SOIL_MAP
+============================================================
+Geological Landscape Section Soil Map1444
+Geological Landscape Section Summary1445
+Geological Findings Map1453
+Geological Landscape Section Map Findings1454
+Geological Landscape Section Map Findings Radon1544
+Geological Landscape Records Searched1545
+Disclaimer - Copyright and Trademark Notice
+All information contained in this report are based on data available from various public, government and other sources and are based upon 
+the best data available from those sources. The information available in this report may be available from other sources and is not exclusive 
+or 
+the exclusive property of Envirosite Corporation.
+NO WARRANTY EXPRESSED OR IMPLIED, IS MADE IN CONNECTION WITH THIS REPORT, INCLUDING WITHOUT LIMITATION, MERCHANTABILITY 
+OR  FITNESS  FOR  A  PARTICULAR  PURPOSE.  ALL  RISK  IS  ASSUMED  BY  USER  AND  Envirosite  assumes  no  liability  for  faulty  or  inaccurate 
+information. The Reports may utilize a variety of public and other sources reasonably available to Envirosite. Envirosite cannot, and does not 
+assure,  warrant,  guarantee  or  assume  any  liability  for  the  correctness,  comprehensiveness,  timeliness  or  completeness  of  any  of  such 
+information,  nor  is  the  information  in  any  Report  to  be  construed  as  legal  advice  with  respect  to  environmental  risks  associated  with any 
+property.  Envirosite  shall  not  be  liable  to  anyone  for  any  claims,  causes  of  action,  suits,  damages,  losses,  costs  and  expenses (including, 
+without limitation, attorneys’ fees and costs) arising out of or caused by this report regardless of the acts, errors or omissions, or negligence 
+of 
+Envirosite. Any damages shall be limited to the purchase price of the report.
+Purchaser of the report accepts the report “As Is”. The report is intended only to provide information only and should not be considered as 
+providing  any  legal  advice,  prediction,  forecast,  or  fact  as  to  the  environmental  risk  for  any  specifi
+
+GEO_SUMMARY
+============================================================
+Geological Landscape Section Summary1445
+Geological Findings Map1453
+Geological Landscape Section Map Findings1454
+Geological Landscape Section Map Findings Radon1544
+Geological Landscape Records Searched1545
+Disclaimer - Copyright and Trademark Notice
+All information contained in this report are based on data available from various public, government and other sources and are based upon 
+the best data available from those sources. The information available in this report may be available from other sources and is not exclusive 
+or 
+the exclusive property of Envirosite Corporation.
+NO WARRANTY EXPRESSED OR IMPLIED, IS MADE IN CONNECTION WITH THIS REPORT, INCLUDING WITHOUT LIMITATION, MERCHANTABILITY 
+OR  FITNESS  FOR  A  PARTICULAR  PURPOSE.  ALL  RISK  IS  ASSUMED  BY  USER  AND  Envirosite  assumes  no  liability  for  faulty  or  inaccurate 
+information. The Reports may utilize a variety of public and other sources reasonably available to Envirosite. Envirosite cannot, and does not 
+assure,  warrant,  guarantee  or  assume  any  liability  for  the  correctness,  comprehensiveness,  timeliness  or  completeness  of  any  of  such 
+information,  nor  is  the  information  in  any  Report  to  be  construed  as  legal  advice  with  respect  to  environmental  risks  associated  with any 
+property.  Envirosite  shall  not  be  liable  to  anyone  for  any  claims,  causes  of  action,  suits,  damages,  losses,  costs  and  expenses (including, 
+without limitation, attorneys’ fees and costs) arising out of or caused by this report regardless of the acts, errors or omissions, or negligence 
+of 
+Envirosite. Any damages shall be limited to the purchase price of the report.
+Purchaser of the report accepts the report “As Is”. The report is intended only to provide information only and should not be considered as 
+providing  any  legal  advice,  prediction,  forecast,  or  fact  as  to  the  environmental  risk  for  any  specific  property.  Reports  are  proprietary to 
+Envirosite,  and  contain  copyrighted  material  and  trademarks  of  Envirosite.  All  other  trademarks  used  herein  are  the  property  of  their 
+respective owners. All rights of Envirosite as to the Reports are reserved.
+
+Executive Summary2026
+Envirosite  Corporation  has  conducted  a  search  of  all  reasonably  ascertainable  records  in  accordance  with  EPA’ s 
+AAI (40 CFR Part 312) requirements and the ASTM E-1527-21 Environmental Site Assessments standard.
+SUBJECT PROPERTY INFORMATION:
+ADDRESS:
+Commercial Property
+200 S Superior St
+Albion, MI 49224
+COORDINATES:
+Latitude (North):42.244174 - 42°14'39"
+Longitude (West):-84.753846 - -84°45'13.8"
+Universal Transverse Mercator:Zone 
+16N
+UTM X (Meters):685312.95
+UTM Y (Meters):
+4679329.85
+State Plane Coordinates:2113 - Michigan South (US Survey Feet)
+X Coordinate (Feet):
+13018497.406 E
+Y Coordinate (Feet):271440.231 N
+ELEVATION:
+Elevation:947 ft. above sea level
+TOPOGRAPHIC MAP ASSOCIATED WITH SUBJECT PROPERTY:
+Subject Prop
+
+RADON
+============================================================
+Radon1544
+Geological Landscape Records Searched1545
+Disclaimer - Copyright and Trademark Notice
+All information contained in this report are based on data available from various public, government and other sources and are based upon 
+the best data available from those sources. The information available in this report may be available from other sources and is not exclusive 
+or 
+the exclusive property of Envirosite Corporation.
+NO WARRANTY EXPRESSED OR IMPLIED, IS MADE IN CONNECTION WITH THIS REPORT, INCLUDING WITHOUT LIMITATION, MERCHANTABILITY 
+OR  FITNESS  FOR  A  PARTICULAR  PURPOSE.  ALL  RISK  IS  ASSUMED  BY  USER  AND  Envirosite  assumes  no  liability  for  faulty  or  inaccurate 
+information. The Reports may utilize a variety of public and other sources reasonably available to Envirosite. Envirosite cannot, and does not 
+assure,  warrant,  guarantee  or  assume  any  liability  for  the  correctness,  comprehensiveness,  timeliness  or  completeness  of  any  of  such 
+information,  nor  is  the  information  in  any  Report  to  be  construed  as  legal  advice  with  respect  to  environmental  risks  associated  with any 
+property.  Envirosite  shall  not  be  liable  to  anyone  for  any  claims,  causes  of  action,  suits,  damages,  losses,  costs  and  expenses (including, 
+without limitation, attorneys’ fees and costs) arising out of or caused by this report regardless of the acts, errors or omissions, or negligence 
+of 
+Envirosite. Any damages shall be limited to the purchase price of the report.
+Purchaser of the report accepts the report “As Is”. The report is intended only to provide information only and should not be considered as 
+providing  any  legal  advice,  prediction,  forecast,  or  fact  as  to  the  environmental  risk  for  any  specific  property.  Reports  are  proprietary to 
+Envirosite,  and  contain  copyrighted  material  and  trademarks  of  Envirosite.  All  other  trademarks  used  herein  are  the  property  of  their 
+re
+

@@ -1,0 +1,561 @@
+© 2026 Envirosite Inc. | All Rights Reserved | (866) 211-2028 | www.envirositecorp.com
+Wilbraham, MA 01095
+PO Box 743
+Environmental Risk Advisors, LLC
+Order Created for:
+Property Type:        Residential
+Borrower:               PNCU
+Loan Number:         21830-26
+Report Generated:  04/28/2026
+Order Number:       12879-10283-SCN
+Boston, MA
+8 Glover Court
+Glover
+Envirosite Screen
+----------------Page (0) Break----------------
+Page 1 of 11
+Equal/Higher Elevation                                         Lower Elevation 
+Boston, MA
+8 Glover Court
+Site Name :    Glover
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (1) Break----------------
+Page 2 of 11
+FMR                                     02127                                  NONGEN
+KERRY'S AUTO SERVICE      BOSTON | Boston, MA          - MA,ECHO,FRS,RCRA 
+- Regulated                                                        & S AUTO REPAIR INC |        SOUTH BOSTON |                MA,MANIFEST EPA,HWG 
+- Reported Event    C13         2729744              KERY'S AUTO SERVICE | E   480 DORCHESTER AVE        RELEASE - MA,SHWS -       NNW / 0.111
+Boston-South Boston, MA
+- Reported Event    12           48030244            H. Cohen & Co.                    511 Dorchester Ave.           BROWNFIELDS - MA          WNW / 0.108
+STATION                              BOSTON, MA 02127
+- Regulated            11           42985291            ANDREW SQUARE               496 SOUTHAMPTON ST       EPA UST,UST - MA             WSW / 0.108
+MA
+UST - MA,ASBESTOS - 
+WASHINGTON BANK            BOSTON, MA 02127            HIST RELEASE - MA,HIST 
+- Regulated                                                        SHELL OIL CO | MT              BOSTON | SOUTH                MA,EPA UST,UST - MA,
+- Reported Event    10           2722594              NO LOCATION AID |             501 SOUTHAMPTON ST       RELEASE - MA,SHWS -       SW / 0.108
+BOSTON, MA 02127
+ELLERY STREET PARCEL A   BOSTON | SOUTH                MA
+- Reported Event    B9           39263562            PRIVATE PROPERTY |           1B - 1A ELLERY STREET       RELEASE - MA,SHWS -       W / 0.108
+MA
+- Reported Event    8             2745727              N/R                                      17 PREBLE ST BOSTON,      HIST SPILLS 2 - MA            S / 0.103
+INC
+CHARLES LEE DISOSAL        02127                                  SQG
+STREET PARCEL B |             BOSTON | Boston, MA          EPA,HWG - MA,RCRA 
+- Regulated                                                        ELLERY STREET | ELLERY    BOSTON | SOUTH                MA,FRS,ECHO,MANIFEST 
+- Reported Event    B7           2739222              OTD D2 TITLE LLC 1            1 ELLERY STREET                RELEASE - MA,SHWS -       W / 0.099
+BOSTON, MA
+- Reported Event    6             2739869              N/R                                      425 DORCHESTER ST.         HIST SPILLS 2 - MA            SSW / 0.079
+FACILITY,ECHO,FRS
+INACTIVE PCS,PCS 
+HIST UST - MA,ICIS,
+MA,HIST RELEASE - MA,
+2 - MA,EPA UST,UST - 
+SPILLS - MA,HIST SPILLS 
+| NO LOCATION AID             BOSTON | Boston, MA          MA,ASBESTOS - MA,
+- Regulated                                                        HYDRAULIC SHEAR AREA    BOSTON | SOUTH                MA,AUL - MA,RELEASE - 
+- Reported Event    A5           2721297              H COHEN & COMPANY |       511 DORCHESTER AVE        MANIFEST EPA,SHWS -      NW / 0.067
+PARKING LOT
+DOTAVE VENTURES LLC 
+DORCHESTER AVE |                                                        LQG,BRS
+PARKING LOT | 511-537      AVE BOSTON, MA 02127     MANIFEST EPA,RCRA 
+- Regulated            A4           2752895              OTD D2 TITLE LLC               511-537 DORCHESTER        FRS,ECHO,HWG - MA,        NW / 0.058
+SITES
+SEMS_8R_ARCHIVED 
+AVENUE DEVELOPMENT      02127                                  CERCLIS-HIST,FRS,
+COHEN & CO INC | DOT       AVENUE BOSTON, MA          SEMS_SMELTER,
+- Reported Event    3             2673562              HARCON CORP AKA H         523 DORCHESTER               ASBESTOS - MA,                NW / 0.045
+READING, MA 01867           FACILITY,ECHO,FRS
+- Reported Event    2             15602649            BARTON ESTATES                BARTON ESTATES                ICIS,INACTIVE PCS,PCS      ENE / 0.040
+DIESEL SERVICE
+SYSTEMS | RELIABLE           02127
+AVENUE | DECO LEASING    BOSTON | Boston, MA          RCRA SQG
+541 DORCHESTER               BOSTON | SOUTH                MANIFEST EPA,ECHO,
+- Regulated            1             2734450              DRB FACILITY SERVICES      541 DORCHESTER AVE        HWG - MA,FRS,                  W / 0.032
+Distance
+Category             Map ID   Envirosite ID     Site Name                       Address                           Database                       Direction / 
+Mapped records found within immediate area of 8 Glover Court Boston, MA (within search set)
+Envirosite Screen Findings
+Regulated                                          38
+Reported Event                                  53
+Summary of Findings
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (2) Break----------------
+Page 3 of 11
+BOSTON, MA 02127
+BOSTON | SOUTH 
+DORCHESTER AVE               LEAD - MA
+DORCHESTER AVE | 622      MA,HIST RELEASE - MA,
+- Reported Event    26           2730200              NO LOCATION AID               620 TO 622                         RELEASE - MA,SHWS -       SSW / 0.157
+EPA
+DOCKET,AFS,MANIFEST 
+MA,RCRA NONGEN,
+DAMRELL ST CONDO S        Boston, MA                          - MA,SHWS - MA,HWG - 
+PARTNERS LLC |                  BOSTON CITY OF |               RELEASE - MA,RELEASE 
+- Regulated                                                        DAMRELL EWER                  DAMRIELL ST BOSTON |      ENF - MA,ECHO,HIST 
+- Reported Event    25           2677729              POLY6 TECHNOLOGIES |      28 DAMRELL ST | 28            FRS,ASBESTOS - MA,         NNE / 0.152
+SOMERVILLE, MA 02145      NONGEN
+- Regulated            24           2756071              TOMS MANAGEMENT INC    480 DORCHESTER AVE        FRS,ECHO,RCRA                NNW / 0.143
+AFS,DOCKET
+HIST SPILLS 2 - MA,HIST 
+- MA,HIST RELEASE - MA,
+NONGEN,DRYCLEANERS 
+RCRA LQG,RCRA 
+BRS,EJ TOXIC RELEASE,
+ENF - MA,EJ HAZ WASTE,
+MA,MANIFEST EPA,AFS,
+CROWN LINEN SERVICES     BOSTON CITY OF, MA          LUST - MA,ECHO,HWG - 
+- Regulated                                                        WASHINGTON VILLAGE |     | SOUTH BOSTON |              MA,FRS,ASBESTOS - MA,
+- Reported Event    23           2716182              CROWN SERVICES |             39 DAMRELL ST BOSTON    RELEASE - MA,SHWS -       NNE / 0.143
+MA
+- Reported Event    22           2745569              N/R                                      15 VANTON ST. BOSTON,    HIST SPILLS 2 - MA            ESE / 0.136
+Frans Auto Rpr                    02127
+FRAN'S AUTO REPAIR |        BOSTON | Boston, MA          MA,FRS
+- Regulated            21           2734434              FRANS AUTO REPAIR |         43 PREBLE ST SOUTH          MANIFEST EPA,HWG -        SE / 0.135
+BOSTON, MA
+- Reported Event    20           2746475              N/R                                      321 DORCHESTER ST.         HIST SPILLS 2 - MA            E / 0.130
+BOSTON, MA 02127
+SOUTHAMPTON ST 
+DORCHESTER AVE 
+DORCHESTER AVE               BROADWAY | 
+MBTA BRIDGE OVER            DORCHESTER AVE               NONGEN
+- Regulated            19           44402270            MBTA ANDREW STATION |   DORCHESTER AVE |             ECHO,FRS,BRS,RCRA        NNW / 0.128
+02127
+BOSTON | BOSTON, MA       MA,HIST RELEASE - MA
+- Reported Event    18           2730092              NO LOCATION AID               35 PREBLE ST SOUTH          RELEASE - MA,SHWS -       SSE / 0.123
+02127
+SOUTH BOSTON, MA 
+SYSTEMS                             DAMREL ST BOSTON |         UST - MA
+- Regulated            17           2720629              CROWN SERVICE                 32 ALGER ST / 39                EPA UST,UST - MA,HIST     NNE / 0.113
+LOCATION AID
+LTD AHH_M209 | NO 
+CONSTRUCTION SUPPLY      02127                                  SHWS - MA
+YARD | HD SUPPLY              BOSTON | Boston, MA          NONGEN,RELEASE - MA,
+- Regulated                                                        CONSTRUCTION CABOT       BOSTON | SOUTH                HWG - MA,ECHO,RCRA 
+- Reported Event    C16         2752080              MASS ELECTRIC                   474 DORCHESTER AVE        FRS,MANIFEST EPA,           NNW / 0.112
+RELEASE - MA,PRP-CORP
+RCRA SQG,AFS,HIST 
+- MA,HIST SPILLS 2 - MA,
+TREATING                            02127                                  ECHO,HWG - MA,SPILLS 
+| LINDBERG HEAT                BOSTON | Boston, MA          MANIFEST EPA,FRS,
+- Regulated                                                        LINDBERG CORPORATION   BOSTON | SOUTH                RELEASE - MA,
+- Reported Event    C15         2719370              PRIVATE PROPERTY |           475 DORCHESTER AVE        SHWS - MA,LUST - MA,      NNW / 0.111
+LLC | OTD D2 Title LLC        02127
+PARCEL A | Ellery Smiley     BOSTON | Boston, MA          - MA,SHWS - MA
+- Reported Event    14           2739170              13 ELLERY STREET              13 ELLERY STREET              MANIFEST EPA,RELEASE    WSW / 0.111
+Distance
+Category             Map ID   Envirosite ID     Site Name                       Address                           Database                       Direction / 
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (3) Break----------------
+Page 4 of 11
+02127                                  RELEASE - MA
+BOSTON | BOSTON, MA       SHWS - MA,HIST 
+- Reported Event    39           2729778              MARR SCAFFOLDING CO     8 DAMRELL ST SOUTH         AUL - MA,RELEASE - MA,   N / 0.173
+- MA
+RELEASE - MA,HIST UST 
+NONGEN,EPA LUST,HIST 
+02127                                  - MA,FRS,ECHO,RCRA 
+SOUTH BOSTON, MA           UST,MANIFEST EPA,UST 
+AUTO TRANSMISSION INC   BOSTON | BOSTON-             ASBESTOS - MA,EPA 
+- Regulated                                                        LOCATION AID | ADAMS      BOSTON | SOUTH                MA,SHWS - MA,
+- Reported Event    F38         2715507              DORCHESTER ST | NO         241 OLD COLONY AVE         LUST - MA,RELEASE -        ENE / 0.173
+MANIFEST EPA
+MANIFEST - NY,
+HWG - MA,HIST 
+HIST RELEASE - MA,
+FMR                                                                                 RCRA VSQG,AUL - MA,
+WINTHROP PRINTING CO     MA                                       PCS FACILITY,ECHO,FRS,
+PRINTING COMPANY |          SOUTH BOSTON | Boston,   - MA,ICIS,INACTIVE PCS,
+- Regulated                                                        FORMER WINTHROP            AVENUE BOSTON |              MA,RELEASE - MA,SHWS 
+- Reported Event    F37         2682930              WASHINGTON VILLAGE |     235 OLD COLONY                ASBESTOS - MA,LUST -      ENE / 0.172
+PAINT COMPANY                  Boston, MA 02127
+ENGLAND | BOSTON            SOUTH BOSTON | S.            HWG - MA
+- Regulated            G36         2734387              PAINT SYSTEMS OF NEW     229 OLD COLONY AVE         FRS,MANIFEST EPA,           ENE / 0.172
+ORRAL REALTY TRUST         BOSTON, MA
+COLONY BOULEVARD |        | BOSTON | SOUTH              MA
+COMPANY | 235 OLD           AVENUE BOSTON CITY OF   RELEASE - MA,SHWS - 
+- Reported Event    F35         2676821              WINTHROP PRINTING          235 OLD COLONY                FRS,HIST AFS,AFS,ECHO,  ENE / 0.172
+DUMPING
+PAINT/ASBESTOS 
+STREET | LEAD
+- Regulated                                                        COMPANY | 2 ALGER           | BOSTON CITY OF, MA        - MA,RCRA NONGEN,AFS
+- Reported Event    E34         2677934              PEARL BOOKBINDING          2 ALGER STREET BOSTON   ECHO,FRS,HIST SPILLS 2   NW / 0.171
+CORPORATION
+TRANSPORTATION               BOSTON, MA 02127            RCRA VSQG
+- Regulated            D33         2735599              LUCKY RIVER                       38-48 DAMRELL ST              ECHO,FRS,HWG - MA,        ENE / 0.170
+02127
+SOUTH BOSTON, MA 
+AVENUE BOSTON |              MA
+- Reported Event    32           50139526            267 OLD COLONY AVENUE  267 OLD COLONY                RELEASE - MA,SHWS -       E / 0.164
+SITES
+SEMS_8R_ARCHIVED 
+STREET                                                                           NFRAP,
+SUBSTATION | ELLERY                                                     RELEASE - MA,CERCLIS
+EVERSOURCE                                                                  MA,RELEASE - MA,HIST 
+STATION 106 |                     BOSTON | BOSTON, MA       2 - MA,AUL - MA,SPILLS - 
+- Reported Event    31           2673801              BOSTON EDISON                 45 ELLERY ST SOUTH          SHWS - MA,HIST SPILLS     SW / 0.164
+BOSTON, MA 02127
+ELLERY STREET                   BOSTON | SOUTH                MA
+- Reported Event    30           42293895            POLE VZ 615-7 NEAR 56     56 ELLERY STREET              RELEASE - MA,SHWS -       SW / 0.162
+BOSTON, MA 02116            MA,SHWS - MA
+- Reported Event    29           2760017              4 ALGER STREET                 4 ALGER STREET                 LUST - MA,RELEASE -        NW / 0.161
+02127                                  MA,FRS
+BOSTON AUTO TECH           BOSTON | BOSTON, MA       RCRA NONGEN,HWG - 
+- Regulated            28           2759913              SB AUTO TECH | SOUTH      6 DEVINE WAY SOUTH         MANIFEST EPA,ECHO,        S / 0.158
+02127                                  MANIFEST EPA
+Eversource Energy              BOSTON | Boston, MA          RELEASE - MA,
+CO INC | NSTAR dba            AVE BOSTON | SOUTH         HIST UST - MA,HIST 
+- Regulated                                                        KARAS & KARAS GLASS       NEAR | 455 DORCHESTER   MA,EPA UST,UST - MA,
+- Reported Event    27           2721589              SPILL TO ROADWAY |           455 DORCHESTER AVE        RELEASE - MA,SHWS -       NNW / 0.158
+Distance
+Category             Map ID   Envirosite ID     Site Name                       Address                           Database                       Direction / 
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (4) Break----------------
+Page 5 of 11
+HEADQUATERS
+| IRONWORKERS LOCAL 7   AVENUE BOSTON, MA          SPILLS 2 - MA
+- Reported Event    56           2745859              IRON WORKERS LOCAL 7    195 OLD COLONY                ASBESTOS - MA,HIST         NE / 0.203
+BOSTON, MA 02127            MA
+- Reported Event    55           59079865            212 OLD COLONY AVE         212 OLD COLONY AVE         RELEASE - MA,SHWS -       NE / 0.197
+MCCORMACK BUILDING A   BOSTON, MA 02127            FACILITY
+- Reported Event    54           62135515            MARY ELLEN                        1 VETERANS WAY                ECHO,FRS,ICIS,PCS           SSE / 0.197
+- Reported Event    J53          16291126            MARR COMPANIES               UNKNOWN BOSTON, MA     ICIS,PCS ENF,DOCKET       NNW / 0.194
+ASBESTOS - MA
+MA,HWG - MA,
+VSQG,HIST RELEASE - 
+MARR EQUIPMENT CORP                                                 MANIFEST - RI,RCRA 
+DORCHESTER AVE |             SOUTH BOSTON, MA           EPA,ECHO,FRS,
+- Regulated                                                        CORNER WITH                     BOSTON | BOSTON-             MA,LUST - MA,MANIFEST 
+- Reported Event    J52          2707287              NO LOCATION AID | AT        1 D ST SOUTH BOSTON |     RELEASE - MA,SHWS -       N / 0.194
+BOSTON, MA 02127
+BOSTON | SOUTH 
+- Reported Event    J51          2729803              MBTA RED LINE                   429 DORCHESTER AVE        SHWS - MA,SPILLS - MA     NNW / 0.193
+BOSTON, MA 02127            RELEASE - MA
+SOUTH BOSTON |                SHWS - MA,HIST 
+- Reported Event    J50          2729777              MARR SCAFFOLDING CO     436 DORCHESTER AVE        AUL - MA,RELEASE - MA,   NNW / 0.189
+02127
+SOUTH BOSTON, MA 
+MAHAN JAMES JOSEPH         BOSTON | BOSTON-             HIST RELEASE - MA
+- Regulated                                                        SERVICE STATION |             BOSTON | SOUTH                MA,FRS,RCRA NONGEN,
+- Reported Event    49           2704496              FORMER AUTOMOTIVE        275 OLD COLONY AVE         RELEASE - MA,SHWS -       E / 0.187
+MA
+BOSTON ST                         BOSTON, MA                       RELEASE - MA,SHWS - 
+- Reported Event    H48         2729725              INTERSECTION WITH           52-56 ELLERY ST                 HIST RELEASE - MA,          SSW / 0.185
+P. SILLERY                           02127                                  MA
+OLD COLONY AVE. | RYAN   AVENUE BOSTON, MA          RELEASE - MA,SHWS - 
+- Reported Event    G47         43765069            NO LOCATION AID | 232      232 OLD COLONY                ASBESTOS - MA,                ENE / 0.184
+AVENUE BOSTON, MA
+- Reported Event    I46          2746025              N/R                                      218 OLD COLONY                HIST SPILLS 2 - MA            ENE / 0.182
+BOSTON, MA 02127            VSQG
+- Regulated            I45          2860289              SCOOTERS GO GREEN         220 OLD COLONY AVE         HWG - MA,ECHO,RCRA      ENE / 0.181
+02127
+SOUTH BOSTON, MA           MANIFEST EPA
+- Regulated            D44         2734446              SCOOTERS GO GREEN         220 OLD COLONY AVE         HWG - MA,FRS,ECHO,        ENE / 0.180
+MA
+- Reported Event    H43         47983056            BECO                                   106 ELLERY ST BOSTON,     HIST SPILLS 2 - MA            SSW / 0.177
+MA 02127
+AVENUE SOUTH BOSTON,   MA
+- Reported Event    D42         2730014              NO LOCATION AID               232 OLD COLONY                RELEASE - MA,SHWS -       ENE / 0.176
+BOSTON, MA 02127            - MA,HIST RELEASE - MA
+WASHINGTON VILLAGE       BOSTON | SOUTH                MA,ASBESTOS - MA,AUL 
+- Reported Event    F41         2729484              COMMERCIAL PROPERTY |   240 OLD COLONY AVE         RELEASE - MA,SHWS -       ENE / 0.175
+VSQG,HIST UST - MA
+UST - MA,FRS,RCRA 
+PCS FACILITY,EPA UST,
+MA,ICIS,INACTIVE PCS,
+CORP,HIST RELEASE - 
+EJ TOXIC RELEASE,PRP-
+ECHO,ENF - MA,DOCKET,
+MA 02127                            - MA,MANIFEST - RI,
+WAREHOUSE BUILDING       BOSTON | South Boston,     MA,MANIFEST EPA,HWG 
+- Regulated                                                        ALGER SMILEY LLC |            STREET BOSTON | SOUTH   RELEASE - MA,SHWS - 
+- Reported Event    E40         2702585              2 ALGER STREET | 4            4 ALGER ST | 2 ALGER         ASBESTOS - MA,                NW / 0.174
+Distance
+Category             Map ID   Envirosite ID     Site Name                       Address                           Database                       Direction / 
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (5) Break----------------
+Page 6 of 11
+ASBESTOS - MA
+BERRY                                                                             MA,SHWS - MA,
+PROPERTY | HELENA            BOSTON, MA 02127            LAST - MA,RELEASE - 
+- Reported Event    70           2715010              BERRY RESIDENTIAL            9 FREDERICK ST                  HIST RELEASE - MA,          NE / 0.231
+AVE                                     AVE BOSTON, MA 02127     MA
+- Reported Event    L69          53921976            421-423 DORCHESTER        421-423 DORCHESTER        RELEASE - MA,SHWS -       NNW / 0.230
+BOSTON, MA 02118
+- Regulated            N68         2734438              SOUTHIE AUTO SERVICE     175 OLD COLONY AVE         HWG - MA,FRS                   NNE / 0.225
+COMMUNITY                                                                    ASBESTOS - MA
+OLD COLONY HOUSING       02127                                  RELEASE - MA,
+DEVELOPMENT BLDG.J |      SOUTH BOSTON, MA           MA,LEAD - MA,HIST 
+- Reported Event    67           2730341              OLD COLONY                       7 BURKE ST BOSTON |         RELEASE - MA,SHWS -       ENE / 0.225
+BOSTON, MA 02127
+- Regulated            66           2721803              MARR SCAFFOLDING CO     25 D ST BOSTON | SOUTH   UST - MA,HIST UST - MA    N / 0.224
+INACTIVE PCS,ENOI
+MA,STORMWATER,
+MANIFEST - NY,LAST - 
+RCRA VSQG,HIST 
+MA,BRS,RCRA SQG,AFS,
+DOCKET,EPA UST,UST - 
+SPILLS 2 - MA,AIRS - MA,
+FACILITY,ENF - MA,HIST 
+RELEASE - MA,ERNS,PCS 
+BOSTON | Boston, MA          MANIFEST - RI,HIST 
+BOSTON | SOUTH                HWG - MA,LUST - MA,
+FACILITY                              FRONTAGE RD SUITE 207    MANIFEST - NJ,ECHO,
+AMTRAK MAINTENANCE      WIDETT CIR | 2                    MANIFEST EPA,FRS,ICIS,
+- Regulated                                                        SOUTHAMPTON YARD |       FRONTAGE RD 110              MA,ASBESTOS - MA,
+- Reported Event    M65         2701889              AMTRAK | AMTRAK              2 FRONTAGE RD | 2             RELEASE - MA,SHWS -       W / 0.224
+MA 02127
+Eversource Energy              SOUTH BOSTON | Boston,   NONGEN,MANIFEST EPA
+- Regulated            64           54139407            FIL TECH | NSTAR dba         190 OLD COLONY AVE         HWG - MA,FRS,RCRA         NE / 0.221
+ASBESTOS - MA,FRS
+CORP                                                                               RELEASE - MA,
+SHERMAN FEINBERG                                                       FTTS INSP,HIST 
+LOCATION AID |                   BOSTON | S BOSTON, MA    MA,HIST SPILLS 2 - MA,
+FARNSWORTH FIBER | NO   BOSTON | SOUTH                MA,LUST - MA,SPILLS - 
+- Reported Event    N63         2674763              S FEINBERG                         185 OLD COLONY AVE         SHWS - MA,RELEASE -       NNE / 0.221
+DRUM RUPTURE
+MAINTENANCE FACILITY | 
+NORTHEAST CORRIDOR 
+FACILITY | AMTRACK 
+STREET MAINTENANCE        BOSTON, MA 02118            SPILLS 2 - MA
+- Reported Event    M62         47983341            AMTRAK SOUTHAMPTON     2 FRONTAGE ROAD             ECHO,PCS ENF,HIST          W / 0.219
+BOSTON, MA 02127
+CORPORATION                    BOSTON | SOUTH                UST - MA
+- Regulated            L61          2752471              PATRIOT GAS & SALES        418 DORCHESTER AVE        EPA UST,UST - MA,HIST     N / 0.219
+BOSTON, MA 02127            UST - MA
+- Regulated            K60         2721802              MARR SCAFFOLDING CO     12 D ST BOSTON | SOUTH   EPA UST,UST - MA,HIST     N / 0.214
+LDING | MARR EQUIPMENT  | BOSTON, MA 02127          RCRA VSQG,HWG - MA
+MARR EQUIPMENT/SCAFFO BOSTON-SOUTH BOSTON    ECHO,MANIFEST - RI,
+- Regulated            K59         2703653              MARR SCAFFOLDING CO |   10 D ST SOUTH BOSTON |   MANIFEST EPA,FRS,           N / 0.210
+RELEASE - MA
+BOSTON, MA 02127            SHWS - MA,HIST 
+- Reported Event    K58         2729776              MARR SCAFFOLDING CO     27 D ST SOUTH BOSTON |   AUL - MA,RELEASE - MA,   N / 0.209
+| LONG ISLAND CAMPUS      MA
+BOSTON PUBLIC HEALTH     BOSTON HBR BOSTON, 
+- Regulated            57           15045701            LONG ISLAND HOSPITAL -   LONG ISLAND CAMPUS |      FRS,EPA UST,UST - MA      SSW / 0.203
+Distance
+Category             Map ID   Envirosite ID     Site Name                       Address                           Database                       Direction / 
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (6) Break----------------
+Page 7 of 11
+BOSTON, MA 02127                                               RELEASE - MA
+32852970               OLD COLONY PHASE TWO                                      OLD COLONY AVE AND DORCHESTER ST SOUTH   SHWS - MA,AUL - MA,
+15780703               OFF DORCHESTER AVE                                           NR #455 ALGER ST BOSTON, MA                           HIST SPILLS 2 - MA
+BOSTON, MA 02127                                               MA
+15460891               NO LOCATION AID                                                  WEST 2ND ST DORCHESTER AVE SOUTH               RELEASE - MA,SHWS - 
+15671006               N/R                                                                         FRONTAGE RD. BOSTON, MA                                  HIST SPILLS 2 - MA
+15711085               N/R                                                                         S.HAMPTON /ELLERY ST. BOSTON, MA                   HIST SPILLS 2 - MA
+02127
+35162917               MBTA BROADWAY STATION                                   DORCHESTER AVE BROADWAY BOSTON, MA         HWG - MA
+MA 02127
+40193802               MBTA ANDREW STATION                                        DORCHESTER AVE SOUTHAMPTON ST BOSTON,    HWG - MA
+SPILLS 2 - MA
+BOSTON HARBOR                                                   BOSTON, MA                                                          MA,ASBESTOS - MA,HIST 
+15449370               LONG ISLAND HOSPITAL | POWER PLANT |             DORCHESTER ST | LONG ISLAND HOSPITAL           RELEASE - MA,SHWS - 
+15754571               GILETTE                                                                  W 2ND ST/ DORCHESTER AVE BOSTON, MA           HIST SPILLS 2 - MA
+15751694               FOUNDRY ST NEAR GILLETTE                                 DORCHESTER AVE BOSTON, MA                            HIST SPILLS 2 - MA
+15751597               FORT POINT CHANNEL                                            NEAR DORCHESTER ST BOSTON, MA                     HIST SPILLS 2 - MA
+MA
+15440831               FMR NIKE SITE GARAGE LONG ISLAND                   DORCHESTER ST BOSTON, MA                               SHWS - MA,RELEASE - 
+MA
+15440827               FMR NIKE SITE BARRACKS LONG ISLAND               DORCHESTER ST BOSTON, MA                               SHWS - MA,RELEASE - 
+BOSTON, MA 02127                                               MA
+57023702               ELLERY STREET-PRIVATE WAY                                PRIVATE WAY ADJACENT TO 1 ELLERY STREET      SHWS - MA,RELEASE - 
+MA
+52614760               ELLERY STREET-PRIVATE WAY                                ELLERY STREET BOSTON, MA 02127                      RELEASE - MA,SHWS - 
+02127                                                                     MA
+57023686               DAMRELL STREET AT DORCHESTER AVE                DORCHESTER AVENUE SOUTH BOSTON, MA          SHWS - MA,RELEASE - 
+15732645               BOSTON TRANSPORTATION YARD                          FRONTAGE ROAD BOSTON, MA                              HIST SPILLS 2 - MA
+MA
+15725633               ASBESTOS REMOVAL                                              SUMMER ST BY NEW BOSTON STATIO BOSTON,    HIST SPILLS 2 - MA
+15725435               ASBESTOS DUMPING                                              DORCHESTER AVE/WOODWARD ST BOSTON, MA  HIST SPILLS 2 - MA
+16338507               ANDREW SQUARE STATION                                    SOUTHAMPTON ST SOUTH BOSTON, MA 02127     HIST UST - MA
+15721466               AMTRAK                                                                 SOUTHAMPTON ST YARD BOSTON, MA                  HIST SPILLS 2 - MA
+Envirosite ID       Site Name                                                       Address                                                           Database
+The search is based on the site address provided and the streets in the search radius.
+Non-mapped Sites
+02127                                  MA,SHWS - MA
+AVE SOUTH BOSTON, MA    LUST - MA,RELEASE - 
+- Reported Event    75           2715448              APARTMENTS                      409-411 DORCHESTER        HIST RELEASE - MA,          N / 0.248
+AFS
+ECHO,RCRA NONGEN,
+INC                                      02127                                  MANIFEST - NY,FRS,
+- Regulated            74           2702520              JOHN P POW COMPANY        49 D ST BOSTON, MA          ENF - MA,HWG - MA,         N / 0.247
+MA 02127                            FACILITY,ECHO,FRS
+20 BURKE ST BOSTON,        INACTIVE PCS,PCS 
+- Reported Event    73           2864377              OLD COLONY PHASE 3A      20 REV. BURKE STREET |     LEAD - MA,ICIS,                 E / 0.243
+NSTAR Station 139
+SUBSTATION # 139 | 
+STATION 139 |                     BOSTON, MA 02127            MA,ECHO,RCRA NONGEN
+- Regulated            72           43758511            NSTAR ELECTRIC                 415 DORCHESTER AVE        ASBESTOS - MA,HWG -      NNW / 0.240
+EV STATION 02
+STATION 01 | PORTSIDE      Boston, MA 02128
+- Regulated            71           2862123              PORTSIDE | PORTSIDE EV    40 East Pier Drive                ALT FUELING                     NE / 0.237
+Distance
+Category             Map ID   Envirosite ID     Site Name                       Address                           Database                       Direction / 
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (7) Break----------------
+Page 8 of 11
+List of underground storage tanks that is no longer in current agency list.
+HIST UST - MA
+Facilities listed in the EPA UST Finder database
+EPA UST
+Sites within the Releases Database that have a UST listed as its source.
+LUST - MA
+Release sites with an aboveground storage tank as it's source
+LAST - MA
+Releases listed in the EPA UST Finder database
+EPA LUST
+Resource Conservation and Recovery Act listing of licensed very small quantity generators.
+RCRA VSQG
+Resource Conservation and Recovery Act listing of licensed small quantity generators
+RCRA SQG
+Resource Conservation and Recovery Act listing of licensed non-generators
+RCRA NONGEN
+Resource Conservation and Recovery Act listing of licensed large quantity generators
+RCRA LQG
+Hazardous waste facilities from Environmental Justice.
+EJ HAZ WASTE
+determined that assessment has been completed and no further remedial action is planned under the Superfund program at this time.
+The Archived Site Inventory displays site and location information at sites archived from SEMS. An archived site is one at which EPA has 
+SEMS_8R_ARCHIVED SITES
+Protection Agency decommissioned the CERCLIS data in 2014. The last update was November 12, 2013.
+The CERCLIS program database contains information on the assessment and remediation of federal hazardous waste sites. The Environmental 
+CERCLIS-HIST
+decommissioned the CERCLIS data in 2014. The last update was November 12, 2013.
+The CERCLIS sites with No Further Remedial Action Planned from the CERCLIS program database. The Environmental Protection Agency 
+CERCLIS NFRAP
+Report Terminology
+BOSTON, MA 02127                                               MA
+32914351               VON HILLERN ST                                                    DORCHESTER AVE AND VON HILLERN SOUTH       RELEASE - MA,SHWS - 
+15812566               STORM DRAIN                                                        FRONTAGE RD BOSTON, MA                                   HIST SPILLS 2 - MA
+15812229               STATION 106                                                          ELLERY ST BOSTON, MA                                         HIST SPILLS 2 - MA
+OVERPASS BRIDGE
+HUGH FARREN PEDESTRIAN OVERPASS | UNDER                                                                                 MA
+15444183               SARGENT ALEXANDER F PACUSKA CIRCLE |           OLD COLONY AVE SOUTH BOSTON, MA 02127      RELEASE - MA,SHWS - 
+MA
+15466341               RTE 93S NR SO BAY CTNR                                      BOSTON ST BOSTON, MA                                       SHWS - MA,RELEASE - 
+15787855               PROPANE CYLINDER                                               FRONTAGE RD BOSTON, MA                                   HIST SPILLS 2 - MA
+MA
+41599222               POLE VZ 615-7 NEAR 56 ELLERY STREET               ELLERY STREET SOUTH BOSTON, MA 02127          SHWS - MA,RELEASE - 
+52530849               OTD D2 TITLE LLC - 13 ELLERY STREET                  ELLERY ST NORTH SOUTH BOSTON, MA 02127      HWG - MA
+MA 02127
+52365034               OTD D2 TITLE LLC - 13 ELLERY STREET                  ELLERY ST NORTH | ELLERY ST SOUTH BOSTON,   ECHO,FRS,RCRA VSQG
+Envirosite ID       Site Name                                                       Address                                                           Database
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (8) Break----------------
+Page 9 of 11
+List of Air Facility Systems Quarterly Extract that are no longer in current agency list.
+HIST AFS
+Tracking of inspections related to FIFRA/TSCA
+FTTS INSP
+Facility Registry Systems
+FRS
+Construction General Permits (CGP) and Multi-Sector General Permits (MSGP).
+The Electronic Notice of Intent (eNOI) database contains construction sites and industrial facilities that submit permit requests to EPA for 
+ENOI
+Toxic release inventory from Environmental Justice.
+EJ TOXIC RELEASE
+environmental regulations related to CAA, CWA, RCRA, & SDWA.
+ECHO is EPA Enforcement and Compliance History Online website to search for facilities in your community to assess their compliance with 
+ECHO
+All Civil Enforcement Actions from the DOCKET and ICIS databases
+DOCKET
+Reporting of hazardous waste generation and management from large quantity generators
+BRS
+Alternative Fueling Stations by fuel type.
+ALT FUELING
+Air Facility Systems Quarterly Extract
+AFS
+Historical list of spill incidents prior to October 1993
+SPILLS - MA
+Contains information on all releases of oil and hazardous materials that have been reported to DEP
+RELEASE - MA
+List of Spills Databases that are no longer in current agency list.
+HIST SPILLS 2 - MA
+agency list.
+List that contains information on all releases of oil and hazardous materials that have been reported to DEP and no longer found in current 
+HIST RELEASE - MA
+List of Superfund and Remediation sites from the MassDEP environmental information database
+SHWS - MA
+List of Massachusetts Hazardous Waste Generators
+HWG - MA
+Potential Brownfields Inventory Listing
+BROWNFIELDS - MA
+Activity and Use Limitations establish limits and conditions on the future use of contaminated property
+AUL - MA
+Emergency Response Notification System records of reported spills
+ERNS
+Underground Storage tanks and owners
+UST - MA
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (9) Break----------------
+Page 10 of 11
+Data for waste shipments since 1989
+MANIFEST - RI
+Hazardous Waste Manifest tracking waste from generator to TSD
+MANIFEST - NY
+Hazardous Waste Manifest
+MANIFEST - NJ
+Sites investigated by the Massachusetts Childhood Lead Poisoning Prevention program
+LEAD - MA
+Hazardous Waste Manifest tracking records 1980-2006
+HIST MANIFEST - NY
+A listing of enforcement action cases tracked by DEP
+ENF - MA
+Drycleaner facilities that use perchloroethylene
+DRYCLEANERS - MA
+List of Asbestos removal projects.
+ASBESTOS - MA
+A listing of Air Resources Management permits.
+AIRS - MA
+Permitted storm water sites
+STORMWATER
+information on the site location as well as contaminants of concern.
+This report includes sites that have smelting-related, or potentially smelting-related, indicators in the SEMS database. The report includes 
+SEMS_SMELTER
+Companies in the SEMS-CERCLIS Potentially Responsible Parties List
+PRP-CORP
+Permitted facilities to discharge wastewater  (Federal equivalent to NPDES)
+PCS FACILITY
+Permitted facilities to discharge wastewater  (Federal equivalent to NPDES)
+PCS ENF
+EPA Hazardous Waste Electronic Manifest System (e-Manifest)
+MANIFEST EPA
+Inactive Permitted facilities to discharge wastewater
+INACTIVE PCS
+compliance information (also contains what used to be known as FFTS)
+Comprised of all Federal Administrative and Judicial enforcement information [intended to replace PCS] by tracking enforcement and 
+ICIS
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (10) Break----------------
+Page 11 of 11
+respective owners. All rights of Envirosite as to the Reports are reserved.
+Envirosite,  and  contain  copyrighted  material  and  trademarks  of  Envirosite.  All  other  trademarks  used  herein  are  the  property  of  their 
+providing  any  legal  advice,  prediction,  forecast,  or  fact  as  to  the  environmental  risk  for  any  specific  property.  Reports  are  proprietary to 
+Purchaser of the report accepts the report “As Is”. The report is intended only to provide information only and should not be considered as 
+of Envirosite. Any damages shall be limited to the purchase price of the report.
+without limitation, attorneys’ fees and costs) arising out of or caused by this report regardless of the acts, errors or omissions, or negligence 
+property.  Envirosite  shall  not  be  liable  to  anyone  for  any  claims,  causes  of  action,  suits,  damages,  losses,  costs  and  expenses (including, 
+information,  nor  is  the  information  in  any  Report  to  be  construed  as  legal  advice  with  respect  to  environmental  risks  associated  with any 
+assure,  warrant,  guarantee  or  assume  any  liability  for  the  correctness,  comprehensiveness,  timeliness  or  completeness  of  any  of  such 
+information. The Reports may utilize a variety of public and other sources reasonably available to Envirosite. Envirosite cannot, and does not 
+OR  FITNESS  FOR  A  PARTICULAR  PURPOSE.  ALL  RISK  IS  ASSUMED  BY  USER  AND  Envirosite  assumes  no  liability  for  faulty  or  inaccurate 
+NO WARRANTY EXPRESSED OR IMPLIED, IS MADE IN CONNECTION WITH THIS REPORT, INCLUDING WITHOUT LIMITATION, MERCHANTABILITY 
+or the exclusive property of Envirosite Corporation.
+the best data available from those sources. The information available in this report may be available from other sources and is not exclusive 
+All information contained in this report are based on data available from various public, government and other sources and are based upon 
+Disclaimer - Copyright and Trademark Notice
+Date: April 28, 2026
+Envirosite Screen
+----------------Page (11) Break----------------
