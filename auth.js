@@ -1578,6 +1578,7 @@ module.exports = {
   requestPasswordResetPersistent,
   resetPasswordWithTokenPersistent,
   createResetToken,
-  verifyResetToken
+  verifyResetToken,
+  pgPool: pool
 };
 
