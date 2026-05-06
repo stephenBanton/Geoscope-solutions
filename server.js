@@ -11578,7 +11578,10 @@ async function generatePDFReportInternal(data) {
   // Read template
   const templatePath = path.join(__dirname, 'reportTemplate.html');
   let htmlContent = fs.readFileSync(templatePath, 'utf8');
-  logStage(`template read: ${htmlContent.includes('cover-right') ? 'NEW' : 'OLD'} design detected (${htmlContent.length} bytes)`);
+  const templateVersion = htmlContent.includes('cover-right') ? 'NEW (dark cover)' : 'OLD (white cover)';
+  const templateSize = htmlContent.length;
+  console.log(`[TEMPLATE] Path: ${templatePath} | Version: ${templateVersion} | Size: ${templateSize} bytes`);
+  logStage(`template loaded: ${templateVersion}`);
 
   // Replace all placeholders
   const replacements = {
@@ -12393,22 +12396,6 @@ app.post('/generate-report', async (req, res) => {
       });
     }
   }
-});
-
-app.get('/test-template', (req, res) => {
-  const templatePath = path.join(__dirname, 'reportTemplate.html');
-  const html = fs.readFileSync(templatePath, 'utf8');
-  const hasDueDil = html.includes('Due Diligence');
-  const hasCoverRight = html.includes('cover-right');
-  const hasEnvRecords = html.includes('ENVIRONMENT RECORDS');
-  res.json({
-    templatePath,
-    fileSize: html.length,
-    hasDueDiligence: hasDueDil,
-    hasCoverRight: hasCoverRight,
-    hasEnvironmentRecords: hasEnvRecords,
-    firstMatch: html.substring(0, 500)
-  });
 });
 
 // GET /download/:orderId - Download report for clients
