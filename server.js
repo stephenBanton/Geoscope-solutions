@@ -10686,8 +10686,11 @@ async function processOrderInBackground(orderId, orderData) {
  */
 function formatOrderNumber(id) {
   const n = Number(id);
-  if (Number.isFinite(n) && n >= 0) return String(Math.floor(n)).padStart(6, '0');
-  return String(id || '');
+  if (!Number.isFinite(n) || n <= 0) return String(id || '');
+  // If it looks like a BIGSERIAL timestamp ID (>= 10 digits), just show last 6 digits
+  const digits = String(Math.floor(n));
+  if (digits.length > 6) return digits.slice(-6);
+  return digits.padStart(6, '0');
 }
 
 async function launchReportBrowser() {
