@@ -576,5 +576,39 @@
     </div>
     <div class="footer-copy">&copy; 2026 GeoScope Solutions. All rights reserved.</div>
   </footer>
+
+  <script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+    // Block common DevTools keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      // F12
+      if (e.key === 'F12') { e.preventDefault(); return false; }
+      // Ctrl+Shift+I / Cmd+Option+I
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return false; }
+      // Ctrl+Shift+J (console)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j')) { e.preventDefault(); return false; }
+      // Ctrl+Shift+C (inspector)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) { e.preventDefault(); return false; }
+      // Ctrl+U (view source)
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) { e.preventDefault(); return false; }
+    });
+
+    // Detect DevTools open via window size discrepancy and blur/redirect
+    (function() {
+      var threshold = 160;
+      function check() {
+        if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+          document.body.style.filter = 'blur(8px)';
+          document.body.style.pointerEvents = 'none';
+        } else {
+          document.body.style.filter = '';
+          document.body.style.pointerEvents = '';
+        }
+      }
+      window.addEventListener('resize', check);
+    })();
+  </script>
 </body>
 </html>
