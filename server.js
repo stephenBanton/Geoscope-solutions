@@ -12398,6 +12398,24 @@ async function generatePDFReportInternal(data) {
     // Use DOMContentLoaded to avoid long hangs waiting for every remote asset.
     await page.setContent(htmlContent, { waitUntil: 'domcontentloaded', timeout: 45000 });
 
+    // Two-pass TOC page numbers: switch to print layout, evaluate positions, inject numbers
+    try {
+      await page.emulateMediaType('print');
+      await page.evaluate(() => {
+        const cover = document.querySelector('.cover');
+        const pageH = (cover && cover.getBoundingClientRect().height > 100)
+          ? cover.getBoundingClientRect().height : 1122.5;
+        document.querySelectorAll('[data-toc]').forEach(el => {
+          const sectionId = el.getAttribute('data-toc');
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const top = section.getBoundingClientRect().top + window.scrollY;
+            el.textContent = String(Math.max(1, Math.floor(top / pageH) + 1));
+          }
+        });
+      });
+    } catch (_tocErr) { /* page numbers stay as default */ }
+
     await page.pdf({
       path: reportPath,
       format: 'A4',
