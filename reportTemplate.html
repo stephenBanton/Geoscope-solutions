@@ -975,87 +975,6 @@
 
 
   <!-- ════════════════════════════════════════════════
-       SECTION 1 — SUBJECT PROPERTY INFORMATION
-  ════════════════════════════════════════════════ -->
-  <div class="section page-break" id="section-2">
-    <div class="section-header">2. Property &amp; Buffer Overview</div>
-
-    <div>{{property_buffer_overview_html}}</div>
-
-    <div class="section-subheader">Three Buffer Zone Breakdown</div>
-    <div>{{buffer_zone_analysis_html}}</div>
-
-    <div class="section-subheader">Address &amp; Identification</div>
-    <table class="prop-table">
-      <tr>
-        <td class="label">Address</td>
-        <td><strong>{{address}}</strong></td>
-        <td class="label">Order Number</td>
-        <td>{{order_id}}</td>
-      </tr>
-      <tr>
-        <td class="label">Project Name</td>
-        <td>{{project_name}}</td>
-        <td class="label">Report Date</td>
-        <td>{{report_date}}</td>
-      </tr>
-      <tr>
-        <td class="label">Company</td>
-        <td>{{company_name}}</td>
-        <td class="label">Client</td>
-        <td>{{client_name}}</td>
-      </tr>
-      <tr>
-        <td class="label">Search Radius</td>
-        <td>{{radius}}</td>
-        <td class="label">Coverage Focus</td>
-        <td>{{countries_covered}}</td>
-      </tr>
-    </table>
-
-    <div class="section-subheader">Coordinates &amp; Location</div>
-    <table class="prop-table">
-      <tr>
-        <td class="label">Latitude (North)</td>
-        <td>{{latitude}} &nbsp;—&nbsp; {{latitude_dms}}</td>
-        <td class="label">Longitude (West)</td>
-        <td>{{longitude}} &nbsp;—&nbsp; {{longitude_dms}}</td>
-      </tr>
-      <tr>
-        <td class="label">UTM Zone</td>
-        <td>{{utm_zone}}</td>
-        <td class="label">UTM Easting (X)</td>
-        <td>{{utm_easting}} m</td>
-      </tr>
-      <tr>
-        <td class="label">UTM Northing (Y)</td>
-        <td>{{utm_northing}} m</td>
-        <td class="label">State Plane System</td>
-        <td>{{state_plane_name}}</td>
-      </tr>
-      <tr>
-        <td class="label">State Plane X (E)</td>
-        <td>{{state_plane_x}} ft</td>
-        <td class="label">State Plane Y (N)</td>
-        <td>{{state_plane_y}} ft</td>
-      </tr>
-      <tr>
-        <td class="label">Elevation</td>
-        <td>{{elevation}}</td>
-        <td class="label">Zoning</td>
-        <td>{{zoning}}</td>
-      </tr>
-      <tr>
-        <td class="label">Elevation Source</td>
-        <td>{{elevation_source}}</td>
-        <td class="label">Topographic Sheet</td>
-        <td>{{topographic_reference}}</td>
-      </tr>
-    </table>
-  </div>
-
-
-  <!-- ════════════════════════════════════════════════
        SECTION 2 — EXECUTIVE SUMMARY
   ════════════════════════════════════════════════ -->
   <div class="section page-break" id="section-1">
@@ -1198,7 +1117,88 @@
   </div>
 
 
+  SECTION 1 — SUBJECT PROPERTY INFORMATION
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break" id="section-2">
+    <div class="section-header">2. Property &amp; Buffer Overview</div>
+
+    <div>{{property_buffer_overview_html}}</div>
+
+    <div class="section-subheader">Three Buffer Zone Breakdown</div>
+    <div>{{buffer_zone_analysis_html}}</div>
+
+    <div class="section-subheader">Address &amp; Identification</div>
+    <table class="prop-table">
+      <tr>
+        <td class="label">Address</td>
+        <td><strong>{{address}}</strong></td>
+        <td class="label">Order Number</td>
+        <td>{{order_id}}</td>
+      </tr>
+      <tr>
+        <td class="label">Project Name</td>
+        <td>{{project_name}}</td>
+        <td class="label">Report Date</td>
+        <td>{{report_date}}</td>
+      </tr>
+      <tr>
+        <td class="label">Company</td>
+        <td>{{company_name}}</td>
+        <td class="label">Client</td>
+        <td>{{client_name}}</td>
+      </tr>
+      <tr>
+        <td class="label">Search Radius</td>
+        <td>{{radius}}</td>
+        <td class="label">Coverage Focus</td>
+        <td>{{countries_covered}}</td>
+      </tr>
+    </table>
+
+    <div class="section-subheader">Coordinates &amp; Location</div>
+    <table class="prop-table">
+      <tr>
+        <td class="label">Latitude (North)</td>
+        <td>{{latitude}} &nbsp;—&nbsp; {{latitude_dms}}</td>
+        <td class="label">Longitude (West)</td>
+        <td>{{longitude}} &nbsp;—&nbsp; {{longitude_dms}}</td>
+      </tr>
+      <tr>
+        <td class="label">UTM Zone</td>
+        <td>{{utm_zone}}</td>
+        <td class="label">UTM Easting (X)</td>
+        <td>{{utm_easting}} m</td>
+      </tr>
+      <tr>
+        <td class="label">UTM Northing (Y)</td>
+        <td>{{utm_northing}} m</td>
+        <td class="label">State Plane System</td>
+        <td>{{state_plane_name}}</td>
+      </tr>
+      <tr>
+        <td class="label">State Plane X (E)</td>
+        <td>{{state_plane_x}} ft</td>
+        <td class="label">State Plane Y (N)</td>
+        <td>{{state_plane_y}} ft</td>
+      </tr>
+      <tr>
+        <td class="label">Elevation</td>
+        <td>{{elevation}}</td>
+        <td class="label">Zoning</td>
+        <td>{{zoning}}</td>
+      </tr>
+      <tr>
+        <td class="label">Elevation Source</td>
+        <td>{{elevation_source}}</td>
+        <td class="label">Topographic Sheet</td>
+        <td>{{topographic_reference}}</td>
+      </tr>
+    </table>
+  </div>
+
+
   <!-- ════════════════════════════════════════════════
+       <!-- ════════════════════════════════════════════════
        SECTION 3 — EXECUTIVE SUMMARY BY DISTANCE
   ════════════════════════════════════════════════ -->
   <div class="section page-break" id="section-3">
@@ -1524,7 +1524,21 @@
 
 
   <!-- ════════════════════════════════════════════════
-      SECTION 12 — GEOLOGICAL LANDSCAPE
+      SECTION 13 — WETLAND & FLOOD ANALYSIS
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break" id="section-11">
+    <div class="section-header">11. Pathway Analysis (Flood, Wetland, Transport)</div>
+
+    <div class="section-subheader">Flood &amp; Hydrology Overview</div>
+    <p>{{flood_data}}</p>
+    <div>{{flood_wetland_detail_html}}</div>
+
+    <div class="section-subheader">Wetland Analysis</div>
+    <div>{{wetland_analysis}}</div>
+  </div>
+
+
+  SECTION 12 — GEOLOGICAL LANDSCAPE
   ════════════════════════════════════════════════ -->
   <div class="section page-break" id="section-12">
 
@@ -1586,37 +1600,12 @@
 
 
   <!-- ════════════════════════════════════════════════
-      SECTION 13 — WETLAND & FLOOD ANALYSIS
-  ════════════════════════════════════════════════ -->
-  <div class="section page-break" id="section-11">
-    <div class="section-header">11. Pathway Analysis (Flood, Wetland, Transport)</div>
-
-    <div class="section-subheader">Flood &amp; Hydrology Overview</div>
-    <p>{{flood_data}}</p>
-    <div>{{flood_wetland_detail_html}}</div>
-
-    <div class="section-subheader">Wetland Analysis</div>
-    <div>{{wetland_analysis}}</div>
-  </div>
-
-
-  <!-- ════════════════════════════════════════════════
+      <!-- ════════════════════════════════════════════════
       SECTION 14 — SENSITIVE RECEPTORS
   ════════════════════════════════════════════════ -->
   <div class="section page-break" id="section-receptors">
     <div class="section-header">Sensitive Receptors</div>
     <div>{{sensitive_receptors}}</div>
-  </div>
-
-
-  <!-- ════════════════════════════════════════════════
-      SECTION 15 — HISTORICAL LAND USE
-  ════════════════════════════════════════════════ -->
-  <div class="section page-break" id="section-16">
-    <div class="section-header">16. Historical Land Use Analysis</div>
-    <p>{{historical_analysis}}</p>
-    <div>{{historical_land_use_analysis}}</div>
-    <div>{{historical_aerial}}</div>
   </div>
 
 
@@ -1641,7 +1630,18 @@
 {{topo_maps}}
 
 
+  SECTION 15 — HISTORICAL LAND USE
+  ════════════════════════════════════════════════ -->
+  <div class="section page-break" id="section-16">
+    <div class="section-header">16. Historical Land Use Analysis</div>
+    <p>{{historical_analysis}}</p>
+    <div>{{historical_land_use_analysis}}</div>
+    <div>{{historical_aerial}}</div>
+  </div>
+
+
   <!-- ════════════════════════════════════════════════
+      <!-- ════════════════════════════════════════════════
        SECTION 17 — ADDRESS DOSSIER PAGES
   ════════════════════════════════════════════════ -->
   <div class="section page-break" id="section-dossier">
@@ -1788,3 +1788,4 @@
 
 </body>
 </html>
+
