@@ -12395,6 +12395,22 @@ app.post('/generate-report', async (req, res) => {
   }
 });
 
+app.get('/test-template', (req, res) => {
+  const templatePath = path.join(__dirname, 'reportTemplate.html');
+  const html = fs.readFileSync(templatePath, 'utf8');
+  const hasDueDil = html.includes('Due Diligence');
+  const hasCoverRight = html.includes('cover-right');
+  const hasEnvRecords = html.includes('ENVIRONMENT RECORDS');
+  res.json({
+    templatePath,
+    fileSize: html.length,
+    hasDueDiligence: hasDueDil,
+    hasCoverRight: hasCoverRight,
+    hasEnvironmentRecords: hasEnvRecords,
+    firstMatch: html.substring(0, 500)
+  });
+});
+
 // GET /download/:orderId - Download report for clients
 app.get('/download/:orderId', async (req, res) => {
   try {
@@ -12403,21 +12419,6 @@ app.get('/download/:orderId', async (req, res) => {
 
     const numericOrderId = Number.parseInt(orderId, 10);
     let order = Number.isFinite(numericOrderId) ? await auth.getOrderByIdPersistent(numericOrderId) : null;
-    // If not found by raw id, try looking up by order_number (short sequential number)
-    if (!order && Number.isFinite(numericOrderId)) {
-      try {
-        const { rows } = await auth.pgPool.query(
-          `SELECT o.*, c.name AS client_name_u, c.email AS client_email_u,
-                  a.name AS analyst_name_u, a.email AS analyst_email_u
-             FROM orders o
-             LEFT JOIN users c ON c.id = o.client_id
-             LEFT JOIN users a ON a.id = COALESCE(o.analyst_id, o.assigned_to)
-            WHERE o.order_number = $1 LIMIT 1`,
-          [numericOrderId]
-        );
-        if (rows[0]) order = { ...rows[0], client_name: rows[0].client_name || rows[0].client_name_u || 'Unknown' };
-      } catch (_e) {}
-    }
     if (!order) {
       order = (orders || []).find((o) => String(o?.id) === String(orderId) || String(o?.order_id) === String(orderId));
     }
