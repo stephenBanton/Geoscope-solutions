@@ -4824,7 +4824,8 @@ async function buildElevationProfilesHtml(subjectLat, subjectLng, subjectElevFt)
     </div>
   </div>`;
 }
-(envData, sites) {
+
+function buildGeologicalSectionHtml(envData, sites) {
   const rainfallValues = (envData?.rainfall || [])
     .map((r) => parseFloat(String(r.precipitation || '').replace(' mm', '')))
     .filter((v) => Number.isFinite(v));
@@ -11751,7 +11752,7 @@ async function generatePDFReportInternal(data) {
     data_density_statement: dataDensityStatement,
     topo_maps: topoMapsHtml,
     histo_summary_table: includeHistoricalTopo ? (generateTopoMapsHtml._lastSummaryHtml || '') : '',
-    topo_section_class: includeHistoricalTopo && generateTopoMapsHtml._hasPublishableHistoricalTopo ? '' : 'section-hidden'
+    topo_section_class: includeHistoricalTopo && generateTopoMapsHtml._hasPublishableHistoricalTopo ? '' : 'section-hidden',
     // Cover page stat boxes
     mapped_records_count: envData.environmentalSites.filter(s => s.lat && s.lng).length,
     addresses_reviewed_count: groupedAddresses.length || envData.environmentalSites.length,
@@ -12288,7 +12289,7 @@ app.post('/generate-report', async (req, res) => {
       data_density_statement: dataDensityStatement,
       topo_maps: topoMapsHtml,
       histo_summary_table: generateTopoMapsHtml._lastSummaryHtml || '',
-      topo_section_class: generateTopoMapsHtml._hasPublishableHistoricalTopo ? '' : 'section-hidden'
+      topo_section_class: generateTopoMapsHtml._hasPublishableHistoricalTopo ? '' : 'section-hidden',
       // Cover page stat boxes
       mapped_records_count: envData.environmentalSites.filter(s => s.lat && s.lng).length,
       addresses_reviewed_count: areaFeatures.length || envData.environmentalSites.length,
