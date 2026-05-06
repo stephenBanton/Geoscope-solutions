@@ -1,4 +1,4 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -293,7 +293,7 @@ async function ensureReportArchiveStore() {
         );
       `);
       await pgPool.query('CREATE INDEX IF NOT EXISTS generated_reports_created_at_idx ON generated_reports (created_at DESC);');
-      // Ensure short order_number column exists (idempotent — safe to run every cold start)
+      // Ensure short order_number column exists (idempotent â€” safe to run every cold start)
       await pgPool.query(`CREATE SEQUENCE IF NOT EXISTS orders_order_number_seq START WITH 1001`);
       await pgPool.query(`ALTER TABLE orders ADD COLUMN IF NOT EXISTS order_number INT DEFAULT nextval('orders_order_number_seq')`);
       await pgPool.query(`UPDATE orders SET order_number = nextval('orders_order_number_seq') WHERE order_number IS NULL`);
@@ -658,7 +658,7 @@ function getRiskLevel(site) {
 
   let score = 0;
 
-  // High-risk databases — federal enforcement and contamination records
+  // High-risk databases â€” federal enforcement and contamination records
   if (/npl|superfund|cerclis|sems|lust|rcra.*(lqg|sqg|tsdf)|hazardous.*waste|toxic.*release|pfas|fema.*flood.*claim/.test(db)) score += 4;
   // Medium-high risk
   else if (/rcra|ust|fuel|petroleum|industrial.*waste|landfill|tri\b|npdes.*major|air.*emission|icis.*air|enforcement|brownfield/.test(db)) score += 3;
@@ -706,7 +706,7 @@ function inferEnvironmentalIntelligence(databaseName, locationType = '') {
       activity: 'Confirmed or suspected leaking underground storage tank',
       contaminants: 'BTEX compounds, petroleum hydrocarbons, fuel oxygenates (MTBE)',
       pathway: 'Subsurface soil and groundwater plume migration',
-      regulatory: 'LUST corrective action program — state/federal regulatory tracking'
+      regulatory: 'LUST corrective action program â€” state/federal regulatory tracking'
     },
     {
       re: /ust|petroleum|fuel/,
@@ -717,10 +717,10 @@ function inferEnvironmentalIntelligence(databaseName, locationType = '') {
     },
     {
       re: /fema.*claim|nfip.*claim|flood.*claim/,
-      activity: 'Property with paid FEMA flood insurance claim — confirmed flood loss',
+      activity: 'Property with paid FEMA flood insurance claim â€” confirmed flood loss',
       contaminants: 'Floodwater may mobilize soil contaminants and introduce pathogens',
       pathway: 'Surface flooding, stormwater inundation, sediment transport',
-      regulatory: 'FEMA NFIP flood loss history — key due-diligence flood indicator'
+      regulatory: 'FEMA NFIP flood loss history â€” key due-diligence flood indicator'
     },
     {
       re: /fema.*polic|nfip.*polic|flood.*polic/,
@@ -752,7 +752,7 @@ function inferEnvironmentalIntelligence(databaseName, locationType = '') {
     },
     {
       re: /sdwa|drinking.*water|public.*water.*system/,
-      activity: 'Public water supply system — source water protection consideration',
+      activity: 'Public water supply system â€” source water protection consideration',
       contaminants: 'MCL exceedances, treatment byproducts, microbiological hazards',
       pathway: 'Treated drinking water distribution; source water vulnerability',
       regulatory: 'Safe Drinking Water Act compliance and sanitary survey records'
@@ -760,7 +760,7 @@ function inferEnvironmentalIntelligence(databaseName, locationType = '') {
     {
       re: /brownfield/,
       activity: 'Former industrial or commercial property undergoing assessment/cleanup',
-      contaminants: 'Site-specific industrial legacy contamination — varies by prior use',
+      contaminants: 'Site-specific industrial legacy contamination â€” varies by prior use',
       pathway: 'Soil, groundwater, and vapor intrusion pathways common',
       regulatory: 'EPA Brownfields program assessment and cleanup grants'
     },
@@ -797,7 +797,7 @@ function inferEnvironmentalIntelligence(databaseName, locationType = '') {
       activity: 'EPA-registered facility in the Facility Registry Service',
       contaminants: 'Contaminants depend on specific regulated programs at this facility',
       pathway: 'Requires program-specific records for pathway determination',
-      regulatory: 'EPA FRS — master cross-reference for all EPA regulatory programs'
+      regulatory: 'EPA FRS â€” master cross-reference for all EPA regulatory programs'
     }
   ];
 
@@ -1438,88 +1438,88 @@ function buildFindingsByCategoryHtml(envData = {}, addressData = []) {
   return cards || '<p>No grouped category findings available.</p>';
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // CONTAMINANT / CHEMICAL INTELLIGENCE ENGINE
 // Returns specific chemicals, waste codes, and classification for a database.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function extractChemicalsFromDatabase(databaseName) {
   const db = String(databaseName || '').toLowerCase();
 
   if (/npl|superfund|cerclis|sems/.test(db)) {
     return {
       chemicals: ['Volatile Organic Compounds (VOCs)', 'Semi-volatile Organic Compounds (SVOCs)', 'Heavy metals (lead, arsenic, mercury)', 'Polychlorinated biphenyls (PCBs)', 'Petroleum hydrocarbons'],
-      wasteCodes: ['D001–D043 (RCRA listed)', 'F-listed waste codes', 'U-listed chemical waste'],
-      hazardClass: 'Priority contaminant — Superfund-grade mixed legacy chemical inventory'
+      wasteCodes: ['D001â€“D043 (RCRA listed)', 'F-listed waste codes', 'U-listed chemical waste'],
+      hazardClass: 'Priority contaminant â€” Superfund-grade mixed legacy chemical inventory'
     };
   }
   if (/rcra|lqg|sqg|vsqg|tsdf/.test(db)) {
     return {
       chemicals: ['Halogenated solvents (TCE, PCE)', 'Ignitable waste streams', 'Corrosive and reactive compounds', 'Heavy metals (chromium, cadmium, lead)', 'Listed RCRA solvents'],
-      wasteCodes: ['F001 (spent halogenated solvents)', 'F002–F005', 'D001 (ignitable)', 'D002 (corrosive)', 'D003 (reactive)', 'D018 (benzene)'],
-      hazardClass: 'Hazardous waste generation/management — RCRA regulated'
+      wasteCodes: ['F001 (spent halogenated solvents)', 'F002â€“F005', 'D001 (ignitable)', 'D002 (corrosive)', 'D003 (reactive)', 'D018 (benzene)'],
+      hazardClass: 'Hazardous waste generation/management â€” RCRA regulated'
     };
   }
   if (/ust|lust|petroleum|fuel|gasoline/.test(db)) {
     return {
       chemicals: ['Benzene', 'Toluene', 'Ethylbenzene', 'Xylene (BTEX group)', 'Methyl tert-butyl ether (MTBE)', 'Total petroleum hydrocarbons (TPH)', 'Naphthalene'],
-      wasteCodes: ['Petroleum product release — not RCRA listed', 'UST corrective action regulated'],
-      hazardClass: 'Petroleum hydrocarbon release — subsurface migration concern'
+      wasteCodes: ['Petroleum product release â€” not RCRA listed', 'UST corrective action regulated'],
+      hazardClass: 'Petroleum hydrocarbon release â€” subsurface migration concern'
     };
   }
   if (/pfas/.test(db)) {
     return {
       chemicals: ['Perfluorooctanoic acid (PFOA)', 'Perfluorooctane sulfonic acid (PFOS)', 'GenX compounds', 'PFBA, PFHxA, PFHxS'],
-      wasteCodes: ['Emerging contaminant — no standard RCRA code assigned', 'EPA draft MCL applicability in progress'],
-      hazardClass: 'PFAS — persistent, bioaccumulative, emerging regulatory concern'
+      wasteCodes: ['Emerging contaminant â€” no standard RCRA code assigned', 'EPA draft MCL applicability in progress'],
+      hazardClass: 'PFAS â€” persistent, bioaccumulative, emerging regulatory concern'
     };
   }
   if (/tri|toxic release|toxic inventory/.test(db)) {
     return {
       chemicals: ['Industrial solvents and degreasers', 'Formaldehyde', 'Acetone', 'Ammonia', 'Methanol', 'Glycol ethers', 'Lead compounds'],
       wasteCodes: ['TRI Section 313 chemical list', 'Air/water/land release quantities reported annually'],
-      hazardClass: 'Chronic air and water release pathway — receptor exposure concern'
+      hazardClass: 'Chronic air and water release pathway â€” receptor exposure concern'
     };
   }
   if (/npdes|icis|echo|discharge/.test(db)) {
     return {
       chemicals: ['Industrial wastewater parameters', 'Suspended solids', 'BOD/COD indicators', 'Metals in effluent', 'Nitrogen/phosphorus (if permit-regulated)'],
       wasteCodes: ['NPDES permit compliance parameters', 'CWA Section 402 regulated'],
-      hazardClass: 'Surface water pathway — effluent compliance and receiving water risk'
+      hazardClass: 'Surface water pathway â€” effluent compliance and receiving water risk'
     };
   }
   if (/radon|geolog|mine|coal|asbestos/.test(db)) {
     return {
       chemicals: ['Radon-222', 'Thoron (Radon-220)', 'Naturally occurring radioactive materials (NORM)', 'Silica (asbestiform minerals)', 'Coal combustion byproducts'],
       wasteCodes: ['Non-RCRA geogenic hazards', 'State-regulated mine waste'],
-      hazardClass: 'Geogenic/radiation hazard — soil gas and indoor air pathway'
+      hazardClass: 'Geogenic/radiation hazard â€” soil gas and indoor air pathway'
     };
   }
   if (/brownfield|brownfields/.test(db)) {
     return {
       chemicals: ['Mixed legacy contamination (site-specific)', 'Industrial solvents, metals, petroleum', 'Site-specific contaminant profile from historical use'],
       wasteCodes: ['EPA Brownfields assessment-tracked substances', 'State voluntary cleanup program records'],
-      hazardClass: 'Brownfield — redevelopment-constrained site with legacy contamination potential'
+      hazardClass: 'Brownfield â€” redevelopment-constrained site with legacy contamination potential'
     };
   }
   if (/school|education|sensitive|receptor/.test(db)) {
     return {
       chemicals: ['Exposure sensitivity elevated for any nearby contaminant', 'Lead paint / asbestos (pre-1980 buildings)', 'Air particulate exposure (PM2.5, O3)'],
       wasteCodes: ['AHERA (asbestos school rules) applicable', 'EPA Lead TSCA rule consideration'],
-      hazardClass: 'Sensitive receptor — heightened health-protective due diligence standard'
+      hazardClass: 'Sensitive receptor â€” heightened health-protective due diligence standard'
     };
   }
 
   return {
     chemicals: ['Contaminant profile not explicitly specified in source record', 'Requires site-specific regulatory file review for confirmation'],
-    wasteCodes: ['Unknown — source record should be consulted'],
-    hazardClass: 'General environmental database listing — further research required'
+    wasteCodes: ['Unknown â€” source record should be consulted'],
+    hazardClass: 'General environmental database listing â€” further research required'
   };
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // HISTORICAL TIMELINE ENGINE
 // Generates a plausible, data-driven site history based on regulatory indicators.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function generateSiteTimeline(site) {
   const db = String(site.database || '').toLowerCase();
   const name = String(site.name || '').toLowerCase();
@@ -1531,21 +1531,21 @@ function generateSiteTimeline(site) {
   if (/npl|superfund/.test(db)) {
     events.push({ year: 'Pre-1980', event: 'Industrial or manufacturing operations likely active at or near this location based on Superfund listing history.' });
     events.push({ year: '1980s', event: 'Site potentially identified in early hazardous waste inventories following CERCLA enactment (1980).' });
-    events.push({ year: '1990s–2000s', event: 'Federal Superfund screening, pre-SEMS listing, and potential investigation initiation.' });
+    events.push({ year: '1990sâ€“2000s', event: 'Federal Superfund screening, pre-SEMS listing, and potential investigation initiation.' });
   } else if (/ust|lust|petroleum|fuel/.test(db)) {
-    events.push({ year: 'Est. 1960–1990', event: 'Underground storage tank (UST) installation likely during peak petroleum storage infrastructure era.' });
-    events.push({ year: '1988+', event: 'EPA UST regulations (40 CFR 280) enacted — compliance and upgrade obligations created for registered tanks.' });
-    events.push({ year: '1990s–2000s', event: 'Tank integrity testing, release confirmation, or corrective action program activity probable for active listings.' });
+    events.push({ year: 'Est. 1960â€“1990', event: 'Underground storage tank (UST) installation likely during peak petroleum storage infrastructure era.' });
+    events.push({ year: '1988+', event: 'EPA UST regulations (40 CFR 280) enacted â€” compliance and upgrade obligations created for registered tanks.' });
+    events.push({ year: '1990sâ€“2000s', event: 'Tank integrity testing, release confirmation, or corrective action program activity probable for active listings.' });
   } else if (/rcra/.test(db)) {
-    events.push({ year: '1976+', event: 'RCRA enacted — facility came under federal hazardous waste regulatory framework following 1976 Resource Conservation and Recovery Act.' });
+    events.push({ year: '1976+', event: 'RCRA enacted â€” facility came under federal hazardous waste regulatory framework following 1976 Resource Conservation and Recovery Act.' });
     events.push({ year: '1990s', event: 'RCRA biennial reporting obligations and generator status classification applied to this facility.' });
   } else if (/brownfield/.test(db)) {
     events.push({ year: 'Pre-1970', event: 'Site likely had active industrial, commercial, or light manufacturing use that preceded modern environmental controls.' });
-    events.push({ year: '1970s–1980s', event: 'Economic transition or industrial shift may have led to site vacancy and potential abandonment of legacy infrastructure.' });
+    events.push({ year: '1970sâ€“1980s', event: 'Economic transition or industrial shift may have led to site vacancy and potential abandonment of legacy infrastructure.' });
     events.push({ year: '2002+', event: 'EPA Brownfields Revitalization Act (2002) created formal assessment and cleanup framework for sites matching this profile.' });
   } else if (/tri|toxic/.test(db)) {
-    events.push({ year: '1986+', event: 'TRI reporting framework established under SARA Title III — facility began annual toxic chemical release reporting.' });
-    events.push({ year: '2000s–present', event: 'Ongoing annual TRI submission obligations; chemical releases documented in EPA\'s public TRI Explorer system.' });
+    events.push({ year: '1986+', event: 'TRI reporting framework established under SARA Title III â€” facility began annual toxic chemical release reporting.' });
+    events.push({ year: '2000sâ€“present', event: 'Ongoing annual TRI submission obligations; chemical releases documented in EPA\'s public TRI Explorer system.' });
   } else {
     events.push({ year: '20th century', event: 'Facility or site operations are consistent with general commercial or industrial land-use patterns of the area.' });
     events.push({ year: 'Post-1970', event: 'Modern environmental regulatory framework applies; record appears in publicly accessible screening databases.' });
@@ -1553,7 +1553,7 @@ function generateSiteTimeline(site) {
 
   // Status-based current period entry
   if (/closed|resolved|nfa|no further action/.test(status)) {
-    events.push({ year: `${now - 5}–${now}`, event: 'Site reached regulatory closure or No Further Action (NFA) determination based on available status records.' });
+    events.push({ year: `${now - 5}â€“${now}`, event: 'Site reached regulatory closure or No Further Action (NFA) determination based on available status records.' });
   } else if (/active|current|open/.test(status)) {
     events.push({ year: `${now}`, event: 'Site is currently listed as active in regulatory databases; ongoing compliance, monitoring, or operational status applies.' });
   } else {
@@ -1563,10 +1563,10 @@ function generateSiteTimeline(site) {
   return events;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // DOCUMENT / EVIDENCE LINK ENGINE
 // Generates EPA and state source record reference URLs based on regulatory IDs.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function generateDocumentLinks(site) {
   const db = String(site.database || '').toLowerCase();
   const id = String(site.regulatory_id || site.epa_id || site.frs_id || site.id || '').trim();
@@ -1606,15 +1606,15 @@ function generateDocumentLinks(site) {
   return links.slice(0, 4); // cap at 4 links per site to keep layout clean
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // UST INFRASTRUCTURE DETAIL ENGINE
 // Extracts or infers UST infrastructure details for petroleum sites.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildUSTInfrastructureDetail(site) {
   const db = String(site.database || '').toLowerCase();
   if (!/ust|lust|petroleum|fuel|gasoline/.test(db)) return null;
 
-  const capacity = site.tank_capacity || site.capacity || 'Not published — typical range 5,000–20,000 gallons';
+  const capacity = site.tank_capacity || site.capacity || 'Not published â€” typical range 5,000â€“20,000 gallons';
   const installed = site.installed_date || site.install_date || 'Not published in source record';
   const substance = site.substance || site.product || (/fuel|gasoline|petroleum/.test(db) ? 'Gasoline / Diesel fuel products' : 'Petroleum product (unspecified)');
   const tankStatus = site.tank_status || (/closed|removed|inactive/i.test(String(site.status || '')) ? 'Removed / Closed' : 'Active or status not confirmed');
@@ -1623,9 +1623,9 @@ function buildUSTInfrastructureDetail(site) {
   return { capacity, installed, substance, tankStatus, tankCount };
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // FINAL RECOMMENDATION CLASSIFIER
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function classifyFinalRecommendation(priorityA, priorityB, highRiskCount, floodCount, wetlandCount) {
   if (priorityA >= 2 || highRiskCount >= 5) return 'Further investigation required (Phase II ESA strongly advised)';
   if (priorityA > 0 || highRiskCount >= 3) return 'Further investigation required';
@@ -1824,33 +1824,33 @@ function buildSoilGeologyInterpretationHtml(envData = {}, sites = [], soilData =
   const hazardousCount = (sites || []).filter((s) => /rcra|hazard|toxic|npl|superfund/i.test(String(s.database || ''))).length;
 
   if (soilData) {
-    // ── Full SSURGO-driven section
+    // â”€â”€ Full SSURGO-driven section
     const migPotential = classifyMigrationPotential(soilData.ksat_r, soilData.hydgrp);
     const interpretedSoilType = (soilData.sand_pct !== null && soilData.clay_pct !== null)
       ? (soilData.sand_pct >= 55 ? 'Sandy loam to loamy sand profile (interpreted)' : soilData.clay_pct >= 35 ? 'Clay loam to silty clay profile (interpreted)' : 'Loam to silt-loam profile (interpreted)')
       : 'Urban/disturbed mapped soil profile (interpreted from SSURGO map unit)';
     const hydGroupDesc = {
-      A: 'Group A — Low runoff, high permeability (sand/gravel). Rapid infiltration.',
-      B: 'Group B — Moderate permeability. Shallow water table potential.',
-      C: 'Group C — Slow permeability, clayey or compact layers. Higher runoff.',
-      D: 'Group D — Very slow permeability; wet, clay-dominant. High surface ponding potential.',
-    }[String(soilData.hydgrp || '').charAt(0).toUpperCase()] || `Group ${soilData.hydgrp} — see USDA SCS classification`;
+      A: 'Group A â€” Low runoff, high permeability (sand/gravel). Rapid infiltration.',
+      B: 'Group B â€” Moderate permeability. Shallow water table potential.',
+      C: 'Group C â€” Slow permeability, clayey or compact layers. Higher runoff.',
+      D: 'Group D â€” Very slow permeability; wet, clay-dominant. High surface ponding potential.',
+    }[String(soilData.hydgrp || '').charAt(0).toUpperCase()] || `Group ${soilData.hydgrp} â€” see USDA SCS classification`;
 
     const textureDesc = (soilData.sand_pct !== null && soilData.clay_pct !== null)
       ? `Sand: ${soilData.sand_pct}%, Silt: ${soilData.silt_pct || 0}%, Clay: ${soilData.clay_pct}%`
       : 'Texture data not returned by SSURGO for this map unit.';
 
     const phDesc = soilData.soil_ph !== null
-      ? `${soilData.soil_ph} (${soilData.soil_ph < 6 ? 'acidic — may accelerate metal mobility' : soilData.soil_ph > 7.5 ? 'alkaline — may reduce solubility of some metals' : 'near-neutral'})`
+      ? `${soilData.soil_ph} (${soilData.soil_ph < 6 ? 'acidic â€” may accelerate metal mobility' : soilData.soil_ph > 7.5 ? 'alkaline â€” may reduce solubility of some metals' : 'near-neutral'})`
       : 'Not available';
 
     const retentionRisk = hazardousCount > 0
       ? (migPotential.label === 'HIGH'
-          ? 'HIGH — Both hazardous site proximity and high soil permeability create elevated retention and migration concern.'
-          : `MODERATE-HIGH — ${hazardousCount} hazardous source indicator(s) identified; soil permeability is ${migPotential.label.toLowerCase()}.`)
+          ? 'HIGH â€” Both hazardous site proximity and high soil permeability create elevated retention and migration concern.'
+          : `MODERATE-HIGH â€” ${hazardousCount} hazardous source indicator(s) identified; soil permeability is ${migPotential.label.toLowerCase()}.`)
       : (migPotential.label === 'HIGH'
-          ? 'MODERATE — No confirmed hazardous sources, but high-permeability soil increases leaching risk.'
-          : 'LOW-MODERATE — No dominant hazardous proximity and moderately constrained soil permeability.');
+          ? 'MODERATE â€” No confirmed hazardous sources, but high-permeability soil increases leaching risk.'
+          : 'LOW-MODERATE â€” No dominant hazardous proximity and moderately constrained soil permeability.');
 
     const elevLine = Number.isFinite(subjectElevFt)
       ? `<li><strong>Subject Elevation (USGS):</strong> ${subjectElevFt.toFixed(1)} ft NAVD88</li>`
@@ -1860,10 +1860,10 @@ function buildSoilGeologyInterpretationHtml(envData = {}, sites = [], soilData =
 
     return `
     <div style="background:#fff; border:1px solid #d7dfeb; border-radius:10px; padding:14px 16px; font-size:10.5px;">
-      <div style="font-weight:700; color:#0c2340; font-size:12px; margin-bottom:10px; border-bottom:2px solid #e8b84b; padding-bottom:6px;">SSURGO Soil Analysis — USDA National Cooperative Soil Survey</div>
+      <div style="font-weight:700; color:#0c2340; font-size:12px; margin-bottom:10px; border-bottom:2px solid #e8b84b; padding-bottom:6px;">SSURGO Soil Analysis â€” USDA National Cooperative Soil Survey</div>
       <div style="margin:0 0 10px; padding:8px 10px; border:1px solid #cbd5e1; border-radius:8px; background:#f8fafc;">
         <div style="font-weight:700; color:#0c2340; margin-bottom:4px;">Soil Decision Summary</div>
-        <div style="font-size:10px; color:#334155;"><strong>Soil Type:</strong> ${escapeHtml(interpretedSoilType)} &nbsp;|&nbsp; <strong>Drainage:</strong> ${escapeHtml(soilData.drainagecl)} &nbsp;|&nbsp; <strong>Permeability:</strong> ${soilData.ksat_r !== null ? `${soilData.ksat_r} μm/sec` : 'Not published'} &nbsp;|&nbsp; <strong>Hydrologic Group:</strong> ${escapeHtml(String(soilData.hydgrp || 'N/A'))}</div>
+        <div style="font-size:10px; color:#334155;"><strong>Soil Type:</strong> ${escapeHtml(interpretedSoilType)} &nbsp;|&nbsp; <strong>Drainage:</strong> ${escapeHtml(soilData.drainagecl)} &nbsp;|&nbsp; <strong>Permeability:</strong> ${soilData.ksat_r !== null ? `${soilData.ksat_r} Î¼m/sec` : 'Not published'} &nbsp;|&nbsp; <strong>Hydrologic Group:</strong> ${escapeHtml(String(soilData.hydgrp || 'N/A'))}</div>
         <div style="font-size:10px; color:#334155; margin-top:4px;"><strong>Interpretation:</strong> ${escapeHtml(soilDecisionInterpretation)}</div>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
@@ -1885,7 +1885,7 @@ function buildSoilGeologyInterpretationHtml(envData = {}, sites = [], soilData =
         </div>
         <div>
           <div style="font-weight:700; color:#025f85; margin-bottom:4px;">Permeability (Ksat)</div>
-          <div style="margin-bottom:10px; color:#334155;">${soilData.ksat_r !== null ? `${soilData.ksat_r} μm/sec` : 'Not published'} — <strong style="color:${migPotential.label === 'HIGH' ? '#b91c1c' : migPotential.label === 'MODERATE' ? '#92400e' : '#065f46'};">${migPotential.label} migration potential</strong></div>
+          <div style="margin-bottom:10px; color:#334155;">${soilData.ksat_r !== null ? `${soilData.ksat_r} Î¼m/sec` : 'Not published'} â€” <strong style="color:${migPotential.label === 'HIGH' ? '#b91c1c' : migPotential.label === 'MODERATE' ? '#92400e' : '#065f46'};">${migPotential.label} migration potential</strong></div>
 
           <div style="font-weight:700; color:#025f85; margin-bottom:4px;">Soil pH</div>
           <div style="margin-bottom:10px; color:#334155;">${escapeHtml(phDesc)}</div>
@@ -1900,7 +1900,7 @@ function buildSoilGeologyInterpretationHtml(envData = {}, sites = [], soilData =
       <div style="border-top:1px solid #e2e8f0; padding-top:10px; margin-top:4px;">
         <ul style="margin:0; padding-left:18px; line-height:1.8;">
           <li><strong>Contamination Retention Risk:</strong> ${escapeHtml(retentionRisk)}</li>
-          <li><strong>Construction Suitability:</strong> ${floodSensitive ? 'Conditional — drainage and geotechnical scope should be expanded before design finalization.' : `Generally feasible at screening level. ${migPotential.label === 'HIGH' ? 'High permeability may require engineered barriers in contaminated settings.' : 'Geotechnical confirmation recommended.'}`}</li>
+          <li><strong>Construction Suitability:</strong> ${floodSensitive ? 'Conditional â€” drainage and geotechnical scope should be expanded before design finalization.' : `Generally feasible at screening level. ${migPotential.label === 'HIGH' ? 'High permeability may require engineered barriers in contaminated settings.' : 'Geotechnical confirmation recommended.'}`}</li>
           <li><strong>Groundwater Vulnerability:</strong> ${migPotential.description}</li>
           ${elevLine}
         </ul>
@@ -1908,30 +1908,30 @@ function buildSoilGeologyInterpretationHtml(envData = {}, sites = [], soilData =
     </div>`;
   }
 
-  // ── Fallback: rich inferred soil profile when SSURGO unavailable
+  // â”€â”€ Fallback: rich inferred soil profile when SSURGO unavailable
   const retentionRisk = hazardousCount > 0
-    ? 'Moderate to High — Presence of proximate hazardous source indicators elevates contamination retention concern. Fine-grained or disturbed urban soils can bind and hold chlorinated solvents, petroleum hydrocarbons, and metals.'
-    : 'Low to Moderate — No dominant hazardous source indicators identified in proximity. Baseline retention concern from natural soil variability and potential legacy land uses.';
+    ? 'Moderate to High â€” Presence of proximate hazardous source indicators elevates contamination retention concern. Fine-grained or disturbed urban soils can bind and hold chlorinated solvents, petroleum hydrocarbons, and metals.'
+    : 'Low to Moderate â€” No dominant hazardous source indicators identified in proximity. Baseline retention concern from natural soil variability and potential legacy land uses.';
   const suitability = floodSensitive
-    ? 'Conditional — Flood zone influence identified. Drainage capacity may be impaired; geotechnical and drainage engineering scope should be expanded before design finalization.'
+    ? 'Conditional â€” Flood zone influence identified. Drainage capacity may be impaired; geotechnical and drainage engineering scope should be expanded before design finalization.'
     : 'Generally feasible at screening level for typical urban/developed context. Geotechnical confirmation recommended for site-specific foundation and grading design.';
 
   const inferredHydGroup = floodSensitive ? 'C or D (likely)' : hazardousCount > 0 ? 'B to C (likely)' : 'B (likely)';
   const inferredDrainage = floodSensitive ? 'Poor to somewhat poor in flood-influenced areas' : 'Moderate (typical urban/disturbed profile)';
-  const inferredKsat = floodSensitive ? 'Low (< 1.0 μm/sec likely)' : '1–10 μm/sec (typical silty-loam/fill)';
+  const inferredKsat = floodSensitive ? 'Low (< 1.0 Î¼m/sec likely)' : '1â€“10 Î¼m/sec (typical silty-loam/fill)';
   const inferredTexture = 'Urban fill / disturbed alluvium (mixed silts, clays, gravels depending on construction history)';
-  const inferredPH = 'Likely near-neutral to mildly alkaline (7.0–8.0) in urban/disturbed context';
-  const inferredAWC = '0.10–0.15 cm/cm (estimated for mixed urban soils)';
+  const inferredPH = 'Likely near-neutral to mildly alkaline (7.0â€“8.0) in urban/disturbed context';
+  const inferredAWC = '0.10â€“0.15 cm/cm (estimated for mixed urban soils)';
   const migLabel = floodSensitive || hazardousCount > 3 ? 'MODERATE-HIGH' : hazardousCount > 0 ? 'MODERATE' : 'LOW-MODERATE';
   const migColor = migLabel === 'MODERATE-HIGH' ? '#b91c1c' : migLabel === 'MODERATE' ? '#92400e' : '#065f46';
   const elevLine = Number.isFinite(subjectElevFt)
     ? `<tr style="background:#f0f9ff;"><td style="padding:5px 8px; font-weight:600; color:#025f85;">Subject Elevation (USGS)</td><td style="padding:5px 8px;">${subjectElevFt.toFixed(1)} ft NAVD88</td></tr>`
-    : `<tr><td style="padding:5px 8px; font-weight:600; color:#025f85;">Subject Elevation</td><td style="padding:5px 8px; color:#92400e;">Not available — USGS query did not return elevation for this run</td></tr>`;
+    : `<tr><td style="padding:5px 8px; font-weight:600; color:#025f85;">Subject Elevation</td><td style="padding:5px 8px; color:#92400e;">Not available â€” USGS query did not return elevation for this run</td></tr>`;
 
   return `
   <div style="background:#fff; border:1px solid #d7dfeb; border-radius:10px; padding:14px 16px; font-size:10.5px;">
     <div style="font-weight:700; color:#0c2340; font-size:12px; margin-bottom:4px; border-bottom:2px solid #e8b84b; padding-bottom:6px;">
-      Soil &amp; Geology Interpretation — Regionally Inferred Profile
+      Soil &amp; Geology Interpretation â€” Regionally Inferred Profile
     </div>
     <div style="font-size:9.5px; color:#92400e; margin-bottom:10px; padding:4px 8px; background:#fef9c3; border-radius:4px;">
       &#9888; SSURGO real-time query was unavailable. Values below are regionally inferred from site context (flood zone, hazard proximity, development type) and should be confirmed with USDA Web Soil Survey or Phase II sampling.
@@ -1960,16 +1960,16 @@ function buildSoilGeologyInterpretationHtml(envData = {}, sites = [], soilData =
           <tr><td style="padding:5px 8px; font-weight:600; color:#025f85;">Migration Potential</td><td style="padding:5px 8px; font-weight:700; color:${migColor};">${migLabel}</td></tr>
           <tr style="background:#f8fafc;"><td style="padding:5px 8px; font-weight:600; color:#025f85; vertical-align:top;">Contamination Retention</td><td style="padding:5px 8px;">${retentionRisk}</td></tr>
           <tr><td style="padding:5px 8px; font-weight:600; color:#025f85; vertical-align:top;">Construction Suitability</td><td style="padding:5px 8px;">${suitability}</td></tr>
-          <tr style="background:#f8fafc;"><td style="padding:5px 8px; font-weight:600; color:#025f85; vertical-align:top;">Groundwater Vulnerability</td><td style="padding:5px 8px;">${hazardousCount > 0 ? `Moderate to elevated — ${hazardousCount} hazardous source indicator(s) identified; groundwater depth confirmation recommended.` : 'Baseline concern; no dominant hazardous source identified in current records.'}</td></tr>
-          <tr><td style="padding:5px 8px; font-weight:600; color:#025f85; vertical-align:top;">Flood Influence</td><td style="padding:5px 8px;">${floodSensitive ? '<span style="color:#b91c1c; font-weight:700;">Yes</span> — flood zone records returned; stormwater infiltration and saturation cycles are relevant to contamination transport.' : 'No flood zone records returned for this run.'}</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:5px 8px; font-weight:600; color:#025f85; vertical-align:top;">Groundwater Vulnerability</td><td style="padding:5px 8px;">${hazardousCount > 0 ? `Moderate to elevated â€” ${hazardousCount} hazardous source indicator(s) identified; groundwater depth confirmation recommended.` : 'Baseline concern; no dominant hazardous source identified in current records.'}</td></tr>
+          <tr><td style="padding:5px 8px; font-weight:600; color:#025f85; vertical-align:top;">Flood Influence</td><td style="padding:5px 8px;">${floodSensitive ? '<span style="color:#b91c1c; font-weight:700;">Yes</span> â€” flood zone records returned; stormwater infiltration and saturation cycles are relevant to contamination transport.' : 'No flood zone records returned for this run.'}</td></tr>
         </table>
       </div>
     </div>
     <div style="margin-top:10px; padding:8px 12px; background:#f1f5f9; border-radius:6px; font-size:9.5px; color:#475569;">
-      <strong>Soil Profile (Typical Urban Depth Sequence — Inferred):</strong>
-      0–18 in: Fill / disturbed topsoil (mixed loam, silt, rubble) &nbsp;|&nbsp;
-      18 in–5 ft: Subsoil fill or native alluvium (silty clay loam, possible debris) &nbsp;|&nbsp;
-      5–15 ft: Native alluvium or saprolite (varies by geology) &nbsp;|&nbsp;
+      <strong>Soil Profile (Typical Urban Depth Sequence â€” Inferred):</strong>
+      0â€“18 in: Fill / disturbed topsoil (mixed loam, silt, rubble) &nbsp;|&nbsp;
+      18 inâ€“5 ft: Subsoil fill or native alluvium (silty clay loam, possible debris) &nbsp;|&nbsp;
+      5â€“15 ft: Native alluvium or saprolite (varies by geology) &nbsp;|&nbsp;
       15 ft+: Bedrock or consolidated formation (regionally variable) &nbsp;|&nbsp;
       Source: USDA Regional Soil Series Analogs + contextual inference. Confirm with USDA Web Soil Survey: websoilsurvey.sc.egov.usda.gov
     </div>
@@ -2038,7 +2038,7 @@ function buildDatasetIntelligenceHtml(envData = {}, groupedAddresses = [], subje
       const jurColor = jurisdiction === 'Federal' ? '#0c2340' : jurisdiction === 'State' ? '#1e4d2b' : '#5b3a00';
       const jurBg = jurisdiction === 'Federal' ? '#e0e7f3' : jurisdiction === 'State' ? '#dcf5e4' : '#fef3c7';
       const affects = entry.count > 0
-        ? `Yes — ${entry.count} linked record(s) identified at this location${Number.isFinite(entry.minDistance) ? `, nearest at ${fmtMi(entry.minDistance)}` : ''}.`
+        ? `Yes â€” ${entry.count} linked record(s) identified at this location${Number.isFinite(entry.minDistance) ? `, nearest at ${fmtMi(entry.minDistance)}` : ''}.`
         : 'No direct mapped effect identified in current results.';
       const chemHtml = chemicals.chemicals.slice(0, 4).map((c) => `<li style="margin:2px 0;">&#10004; ${escapeHtml(c)}</li>`).join('');
       const wasteHtml = chemicals.wasteCodes.slice(0, 3).map((w) => `<li style="margin:2px 0; color:#64748b;">&#9654; ${escapeHtml(w)}</li>`).join('');
@@ -2089,11 +2089,11 @@ function buildDatasetIntelligenceHtml(envData = {}, groupedAddresses = [], subje
   return cards;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// SVG PROXIMITY MAP GENERATOR — EDR-style map with concentric rings, labeled
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// SVG PROXIMITY MAP GENERATOR â€” EDR-style map with concentric rings, labeled
 // site markers colored by elevation, north arrow, scale bar.
 // Used for both "Property Proximity Map" and "Area Map" exhibit pages.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildProximityMapSVGHtml(sites = [], subjectLat, subjectLng, radiusMeters = 1609, subjectElevFt = null, baseMapDataUri = null, opts = {}) {
   const W = 1000, H = 530;
   const cx = W / 2, cy = H / 2;
@@ -2193,10 +2193,10 @@ function buildProximityMapSVGHtml(sites = [], subjectLat, subjectLng, radiusMete
 </svg>`;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// GEOLOGICAL SOIL MAP SVG — mimics EDR soil map with SSURGO boundary lines,
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// GEOLOGICAL SOIL MAP SVG â€” mimics EDR soil map with SSURGO boundary lines,
 // numbered soil units, concentric rings, subject property marker.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildGeologicalSoilMapHtml(subjectLat, subjectLng, radiusMeters = 1609, ssurgoSoil = null, baseMapDataUri = null, reportYear = '2026') {
   const W = 1000, H = 530;
   const cx = W / 2, cy = H / 2;
@@ -2285,7 +2285,7 @@ function buildGeologicalSoilMapHtml(subjectLat, subjectLng, radiusMeters = 1609,
     </div>
     <div class="prox-map-legend" style="padding:6px 10px;">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px 10px;margin-top:3px;">
-        <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><span style="color:#999;font-size:12px;">☆</span> Subject Property</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><span style="color:#999;font-size:12px;">â˜†</span> Subject Property</div>
         <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><svg width="20" height="10"><line x1="0" y1="5" x2="20" y2="5" stroke="#5c3a1e" stroke-width="2.5"/></svg> SSURGO</div>
         <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><svg width="20" height="10"><line x1="0" y1="5" x2="20" y2="5" stroke="#8b6914" stroke-width="1.5" stroke-dasharray="5,3"/></svg> STATSGO</div>
       </div>
@@ -2448,7 +2448,7 @@ function buildProximityDecisionStatement(sites = [], subjectLat, subjectLng, sub
     : 'not concentrated in a single quadrant';
   const numericElev = Number(subjectElevFt);
 
-  // Elevation intelligence — count sites above, at, and below subject
+  // Elevation intelligence â€” count sites above, at, and below subject
   let elevSummary = '';
   if (Number.isFinite(numericElev)) {
     const elevatedSites = normalized.filter((s) => Number(s.elevation) > numericElev + 3);
@@ -2464,9 +2464,9 @@ function buildProximityDecisionStatement(sites = [], subjectLat, subjectLng, sub
     if (lowerSites.length > 0 && elevatedSites.length === 0) {
       elevSummary = `Most identified sites (${lowerSites.length} of ${normalized.length}) are located at lower elevation than the subject property, reducing the potential for gravity-driven contaminant migration toward the site. This is a favorable indicator.`;
     } else if (elevatedSites.length === 0 && equalSites.length > 0) {
-      elevSummary = `Identified sites are at equal or lower elevation relative to the subject property — lateral and surface-water-driven migration pathways are of primary concern rather than upgradient plume migration.`;
+      elevSummary = `Identified sites are at equal or lower elevation relative to the subject property â€” lateral and surface-water-driven migration pathways are of primary concern rather than upgradient plume migration.`;
     } else if (higherNear.length > 0) {
-      elevSummary = `${higherNear.length} site(s) in the near-field buffer (≤500m) are located at higher elevation than the subject property, indicating a potential upgradient migration pathway that warrants elevated concern. Site-specific groundwater flow confirmation is recommended.`;
+      elevSummary = `${higherNear.length} site(s) in the near-field buffer (â‰¤500m) are located at higher elevation than the subject property, indicating a potential upgradient migration pathway that warrants elevated concern. Site-specific groundwater flow confirmation is recommended.`;
     } else if (elevatedSites.length > 0) {
       elevSummary = `${elevatedSites.length} site(s) are at higher elevation but at greater distance (>500m). Direct upgradient migration toward the subject property is possible but attenuated by distance.`;
     } else {
@@ -2498,7 +2498,7 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
     return '<p>No address-level locations were available for core intelligence output.</p>';
   }
 
-  // Cap detailed dossier cards at top 20 (Priority A + highest risk) — remainder gets compact table
+  // Cap detailed dossier cards at top 20 (Priority A + highest risk) â€” remainder gets compact table
   const DOSSIER_LIMIT = 20;
   const detailedSet = ranked.slice(0, DOSSIER_LIMIT);
   const remainderSet = ranked.slice(DOSSIER_LIMIT);
@@ -2522,7 +2522,7 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
     return `
       <div style="margin-top:8px; border:1px solid #d7dfeb; border-radius:8px; overflow:hidden;">
         <div style="background:#f1f5f9; padding:6px 10px; font-weight:700; font-size:10.5px; color:#0c2340;">
-          Remaining ${remainderSet.length} Locations — Summary Reference (sites ${DOSSIER_LIMIT + 1}–${ranked.length})
+          Remaining ${remainderSet.length} Locations â€” Summary Reference (sites ${DOSSIER_LIMIT + 1}â€“${ranked.length})
         </div>
         <table style="width:100%; font-size:10px; border-collapse:collapse;">
           <thead>
@@ -2562,7 +2562,7 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
     const riskColor = riskBand === 'High Risk' ? '#b91c1c' : riskBand === 'Moderate Risk' ? '#92400e' : '#065f46';
     const riskBg = riskBand === 'High Risk' ? '#fee2e2' : riskBand === 'Moderate Risk' ? '#fef3c7' : '#d1fae5';
 
-    // ── DATASET STACKING (all databases linked to this address) ──────────────
+    // â”€â”€ DATASET STACKING (all databases linked to this address) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const primaryRisk = allRisks[0] || {};
     const countyMatch = String(addr.address || '').match(/([^,]+\s+County)/i);
     const countyLabel = countyMatch ? countyMatch[1] : 'County not stated in source address';
@@ -2605,13 +2605,13 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
       }).join('')
       : '<p style="color:#64748b; font-size:10.5px;">No linked database records at this address.</p>';
 
-    // ── CHEMICAL / CONTAMINANT SECTION ────────────────────────────────────────
+    // â”€â”€ CHEMICAL / CONTAMINANT SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const primaryDb = (primaryRisk.database_name || primaryRisk.database || '');
     const contaminants = extractChemicalsFromDatabase(primaryDb);
     const chemListHtml = contaminants.chemicals.map((c) => `<li style="margin:2px 0;">&#10004; ${escapeHtml(c)}</li>`).join('');
     const wasteCodeHtml = contaminants.wasteCodes.map((w) => `<li style="margin:2px 0; color:#64748b;">&#9654; ${escapeHtml(w)}</li>`).join('');
 
-    // ── REGULATORY STATUS (all linked) ────────────────────────────────────────
+    // â”€â”€ REGULATORY STATUS (all linked) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const primaryStatus = inferOperationalStatus({
       status: primaryRisk.status || '',
       name: primaryRisk.site_name || primaryRisk.name || '',
@@ -2621,7 +2621,7 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
     const lastSeenYear = new Date().getFullYear() - (Math.abs(_yearSeed) % 3);
     const statusDisplay = `${primaryStatus} (last reported ${lastSeenYear})`;
 
-    // ── UST INFRASTRUCTURE (if applicable) ────────────────────────────────────
+    // â”€â”€ UST INFRASTRUCTURE (if applicable) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const pseudoSite = {
       database: primaryDb,
       name: primaryRisk.site_name || primaryRisk.name || '',
@@ -2643,19 +2643,19 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
         </table>
       </div>` : '';
 
-    // ── HISTORICAL TIMELINE ────────────────────────────────────────────────────
+    // â”€â”€ HISTORICAL TIMELINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const timeline = generateSiteTimeline(pseudoSite);
     const timelineHtml = timeline.map((t) =>
       `<tr><td style="padding:3px 8px 3px 0; font-weight:600; white-space:nowrap; width:130px;">${escapeHtml(t.year)}</td><td style="padding:3px 0; color:#334155;">${escapeHtml(t.event)}</td></tr>`
     ).join('');
 
-    // ── DOCUMENT / EVIDENCE LINKS ──────────────────────────────────────────────
+    // â”€â”€ DOCUMENT / EVIDENCE LINKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const docLinks = generateDocumentLinks(pseudoSite);
     const docLinksHtml = docLinks.length
       ? docLinks.map((link) => `<div style="margin:3px 0;">&#128279; <a href="${escapeHtml(link.url)}" style="color:#2563eb; font-size:10.5px;">${escapeHtml(link.label)}</a></div>`).join('')
       : '<div style="color:#64748b; font-size:10.5px;">No direct document links available for this database type.</div>';
 
-    // ── PATHWAY RELEVANCE ─────────────────────────────────────────────────────
+    // â”€â”€ PATHWAY RELEVANCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const intelligence = inferEnvironmentalIntelligence(primaryDb, addr.type);
     const whatThisMeans = `${intelligence.regulatory}. This profile indicates ${String(riskBand).toLowerCase()} concern at this address and should be evaluated with file-level regulator records before transaction close.`;
     const relevance = bearing !== null
@@ -2738,7 +2738,7 @@ function buildAddressIntelligenceCoreHtml(addressData = [], subjectLat, subjectL
           <table style="width:100%; font-size:10.5px; border-collapse:collapse;">${timelineHtml}</table>
 
           <!-- RISK SCORE BREAKDOWN -->
-          <div style="font-weight:700; color:#025f85; font-size:11px; margin:10px 0 4px; border-bottom:1px solid #e2e8f0; padding-bottom:4px;">&#128202; Risk Score Breakdown (${scoring.score}/100 — ${escapeHtml(riskBand)})</div>
+          <div style="font-weight:700; color:#025f85; font-size:11px; margin:10px 0 4px; border-bottom:1px solid #e2e8f0; padding-bottom:4px;">&#128202; Risk Score Breakdown (${scoring.score}/100 â€” ${escapeHtml(riskBand)})</div>
           <table style="width:100%; font-size:10.5px; border-collapse:collapse;">
             <tr style="background:#f1f5f9;"><th style="padding:3px 8px; text-align:left;">Factor</th><th style="padding:3px 8px; text-align:left;">Score Component</th><th style="padding:3px 8px; text-align:left;">Weight</th><th style="padding:3px 8px; text-align:left;">Contribution</th></tr>
             <tr><td style="padding:3px 8px;">Distance Weight</td><td>${scoring.distanceWeight}</td><td>30%</td><td>${Math.round(scoring.distanceWeight * 0.3)}</td></tr>
@@ -2848,28 +2848,28 @@ function buildClientConclusionHtml(projectAddress, addressData = [], riskLevels 
     : '<li style="margin:2px 0;">No dominant high-risk trigger identified in current mapped records.</li>';
 
   const financialImplications = high > 0 || priorityA > 0
-    ? 'Material environmental cost factors are present. Phase II ESA scope, possible remedial investigation, acquisition price adjustment, lender environmental hold, and insurance surcharge are all plausible financial outcomes. Recommend budgeting for $5,000–$30,000+ in follow-up environmental diligence depending on site-specific scope.'
+    ? 'Material environmental cost factors are present. Phase II ESA scope, possible remedial investigation, acquisition price adjustment, lender environmental hold, and insurance surcharge are all plausible financial outcomes. Recommend budgeting for $5,000â€“$30,000+ in follow-up environmental diligence depending on site-specific scope.'
     : medium > 0 || priorityB > 0
-      ? 'Moderate environmental cost factors are present. Targeted Phase I follow-up, source-record review, and possible focused soil/groundwater sampling may add $2,000–$8,000 in diligence cost. Lender flagging is possible but manageable with early disclosure and scope documentation.'
-      : 'No immediate material environmental cost driver was identified at this screening level. Standard diligence reserve of $1,500–$3,000 is typical for routine Phase I follow-through.';
+      ? 'Moderate environmental cost factors are present. Targeted Phase I follow-up, source-record review, and possible focused soil/groundwater sampling may add $2,000â€“$8,000 in diligence cost. Lender flagging is possible but manageable with early disclosure and scope documentation.'
+      : 'No immediate material environmental cost driver was identified at this screening level. Standard diligence reserve of $1,500â€“$3,000 is typical for routine Phase I follow-through.';
 
-  // ── RISK BALANCE: mitigating factors + positives ────────────────────────────
+  // â”€â”€ RISK BALANCE: mitigating factors + positives â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const mitigatingFactors = [];
   const positiveIndicators = [];
-  if (low > 0 && high === 0 && medium === 0) positiveIndicators.push('All mapped records fall in the low-risk tier — no confirmed hazardous releases in proximity.');
-  if (high === 0) mitigatingFactors.push('No high-risk records returned in the current mapped dataset — dominant risk remains at or below moderate.');
-  if (priorityA === 0) mitigatingFactors.push('No Priority A locations identified — no records triggering immediate regulatory escalation threshold.');
-  if (priorityB === 0 && priorityA === 0) positiveIndicators.push('No Priority A or Priority B locations flagged — baseline diligence protocol is sufficient.');
-  if ((addressData || []).length === 0) positiveIndicators.push('No mapped nearby addresses returned in current buffer — minimal multi-site stacking concern.');
-  if (medium > 0 && high === 0) mitigatingFactors.push(`${medium} moderate-risk record(s) present without high-risk escalation — manageable with targeted file review.`);
+  if (low > 0 && high === 0 && medium === 0) positiveIndicators.push('All mapped records fall in the low-risk tier â€” no confirmed hazardous releases in proximity.');
+  if (high === 0) mitigatingFactors.push('No high-risk records returned in the current mapped dataset â€” dominant risk remains at or below moderate.');
+  if (priorityA === 0) mitigatingFactors.push('No Priority A locations identified â€” no records triggering immediate regulatory escalation threshold.');
+  if (priorityB === 0 && priorityA === 0) positiveIndicators.push('No Priority A or Priority B locations flagged â€” baseline diligence protocol is sufficient.');
+  if ((addressData || []).length === 0) positiveIndicators.push('No mapped nearby addresses returned in current buffer â€” minimal multi-site stacking concern.');
+  if (medium > 0 && high === 0) mitigatingFactors.push(`${medium} moderate-risk record(s) present without high-risk escalation â€” manageable with targeted file review.`);
   if (priorityA > 0) {
     // If there are risks, note what might reduce them
-    mitigatingFactors.push('Site-specific regulatory records may confirm resolved or closed status — file-level verification is the recommended next step.');
+    mitigatingFactors.push('Site-specific regulatory records may confirm resolved or closed status â€” file-level verification is the recommended next step.');
     mitigatingFactors.push('Regulatory closure and institutional controls, if documented, would materially reduce residual risk.');
   }
-  if (!mitigatingFactors.length) mitigatingFactors.push('No dominant mitigating evidence identified at screening level — requires file-level verification to confirm.');
+  if (!mitigatingFactors.length) mitigatingFactors.push('No dominant mitigating evidence identified at screening level â€” requires file-level verification to confirm.');
   if (!positiveIndicators.length && high === 0) positiveIndicators.push('No Superfund (NPL) or CERCLA program listings within the search radius.');
-  if (!positiveIndicators.length) positiveIndicators.push('Screening is preliminary — unresolved indicators do not confirm active contamination without Phase I investigation.');
+  if (!positiveIndicators.length) positiveIndicators.push('Screening is preliminary â€” unresolved indicators do not confirm active contamination without Phase I investigation.');
 
   const riskBalanceHtml = `
     <div style="margin-top:14px; border:1px solid #d7dfeb; border-radius:8px; overflow:hidden;">
@@ -3127,7 +3127,7 @@ function haversineMiles(lat1, lng1, lat2, lng2) {
 
 /**
  * Formats an internal meters value as a user-facing US distance string.
- * < 528 ft (0.1 mi) → shown in feet; otherwise in miles to 2 decimal places.
+ * < 528 ft (0.1 mi) â†’ shown in feet; otherwise in miles to 2 decimal places.
  */
 function fmtMi(meters) {
   if (!Number.isFinite(Number(meters))) return 'N/A';
@@ -3186,7 +3186,7 @@ function buildCoordinateReferenceData(latitude, longitude, address = '', subject
   const utmEasting = utmResult.easting.toLocaleString();
   const utmNorthing = utmResult.northing.toLocaleString();
 
-  // State Plane name and approximate coordinates (surveyor-quality values from projection — these are estimates)
+  // State Plane name and approximate coordinates (surveyor-quality values from projection â€” these are estimates)
   const statePlaneInfo = lookupStatePlane(lat, lng, stateAbbr);
 
   return {
@@ -3205,7 +3205,7 @@ function buildCoordinateReferenceData(latitude, longitude, address = '', subject
   };
 }
 
-// State Plane lookup — approximate zone name + coordinate estimates
+// State Plane lookup â€” approximate zone name + coordinate estimates
 function lookupStatePlane(lat, lng, stateAbbr) {
   const STATE_PLANE_ZONES = {
     AL: { name: 'Alabama West (FIPS 0102)', fips: '0102' },
@@ -3263,7 +3263,7 @@ function lookupStatePlane(lat, lng, stateAbbr) {
   if (!info) {
     return { name: 'NAD83 State Plane (zone varies)', x: 'N/A', y: 'N/A' };
   }
-  // Approximate State Plane coordinates — convert from UTM as rough estimate
+  // Approximate State Plane coordinates â€” convert from UTM as rough estimate
   // (A licensed surveyor should perform rigorous grid-to-ground conversion)
   try {
     const utmResult = decimalToUTM(lat, lng);
@@ -3275,9 +3275,9 @@ function lookupStatePlane(lat, lng, stateAbbr) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// COORDINATE UTILITIES — DMS, UTM, STATE PLANE
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// COORDINATE UTILITIES â€” DMS, UTM, STATE PLANE
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 function decimalToDMS(decimal, isLat) {
   const abs = Math.abs(decimal);
@@ -3317,9 +3317,9 @@ function decimalToUTM(lat, lng) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// MAP FINDINGS SUMMARY GRID — Full ASTM distance-band table (Gap #1)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// MAP FINDINGS SUMMARY GRID â€” Full ASTM distance-band table (Gap #1)
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 const ASTM_DB_GRID = [
   // group, name, searchMi, isSPOnly
@@ -3483,7 +3483,7 @@ function buildMapFindingsSummaryGridHtml(sites = []) {
   const sectionRows = Object.entries(groups).map(([grp, dbList]) => {
     const dbRows = dbList.map(({ name, searchMi, isSP }) => {
       const { spCount, band0, band1, band2, band3, band4, total } = getCountsForDb(name);
-      const dash = '<span style="color:#94a3b8;">—</span>';
+      const dash = '<span style="color:#94a3b8;">â€”</span>';
       const cellVal = (n) => n > 0 ? `<strong style="color:#1d4ed8;">${n}</strong>` : '0';
 
       if (isSP) {
@@ -3518,9 +3518,9 @@ function buildMapFindingsSummaryGridHtml(sites = []) {
   <div style="overflow-x:auto; margin-bottom:16px;">
     <div style="font-size:10px; color:#475569; margin-bottom:6px;">
       Distance bands: <strong>&lt;1/8 mi</strong> = High relevance &nbsp;|&nbsp;
-      <strong>1/8–1/4 mi</strong> = Moderate-High &nbsp;|&nbsp;
-      <strong>1/4–1/2 mi</strong> = Moderate &nbsp;|&nbsp;
-      <strong>1/2–1 mi</strong> = Lower &nbsp;|&nbsp;
+      <strong>1/8â€“1/4 mi</strong> = Moderate-High &nbsp;|&nbsp;
+      <strong>1/4â€“1/2 mi</strong> = Moderate &nbsp;|&nbsp;
+      <strong>1/2â€“1 mi</strong> = Lower &nbsp;|&nbsp;
       <strong>&gt;1 mi</strong> = Contextual. SP = Subject Property match.
     </div>
     <table style="width:100%; font-size:9.5px; border-collapse:collapse; border:1px solid #c8d4e8;">
@@ -3530,9 +3530,9 @@ function buildMapFindingsSummaryGridHtml(sites = []) {
           <th style="${thStyle}">SEARCH DIST (mi)</th>
           <th style="${thStyle}">SUBJECT PROP</th>
           <th style="${thStyle}">&lt;1/8</th>
-          <th style="${thStyle}">1/8–1/4</th>
-          <th style="${thStyle}">1/4–1/2</th>
-          <th style="${thStyle}">1/2–1</th>
+          <th style="${thStyle}">1/8â€“1/4</th>
+          <th style="${thStyle}">1/4â€“1/2</th>
+          <th style="${thStyle}">1/2â€“1</th>
           <th style="${thStyle}">&gt;1</th>
           <th style="${thStyle}">TOTAL MAPPED</th>
         </tr>
@@ -3544,9 +3544,9 @@ function buildMapFindingsSummaryGridHtml(sites = []) {
   </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// ENVIRONMENTAL RECORDS SEARCHED — With Agency Metadata (Gap #3)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ENVIRONMENTAL RECORDS SEARCHED â€” With Agency Metadata (Gap #3)
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 const DB_AGENCY_METADATA = {
   'NPL': { desc: 'List of priority contaminated sites among identified releases or threatened releases of hazardous substances, pollutants, or contaminants nationally', agency: 'U.S. Environmental Protection Agency', contact: '703-603-8867', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
@@ -3569,26 +3569,26 @@ const DB_AGENCY_METADATA = {
   'RCRA LQG': { desc: 'Resource Conservation and Recovery Act listing of licensed large quantity generators', agency: 'U.S. Environmental Protection Agency', contact: '800-424-9346', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'RCRA SQG': { desc: 'Resource Conservation and Recovery Act listing of licensed small quantity generators', agency: 'U.S. Environmental Protection Agency', contact: '800-424-9346', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'RCRA VSQG': { desc: 'Resource Conservation and Recovery Act listing of licensed very small quantity generators', agency: 'U.S. Environmental Protection Agency', contact: '800-424-9346', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'EPA LUST': { desc: 'EPA Leaking Underground Storage Tank data — identifies facilities with confirmed or suspected fuel releases from underground storage systems', agency: 'U.S. Environmental Protection Agency', contact: '703-603-7000', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'EPA LUST': { desc: 'EPA Leaking Underground Storage Tank data â€” identifies facilities with confirmed or suspected fuel releases from underground storage systems', agency: 'U.S. Environmental Protection Agency', contact: '703-603-7000', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'EPA UST': { desc: 'Facilities listed in the EPA Underground Storage Tank Finder database', agency: 'U.S. Environmental Protection Agency', contact: '703-603-7000', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'ECHO': { desc: 'Enforcement and Compliance History Online — tracks compliance history across CAA, CWA, RCRA, and SDWA programs', agency: 'U.S. Environmental Protection Agency', contact: '888-372-7341', versionDate: '08/13/2025', updateFreq: 'Weekly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'FRS': { desc: 'Facility Registry Service — unique identifier system for EPA-regulated facilities', agency: 'U.S. Environmental Protection Agency', contact: '202-566-1550', versionDate: '08/13/2025', updateFreq: 'Weekly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'AUL': { desc: 'Activity and Use Limitation (Institutional Control) — records restrictions on use of contaminated properties', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'ECHO': { desc: 'Enforcement and Compliance History Online â€” tracks compliance history across CAA, CWA, RCRA, and SDWA programs', agency: 'U.S. Environmental Protection Agency', contact: '888-372-7341', versionDate: '08/13/2025', updateFreq: 'Weekly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'FRS': { desc: 'Facility Registry Service â€” unique identifier system for EPA-regulated facilities', agency: 'U.S. Environmental Protection Agency', contact: '202-566-1550', versionDate: '08/13/2025', updateFreq: 'Weekly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'AUL': { desc: 'Activity and Use Limitation (Institutional Control) â€” records restrictions on use of contaminated properties', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'FED BROWNFIELDS': { desc: 'EPA Brownfields program sites targeted for assessment and cleanup to enable reuse', agency: 'U.S. Environmental Protection Agency', contact: '202-566-2777', versionDate: '08/13/2025', updateFreq: 'Semi-annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'EJ BROWNFIELDS': { desc: 'Brownfields Environmental Justice screening sites', agency: 'U.S. Environmental Protection Agency', contact: '202-566-2777', versionDate: '08/13/2025', updateFreq: 'Semi-annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'BROWNFIELDS-ACRES': { desc: 'Brownfields, Cleanups, Revitalization, Economic Redevelopment, and Sustainability — combined brownfield assessment database', agency: 'U.S. Environmental Protection Agency', contact: '202-566-2777', versionDate: '08/13/2025', updateFreq: 'Semi-annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'PFAS FED SITES': { desc: 'Per- and polyfluoroalkyl substance (PFAS) contamination screening — federal sites', agency: 'U.S. Environmental Protection Agency', contact: '202-564-8166', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'BROWNFIELDS-ACRES': { desc: 'Brownfields, Cleanups, Revitalization, Economic Redevelopment, and Sustainability â€” combined brownfield assessment database', agency: 'U.S. Environmental Protection Agency', contact: '202-566-2777', versionDate: '08/13/2025', updateFreq: 'Semi-annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'PFAS FED SITES': { desc: 'Per- and polyfluoroalkyl substance (PFAS) contamination screening â€” federal sites', agency: 'U.S. Environmental Protection Agency', contact: '202-564-8166', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'PFAS INDUSTRY': { desc: 'PFAS industrial source sites from EPA regulatory and TRI data', agency: 'U.S. Environmental Protection Agency', contact: '202-564-8166', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'RMP': { desc: 'Risk Management Plans — facilities that handle extremely hazardous substances above threshold quantities', agency: 'U.S. Environmental Protection Agency', contact: '202-564-7985', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'MANIFEST EPA': { desc: 'EPA Hazardous Waste Manifest tracking — records waste generators, transporters, and disposal facilities', agency: 'U.S. Environmental Protection Agency', contact: '800-424-9346', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'HMIRS (DOT)': { desc: 'Hazardous Materials Incident Reporting System — incident reports submitted to the Department of Transportation', agency: 'U.S. Department of Transportation', contact: '202-366-4900', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'TRI': { desc: 'Toxics Release Inventory — annual toxic chemical release and waste management data for industrial facilities', agency: 'U.S. Environmental Protection Agency', contact: '202-566-0250', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'RMP': { desc: 'Risk Management Plans â€” facilities that handle extremely hazardous substances above threshold quantities', agency: 'U.S. Environmental Protection Agency', contact: '202-564-7985', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'MANIFEST EPA': { desc: 'EPA Hazardous Waste Manifest tracking â€” records waste generators, transporters, and disposal facilities', agency: 'U.S. Environmental Protection Agency', contact: '800-424-9346', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'HMIRS (DOT)': { desc: 'Hazardous Materials Incident Reporting System â€” incident reports submitted to the Department of Transportation', agency: 'U.S. Department of Transportation', contact: '202-366-4900', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'TRI': { desc: 'Toxics Release Inventory â€” annual toxic chemical release and waste management data for industrial facilities', agency: 'U.S. Environmental Protection Agency', contact: '202-566-0250', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
   'MINES': { desc: 'Mine operations and inactive/abandoned mine workings from USGS/MSHA records', agency: 'U.S. Geological Survey / MSHA', contact: '202-693-9400', versionDate: '08/13/2025', updateFreq: 'Annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'SHWS': { desc: 'State Hazardous Waste Site listing — state-administered Superfund and remediation programs', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'HWG': { desc: 'Hazardous Waste Generator — state-level RCRA generator database', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'LUST': { desc: 'Leaking Underground Storage Tank — state database tracking releases from UST systems', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'UST': { desc: 'Underground Storage Tank registration database — active and closed UST facilities', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
-  'BEA': { desc: 'Brownfields and Environmental Assessments — state brownfield program listings', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Semi-annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'SHWS': { desc: 'State Hazardous Waste Site listing â€” state-administered Superfund and remediation programs', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'HWG': { desc: 'Hazardous Waste Generator â€” state-level RCRA generator database', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'LUST': { desc: 'Leaking Underground Storage Tank â€” state database tracking releases from UST systems', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'UST': { desc: 'Underground Storage Tank registration database â€” active and closed UST facilities', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Quarterly', lastContact: '02/03/2026', nextContact: '04/30/2026' },
+  'BEA': { desc: 'Brownfields and Environmental Assessments â€” state brownfield program listings', agency: 'State Environmental Agency', contact: 'State contact varies', versionDate: '08/13/2025', updateFreq: 'Semi-annual', lastContact: '02/03/2026', nextContact: '04/30/2026' },
 };
 
 function buildEnvRecordsAgencyMetadataHtml(sites = []) {
@@ -3641,7 +3641,7 @@ function buildEnvRecordsAgencyMetadataHtml(sites = []) {
 
   return `
     <div style="margin-bottom:8px; padding:8px 12px; background:#0c2340; color:#fff; border-radius:6px; font-size:11px;">
-      <strong>Environmental Records Searched — Agency Contact &amp; Version Information</strong>
+      <strong>Environmental Records Searched â€” Agency Contact &amp; Version Information</strong>
       &nbsp;|&nbsp; Screen date: ${screenDateStr}
     </div>
     <p style="font-size:10px; color:#334155; margin-bottom:12px;">
@@ -3651,22 +3651,22 @@ function buildEnvRecordsAgencyMetadataHtml(sites = []) {
     ${sections}`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // GEOLOGICAL RECORDS SEARCHED (Gap #6)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 function buildGeologicalRecordsSearchedHtml() {
   const GEO_DATABASES = [
-    { name: 'SSURGO', desc: 'Soil Survey Geographic Database — USDA NRCS national cooperative soil survey providing soil map unit, component, and interpretive data. Used to assess soil permeability, drainage, and hydrologic group.', agency: 'U.S. Department of Agriculture, Natural Resources Conservation Service', contact: '800-662-7657', versionDate: '10/01/2025', updateFreq: 'Annual' },
+    { name: 'SSURGO', desc: 'Soil Survey Geographic Database â€” USDA NRCS national cooperative soil survey providing soil map unit, component, and interpretive data. Used to assess soil permeability, drainage, and hydrologic group.', agency: 'U.S. Department of Agriculture, Natural Resources Conservation Service', contact: '800-662-7657', versionDate: '10/01/2025', updateFreq: 'Annual' },
     { name: 'USGS 7.5-Minute Topo', desc: 'USGS National Map Historical Topographic Map Collection. Used for elevation gradient, topographic flow analysis, and historical land-use context.', agency: 'U.S. Geological Survey', contact: '888-275-8747', versionDate: 'Current edition', updateFreq: 'Continuous' },
-    { name: 'DFIRM / FEMA NFHL', desc: 'Digital Flood Insurance Rate Maps — National Flood Hazard Layer. FEMA-administered digital elevation and flood zone designation data per 44 CFR Part 59.', agency: 'Federal Emergency Management Agency', contact: '877-336-2627', versionDate: 'Panel effective date', updateFreq: 'Varies by panel' },
+    { name: 'DFIRM / FEMA NFHL', desc: 'Digital Flood Insurance Rate Maps â€” National Flood Hazard Layer. FEMA-administered digital elevation and flood zone designation data per 44 CFR Part 59.', agency: 'Federal Emergency Management Agency', contact: '877-336-2627', versionDate: 'Panel effective date', updateFreq: 'Varies by panel' },
     { name: 'OIL & GAS WELLS', desc: 'State oil and gas well completion and production records. Used to evaluate subsurface disturbance, legacy contamination potential, and migration pathways.', agency: 'State Oil & Gas Regulatory Authority', contact: 'State contact varies', versionDate: '04/29/2025', updateFreq: 'Quarterly' },
     { name: 'WATER WELLS', desc: 'State groundwater well logs and construction records. Used to evaluate aquifer depth, well proximity, and receptor sensitivity.', agency: 'State Water Resources Authority', contact: 'State contact varies', versionDate: '11/21/2025', updateFreq: 'Continuous' },
     { name: 'GEOLOGICAL BORINGS', desc: 'Subsurface investigation boring logs from state geological surveys and USGS. Used to assess stratigraphy, bedrock depth, and contamination evidence.', agency: 'U.S. Geological Survey / State Geological Survey', contact: '888-275-8747', versionDate: '08/13/2025', updateFreq: 'Annual' },
     { name: 'RADON (EPA/State)', desc: 'EPA and state radon zone designations and measurement data. Used to assess indoor radon risk for occupied structures per EPA Map of Radon Zones guidance.', agency: 'U.S. Environmental Protection Agency', contact: '800-767-7236', versionDate: '08/13/2025', updateFreq: 'Annual' },
-    { name: 'USGS GEOLOGIC MAP', desc: 'USGS National Geologic Map Database — bedrock and surficial geology mapping used to evaluate lithology, faulting, karst potential, and regional geology.', agency: 'U.S. Geological Survey', contact: '888-275-8747', versionDate: '08/13/2025', updateFreq: 'Varies' },
-    { name: 'NWI (WETLANDS)', desc: 'National Wetlands Inventory — U.S. Fish & Wildlife Service mapping of wetland and deepwater habitats. Used to evaluate regulatory buffer constraints.', agency: 'U.S. Fish & Wildlife Service', contact: '703-358-2201', versionDate: '08/13/2025', updateFreq: 'Periodic' },
-    { name: 'NHD (HYDROLOGY)', desc: 'National Hydrography Dataset — stream, river, lake, and watershed boundary data used for hydrologic pathway analysis and downgradient receptor identification.', agency: 'U.S. Geological Survey', contact: '888-275-8747', versionDate: '08/13/2025', updateFreq: 'Continuous' },
+    { name: 'USGS GEOLOGIC MAP', desc: 'USGS National Geologic Map Database â€” bedrock and surficial geology mapping used to evaluate lithology, faulting, karst potential, and regional geology.', agency: 'U.S. Geological Survey', contact: '888-275-8747', versionDate: '08/13/2025', updateFreq: 'Varies' },
+    { name: 'NWI (WETLANDS)', desc: 'National Wetlands Inventory â€” U.S. Fish & Wildlife Service mapping of wetland and deepwater habitats. Used to evaluate regulatory buffer constraints.', agency: 'U.S. Fish & Wildlife Service', contact: '703-358-2201', versionDate: '08/13/2025', updateFreq: 'Periodic' },
+    { name: 'NHD (HYDROLOGY)', desc: 'National Hydrography Dataset â€” stream, river, lake, and watershed boundary data used for hydrologic pathway analysis and downgradient receptor identification.', agency: 'U.S. Geological Survey', contact: '888-275-8747', versionDate: '08/13/2025', updateFreq: 'Continuous' },
   ];
 
   const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -3692,21 +3692,21 @@ function buildGeologicalRecordsSearchedHtml() {
     </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // SSURGO SOIL UNIT TABLE (Gap #4)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 function buildSSURGOSoilUnitTableHtml(ssurgoSoil) {
   if (!ssurgoSoil) {
     return `<p style="font-size:10px; color:#64748b; font-style:italic;">SSURGO data unavailable for this location. Consult USDA Web Soil Survey at <strong>websoilsurvey.nrcs.usda.gov</strong> for site-specific soil unit information.</p>`;
   }
-  const hydGrpDesc = { A: 'Low runoff potential, high infiltration rate', B: 'Moderate infiltration rate when wetted', C: 'Slow infiltration rate when wetted', D: 'Very slow infiltration rate — high runoff potential' };
+  const hydGrpDesc = { A: 'Low runoff potential, high infiltration rate', B: 'Moderate infiltration rate when wetted', C: 'Slow infiltration rate when wetted', D: 'Very slow infiltration rate â€” high runoff potential' };
   const hydGrp = String(ssurgoSoil.hydgrp || 'B').toUpperCase().trim();
   const hydDesc = hydGrpDesc[hydGrp] || 'See NRCS Web Soil Survey';
   const drainCl = String(ssurgoSoil.drainagecl || 'Not rated').trim();
   const ksat = ssurgoSoil.ksat_r;
   const ksatLabel = ksat !== null && Number.isFinite(ksat)
-    ? `${ksat.toFixed(3)} µm/s${ksat > 10 ? ' (High — rapid migration)' : ksat > 1 ? ' (Moderate)' : ' (Low — slow migration)'}`
+    ? `${ksat.toFixed(3)} Âµm/s${ksat > 10 ? ' (High â€” rapid migration)' : ksat > 1 ? ' (Moderate)' : ' (Low â€” slow migration)'}`
     : 'Not available';
   const permeabilityClass = ksat !== null && Number.isFinite(ksat)
     ? (ksat > 10 ? 'HIGH' : ksat > 1 ? 'MODERATE' : 'LOW')
@@ -3725,7 +3725,7 @@ function buildSSURGOSoilUnitTableHtml(ssurgoSoil) {
     : '';
   const ph = ssurgoSoil.soil_ph;
   const phRow = (ph !== null && Number.isFinite(ph))
-    ? `<tr><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Soil pH (1:1 H₂O)</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;">${ph.toFixed(1)}</td></tr>`
+    ? `<tr><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Soil pH (1:1 Hâ‚‚O)</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;">${ph.toFixed(1)}</td></tr>`
     : '';
 
   return `
@@ -3743,19 +3743,19 @@ function buildSSURGOSoilUnitTableHtml(ssurgoSoil) {
         <tbody>
           <tr style="background:#f8fafc;"><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Map Unit Name</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;"><strong>${escapeHtml(String(ssurgoSoil.muname || 'Urban land / Developed'))}</strong></td></tr>
           <tr><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Drainage Class</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;">${escapeHtml(drainCl)}</td></tr>
-          <tr style="background:#f8fafc;"><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Hydrologic Group</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;"><strong>${escapeHtml(hydGrp)}</strong> — ${escapeHtml(hydDesc)}</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Hydrologic Group</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;"><strong>${escapeHtml(hydGrp)}</strong> â€” ${escapeHtml(hydDesc)}</td></tr>
           <tr><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Saturated Hydraulic Conductivity (Ksat)</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;">${escapeHtml(ksatLabel)} &nbsp;<strong style="color:${permeabilityColor};">[${permeabilityClass}]</strong></td></tr>
           ${textureRow}${awcRow}${phRow}
-          <tr style="background:#f8fafc;"><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Migration Potential</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;"><strong style="color:${permeabilityColor};">${permeabilityClass}</strong> — ${permeabilityClass === 'HIGH' ? 'Contaminants may migrate rapidly through the unsaturated zone. Phase II evaluation recommended if sources are identified.' : permeabilityClass === 'MODERATE' ? 'Moderate migration potential. Leachate pathways should be evaluated relative to identified sources.' : 'Lower migration rate; however, long-term accumulation may still be possible with persistent sources.'}</td></tr>
-          <tr><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Data Source</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;">USDA NRCS SSURGO — Soil Data Access (sdmdataaccess.nrcs.usda.gov)</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Migration Potential</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;"><strong style="color:${permeabilityColor};">${permeabilityClass}</strong> â€” ${permeabilityClass === 'HIGH' ? 'Contaminants may migrate rapidly through the unsaturated zone. Phase II evaluation recommended if sources are identified.' : permeabilityClass === 'MODERATE' ? 'Moderate migration potential. Leachate pathways should be evaluated relative to identified sources.' : 'Lower migration rate; however, long-term accumulation may still be possible with persistent sources.'}</td></tr>
+          <tr><td style="padding:4px 8px; font-size:10px; font-weight:700; color:#334155; border:1px solid #e2e8f0;">Data Source</td><td style="padding:4px 8px; font-size:10px; border:1px solid #e2e8f0;">USDA NRCS SSURGO â€” Soil Data Access (sdmdataaccess.nrcs.usda.gov)</td></tr>
         </tbody>
       </table>
     </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // FEMA DFIRM FLOOD PANEL FETCH + RENDER (Gap #5)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 async function fetchDFIRMFloodPanels(lat, lng) {
   try {
@@ -3791,7 +3791,7 @@ function buildDFIRMFloodPanelHtml(panels, floodZones = []) {
       <div style="font-size:10.5px; font-weight:700; color:#0c2340; margin-bottom:4px;">DFIRM Flood Zone Designation</div>
       <div style="font-size:10px; color:#334155; margin-bottom:6px;">
         <strong>Flood Zone(s) at Subject Property:</strong> <span style="font-weight:700; color:#b45309;">${escapeHtml(floodZoneText)}</span>
-        &nbsp;|&nbsp; Electronic DFIRM data: Available — refer to Property Proximity Map and Area Map for visual reference.
+        &nbsp;|&nbsp; Electronic DFIRM data: Available â€” refer to Property Proximity Map and Area Map for visual reference.
       </div>
       <table style="width:100%; border-collapse:collapse; border:1px solid #d7dfeb;">
         <thead>
@@ -3809,9 +3809,9 @@ function buildDFIRMFloodPanelHtml(panels, floodZones = []) {
     </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // SSURGO SOIL MAP WMS URL (Gap #6 visual)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 function buildSSURGOSoilMapUrl(lat, lng, radiusMi = 0.5) {
   try {
@@ -3829,7 +3829,7 @@ function buildSSURGOSoilMapUrl(lat, lng, radiusMi = 0.5) {
   }
 }
 
-// Fetch SSURGO soil map and return as base64 data URI (for Puppeteer — avoids external HTTP during PDF render)
+// Fetch SSURGO soil map and return as base64 data URI (for Puppeteer â€” avoids external HTTP during PDF render)
 async function fetchSSURGOImageAsBase64(lat, lng, radiusMi = 0.5) {
   try {
     const url = buildSSURGOSoilMapUrl(lat, lng, radiusMi);
@@ -3854,7 +3854,7 @@ async function fetchAerialImageAsBase64(lat, lng, radiusMi = 0.25) {
     const north = (latN + degPerMiLat * buf).toFixed(6);
     const west  = (lngN - degPerMiLng * buf).toFixed(6);
     const east  = (lngN + degPerMiLng * buf).toFixed(6);
-    // USGS National Map — NAIP/USImageryTopo imagery via TNM WMS
+    // USGS National Map â€” NAIP/USImageryTopo imagery via TNM WMS
     const url = `https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/export?bbox=${west},${south},${east},${north}&bboxSR=4326&size=800,600&format=png32&transparent=false&f=image`;
     const resp = await axios.get(url, { timeout: 20000, responseType: 'arraybuffer' });
     if (!resp.data || resp.data.byteLength < 1000) return null;
@@ -3930,21 +3930,21 @@ async function fetchAdditionalUsgsAerialSources(lat, lng, radiusMi = 0.25) {
       year: 'NAIP',
       source: 'USGS NAIP Imagery',
       date: String(currentYear),
-      caption: `USGS NAIP imagery — ${lat.toFixed(5)}, ${lng.toFixed(5)} — Source: imagery.nationalmap.gov/USGSNAIPImagery`,
+      caption: `USGS NAIP imagery â€” ${lat.toFixed(5)}, ${lng.toFixed(5)} â€” Source: imagery.nationalmap.gov/USGSNAIPImagery`,
       promise: fetchArcgisExportImageAsBase64('https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer', lat, lng, radiusMi),
     },
     {
       year: 'NAIP+',
       source: 'USGS NAIP Plus',
       date: String(currentYear),
-      caption: `USGS NAIP Plus imagery — ${lat.toFixed(5)}, ${lng.toFixed(5)} — Source: imagery.nationalmap.gov/USGSNAIPPlus`,
+      caption: `USGS NAIP Plus imagery â€” ${lat.toFixed(5)}, ${lng.toFixed(5)} â€” Source: imagery.nationalmap.gov/USGSNAIPPlus`,
       promise: fetchArcgisExportImageAsBase64('https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPPlus/ImageServer', lat, lng, radiusMi),
     },
     {
       year: 'USGS',
       source: 'USGS Imagery Topo',
       date: String(currentYear),
-      caption: `USGS Imagery Topo blend — ${lat.toFixed(5)}, ${lng.toFixed(5)} — Source: basemap.nationalmap.gov/USGSImageryTopo`,
+      caption: `USGS Imagery Topo blend â€” ${lat.toFixed(5)}, ${lng.toFixed(5)} â€” Source: basemap.nationalmap.gov/USGSImageryTopo`,
       promise: fetchArcgisExportImageAsBase64('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer', lat, lng, radiusMi),
     },
   ];
@@ -3977,7 +3977,7 @@ async function fetchAdditionalUsgsAerialSources(lat, lng, radiusMi = 0.25) {
       source: candidate.source,
       date: dateLabel,
       dataUri: preview.dataUri,
-      caption: `${preview.title || candidate.label} — Source: USGS TNM ${candidate.label}`,
+      caption: `${preview.title || candidate.label} â€” Source: USGS TNM ${candidate.label}`,
     };
   }));
 
@@ -4029,7 +4029,7 @@ async function resolveReportHistoricalAerialImages(lat, lng, providedImages = []
             date: rel.date,
             dataUri,
             source: 'Esri World Imagery (Wayback)',
-            caption: `Aerial imagery ${rel.date} — Source: Esri World Imagery (Wayback)`,
+            caption: `Aerial imagery ${rel.date} â€” Source: Esri World Imagery (Wayback)`,
           });
         }
       }
@@ -4055,7 +4055,7 @@ async function resolveReportHistoricalAerialImages(lat, lng, providedImages = []
 }
 
 // ---------------------------------------------------------------------------
-// Esri Wayback — fetch one snapshot tile-stitched image for a given releaseId
+// Esri Wayback â€” fetch one snapshot tile-stitched image for a given releaseId
 // Uses WMTS tile fetching (3x3 grid) and stitches via sharp if available,
 // otherwise falls back to individual tiles returned as separate items.
 // ---------------------------------------------------------------------------
@@ -4115,7 +4115,7 @@ async function fetchWaybackImageAsBase64(releaseId, lat, lng, zoom = 17) {
       const stitched = await base.composite(composites).png().toBuffer();
       return `data:image/png;base64,${stitched.toString('base64')}`;
     } catch (_) {
-      // sharp not available — return center tile only
+      // sharp not available â€” return center tile only
       const center = tileResults.find(t => t.dx === 0 && t.dy === 0 && t.data);
       if (center) return `data:image/jpeg;base64,${center.data.toString('base64')}`;
       const anyTile = tileResults.find(t => t.data);
@@ -4179,7 +4179,7 @@ function buildAerialImageHtml(dataUri, filters = {}, caption = '') {
       <div style="font-size:10.5px;font-weight:700;color:#0c2340;margin-bottom:6px;">Current Aerial Imagery</div>
       <img src="${dataUri}" alt="Aerial imagery" style="width:100%;max-width:720px;border-radius:4px;border:1px solid #e2e8f0;display:block;filter:${filterStr};" />
       ${captionHtml}
-      <p style="font-size:9px;color:#94a3b8;margin-top:2px;">Source: USGS National Map. Adjustments: brightness ${brightness}, contrast ${contrast}, saturation ${vibSat}, hue ${hue}°.</p>
+      <p style="font-size:9px;color:#94a3b8;margin-top:2px;">Source: USGS National Map. Adjustments: brightness ${brightness}, contrast ${contrast}, saturation ${vibSat}, hue ${hue}Â°.</p>
     </div>`;
 }
 
@@ -4194,7 +4194,7 @@ function buildHistoricalAerialsHtml(images = []) {
         <div style="font-size:9.5px;font-weight:700;color:#0c2340;margin-bottom:4px;text-align:center;">${escapeHtml(String(img.year))}</div>
         <img src="${img.dataUri}" alt="Aerial ${img.year}"
           style="width:100%;border-radius:3px;border:1px solid #e2e8f0;display:block;" />
-        <p style="font-size:8px;color:#94a3b8;margin-top:3px;text-align:center;">${escapeHtml(img.date || '')} — Source: ${escapeHtml(img.source || 'Esri World Imagery (Wayback)')}</p>
+        <p style="font-size:8px;color:#94a3b8;margin-top:3px;text-align:center;">${escapeHtml(img.date || '')} â€” Source: ${escapeHtml(img.source || 'Esri World Imagery (Wayback)')}</p>
       </td>`).join('');
     rows.push(`<tr>${cells}${pair.length < 2 ? '<td></td>' : ''}</tr>`);
   }
@@ -4206,9 +4206,9 @@ function buildHistoricalAerialsHtml(images = []) {
     </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════
-// MAP ID LETTER SYSTEM — ASTM E1527-21 style (Gap #10)
-// ═══════════════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// MAP ID LETTER SYSTEM â€” ASTM E1527-21 style (Gap #10)
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 function assignLetterMapIds(sites = []) {
   const letterCounters = {};
@@ -4380,6 +4380,12 @@ function normalizeSiteForReport(site, index, subjectLat, subjectLng) {
   };
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// EXPANDED SITE RECORDS — Envirosite-style per-site card with:
+// Left strip (Map Id / Dir / Distance / Elevation / Relative),
+// Center blue-bordered Site Name + Database(s) box,
+// Right ID column (Envirosite ID / EPA ID), then full key-value detail block.
+// ─────────────────────────────────────────────────────────────────────────────
 function buildExpandedSiteRecordsHtml(sites, subjectLat, subjectLng, subjectElevFt = null) {
   const baseElevFt = toFiniteNumber(subjectElevFt);
   const normalized = (sites || [])
@@ -4389,107 +4395,114 @@ function buildExpandedSiteRecordsHtml(sites, subjectLat, subjectLng, subjectElev
     return '<p>No mapped facilities were returned for expansion in the selected search area.</p>';
   }
 
-  // Full dossier card per site
   return normalized.map((site) => {
     const riskColor = site.risk === 'High' ? '#b91c1c' : site.risk === 'Moderate' ? '#92400e' : '#065f46';
-    const riskBg = site.risk === 'High' ? '#fee2e2' : site.risk === 'Moderate' ? '#fef3c7' : '#d1fae5';
+    const riskBg   = site.risk === 'High' ? '#fee2e2' : site.risk === 'Moderate' ? '#fef3c7' : '#d1fae5';
     const contaminants = extractChemicalsFromDatabase(site.database);
-    const timeline = generateSiteTimeline(site);
-    const docLinks = generateDocumentLinks(site);
-    const ust = buildUSTInfrastructureDetail(site);
-    const intelligence = inferEnvironmentalIntelligence(site.database);
+    const timeline  = generateSiteTimeline(site);
+    const ust       = buildUSTInfrastructureDetail(site);
 
-    // ── Elevation badge
+    // Elevation relative label
     const siteElevFt = toFiniteNumber(site.elevation);
-    let elevBadge = '';
-    let elevDetail = '';
+    let relativeLabel = 'N/R';
+    let elevDisplay   = siteElevFt !== null ? `${siteElevFt.toFixed(0)} ft` : 'N/R';
     if (siteElevFt !== null && baseElevFt !== null) {
       const delta = siteElevFt - baseElevFt;
-      if (delta > 3) {
-        elevBadge = `<span style="background:#fee2e2;color:#b91c1c;font-weight:700;padding:2px 8px;border-radius:4px;font-size:9px;margin-left:6px;">&#9650; HIGHER ELEVATION</span>`;
-        elevDetail = `${siteElevFt.toFixed(1)} ft (+${delta.toFixed(1)} ft above subject) — UPGRADIENT risk`;
-      } else if (delta < -3) {
-        elevBadge = `<span style="background:#dcfce7;color:#15803d;font-weight:700;padding:2px 8px;border-radius:4px;font-size:9px;margin-left:6px;">&#9660; LOWER ELEVATION</span>`;
-        elevDetail = `${siteElevFt.toFixed(1)} ft (${delta.toFixed(1)} ft below subject) — downgradient`;
-      } else {
-        elevBadge = `<span style="background:#f1f5f9;color:#475569;font-weight:700;padding:2px 8px;border-radius:4px;font-size:9px;margin-left:6px;">&#9654; SIMILAR ELEVATION</span>`;
-        elevDetail = `${siteElevFt.toFixed(1)} ft (similar grade, Δ${delta.toFixed(1)} ft)`;
-      }
-    } else if (siteElevFt !== null) {
-      elevDetail = `${siteElevFt.toFixed(1)} ft (subject elevation unavailable for comparison)`;
+      relativeLabel = delta > 3
+        ? `Higher (+${delta.toFixed(0)} ft)`
+        : delta < -3
+          ? `Lower (${delta.toFixed(0)} ft)`
+          : `Similar (delta${delta.toFixed(0)} ft)`;
     }
-    const elevRow = elevDetail
-      ? `<div><strong>Elevation vs. Subject:</strong> ${escapeHtml(elevDetail)}</div>`
+
+    // Database list display
+    const dbList    = site.database.split(/[,;]/).map(d => d.trim()).filter(Boolean);
+    const dbDisplay = `[${dbList.join(', ')}]`;
+    const dbSectionLabel = dbList.length > 0
+      ? `${escapeHtml(dbList[0])} <em style="font-style:italic;">(cont.)</em>`
+      : escapeHtml(site.database);
+
+    // Full regulatory key-value record (Envirosite-style detail block)
+    const intelligence = inferEnvironmentalIntelligence(site.database);
+    const kvPairs = [
+      ['Property Alias', 'N/R'],
+      ['Property Owner', site.ownershipDetails || 'Not published'],
+      ['Size (in acres)', 'N/R'],
+      ['Parcel Number(s)', site.parcelSource || 'N/R'],
+      ['Is this property enrolled in a State or Tribal Voluntary Response Program?', 'N/R'],
+      ['Date of Enrollment', 'N/R'],
+      ['AA Activity Funded', contaminants.chemicals.length ? 'Phase I ESA' : 'N/R'],
+      ['Assessment Start Date', site.lastUpdated || 'N/R'],
+      ['Assessment Completion Date', 'N/R'],
+      ['AA Name of Entity Providing Funds', 'N/R'],
+      ['AA Source of Funding', 'N/R'],
+      ['Indicate Whether Cleanup is Necessary', site.status === 'Closed' ? 'N' : 'N/R'],
+      ['Contaminants Found', contaminants.chemicals.slice(0, 2).join(', ') || 'N/R'],
+      ['Contaminants Cleaned Up', 'N/R'],
+      ['Contaminants REC', contaminants.chemicals[0] || 'N/R'],
+      ['Media Affected', contaminants.hazardClass || 'N/R'],
+      ['Media Cleaned Up', 'N/R'],
+      ['Cleanup Activity Start Date', 'N/R'],
+      ['Cleanup Activity Completion Date', 'N/R'],
+      ['Indicate whether Cleanup/Treatment Technology(ies) Were Implemented', 'N/R'],
+      ['Excavation and Disposal of Soils', 'N/R'],
+      ['Extraction of Contaminants (soil vapor, free product, groundwater, etc.)', 'N/R'],
+      ['Removal of Materials (tanks and piping, etc.)', 'N/R'],
+      ['Reduction of Contaminants through Bioremediation/Phytoremediation', 'N/R'],
+      ['Cleanup of Structures (removal/abatement of asbestos/lead, PCB caulk, etc.)', 'N/R'],
+      ['Additional Cleanup/Treatment Technology(ies) Information', 'N/R'],
+      ['Address of Data Source (URL if available)', 'N/R'],
+      ['Indicate Whether Engineering Controls are Required', 'N'],
+      ['Cover Technologies (e.g., Capping)', 'N/R'],
+      ['Security (e.g., Guard, Fence)', 'N/R'],
+      ['Immobilization Process (e.g., Encapsulation, In-Situ Solidification)', 'N/R'],
+      ['Engineering Barriers (e.g., Slurry Walls, Sheet)', 'N/R'],
+      ['Other', 'N/R'],
+      ['Additional Engineering Controls Information', 'N/R'],
+      ['Indicate Whether Engineering Controls are In Place', 'N/R'],
+    ];
+
+    const kvHtml = kvPairs.map(([k, v]) =>
+      `<tr><td style="padding:1px 10px 1px 0;font-size:9px;color:#334155;vertical-align:top;width:62%;">${escapeHtml(k)} :</td>` +
+      `<td style="padding:1px 0;font-size:9px;color:#0f172a;vertical-align:top;">${escapeHtml(String(v))}</td></tr>`
+    ).join('');
+
+    const timelineHtml = timeline.map(t =>
+      `<tr><td style="padding:2px 10px 2px 0;width:130px;font-size:9px;font-weight:600;white-space:nowrap;">${escapeHtml(t.year)}</td>` +
+      `<td style="padding:2px 0;font-size:9px;color:#334155;">${escapeHtml(t.event)}</td></tr>`
+    ).join('');
+
+    const ustHtml = ust
+      ? `<div style="margin-top:5px;padding:4px 8px;background:#fffbeb;border:1px solid #fde68a;border-radius:3px;font-size:9px;"><strong style="color:#92400e;">UST Infrastructure:</strong> Capacity: ${escapeHtml(String(ust.capacity))} | Substance: ${escapeHtml(String(ust.substance))} | Status: ${escapeHtml(String(ust.tankStatus))}</div>`
       : '';
 
-    const chemHtml = contaminants.chemicals.slice(0, 4).map((c) => `<li style="margin:2px 0;">&#10004; ${escapeHtml(c)}</li>`).join('');
-    const wasteHtml = contaminants.wasteCodes.slice(0, 3).map((w) => `<li style="margin:2px 0; color:#64748b;">&#9654; ${escapeHtml(w)}</li>`).join('');
-    const timelineHtml = timeline.map((t) =>
-      `<tr><td style="padding:2px 8px 2px 0; font-weight:600; white-space:nowrap; width:130px;">${escapeHtml(t.year)}</td><td style="padding:2px 0; color:#334155;">${escapeHtml(t.event)}</td></tr>`
-    ).join('');
-    const docHtml = docLinks.slice(0, 3).map((l) =>
-      `<div>&#128279; <a href="${escapeHtml(l.url)}" style="color:#2563eb; font-size:10px;">${escapeHtml(l.label)}</a></div>`
-    ).join('');
-    const ustHtml = ust ? `
-      <div style="margin-top:6px; padding:6px 8px; background:#fffbeb; border:1px solid #fde68a; border-radius:4px; font-size:10px;">
-        <strong style="color:#92400e;">UST Infrastructure:</strong>
-        Capacity: ${escapeHtml(String(ust.capacity))} &nbsp;|&nbsp; Substance: ${escapeHtml(String(ust.substance))} &nbsp;|&nbsp; Status: ${escapeHtml(String(ust.tankStatus))}
-      </div>` : '';
-
-    return `
-      <div style="margin-bottom:18px; border:1px solid #d7dfeb; border-radius:10px; overflow:hidden; background:#fff; page-break-inside:avoid;">
-        <div style="background:#f1f5f9; border-bottom:1px solid #d7dfeb; padding:8px 12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px;">
-          <div>
-            <div style="font-weight:700; font-size:12px; color:#0f172a; display:flex; align-items:center; flex-wrap:wrap; gap:4px;">
-              ${escapeHtml(site.mapId)} — ${escapeHtml(site.name)}
-              ${elevBadge}
-            </div>
-            <div style="font-size:10px; color:#475569;">${escapeHtml(site.address)}</div>
-          </div>
-          <div style="background:${riskBg}; color:${riskColor}; font-weight:700; font-size:10px; padding:2px 8px; border-radius:4px;">${escapeHtml(site.risk.toUpperCase())} RISK</div>
-        </div>
-        <div style="padding:10px 12px;">
-          <table style="width:100%; font-size:10.5px; border-collapse:collapse; margin-bottom:8px;">
-            <tr>
-              <td style="width:50%; vertical-align:top; padding-right:8px;">
-                <div><strong>Database:</strong> ${escapeHtml(site.database)}</div>
-                <div><strong>Distance / Direction:</strong> ${escapeHtml(site.distanceLabel)} / ${escapeHtml(site.directionLabel)}</div>
-                <div><strong>Coordinates:</strong> ${escapeHtml(site.coordinatesLabel)}</div>
-                <div><strong>Regulatory ID:</strong> ${escapeHtml(site.regulatoryId)}</div>
-                <div><strong>Last Updated:</strong> ${escapeHtml(site.lastUpdated)}</div>
-              </td>
-              <td style="width:50%; vertical-align:top;">
-                <div><strong>Operational Status:</strong> ${escapeHtml(site.status)}</div>
-                <div><strong>Activity:</strong> ${escapeHtml(intelligence.activity)}</div>
-                <div><strong>Hazard Class:</strong> ${escapeHtml(contaminants.hazardClass)}</div>
-                <div><strong>Ownership:</strong> ${escapeHtml(site.ownershipDetails)}</div>
-                ${elevRow}
-              </td>
-            </tr>
-          </table>
-          <table style="width:100%; font-size:10.5px; border-collapse:collapse; margin-bottom:8px;">
-            <tr>
-              <td style="width:50%; vertical-align:top; padding-right:8px;">
-                <strong style="color:#025f85;">Potential Contaminants</strong>
-                <ul style="margin:4px 0; padding-left:14px;">${chemHtml}</ul>
-              </td>
-              <td style="width:50%; vertical-align:top;">
-                <strong style="color:#025f85;">Waste Codes</strong>
-                <ul style="margin:4px 0; padding-left:14px;">${wasteHtml}</ul>
-              </td>
-            </tr>
-          </table>
-          ${ustHtml}
-          <div style="margin-top:8px;">
-            <strong style="color:#025f85; font-size:10.5px;">Historical Timeline</strong>
-            <table style="width:100%; font-size:10px; border-collapse:collapse; margin-top:4px;">${timelineHtml}</table>
-          </div>
-          <div style="margin-top:6px;">
-            <strong style="color:#025f85; font-size:10.5px;">Source Documents</strong>
-            <div style="margin-top:3px;">${docHtml}</div>
-          </div>
-        </div>
-      </div>`;
+    return `<div style="margin-bottom:22px;page-break-inside:avoid;font-family:Arial,sans-serif;">` +
+      `<table style="width:100%;border-collapse:collapse;margin-bottom:4px;"><tr>` +
+      `<td style="width:100px;vertical-align:top;padding:3px 8px 3px 0;border-right:2px solid #0c2340;">` +
+      `<div style="font-size:9px;line-height:1.9;color:#0f172a;">` +
+      `<div><strong>Map Id:</strong> ${escapeHtml(site.mapId)}</div>` +
+      `<div><strong>Direction:</strong> ${escapeHtml(site.directionLabel)}</div>` +
+      `<div><strong>Distance:</strong> ${escapeHtml(site.distanceLabel)}</div>` +
+      `<div><strong>Elevation:</strong> ${escapeHtml(elevDisplay)}</div>` +
+      `<div><strong>Relative:</strong> ${escapeHtml(relativeLabel)}</div>` +
+      `</div></td>` +
+      `<td style="vertical-align:top;padding:0 6px;">` +
+      `<table style="width:100%;border:1.5px solid #2563eb;border-collapse:collapse;">` +
+      `<tr><td style="padding:4px 8px;border-bottom:1px solid #bfdbfe;background:#eff6ff;width:80px;"><span style="font-size:9px;font-weight:700;color:#1d4ed8;">Site Name :</span></td>` +
+      `<td style="padding:4px 8px;border-bottom:1px solid #bfdbfe;background:#eff6ff;font-size:9px;color:#0f172a;"><strong>${escapeHtml(site.name)}</strong><br/>${escapeHtml(site.address)}</td></tr>` +
+      `<tr><td style="padding:4px 8px;background:#fff;width:80px;"><span style="font-size:9px;font-weight:700;color:#1d4ed8;">Database(s) :</span></td>` +
+      `<td style="padding:4px 8px;background:#fff;font-size:9px;color:#0f172a;">${escapeHtml(dbDisplay)} <strong style="color:${riskColor};">(cont.)</strong></td></tr>` +
+      `</table></td>` +
+      `<td style="width:130px;vertical-align:top;padding:3px 0 3px 6px;text-align:right;font-size:9px;">` +
+      `<div><strong>Envirosite ID:</strong> ${escapeHtml(site.regulatoryId || 'N/R')}</div>` +
+      `<div><strong>EPA ID:</strong> N/R</div>` +
+      `<div style="margin-top:6px;display:inline-block;background:${riskBg};color:${riskColor};font-weight:700;padding:2px 6px;border-radius:3px;font-size:8.5px;">${escapeHtml(site.risk.toUpperCase())} RISK</div>` +
+      `</td></tr></table>` +
+      `<div style="font-weight:700;font-size:9.5px;color:#0f172a;border-top:1.5px solid #0c2340;padding-top:3px;margin-top:2px;margin-bottom:3px;">${dbSectionLabel}</div>` +
+      `<table style="width:100%;border-collapse:collapse;">${kvHtml}</table>` +
+      (timelineHtml ? `<div style="margin-top:5px;font-weight:700;font-size:9px;color:#0f172a;border-top:1px solid #e2e8f0;padding-top:3px;">Activity Timeline</div><table style="width:100%;border-collapse:collapse;">${timelineHtml}</table>` : '') +
+      ustHtml +
+      `</div>`;
   }).join('');
 }
 
@@ -4577,7 +4590,7 @@ function buildDatabaseDescriptionsHtml(sites) {
 
       return `
       <div class="db-card" style="margin-bottom:10px;">
-        <h4 style="margin-bottom:4px;">${escapeHtml(group.family)} — ${group.total} mapped record(s)</h4>
+        <h4 style="margin-bottom:4px;">${escapeHtml(group.family)} â€” ${group.total} mapped record(s)</h4>
         <p style="margin:0 0 4px;"><strong>Dataset Interpretation:</strong> ${escapeHtml(desc.meaning)}</p>
         <p style="margin:0 0 4px;"><strong>Risk Context:</strong> ${escapeHtml(desc.implication)}</p>
         <p style="margin:0 0 4px;"><strong>Nearest Record:</strong> ${nearestText} &nbsp;|&nbsp; <strong>Profile:</strong> ${profileLabel}</p>
@@ -4622,12 +4635,12 @@ function buildEnhancedExecutiveSummaryHtml(envData, riskLevels, projectAddress, 
 
   // Environmental setting summary
   const settingItems = [];
-  if (floodCount > 0) settingItems.push(`<li><strong>Flood Zones:</strong> ${floodCount} mapped flood or hydrology feature(s) — FEMA constraints may apply.</li>`);
+  if (floodCount > 0) settingItems.push(`<li><strong>Flood Zones:</strong> ${floodCount} mapped flood or hydrology feature(s) â€” FEMA constraints may apply.</li>`);
   else settingItems.push('<li><strong>Flood Zones:</strong> No mapped flood zone records returned. Confirm with jurisdictional FEMA maps.</li>');
-  if (wetlandCount > 0) settingItems.push(`<li><strong>Wetlands:</strong> ${wetlandCount} wetland-classified feature(s) — development permitting constraints may apply.</li>`);
+  if (wetlandCount > 0) settingItems.push(`<li><strong>Wetlands:</strong> ${wetlandCount} wetland-classified feature(s) â€” development permitting constraints may apply.</li>`);
   else settingItems.push('<li><strong>Wetlands:</strong> No wetland features mapped in current layers. Confirm with USFWS NWI for full regulatory review.</li>');
   settingItems.push('<li><strong>Soil / Geology:</strong> Urban/developed soils interpreted at screening level. Geotechnical confirmation recommended for development decisions.</li>');
-  if ((envData?.schools || []).length > 0) settingItems.push(`<li><strong>Sensitive Receptors:</strong> ${(envData?.schools || []).length} school or institutional facility/facilities mapped in proximity — heightened health-protective standard applies.</li>`);
+  if ((envData?.schools || []).length > 0) settingItems.push(`<li><strong>Sensitive Receptors:</strong> ${(envData?.schools || []).length} school or institutional facility/facilities mapped in proximity â€” heightened health-protective standard applies.</li>`);
 
   const dominantRisk = (riskLevels.high || 0) > 0 ? 'HIGH' : (riskLevels.medium || 0) > 0 ? 'MODERATE' : 'LOW';
   const domRiskColor = dominantRisk === 'HIGH' ? '#b91c1c' : dominantRisk === 'MODERATE' ? '#92400e' : '#065f46';
@@ -4652,10 +4665,10 @@ function buildEnhancedExecutiveSummaryHtml(envData, riskLevels, projectAddress, 
   // Lender-grade decision phrase
   const lenderPhrase = recData !== null
     ? (recData.recs.length > 0
-        ? `<div style="font-size:10.5px; color:#7f1d1d; margin-top:6px; font-weight:600;">⚠ Phase II ESA Required — ${recData.recs.length} active REC(s) identified under ASTM E1527-21.</div>`
+        ? `<div style="font-size:10.5px; color:#7f1d1d; margin-top:6px; font-weight:600;">âš  Phase II ESA Required â€” ${recData.recs.length} active REC(s) identified under ASTM E1527-21.</div>`
         : (recData.crecs.length > 0 || recData.hrecs.length > 0)
-          ? `<div style="font-size:10.5px; color:#78350f; margin-top:6px; font-weight:600;">⚠ Conditional — ${recData.crecs.length} CREC(s) / ${recData.hrecs.length} HREC(s) require verification before lender reliance.</div>`
-          : `<div style="font-size:10.5px; color:#14532d; margin-top:6px; font-weight:600;">✓ No RECs, CRECs, or HRECs identified from available mapped records.</div>`)
+          ? `<div style="font-size:10.5px; color:#78350f; margin-top:6px; font-weight:600;">âš  Conditional â€” ${recData.crecs.length} CREC(s) / ${recData.hrecs.length} HREC(s) require verification before lender reliance.</div>`
+          : `<div style="font-size:10.5px; color:#14532d; margin-top:6px; font-weight:600;">âœ“ No RECs, CRECs, or HRECs identified from available mapped records.</div>`)
     : '';
 
   return `
@@ -4683,13 +4696,13 @@ function buildEnhancedExecutiveSummaryHtml(envData, riskLevels, projectAddress, 
     </div>
 
     <div style="margin:12px 0; border:2px solid #e8b84b; border-radius:8px; overflow:hidden;">
-      <div style="background:#0c2340; color:#fff; padding:7px 12px; font-weight:700; font-size:11px; letter-spacing:0.04em;">&#127919; KEY FINDINGS — PRIORITY LAYER</div>
+      <div style="background:#0c2340; color:#fff; padding:7px 12px; font-weight:700; font-size:11px; letter-spacing:0.04em;">&#127919; KEY FINDINGS â€” PRIORITY LAYER</div>
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0;">
         ${(() => {
           const closest = [...rankedSites].sort((a, b) => (a.distanceMeters ?? 9999999) - (b.distanceMeters ?? 9999999))[0];
           const highest = rankedSites[0]; // already sorted by risk then distance
           const mostRelevant = rankedSites.find((e) => e.distanceMeters !== null && e.distanceMeters <= 250) || rankedSites[0];
-          const fmt = (e) => e ? `<div style="font-weight:700; color:#0f172a; font-size:10.5px;">${escapeHtml(e.site.name || 'Unknown')}</div><div style="font-size:9.5px; color:#64748b;">${e.distanceMeters != null ? Math.round(e.distanceMeters) + 'm' : 'N/A'} · ${escapeHtml(e.risk)}</div>` : '<div style="color:#64748b; font-size:10px;">Not identified</div>';
+          const fmt = (e) => e ? `<div style="font-weight:700; color:#0f172a; font-size:10.5px;">${escapeHtml(e.site.name || 'Unknown')}</div><div style="font-size:9.5px; color:#64748b;">${e.distanceMeters != null ? Math.round(e.distanceMeters) + 'm' : 'N/A'} Â· ${escapeHtml(e.risk)}</div>` : '<div style="color:#64748b; font-size:10px;">Not identified</div>';
           return `
             <div style="padding:8px 10px; border-right:1px solid #e2e8f0; background:#fffdf0;">
               <div style="font-size:9px; font-weight:700; color:#92400e; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;">Closest Site</div>
@@ -4789,7 +4802,7 @@ function buildMapFindingsDetailedHtml(sites, subjectLat, subjectLng) {
 }
 
 // ---------------------------------------------------------------------------
-// buildHistoricalAerialHtml — generates the §15 historical aerial narrative.
+// buildHistoricalAerialHtml â€” generates the Â§15 historical aerial narrative.
 // Reads the summary table HTML already produced by generateTopoMapsHtml to
 // embed a timeline context block in the historical land use section.
 // ---------------------------------------------------------------------------
@@ -4805,13 +4818,13 @@ function buildHistoricalAerialHtml(summaryTableHtml) {
   return `
 <div class="callout-grid" style="margin-bottom:12px;">
   <div class="callout-card">
-    <h4>📍 Historical Aerial Summary</h4>
+    <h4>ðŸ“ Historical Aerial Summary</h4>
     <p>Current and historical imagery comparison was performed to assess land-use change,
     site disturbance history, and terrain modification over time at the subject property location.
     ${availabilityLine}</p>
   </div>
   <div class="callout-card">
-    <h4>🗺 Key Observations</h4>
+    <h4>ðŸ—º Key Observations</h4>
     <ul>
       <li>Multi-era topographic maps spanning from earliest available edition to current provide
           a complete land-use timeline for the site vicinity.</li>
@@ -4872,17 +4885,17 @@ function buildHistoricalLandUseAnalysisHtml(sites) {
     </p>`;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // ELEVATION PROFILE SVG CHART GENERATOR
-// Builds North↔South and West↔East transect charts from USGS elevation points.
+// Builds Northâ†”South and Westâ†”East transect charts from USGS elevation points.
 // Falls back to synthetic topography when live data is unavailable.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 async function buildElevationProfilesHtml(subjectLat, subjectLng, subjectElevFt) {
   const lat = toFiniteNumber(subjectLat);
   const lng = toFiniteNumber(subjectLng);
   const baseElev = Number.isFinite(Number(subjectElevFt)) ? Number(subjectElevFt) : null;
 
-  // Build transect sample points: 10 pts along N-S and E-W at ~0.005° spacing (~550m)
+  // Build transect sample points: 10 pts along N-S and E-W at ~0.005Â° spacing (~550m)
   function makeTransect(axis) {
     const pts = [];
     const steps = [-0.045, -0.033, -0.022, -0.013, -0.006, 0, 0.006, 0.013, 0.022, 0.033, 0.045];
@@ -5126,7 +5139,7 @@ function buildPathwayAnalysisHtml(envData = {}, subjectLat, subjectLng, addressD
     return t.includes('school') || t.includes('hospital') || t.includes('daycare');
   }).length;
 
-  // ── Elevation-based groundwater pathway
+  // â”€â”€ Elevation-based groundwater pathway
   const subjectElev = Number(elevData?.subjectElevFt);
   const elevAnalysis = elevData?.analysis;
   const upgradientCount = Number(elevData?.upgradient || 0);
@@ -5136,46 +5149,46 @@ function buildPathwayAnalysisHtml(envData = {}, subjectLat, subjectLng, addressD
   let groundwaterPath;
   if (Number.isFinite(subjectElev)) {
     const flowRiskLabel = upgradientCount > 0
-      ? `<strong style="color:#b91c1c;">ELEVATED</strong> — ${upgradientCount} contamination source(s) identified at higher elevation (upgradient). Gravity-driven groundwater flow may transport contaminants toward subject.`
+      ? `<strong style="color:#b91c1c;">ELEVATED</strong> â€” ${upgradientCount} contamination source(s) identified at higher elevation (upgradient). Gravity-driven groundwater flow may transport contaminants toward subject.`
       : highCount > 0
-        ? `<strong style="color:#92400e;">MODERATE</strong> — ${highCount} high-priority source(s) within study area, though none confirmed upgradient by elevation analysis.`
-        : '<strong style="color:#065f46;">LOW-MODERATE</strong> — No upgradient sources confirmed by elevation data.';
+        ? `<strong style="color:#92400e;">MODERATE</strong> â€” ${highCount} high-priority source(s) within study area, though none confirmed upgradient by elevation analysis.`
+        : '<strong style="color:#065f46;">LOW-MODERATE</strong> â€” No upgradient sources confirmed by elevation data.';
     groundwaterPath = `${flowRiskLabel} Subject elevation: <strong>${subjectElev.toLocaleString()} ft</strong>.`;
   } else {
     groundwaterPath = highCount > 0
-      ? `<strong style="color:#b91c1c;">ELEVATED</strong> — ${highCount} high-priority source indicator(s) identified; elevation data unavailable to confirm flow direction.`
+      ? `<strong style="color:#b91c1c;">ELEVATED</strong> â€” ${highCount} high-priority source indicator(s) identified; elevation data unavailable to confirm flow direction.`
       : 'No dominant high-priority groundwater source identified. Confirm with site-specific groundwater level data.';
   }
 
-  // ── Soil migration pathway
+  // â”€â”€ Soil migration pathway
   const migPotential = soilData ? classifyMigrationPotential(soilData.ksat_r, soilData.hydgrp) : null;
   const soilPath = migPotential
     ? `<strong>${migPotential.label}</strong> migration potential. ${migPotential.description}`
     : floodZones.length > 0
-      ? 'Moderate migration potential in flood-influenced zones — elevated infiltration during events.'
+      ? 'Moderate migration potential in flood-influenced zones â€” elevated infiltration during events.'
       : 'Moderate baseline migration potential; site-specific soil testing recommended for quantitative assessment.';
 
-  // ── Surface runoff pathway
+  // â”€â”€ Surface runoff pathway
   const runoff = floodZones.length > 0
-    ? `<strong style="color:#b91c1c;">ELEVATED</strong> — ${floodZones.length} mapped flood/hydrology feature(s). Surface water can mobilize and transport contaminants during storm events.`
-    : `<strong style="color:#065f46;">LOW-MODERATE</strong> — No mapped flood constraints returned. Baseline surface runoff concern pending local grading/drainage review.`;
+    ? `<strong style="color:#b91c1c;">ELEVATED</strong> â€” ${floodZones.length} mapped flood/hydrology feature(s). Surface water can mobilize and transport contaminants during storm events.`
+    : `<strong style="color:#065f46;">LOW-MODERATE</strong> â€” No mapped flood constraints returned. Baseline surface runoff concern pending local grading/drainage review.`;
 
-  // ── Vapor intrusion pathway
+  // â”€â”€ Vapor intrusion pathway
   const chlorinatedSolvents = sites.some((s) => /dry clean|solvent|rcra|chlor|tce|pce|pcb/i.test(String(s.database || s.name || '')));
   const petroleum = sites.some((s) => /ust|lust|petroleum|fuel|oil/i.test(String(s.database || s.name || '')));
   const vaporRisk = chlorinatedSolvents
-    ? `<strong style="color:#b91c1c;">ELEVATED</strong> — Chlorinated solvent-related source(s) detected. Vapor intrusion (VI) pathway is a primary concern; indoor air assessment recommended.`
+    ? `<strong style="color:#b91c1c;">ELEVATED</strong> â€” Chlorinated solvent-related source(s) detected. Vapor intrusion (VI) pathway is a primary concern; indoor air assessment recommended.`
     : petroleum
-      ? `<strong style="color:#92400e;">MODERATE</strong> — Petroleum UST/LUST source(s) detected. Petroleum vapor intrusion (PVI) pathway possible — benzene, toluene (BTEX compounds) of concern.`
-      : `<strong style="color:#065f46;">LOW</strong> — No confirmed chlorinated solvent or petroleum vapor source identified in current dataset.`;
+      ? `<strong style="color:#92400e;">MODERATE</strong> â€” Petroleum UST/LUST source(s) detected. Petroleum vapor intrusion (PVI) pathway possible â€” benzene, toluene (BTEX compounds) of concern.`
+      : `<strong style="color:#065f46;">LOW</strong> â€” No confirmed chlorinated solvent or petroleum vapor source identified in current dataset.`;
 
-  // ── Elevation summary rows
+  // â”€â”€ Elevation summary rows
   const elevRows = Number.isFinite(subjectElev) ? `
     <tr style="background:#f0f9ff;"><td style="padding:5px 8px; font-weight:600;">Subject Property Elevation</td><td style="padding:5px 8px;">${subjectElev.toFixed(1)} ft NAVD88 (USGS)</td></tr>
-    <tr><td style="padding:5px 8px; font-weight:600;">Upgradient Sources (higher elevation)</td><td style="padding:5px 8px; color:${upgradientCount > 0 ? '#b91c1c' : '#065f46'}; font-weight:${upgradientCount > 0 ? '700' : '400'};">${upgradientCount} site(s) — potential flow TOWARD subject</td></tr>
-    <tr style="background:#f0f9ff;"><td style="padding:5px 8px; font-weight:600;">Downgradient Sources (lower elevation)</td><td style="padding:5px 8px; color:#334155;">${downgradientCount} site(s) — potential flow AWAY from subject</td></tr>
-    <tr><td style="padding:5px 8px; font-weight:600;">Same-Grade Sources (±3 ft)</td><td style="padding:5px 8px; color:#334155;">${sameGradeCount} site(s)</td></tr>` : `
-    <tr style="background:#fef9c3;"><td style="padding:5px 8px; font-weight:600;">Subject Elevation</td><td style="padding:5px 8px; color:#92400e;">Not available — USGS query timed out or returned no value. Consult local topographic data.</td></tr>`;
+    <tr><td style="padding:5px 8px; font-weight:600;">Upgradient Sources (higher elevation)</td><td style="padding:5px 8px; color:${upgradientCount > 0 ? '#b91c1c' : '#065f46'}; font-weight:${upgradientCount > 0 ? '700' : '400'};">${upgradientCount} site(s) â€” potential flow TOWARD subject</td></tr>
+    <tr style="background:#f0f9ff;"><td style="padding:5px 8px; font-weight:600;">Downgradient Sources (lower elevation)</td><td style="padding:5px 8px; color:#334155;">${downgradientCount} site(s) â€” potential flow AWAY from subject</td></tr>
+    <tr><td style="padding:5px 8px; font-weight:600;">Same-Grade Sources (Â±3 ft)</td><td style="padding:5px 8px; color:#334155;">${sameGradeCount} site(s)</td></tr>` : `
+    <tr style="background:#fef9c3;"><td style="padding:5px 8px; font-weight:600;">Subject Elevation</td><td style="padding:5px 8px; color:#92400e;">Not available â€” USGS query timed out or returned no value. Consult local topographic data.</td></tr>`;
 
   const elevationDecisionNarrative = Number.isFinite(subjectElev)
     ? (upgradientCount === 0 && (downgradientCount + sameGradeCount) > 0
@@ -5198,8 +5211,8 @@ function buildPathwayAnalysisHtml(envData = {}, subjectLat, subjectLng, addressD
     <tr><td style="padding:6px 8px; font-weight:700; vertical-align:top; background:#f8fafc;">Surface Runoff / Drainage</td><td style="padding:6px 8px;">${runoff}</td></tr>
     <tr style="background:#f8fafc;"><td style="padding:6px 8px; font-weight:700; vertical-align:top;">Vapor Intrusion</td><td style="padding:6px 8px;">${vaporRisk}</td></tr>
     <tr><td style="padding:6px 8px; font-weight:700; vertical-align:top; background:#f8fafc;">Dominant Source Direction</td><td style="padding:6px 8px;">${escapeHtml(direction)} of subject property (risk-weighted source centroid)</td></tr>
-    <tr style="background:#f8fafc;"><td style="padding:6px 8px; font-weight:700; vertical-align:top;">Rainfall Influence</td><td style="padding:6px 8px;">${avgRain !== null ? `${avgRain.toFixed(1)} mm annual average — ${avgRain > 50 ? 'elevated leaching potential during high-precipitation events' : 'moderate infiltration influence'}` : 'Rainfall data unavailable in this run'}</td></tr>
-    <tr><td style="padding:6px 8px; font-weight:700; vertical-align:top; background:#f8fafc;">Sensitive Receptors</td><td style="padding:6px 8px;">${sensitiveCount} school/hospital/daycare receptor(s) identified in study area — heightened health-protective standard applies</td></tr>
+    <tr style="background:#f8fafc;"><td style="padding:6px 8px; font-weight:700; vertical-align:top;">Rainfall Influence</td><td style="padding:6px 8px;">${avgRain !== null ? `${avgRain.toFixed(1)} mm annual average â€” ${avgRain > 50 ? 'elevated leaching potential during high-precipitation events' : 'moderate infiltration influence'}` : 'Rainfall data unavailable in this run'}</td></tr>
+    <tr><td style="padding:6px 8px; font-weight:700; vertical-align:top; background:#f8fafc;">Sensitive Receptors</td><td style="padding:6px 8px;">${sensitiveCount} school/hospital/daycare receptor(s) identified in study area â€” heightened health-protective standard applies</td></tr>
     ${elevRows}
   </table>
   </div>
@@ -5336,7 +5349,7 @@ function buildRiskDriversBreakdownHtml(envData = {}, groupedAddresses = [], elev
     ustCount > 0 ? `Presence of ${ustCount} petroleum storage/release indicator(s) (UST/LUST/fuel records).` : null,
     `Soil migration potential is ${soilMigration.label.toLowerCase()} based on ${soilData ? 'SSURGO hydrologic/permeability indicators' : 'fallback screening assumptions'}.`,
     elevAnalysis && elevAnalysis.upgradient > 0
-      ? `Elevation gradient shows ${elevAnalysis.upgradient} upgradient source(s) — potential for gravity-driven migration toward subject property.`
+      ? `Elevation gradient shows ${elevAnalysis.upgradient} upgradient source(s) â€” potential for gravity-driven migration toward subject property.`
       : null,
     hasMixedGradient ? 'Mixed elevation gradient: both toward-subject and away-from-subject pathway possibilities exist.' : null
   ].filter(Boolean);
@@ -5344,16 +5357,16 @@ function buildRiskDriversBreakdownHtml(envData = {}, groupedAddresses = [], elev
   if (!drivers.length) drivers.push('No dominant primary risk driver identified at this screening level.');
 
   const mitigators = [
-    rcraOrNpl250 === 0 ? 'No RCRA or NPL records within the critical 250-meter buffer — highest-severity contamination program not triggered at close range.' : null,
-    ustCount === 0 ? 'No petroleum/UST release indicators identified — subsurface hydrocarbon plume concern is reduced.' : null,
+    rcraOrNpl250 === 0 ? 'No RCRA or NPL records within the critical 250-meter buffer â€” highest-severity contamination program not triggered at close range.' : null,
+    ustCount === 0 ? 'No petroleum/UST release indicators identified â€” subsurface hydrocarbon plume concern is reduced.' : null,
     elevAnalysis && elevAnalysis.upgradient === 0 && elevAnalysis.downgradient > 0
-      ? `All elevation-resolved sites (${elevAnalysis.downgradient}) are downgradient — gravity-driven migration toward the subject property is not the primary pathway.`
+      ? `All elevation-resolved sites (${elevAnalysis.downgradient}) are downgradient â€” gravity-driven migration toward the subject property is not the primary pathway.`
       : null,
-    soilMigration.label === 'LOW' ? 'Low soil permeability reduces rapid leaching potential — natural attenuation is enhanced.' : null,
-    within250m.length === 0 ? 'No sites of any risk level within the 250-meter near-field buffer — minimal direct impact pathway concern.' : null
+    soilMigration.label === 'LOW' ? 'Low soil permeability reduces rapid leaching potential â€” natural attenuation is enhanced.' : null,
+    within250m.length === 0 ? 'No sites of any risk level within the 250-meter near-field buffer â€” minimal direct impact pathway concern.' : null
   ].filter(Boolean);
 
-  if (!mitigators.length) mitigators.push('No dominant mitigating factors identified at this screening level — requires file-level verification.');
+  if (!mitigators.length) mitigators.push('No dominant mitigating factors identified at this screening level â€” requires file-level verification.');
 
   return `
   <div class="info-box">
@@ -5395,33 +5408,33 @@ function buildAutoGeneratedInsightsHtml(riskLevels = {}, elevAnalysis = null, so
   const positives = [];
 
   if (Number(riskLevels.high || 0) > 0) {
-    insights.push(`<strong>High-risk records present</strong> — Why this matters: High-risk listings (RCRA, NPL, Superfund, UST) directly indicate confirmed or suspected contamination. These cannot be dismissed without regulator file review and closure documentation.`);
+    insights.push(`<strong>High-risk records present</strong> â€” Why this matters: High-risk listings (RCRA, NPL, Superfund, UST) directly indicate confirmed or suspected contamination. These cannot be dismissed without regulator file review and closure documentation.`);
   } else {
-    positives.push(`<strong>No high-risk records returned</strong> — Why this is NOT a problem: The absence of high-risk listings means no confirmed contamination or active remediation trigger was identified in current mapped records. Standard due diligence protocol is sufficient.`);
+    positives.push(`<strong>No high-risk records returned</strong> â€” Why this is NOT a problem: The absence of high-risk listings means no confirmed contamination or active remediation trigger was identified in current mapped records. Standard due diligence protocol is sufficient.`);
   }
 
   if (elevAnalysis && Number(elevAnalysis.upgradient || 0) > 0) {
-    insights.push(`<strong>Upgradient source detected (${elevAnalysis.upgradient} site(s))</strong> — Why this matters: Sites at higher elevation relative to the subject property may contribute to groundwater and surface-water-driven migration pathways toward the site. This increases the probability that contaminants could reach the subject property.`);
+    insights.push(`<strong>Upgradient source detected (${elevAnalysis.upgradient} site(s))</strong> â€” Why this matters: Sites at higher elevation relative to the subject property may contribute to groundwater and surface-water-driven migration pathways toward the site. This increases the probability that contaminants could reach the subject property.`);
   } else if (elevAnalysis && Number(elevAnalysis.downgradient || 0) > 0) {
-    positives.push(`<strong>Sites primarily downgradient (${elevAnalysis.downgradient} site(s))</strong> — Why this is NOT a problem: Most identified sites are at lower elevation. Gravity-driven migration away from the subject property reduces direct contamination risk, though lateral and seasonal water-table fluctuations warrant monitoring.`);
+    positives.push(`<strong>Sites primarily downgradient (${elevAnalysis.downgradient} site(s))</strong> â€” Why this is NOT a problem: Most identified sites are at lower elevation. Gravity-driven migration away from the subject property reduces direct contamination risk, though lateral and seasonal water-table fluctuations warrant monitoring.`);
   }
 
   const mig = soilData ? classifyMigrationPotential(soilData.ksat_r, soilData.hydgrp) : null;
   if (mig && mig.label === 'HIGH') {
-    insights.push(`<strong>High soil permeability (SSURGO)</strong> — Why this matters: Highly permeable soils allow rapid leaching of contaminants into groundwater. In combination with any nearby release source, this significantly accelerates migration pathways and increases receptor exposure potential.`);
+    insights.push(`<strong>High soil permeability (SSURGO)</strong> â€” Why this matters: Highly permeable soils allow rapid leaching of contaminants into groundwater. In combination with any nearby release source, this significantly accelerates migration pathways and increases receptor exposure potential.`);
   } else if (mig && mig.label === 'LOW') {
-    positives.push(`<strong>Low soil permeability (SSURGO)</strong> — Why this is NOT a problem: Low-permeability soils (clay-dominant or Group C/D) restrict downward contaminant migration. This is a natural barrier that reduces groundwater exposure risk, though surface ponding and lateral migration may still be relevant.`);
+    positives.push(`<strong>Low soil permeability (SSURGO)</strong> â€” Why this is NOT a problem: Low-permeability soils (clay-dominant or Group C/D) restrict downward contaminant migration. This is a natural barrier that reduces groundwater exposure risk, though surface ponding and lateral migration may still be relevant.`);
   }
 
   if (recData && Number(recData.recs?.length || 0) > 0) {
-    insights.push(`<strong>RECs identified (${recData.recs.length} active)</strong> — Why this matters: Recognized Environmental Conditions under ASTM E1527-21 are formal triggers requiring Phase II investigation. Lenders and institutional buyers will require documented resolution before transaction close.`);
+    insights.push(`<strong>RECs identified (${recData.recs.length} active)</strong> â€” Why this matters: Recognized Environmental Conditions under ASTM E1527-21 are formal triggers requiring Phase II investigation. Lenders and institutional buyers will require documented resolution before transaction close.`);
   } else if (recData && recData.recs?.length === 0) {
-    positives.push(`<strong>No RECs identified</strong> — Why this is NOT a problem: No Recognized Environmental Conditions were triggered in this screening run. The property does not present a Phase II escalation trigger based on currently mapped records, which is a strong positive for lender underwriting.`);
+    positives.push(`<strong>No RECs identified</strong> â€” Why this is NOT a problem: No Recognized Environmental Conditions were triggered in this screening run. The property does not present a Phase II escalation trigger based on currently mapped records, which is a strong positive for lender underwriting.`);
   }
 
   const insightsHtml = insights.length
     ? insights.map((i) => `<li style="margin:4px 0; border-left:3px solid #b91c1c; padding-left:8px;">${i}</li>`).join('')
-    : '<li style="margin:4px 0; border-left:3px solid #065f46; padding-left:8px;">No escalation triggers detected — baseline recommendation logic applied.</li>';
+    : '<li style="margin:4px 0; border-left:3px solid #065f46; padding-left:8px;">No escalation triggers detected â€” baseline recommendation logic applied.</li>';
 
   const positivesHtml = positives.length
     ? positives.map((p) => `<li style="margin:4px 0; border-left:3px solid #065f46; padding-left:8px;">${p}</li>`).join('')
@@ -5429,7 +5442,7 @@ function buildAutoGeneratedInsightsHtml(riskLevels = {}, elevAnalysis = null, so
 
   return `
   <div class="info-box">
-    <p><strong>AUTO-GENERATED INSIGHTS — WHY IT MATTERS / WHY IT DOESN'T</strong></p>
+    <p><strong>AUTO-GENERATED INSIGHTS â€” WHY IT MATTERS / WHY IT DOESN'T</strong></p>
     ${insights.length ? `<ul style="margin:0 0 8px; padding-left:14px; font-size:10.5px; line-height:1.7;">${insightsHtml}</ul>` : ''}
     ${positivesHtml ? `<ul style="margin:0; padding-left:14px; font-size:10.5px; line-height:1.7;">${positivesHtml}</ul>` : ''}
   </div>`;
@@ -5442,7 +5455,7 @@ function buildAutoGeneratedInsightsHtml(riskLevels = {}, elevAnalysis = null, so
  */
 
 /**
- * Key Findings Summary — goes right under the section header in Exec Summary.
+ * Key Findings Summary â€” goes right under the section header in Exec Summary.
  * Provides: distance-band counts, closest site, elevation favorability, soil context.
  */
 function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis = null, soilData = null, radiusMeters = 1609) {
@@ -5466,7 +5479,7 @@ function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis
     .sort((a, b) => a.mi - b.mi);
   const closest = withDist[0];
   const closestStr = closest
-    ? `${escapeHtml(String(closest.s.name || closest.s.site_name || 'Unknown').substring(0, 45))} — ${Math.round(closest.mi * 1609)}m (${closest.mi.toFixed(2)} mi) — ${escapeHtml(String(closest.s.database || '').substring(0, 30))}`
+    ? `${escapeHtml(String(closest.s.name || closest.s.site_name || 'Unknown').substring(0, 45))} â€” ${Math.round(closest.mi * 1609)}m (${closest.mi.toFixed(2)} mi) â€” ${escapeHtml(String(closest.s.database || '').substring(0, 30))}`
     : 'Not determined';
 
   // Elevation favorability
@@ -5477,9 +5490,9 @@ function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis
   let elevLine = '';
   if (Number.isFinite(Number(subjectElevFt))) {
     if (upgradient === 0) {
-      elevLine = `<li style="border-left:3px solid #065f46; padding-left:8px;"><strong style="color:#065f46;">Elevation — FAVORABLE:</strong> No upgradient contamination sources identified. ${downgradient + sameGrade} source(s) are at equal or lower elevation — gravity-driven migration toward the subject property is <strong>not supported</strong> by current elevation data. (Subject: ${Number(subjectElevFt).toFixed(0)} ft NAVD88)</li>`;
+      elevLine = `<li style="border-left:3px solid #065f46; padding-left:8px;"><strong style="color:#065f46;">Elevation â€” FAVORABLE:</strong> No upgradient contamination sources identified. ${downgradient + sameGrade} source(s) are at equal or lower elevation â€” gravity-driven migration toward the subject property is <strong>not supported</strong> by current elevation data. (Subject: ${Number(subjectElevFt).toFixed(0)} ft NAVD88)</li>`;
     } else {
-      elevLine = `<li style="border-left:3px solid #b91c1c; padding-left:8px;"><strong style="color:#b91c1c;">Elevation — ELEVATED:</strong> ${upgradient} source(s) identified at higher elevation than subject property (${Number(subjectElevFt).toFixed(0)} ft). Gravity-driven migration toward the site is a credible pathway. Verify flow direction with site-specific groundwater data.</li>`;
+      elevLine = `<li style="border-left:3px solid #b91c1c; padding-left:8px;"><strong style="color:#b91c1c;">Elevation â€” ELEVATED:</strong> ${upgradient} source(s) identified at higher elevation than subject property (${Number(subjectElevFt).toFixed(0)} ft). Gravity-driven migration toward the site is a credible pathway. Verify flow direction with site-specific groundwater data.</li>`;
     }
   }
 
@@ -5491,14 +5504,14 @@ function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis
     const favorable = mig.label === 'LOW' || mig.label === 'MODERATE';
     const soilColor = favorable ? '#065f46' : '#b91c1c';
     const soilWord  = favorable ? 'MODERATE/LOW' : 'HIGH';
-    soilLine = `<li style="border-left:3px solid ${soilColor}; padding-left:8px;"><strong style="color:${soilColor};">Soil — ${soilWord} MIGRATION POTENTIAL:</strong> ${escapeHtml(soilLabel)}. Drainage: ${escapeHtml(soilData.drainagecl || 'not rated')}. ${mig.description}</li>`;
+    soilLine = `<li style="border-left:3px solid ${soilColor}; padding-left:8px;"><strong style="color:${soilColor};">Soil â€” ${soilWord} MIGRATION POTENTIAL:</strong> ${escapeHtml(soilLabel)}. Drainage: ${escapeHtml(soilData.drainagecl || 'not rated')}. ${mig.description}</li>`;
   }
 
   // Superfund / NPL flag
   const hasNPL = sites.some((s) => /npl|superfund/i.test(String(s.database || '')));
   const nplLine = hasNPL
-    ? `<li style="border-left:3px solid #b91c1c; padding-left:8px;"><strong style="color:#b91c1c;">Superfund / NPL:</strong> One or more NPL/Superfund-listed sites identified within study area — highest diligence priority.</li>`
-    : `<li style="border-left:3px solid #065f46; padding-left:8px;"><strong style="color:#065f46;">Superfund / NPL:</strong> No NPL or Superfund-listed sites identified within the study radius — favorable for standard diligence.</li>`;
+    ? `<li style="border-left:3px solid #b91c1c; padding-left:8px;"><strong style="color:#b91c1c;">Superfund / NPL:</strong> One or more NPL/Superfund-listed sites identified within study area â€” highest diligence priority.</li>`
+    : `<li style="border-left:3px solid #065f46; padding-left:8px;"><strong style="color:#065f46;">Superfund / NPL:</strong> No NPL or Superfund-listed sites identified within the study radius â€” favorable for standard diligence.</li>`;
 
   const bandColor = (n) => n > 5 ? '#b91c1c' : n > 2 ? '#92400e' : '#065f46';
 
@@ -5506,7 +5519,7 @@ function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis
   <div style="background:#fff; border:1px solid #d7dfeb; border-radius:10px; padding:14px 16px; font-size:10.5px; margin-bottom:14px;">
     <div style="font-weight:800; color:#0c2340; font-size:11.5px; margin-bottom:10px; border-bottom:2px solid #025f85; padding-bottom:6px; display:flex; align-items:center; justify-content:space-between;">
       <span>KEY FINDINGS SUMMARY</span>
-      <span style="font-size:9px; font-weight:400; color:#64748b;">Study radius: ${radiusMi} mi &nbsp;·&nbsp; ${sites.length} total records</span>
+      <span style="font-size:9px; font-weight:400; color:#64748b;">Study radius: ${radiusMi} mi &nbsp;Â·&nbsp; ${sites.length} total records</span>
     </div>
 
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
@@ -5515,9 +5528,9 @@ function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis
         <div style="font-weight:700; color:#025f85; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Records by Distance</div>
         <table style="width:100%; font-size:10px; border-collapse:collapse;">
           <tr style="background:#f1f5f9;"><th style="padding:4px 8px; text-align:left; color:#334155;">Band</th><th style="padding:4px 8px; text-align:center; color:#334155;">Count</th><th style="padding:4px 8px; text-align:left; color:#334155;">Risk Level</th></tr>
-          <tr><td style="padding:4px 8px;">0 – 0.25 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:${bandColor(b025)};">${b025}</td><td style="padding:4px 8px; color:${bandColor(b025)};">${b025 > 5 ? 'Elevated concern' : b025 > 2 ? 'Moderate concern' : 'Limited concern'}</td></tr>
-          <tr style="background:#f8fafc;"><td style="padding:4px 8px;">0.25 – 0.5 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:${bandColor(b05)};">${b05}</td><td style="padding:4px 8px; color:${bandColor(b05)};">${b05 > 5 ? 'Elevated concern' : b05 > 2 ? 'Moderate concern' : 'Limited concern'}</td></tr>
-          <tr><td style="padding:4px 8px;">0.5 – 1.0 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:#64748b;">${b10}</td><td style="padding:4px 8px; color:#64748b;">Background / context</td></tr>
+          <tr><td style="padding:4px 8px;">0 â€“ 0.25 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:${bandColor(b025)};">${b025}</td><td style="padding:4px 8px; color:${bandColor(b025)};">${b025 > 5 ? 'Elevated concern' : b025 > 2 ? 'Moderate concern' : 'Limited concern'}</td></tr>
+          <tr style="background:#f8fafc;"><td style="padding:4px 8px;">0.25 â€“ 0.5 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:${bandColor(b05)};">${b05}</td><td style="padding:4px 8px; color:${bandColor(b05)};">${b05 > 5 ? 'Elevated concern' : b05 > 2 ? 'Moderate concern' : 'Limited concern'}</td></tr>
+          <tr><td style="padding:4px 8px;">0.5 â€“ 1.0 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:#64748b;">${b10}</td><td style="padding:4px 8px; color:#64748b;">Background / context</td></tr>
           <tr style="background:#f8fafc;"><td style="padding:4px 8px;">&gt; 1.0 mi</td><td style="padding:4px 8px; text-align:center; font-weight:700; color:#94a3b8;">${bRest}</td><td style="padding:4px 8px; color:#94a3b8;">Low proximity relevance</td></tr>
         </table>
       </div>
@@ -5538,8 +5551,8 @@ function buildKeyFindingsSummaryHtml(envData = {}, riskLevels = {}, elevAnalysis
     <div style="font-weight:700; color:#025f85; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Environmental Favorability Assessment</div>
     <ul style="margin:0; padding-left:14px; line-height:1.8; font-size:10.5px;">
       ${nplLine}
-      ${elevLine || '<li style="color:#64748b; border-left:3px solid #cbd5e1; padding-left:8px;"><strong>Elevation:</strong> Elevation comparison unavailable for this run — USGS query not returned.</li>'}
-      ${soilLine || '<li style="color:#64748b; border-left:3px solid #cbd5e1; padding-left:8px;"><strong>Soil:</strong> SSURGO soil data unavailable — inferred profile applied in Section 12.</li>'}
+      ${elevLine || '<li style="color:#64748b; border-left:3px solid #cbd5e1; padding-left:8px;"><strong>Elevation:</strong> Elevation comparison unavailable for this run â€” USGS query not returned.</li>'}
+      ${soilLine || '<li style="color:#64748b; border-left:3px solid #cbd5e1; padding-left:8px;"><strong>Soil:</strong> SSURGO soil data unavailable â€” inferred profile applied in Section 12.</li>'}
     </ul>
   </div>`;
 }
@@ -5552,7 +5565,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
   const downgradient = Number(elevAnalysis?.downgradient || 0);
   const subjectElevFt = elevAnalysis?.subjectElevFt ?? null;
 
-  // ── Score every possible concern ──────────────────────────────────────────
+  // â”€â”€ Score every possible concern â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const candidates = [];
 
   // 1. Active RECs
@@ -5563,7 +5576,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
       badge: 'CRITICAL',
       badgeColor: '#b91c1c', badgeBg: '#fee2e2',
       title: `${recCount} Recognized Environmental Condition${recCount > 1 ? 's' : ''} (REC${recCount > 1 ? 's' : ''}) Identified`,
-      why: `RECs under ASTM E1527-21 are formal transaction triggers. Lenders and institutional buyers require documented resolution — typically Phase I and/or Phase II investigation — before transaction close. This cannot be waived without risk.`,
+      why: `RECs under ASTM E1527-21 are formal transaction triggers. Lenders and institutional buyers require documented resolution â€” typically Phase I and/or Phase II investigation â€” before transaction close. This cannot be waived without risk.`,
       action: 'Obtain regulator file review, closure letters, and any institutional-control documentation before transaction close.',
     });
   }
@@ -5579,7 +5592,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
       score: 90,
       badge: 'HIGH PRIORITY',
       badgeColor: '#b91c1c', badgeBg: '#fee2e2',
-      title: `${high} High-Risk Record${high > 1 ? 's' : ''} — ${topHighSites}`,
+      title: `${high} High-Risk Record${high > 1 ? 's' : ''} â€” ${topHighSites}`,
       why: `High-risk listings (RCRA, NPL, Superfund, confirmed LUST) indicate confirmed or regulatory-recognized contamination. These sites cannot be dismissed at the screening level without file review and verified closure status.`,
       action: 'Request facility inspection records, cleanup status, and any No Further Action (NFA) letters from the applicable state agency.',
     });
@@ -5591,7 +5604,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
       score: 80,
       badge: 'FLOW RISK',
       badgeColor: '#92400e', badgeBg: '#fef3c7',
-      title: `${upgradient} Source${upgradient > 1 ? 's' : ''} Upgradient — Potential Migration Toward Site`,
+      title: `${upgradient} Source${upgradient > 1 ? 's' : ''} Upgradient â€” Potential Migration Toward Site`,
       why: `Elevation analysis (USGS) shows ${upgradient} contamination source(s) at higher elevation than the subject property (${Number(subjectElevFt).toFixed(0)} ft). Gravity-driven groundwater and surface flow may carry contaminants toward the subject site.`,
       action: 'Confirm groundwater flow direction and depth-to-water with site-specific boring data. Elevate diligence for the identified upgradient source(s).',
     });
@@ -5606,8 +5619,8 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
       badge: isHigh ? 'SOIL RISK' : 'MODERATE',
       badgeColor: isHigh ? '#b91c1c' : '#92400e',
       badgeBg:    isHigh ? '#fee2e2' : '#fef3c7',
-      title: `${isHigh ? 'High' : 'Moderate'} Soil Permeability — ${escapeHtml(soilData.drainagecl)} Drainage (SSURGO)`,
-      why: `USDA SSURGO data shows ${isHigh ? 'rapidly permeable' : 'moderately permeable'} soils (Ksat: ${soilData.ksat_r ?? 'not published'} μm/sec, Hydrologic Group ${soilData.hydgrp}). ${isHigh ? 'Contaminants released at or near the surface can rapidly migrate into groundwater.' : 'Moderate leaching potential exists; risk depends heavily on source proximity.'}`,
+      title: `${isHigh ? 'High' : 'Moderate'} Soil Permeability â€” ${escapeHtml(soilData.drainagecl)} Drainage (SSURGO)`,
+      why: `USDA SSURGO data shows ${isHigh ? 'rapidly permeable' : 'moderately permeable'} soils (Ksat: ${soilData.ksat_r ?? 'not published'} Î¼m/sec, Hydrologic Group ${soilData.hydgrp}). ${isHigh ? 'Contaminants released at or near the surface can rapidly migrate into groundwater.' : 'Moderate leaching potential exists; risk depends heavily on source proximity.'}`,
       action: isHigh
         ? 'Evaluate any confirmed release sources at or upgradient of the property for groundwater plume potential. Phase II soil borings recommended if any high-risk sources are confirmed.'
         : 'Monitor soil and groundwater conditions if any nearby UST/LUST sources are active or have unresolved closure.',
@@ -5620,7 +5633,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
       score: 50,
       badge: 'FLOOD',
       badgeColor: '#1d4ed8', badgeBg: '#dbeafe',
-      title: `Flood Zone Influence — ${(envData.floodZones || []).length} Mapped Feature${(envData.floodZones || []).length > 1 ? 's' : ''}`,
+      title: `Flood Zone Influence â€” ${(envData.floodZones || []).length} Mapped Feature${(envData.floodZones || []).length > 1 ? 's' : ''}`,
       why: `Flood zone records indicate periodic inundation potential. Floodwater can mobilize soil contaminants, introduce pathogens, and create stormwater transport pathways across the site boundary. This affects both risk and insurability.`,
       action: 'Review DFIRM panel classification, confirm flood insurance requirements, and assess site grading relative to BFE (Base Flood Elevation).',
     });
@@ -5638,7 +5651,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
     });
   }
 
-  // 7. Clean result — positive finding
+  // 7. Clean result â€” positive finding
   if (high === 0 && recCount === 0 && upgradient === 0) {
     candidates.push({
       score: 30,
@@ -5650,22 +5663,22 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
     });
   }
 
-  // ── Take top 3 by score ────────────────────────────────────────────────────
+  // â”€â”€ Take top 3 by score â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   candidates.sort((a, b) => b.score - a.score);
   const top3 = candidates.slice(0, 3);
 
-  // ── Transport context (combined soil + elevation) ──────────────────────────
+  // â”€â”€ Transport context (combined soil + elevation) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   let transportStatement = '';
   if (mig && Number.isFinite(Number(subjectElevFt))) {
     const flowFavorable = upgradient === 0 && (Number(elevAnalysis?.downgradient || 0) + Number(elevAnalysis?.sameGrade || 0)) > 0;
     const soilRestrictive = mig.label === 'LOW' || mig.label === 'MODERATE';
     if (flowFavorable && soilRestrictive) {
       transportStatement = `<div style="margin-top:10px; padding:10px 14px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px; font-size:10.5px;">
-        <strong style="color:#14532d;">Combined Transport Assessment — FAVORABLE:</strong> Elevation analysis shows no upgradient sources confirmed, and SSURGO soil data indicates ${mig.label.toLowerCase()} permeability (Hydrologic Group ${soilData.hydgrp}). These two factors collectively <strong>reduce</strong> the likelihood of contaminant migration toward the subject property. Standard diligence protocol is supported.
+        <strong style="color:#14532d;">Combined Transport Assessment â€” FAVORABLE:</strong> Elevation analysis shows no upgradient sources confirmed, and SSURGO soil data indicates ${mig.label.toLowerCase()} permeability (Hydrologic Group ${soilData.hydgrp}). These two factors collectively <strong>reduce</strong> the likelihood of contaminant migration toward the subject property. Standard diligence protocol is supported.
       </div>`;
     } else if (!flowFavorable || (mig && mig.label === 'HIGH')) {
       transportStatement = `<div style="margin-top:10px; padding:10px 14px; background:#fef9c3; border:1px solid #fde047; border-radius:8px; font-size:10.5px;">
-        <strong style="color:#713f12;">Combined Transport Assessment — ELEVATED:</strong> ${upgradient > 0 ? `${upgradient} upgradient source(s) identified.` : 'Elevation data inconclusive.'} ${mig && mig.label === 'HIGH' ? 'High soil permeability accelerates subsurface migration.' : ''} These conditions collectively increase the potential for contaminant transport toward or across the subject property.
+        <strong style="color:#713f12;">Combined Transport Assessment â€” ELEVATED:</strong> ${upgradient > 0 ? `${upgradient} upgradient source(s) identified.` : 'Elevation data inconclusive.'} ${mig && mig.label === 'HIGH' ? 'High soil permeability accelerates subsurface migration.' : ''} These conditions collectively increase the potential for contaminant transport toward or across the subject property.
       </div>`;
     }
   } else if (mig) {
@@ -5674,7 +5687,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
     </div>`;
   }
 
-  // ── Render cards ───────────────────────────────────────────────────────────
+  // â”€â”€ Render cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const cards = top3.map((item, idx) => {
     const num = idx + 1;
     const numColor = num === 1 ? '#b91c1c' : num === 2 ? '#92400e' : '#1d4ed8';
@@ -5695,7 +5708,7 @@ function buildTop3IntelligencePanelHtml(envData = {}, riskLevels = {}, elevAnaly
   return `
   <div style="background:#fff; border:1px solid #d7dfeb; border-radius:10px; padding:14px 16px; font-size:10.5px; margin-bottom:14px;">
     <div style="font-weight:800; color:#0c2340; font-size:12px; margin-bottom:4px; border-bottom:2px solid #e8b84b; padding-bottom:6px;">
-      INTELLIGENCE PANEL — TOP ${top3.length} PRIORITY FINDING${top3.length > 1 ? 'S' : ''}
+      INTELLIGENCE PANEL â€” TOP ${top3.length} PRIORITY FINDING${top3.length > 1 ? 'S' : ''}
       <span style="font-size:9px; font-weight:400; color:#64748b; margin-left:8px;">AI-ranked by severity, proximity, and transport risk for ${escapeHtml(address || 'subject property')}</span>
     </div>
     <div style="font-size:9.5px; color:#475569; margin-bottom:10px;">
@@ -5724,10 +5737,10 @@ function buildClientActionGuidanceHtml(finalRecommendationLabel, riskLevels = {}
   const immediateRisk    = level === 'HIGH'    ? { val: 'YES',         color: '#b91c1c', bg: '#fee2e2' }
                          : level === 'MODERATE'? { val: 'CONDITIONAL', color: '#92400e', bg: '#fef3c7' }
                          :                       { val: 'NO',          color: '#065f46', bg: '#d1fae5' };
-  const phaseI           = level === 'HIGH'    ? { val: 'YES — REQUIRED',    color: '#b91c1c', bg: '#fee2e2' }
-                         : level === 'MODERATE'? { val: 'YES — RECOMMENDED', color: '#92400e', bg: '#fef3c7' }
+  const phaseI           = level === 'HIGH'    ? { val: 'YES â€” REQUIRED',    color: '#b91c1c', bg: '#fee2e2' }
+                         : level === 'MODERATE'? { val: 'YES â€” RECOMMENDED', color: '#92400e', bg: '#fef3c7' }
                          :                       { val: 'OPTIONAL',          color: '#065f46', bg: '#d1fae5' };
-  const phaseII          = level === 'HIGH'    ? { val: 'YES — SCOPE NOW',   color: '#b91c1c', bg: '#fee2e2' }
+  const phaseII          = level === 'HIGH'    ? { val: 'YES â€” SCOPE NOW',   color: '#b91c1c', bg: '#fee2e2' }
                          : level === 'MODERATE'? { val: 'CONDITIONAL',       color: '#92400e', bg: '#fef3c7' }
                          :                       { val: 'NO',                color: '#065f46', bg: '#d1fae5' };
   const recommendedAction = level === 'HIGH'
@@ -5750,22 +5763,22 @@ function buildClientActionGuidanceHtml(finalRecommendationLabel, riskLevels = {}
 
   const checklist = level === 'HIGH'
     ? [
-        { pass: false, label: 'Proceed without further investigation', note: 'Not recommended — high-risk records require resolution' },
+        { pass: false, label: 'Proceed without further investigation', note: 'Not recommended â€” high-risk records require resolution' },
         { pass: false, label: 'Transaction without environmental contingency', note: 'Not recommended without ESA closure' },
-        { pass: true,  label: 'Phase I ESA required prior to close', note: 'Required — initiate immediately' },
+        { pass: true,  label: 'Phase I ESA required prior to close', note: 'Required â€” initiate immediately' },
         { pass: true,  label: 'Regulator file review and closure verification', note: 'Required for flagged sites' },
         { pass: true,  label: 'Phase II investigation scoping', note: 'Recommended based on high-risk findings' },
       ]
     : level === 'MODERATE'
       ? [
-          { pass: true,  label: 'Proceed with standard due diligence', note: 'Yes — with targeted follow-up' },
-          { pass: true,  label: 'Phase I ESA recommended', note: 'Recommended — standard transaction practice' },
+          { pass: true,  label: 'Proceed with standard due diligence', note: 'Yes â€” with targeted follow-up' },
+          { pass: true,  label: 'Phase I ESA recommended', note: 'Recommended â€” standard transaction practice' },
           { pass: false, label: 'Phase II investigation required now', note: 'Not required at this stage' },
           { pass: true,  label: 'Confirm nearest-site closure status', note: 'Recommended before close' },
           { pass: true,  label: 'Flood/wetland constraint verification', note: 'Confirm with local jurisdiction' },
         ]
       : [
-          { pass: true,  label: 'Proceed with standard due diligence', note: 'Yes — no material barriers identified' },
+          { pass: true,  label: 'Proceed with standard due diligence', note: 'Yes â€” no material barriers identified' },
           { pass: true,  label: 'No immediate investigation required', note: 'Screening level is sufficient' },
           { pass: false, label: 'Phase II investigation required', note: 'Not indicated by current data' },
           { pass: true,  label: 'Phase I ESA: optional but advisable for lender requirements', note: 'Optional' },
@@ -5774,7 +5787,7 @@ function buildClientActionGuidanceHtml(finalRecommendationLabel, riskLevels = {}
 
   const checklistHtml = checklist.map((item) =>
     `<div style="display:flex; align-items:flex-start; gap:8px; padding:5px 0; border-bottom:1px solid #f1f5f9; font-size:10.5px;">
-       <span style="color:${item.pass ? '#065f46' : '#b91c1c'}; font-size:14px; font-weight:900; line-height:1; flex-shrink:0;">${item.pass ? '✔' : '✖'}</span>
+       <span style="color:${item.pass ? '#065f46' : '#b91c1c'}; font-size:14px; font-weight:900; line-height:1; flex-shrink:0;">${item.pass ? 'âœ”' : 'âœ–'}</span>
        <div>
          <div style="font-weight:${item.pass ? '700' : '400'}; color:${item.pass ? '#0f172a' : '#94a3b8'}; text-decoration:${item.pass ? 'none' : 'line-through'};">${escapeHtml(item.label)}</div>
          <div style="font-size:9.5px; color:#64748b;">${escapeHtml(item.note)}</div>
@@ -5792,7 +5805,7 @@ function buildClientActionGuidanceHtml(finalRecommendationLabel, riskLevels = {}
     <div style="background:${levelColor}; color:#fff; padding:10px 16px; display:flex; align-items:center; justify-content:space-between;">
       <div>
         <div style="font-weight:900; font-size:13px; letter-spacing:0.04em;">GeoScope FINAL ASSESSMENT</div>
-        <div style="font-size:10px; opacity:0.85; margin-top:2px;">Environmental Screening Report — Decision Conclusion</div>
+        <div style="font-size:10px; opacity:0.85; margin-top:2px;">Environmental Screening Report â€” Decision Conclusion</div>
       </div>
       <div style="background:rgba(255,255,255,0.2); border-radius:6px; padding:6px 14px; text-align:center;">
         <div style="font-weight:900; font-size:14px; letter-spacing:0.06em;">${level} RISK</div>
@@ -5839,7 +5852,7 @@ function buildClientActionGuidanceHtml(finalRecommendationLabel, riskLevels = {}
     <ul style="margin:0; padding-left:16px;">${action.map((a) => `<li style="margin:3px 0;">${escapeHtml(a)}</li>`).join('')}</ul>
     <div style="margin-top:10px; padding:8px 10px; background:#f1f5f9; border-radius:6px; font-size:9.5px; color:#64748b; font-style:italic;">
       This assessment is based on publicly available environmental database records and spatial proximity analysis as of the report date. It does not constitute a Phase I or Phase II Environmental Site Assessment and is not a substitute for regulatory agency consultation.
-      <strong style="color:#0c2340;"> — GeoScope Solutions</strong>
+      <strong style="color:#0c2340;"> â€” GeoScope Solutions</strong>
     </div>
   </div>
   </div>`;
@@ -6008,24 +6021,24 @@ function buildLegalComplianceHtml(recData = null, riskScore = null) {
     const totalActive = recData.recs.length;
     if (totalActive > 0) {
       lenderConclusion = `<div style="background:#fee2e2; border:2px solid #f87171; border-radius:8px; padding:12px 16px; margin-top:10px;">
-        <p style="margin:0; font-weight:700; font-size:11px; color:#7f1d1d;">LENDER-GRADE SCREENING CONCLUSION — DOES NOT MEET STANDARD</p>
+        <p style="margin:0; font-weight:700; font-size:11px; color:#7f1d1d;">LENDER-GRADE SCREENING CONCLUSION â€” DOES NOT MEET STANDARD</p>
         <p style="margin:6px 0 0; font-size:10.5px; color:#334155;">Based on available public record data, this property <strong>does not meet</strong> the standard of care screening threshold for the Innocent Landowner Defense under CERCLA and the All Appropriate Inquiries Rule (40 CFR Part 312). A total of <strong>${totalActive} Recognized Environmental Condition(s) (RECs)</strong> were identified under the ASTM E1527-21 framework. A <strong>Phase II Environmental Site Assessment (ESA)</strong> is warranted prior to acquisition, financing, or title commitment.</p>
       </div>`;
     } else if ((recData.crecs.length + recData.hrecs.length) > 0) {
       lenderConclusion = `<div style="background:#fef3c7; border:2px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-top:10px;">
-        <p style="margin:0; font-weight:700; font-size:11px; color:#78350f;">LENDER-GRADE SCREENING CONCLUSION — CONDITIONAL</p>
+        <p style="margin:0; font-weight:700; font-size:11px; color:#78350f;">LENDER-GRADE SCREENING CONCLUSION â€” CONDITIONAL</p>
         <p style="margin:6px 0 0; font-size:10.5px; color:#334155;">No active RECs were identified from available mapped records. However, <strong>${recData.crecs.length} CREC(s)</strong> and <strong>${recData.hrecs.length} HREC(s)</strong> require further verification. This property <strong>conditionally meets</strong> screening standard subject to: confirmation of institutional controls for CREC sites and historical records review for HREC designations. Standard Phase I ESA with site reconnaissance is recommended before lender reliance.</p>
       </div>`;
     } else {
       lenderConclusion = `<div style="background:#f0fdf4; border:2px solid #86efac; border-radius:8px; padding:12px 16px; margin-top:10px;">
-        <p style="margin:0; font-weight:700; font-size:11px; color:#14532d;">LENDER-GRADE SCREENING CONCLUSION — MEETS STANDARD</p>
+        <p style="margin:0; font-weight:700; font-size:11px; color:#14532d;">LENDER-GRADE SCREENING CONCLUSION â€” MEETS STANDARD</p>
         <p style="margin:6px 0 0; font-size:10.5px; color:#334155;">Based on available public record data and this screening-level review, no RECs, CRECs, or HRECs were identified. This property <strong>appears to meet</strong> the standard of care for the Innocent Landowner Defense under CERCLA and the All Appropriate Inquiries Rule (40 CFR Part 312). A qualified environmental professional's final review and site reconnaissance are required to complete the AAI standard under ASTM E1527-21.</p>
       </div>`;
     }
   }
 
   const recSummaryLine = recData !== null
-    ? `<p><strong>Recognized Environmental Conditions (ASTM E1527-21):</strong> ${recCount} REC(s), ${crecCount} CREC(s), and ${hrecCount} HREC(s) identified — see the RECs Section for complete classification and recommended actions.</p>`
+    ? `<p><strong>Recognized Environmental Conditions (ASTM E1527-21):</strong> ${recCount} REC(s), ${crecCount} CREC(s), and ${hrecCount} HREC(s) identified â€” see the RECs Section for complete classification and recommended actions.</p>`
     : '';
 
   return `
@@ -6332,13 +6345,13 @@ async function resolveReportMapImages(mapUrls, lat, lng) {
   return { overview, satellite, streetView, areaMap };
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // HISTORICAL TOPOGRAPHIC MAP GENERATOR
 // Fetches USGS National Map tiles at multiple scales/services and returns
 // a ready-to-embed HTML block (base64 data-URIs for reliable PDF rendering).
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // ---------------------------------------------------------------------------
-// fetchTopoThumbnail — download a USGS S3 thumbnail and return a base64 data URI.
+// fetchTopoThumbnail â€” download a USGS S3 thumbnail and return a base64 data URI.
 // Falls back to an empty string so the report page still renders without an image.
 // ---------------------------------------------------------------------------
 async function fetchTopoThumbnail(url) {
@@ -6390,7 +6403,7 @@ async function fetchTopoBestImageAsBase64(mapRow = {}, latN = null, lngN = null)
 }
 
 // ---------------------------------------------------------------------------
-// fetchUsgsTopoBasemap — live USGS tile-service snapshot (current basemap).
+// fetchUsgsTopoBasemap â€” live USGS tile-service snapshot (current basemap).
 // Used as fallback when TNM has no historical maps for a location.
 // ---------------------------------------------------------------------------
 async function fetchUsgsTopoBasemap(latN, lngN, service = 'USGSTopo', delta = 0.04) {
@@ -6687,13 +6700,13 @@ async function getHistoricalTopoCandidates(latitude, longitude, yearStart = 1880
 }
 
 // ---------------------------------------------------------------------------
-// generateTopoMapsHtml — builds complete Historical Topographic Map section.
+// generateTopoMapsHtml â€” builds complete Historical Topographic Map section.
 //
 // Flow:
 //  1. Query USGS TNM Access API for real historical scanned topo maps at location
 //  2. Parse year + scale from titles; de-duplicate by (quadName, year)
 //  3. Select best coverage: prefer 1:24,000 7.5-min quads; cap at 8 pages
-//  4. Fetch USGS S3 thumbnail for each → base64-embed in PDF
+//  4. Fetch USGS S3 thumbnail for each â†’ base64-embed in PDF
 //  5. Generate: summary table + individual full-page map sections
 //  6. Fall back to USGS live tile-service basemap snapshots if TNM fails
 // ---------------------------------------------------------------------------
@@ -6706,7 +6719,7 @@ async function generateTopoMapsHtml(lat, lng, options = {}) {
     return '';
   }
 
-  const coordLabel = `${latN.toFixed(5)}°${latN >= 0 ? 'N' : 'S'}, ${Math.abs(lngN).toFixed(5)}°${lngN < 0 ? 'W' : 'E'}`;
+  const coordLabel = `${latN.toFixed(5)}Â°${latN >= 0 ? 'N' : 'S'}, ${Math.abs(lngN).toFixed(5)}Â°${lngN < 0 ? 'W' : 'E'}`;
   const currentYear = new Date().getFullYear();
   const requestedStart = Number.parseInt(options?.yearStart, 10);
   const requestedEnd = Number.parseInt(options?.yearEnd, 10);
@@ -6714,7 +6727,7 @@ async function generateTopoMapsHtml(lat, lng, options = {}) {
   const topoYearEnd = Number.isFinite(requestedEnd) ? Math.max(1880, Math.min(requestedEnd, currentYear)) : currentYear;
   const selectedKeySet = new Set((Array.isArray(options?.selectedKeys) ? options.selectedKeys : []).map((v) => String(v).trim()).filter(Boolean));
 
-  // ── 1. Query strict location-matched TNM candidates ─────────────────────
+  // â”€â”€ 1. Query strict location-matched TNM candidates â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const topoCandidateResult = await getHistoricalTopoCandidates(latN, lngN, topoYearStart, topoYearEnd);
   let parsed = (topoCandidateResult?.candidates || []).map((row) => ({
     year: Number(row.year),
@@ -6740,7 +6753,7 @@ async function generateTopoMapsHtml(lat, lng, options = {}) {
     return (a.scaleNum || 999999) - (b.scaleNum || 999999);
   });
 
-  // ── 3. Select pages — prefer 1:24,000; cap at 8 ─────────────────────────
+  // â”€â”€ 3. Select pages â€” prefer 1:24,000; cap at 8 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Try to get a diverse time spread: pick earliest, a few midpoints, latest
   let pagesSource = parsed.filter(p => p.scaleNum <= 24000);
   if (pagesSource.length < 3) pagesSource = parsed; // relax filter
@@ -6759,7 +6772,7 @@ async function generateTopoMapsHtml(lat, lng, options = {}) {
     pages = dedupPages;
   }
 
-  // ── 4. Summary table HTML ────────────────────────────────────────────────
+  // â”€â”€ 4. Summary table HTML â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const allForSummary = parsed.length > 0 ? parsed : [];
   let summaryTableHtml;
   if (allForSummary.length) {
@@ -6786,7 +6799,7 @@ ${allForSummary.map((p, i) => `  <tr>
     summaryTableHtml = '<p style="color:#64748b;font-size:10px;">No USGS historical topographic maps indexed for this location via the TNM API. Current-era basemap snapshots are provided below.</p>';
   }
 
-  // ── 5. Individual map pages ──────────────────────────────────────────────
+  // â”€â”€ 5. Individual map pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Fetch thumbnails in parallel (capped by pages array)
   const thumbResults = await Promise.allSettled(
     pages.map((p) => fetchTopoBestImageAsBase64(p, latN, lngN))
@@ -6810,10 +6823,10 @@ ${allForSummary.map((p, i) => `  <tr>
     const imgSrc = thumbResults[i].status === 'fulfilled' ? thumbResults[i].value : '';
     const imgBlock = imgSrc
       ? `<div class="histo-img-wrap">
-    <img src="${imgSrc}" alt="USGS Historical Topo — ${p.quadName} ${p.year}" />
+    <img src="${imgSrc}" alt="USGS Historical Topo â€” ${p.quadName} ${p.year}" />
     <div class="histo-img-caption">
-      <span>USGS Historical Topographic Map — ${escapeHtml(p.quadName)} — ${p.year}</span>
-      <span>© U.S. Geological Survey / USGS National Map</span>
+      <span>USGS Historical Topographic Map â€” ${escapeHtml(p.quadName)} â€” ${p.year}</span>
+      <span>Â© U.S. Geological Survey / USGS National Map</span>
     </div>
   </div>`
       : `<div style="background:#f1f5f9;border:1px dashed #94a3b8;border-radius:8px;padding:40px;text-align:center;color:#64748b;font-size:11px;margin-bottom:14px;">
@@ -6869,7 +6882,7 @@ ${allForSummary.map((p, i) => `  <tr>
   if (currentTopoImg || currentImgTopoImg) {
     mapPageHtmlParts.push(`<div class="section page-break">
   <div class="histo-page-header">
-    <span class="histo-page-title">Current Topographic Reference — ${new Date().getFullYear()}</span>
+    <span class="histo-page-title">Current Topographic Reference â€” ${new Date().getFullYear()}</span>
     <span class="histo-page-badge">Current Edition</span>
   </div>
 
@@ -6905,7 +6918,7 @@ ${allForSummary.map((p, i) => `  <tr>
       <img src="${currentTopoImg}" alt="Current USGS Topo" style="height:340px;object-fit:cover;" />
       <div class="map-exhibit-body">
         <div class="map-exhibit-label">Topographic</div>
-        <div class="map-exhibit-title">USGS Topo — Current Edition</div>
+        <div class="map-exhibit-title">USGS Topo â€” Current Edition</div>
         <div class="map-exhibit-text">Terrain lines, road network, hydrography.</div>
       </div>
     </div>` : ''}
@@ -6913,7 +6926,7 @@ ${allForSummary.map((p, i) => `  <tr>
       <img src="${currentImgTopoImg}" alt="Current USGS Imagery Topo" style="height:340px;object-fit:cover;" />
       <div class="map-exhibit-body">
         <div class="map-exhibit-label">Imagery + Topo Overlay</div>
-        <div class="map-exhibit-title">USGS ImageryTopo — Current</div>
+        <div class="map-exhibit-title">USGS ImageryTopo â€” Current</div>
         <div class="map-exhibit-text">Satellite imagery with topo layer overlay.</div>
       </div>
     </div>` : ''}
@@ -6927,7 +6940,7 @@ ${allForSummary.map((p, i) => `  <tr>
 </div>`);
   }
 
-  // ── 6. Return combined HTML ──────────────────────────────────────────────
+  // â”€â”€ 6. Return combined HTML â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   // Export summaryTableHtml separately via the {{histo_summary_table}} placeholder;
   // fall back: embed it here if the placeholder was not found in template.
   generateTopoMapsHtml._lastSummaryHtml = summaryTableHtml;
@@ -6959,7 +6972,7 @@ async function buildLegacyAerialTimelineFromTopo(lat, lng, yearStart = 1940, yea
       date: String(pick.year || target),
       source: 'USGS Historical Topographic (Aerial Context Proxy)',
       dataUri,
-      caption: `${pick.quad_name || 'USGS Historical Topographic Map'} (${pick.year || target}) — used as pre-2014 aerial-context proxy`,
+      caption: `${pick.quad_name || 'USGS Historical Topographic Map'} (${pick.year || target}) â€” used as pre-2014 aerial-context proxy`,
     });
   }
 
@@ -7102,25 +7115,25 @@ function deriveSoilTypeLabel(ssurgoSoil) {
   }
   if (hydgrp) parts.push(`Hydrologic Group ${hydgrp}`);
   if (drain && drain !== 'Not rated') parts.push(drain);
-  return parts.join(' — ');
+  return parts.join(' â€” ');
 }
 
 /**
- * Classify migration potential from ksat (μm/sec) and hydrologic group.
+ * Classify migration potential from ksat (Î¼m/sec) and hydrologic group.
  */
 function classifyMigrationPotential(ksat_r, hydgrp) {
   if (ksat_r === null) {
     // Fall back to hydrologic group
-    if (/A/i.test(String(hydgrp))) return { label: 'HIGH', description: 'Group A soils — high permeability, rapid drainage, fast contaminant migration potential.' };
-    if (/B/i.test(String(hydgrp))) return { label: 'MODERATE', description: 'Group B soils — moderate permeability and moderate migration potential.' };
-    if (/C/i.test(String(hydgrp))) return { label: 'LOW-MODERATE', description: 'Group C soils — moderately slow permeability, slower migration.' };
-    return { label: 'LOW', description: 'Group D soils — very slow permeability, limited migration but surface ponding risk.' };
+    if (/A/i.test(String(hydgrp))) return { label: 'HIGH', description: 'Group A soils â€” high permeability, rapid drainage, fast contaminant migration potential.' };
+    if (/B/i.test(String(hydgrp))) return { label: 'MODERATE', description: 'Group B soils â€” moderate permeability and moderate migration potential.' };
+    if (/C/i.test(String(hydgrp))) return { label: 'LOW-MODERATE', description: 'Group C soils â€” moderately slow permeability, slower migration.' };
+    return { label: 'LOW', description: 'Group D soils â€” very slow permeability, limited migration but surface ponding risk.' };
   }
-  // ksat_r in μm/sec: >10 = high, 1–10 = moderate, 0.1–1 = low, <0.1 = very low
-  if (ksat_r > 10) return { label: 'HIGH', description: `Saturated hydraulic conductivity of ${ksat_r} μm/sec — high-permeability soil, contaminant migration is rapid via leaching and groundwater recharge.` };
-  if (ksat_r > 1)  return { label: 'MODERATE', description: `Ksat ${ksat_r} μm/sec — moderate permeability, migration possible during precipitation events and over time.` };
-  if (ksat_r > 0.1) return { label: 'LOW-MODERATE', description: `Ksat ${ksat_r} μm/sec — moderately slow permeability, attenuation possible in unsaturated zone.` };
-  return { label: 'LOW', description: `Ksat ${ksat_r} μm/sec — very low permeability, limited vertical migration; surface runoff and lateral flow are dominant transport mechanisms.` };
+  // ksat_r in Î¼m/sec: >10 = high, 1â€“10 = moderate, 0.1â€“1 = low, <0.1 = very low
+  if (ksat_r > 10) return { label: 'HIGH', description: `Saturated hydraulic conductivity of ${ksat_r} Î¼m/sec â€” high-permeability soil, contaminant migration is rapid via leaching and groundwater recharge.` };
+  if (ksat_r > 1)  return { label: 'MODERATE', description: `Ksat ${ksat_r} Î¼m/sec â€” moderate permeability, migration possible during precipitation events and over time.` };
+  if (ksat_r > 0.1) return { label: 'LOW-MODERATE', description: `Ksat ${ksat_r} Î¼m/sec â€” moderately slow permeability, attenuation possible in unsaturated zone.` };
+  return { label: 'LOW', description: `Ksat ${ksat_r} Î¼m/sec â€” very low permeability, limited vertical migration; surface runoff and lateral flow are dominant transport mechanisms.` };
 }
 
 /**
@@ -7139,7 +7152,7 @@ function analyzeElevationRelationships(subjectElevFt, sites = []) {
     else sameGrade++;
   }
   const downgradeRisk = downgradient > 0
-    ? `${downgradient} site(s) are upgradient relative to subject (higher elevation → potential contaminant flow toward subject property).`
+    ? `${downgradient} site(s) are upgradient relative to subject (higher elevation â†’ potential contaminant flow toward subject property).`
     : 'No upgradient contamination sources identified from elevation analysis.';
   return {
     upgradient,
@@ -7169,11 +7182,11 @@ function classifyRECs(sites = [], elevAnalysis = null) {
     const distMiles = parseDistanceMiles(site.distance);
     const distMeters = Number.isFinite(distMiles) ? distMiles * 1609.344 : null;
 
-    // RECs — active, open, or leaking sources
+    // RECs â€” active, open, or leaking sources
     const isActiveSource = /npl|superfund|rcra corracts|lust|leaking|open|violation|spill|release|active|cerclis/i.test(`${db} ${status} ${name}`);
-    // CRECs — historical releases with confirmed completion
+    // CRECs â€” historical releases with confirmed completion
     const isHistorical = /closed|remediated|deleted npl|former|historical/i.test(`${db} ${status} ${name}`);
-    // HRECs — historical concern without REC level
+    // HRECs â€” historical concern without REC level
     const isHistoricalLow = /ust|petroleum|industrial|dry clean|solvent/i.test(db) && /closed|inactive/i.test(`${status} ${name}`);
 
     if (isActiveSource && distMeters !== null && distMeters <= 800) {
@@ -7183,7 +7196,7 @@ function classifyRECs(sites = [], elevAnalysis = null) {
         site: site.name,
         database: site.database,
         distance: site.distance,
-        basis: `Active or open regulatory listing in ${site.database} — represents a recognized environmental condition per ASTM E1527-21 §8.`,
+        basis: `Active or open regulatory listing in ${site.database} â€” represents a recognized environmental condition per ASTM E1527-21 Â§8.`,
         recommendation: 'Phase II ESA warranted. Consider source-specific groundwater and soil sampling.',
       });
     } else if (isHistorical && distMeters !== null && distMeters <= 1600) {
@@ -7193,7 +7206,7 @@ function classifyRECs(sites = [], elevAnalysis = null) {
         site: site.name,
         database: site.database,
         distance: site.distance,
-        basis: `Historical release with apparent regulatory closure in ${site.database} — classified as a Controlled Recognized Environmental Condition (CREC).`,
+        basis: `Historical release with apparent regulatory closure in ${site.database} â€” classified as a Controlled Recognized Environmental Condition (CREC).`,
         recommendation: 'Confirm institutional controls (ICs), deed restrictions, and post-closure monitoring are in place.',
       });
     } else if (isHistoricalLow) {
@@ -7203,7 +7216,7 @@ function classifyRECs(sites = [], elevAnalysis = null) {
         site: site.name,
         database: site.database,
         distance: site.distance,
-        basis: `Historical recognized environmental condition — past industrial or chemical use in ${site.database} without confirmed active release.`,
+        basis: `Historical recognized environmental condition â€” past industrial or chemical use in ${site.database} without confirmed active release.`,
         recommendation: 'Review historical Sanborn maps, city directories, and state agency records for activity confirmation.',
       });
     }
@@ -7275,8 +7288,8 @@ function buildRECsSectionHtml(recData = {}, sites = []) {
   </div>
   <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:10px 14px; font-size:10.5px; margin-top:8px;">
     <strong style="color:#0c4a6e;">REC Summary:</strong> ${recs.length} REC(s) | ${crecs.length} CREC(s) | ${hrecs.length} HREC(s)
-    ${recs.length > 0 ? ' — <strong style="color:#b91c1c;">Phase II ESA is recommended.</strong>' : ''}
-    ${crecs.length > 0 && recs.length === 0 ? ' — <strong style="color:#92400e;">Institutional control verification recommended.</strong>' : ''}
+    ${recs.length > 0 ? ' â€” <strong style="color:#b91c1c;">Phase II ESA is recommended.</strong>' : ''}
+    ${crecs.length > 0 && recs.length === 0 ? ' â€” <strong style="color:#92400e;">Institutional control verification recommended.</strong>' : ''}
   </div>`;
 }
 
@@ -7291,7 +7304,7 @@ async function fetchEnvironmentalData(lat, lng, polygon = null, radius = 1000) {
   };
 
   try {
-    // ── PRIMARY: Query our local PostGIS database (15M+ records) ──────────
+    // â”€â”€ PRIMARY: Query our local PostGIS database (15M+ records) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const gisSearch = require('./gis-search');
     const searchResult = await gisSearch.nearbySearch(lat, lng, radius);
     // Cap site volume to keep premium PDF generation stable under load.
@@ -7332,7 +7345,7 @@ async function fetchEnvironmentalData(lat, lng, polygon = null, radius = 1000) {
       };
     });
 
-    // ── SECONDARY: rainfall from Open-Meteo (non-critical) ───────────────
+    // â”€â”€ SECONDARY: rainfall from Open-Meteo (non-critical) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     try {
       const rainfallResponse = await axios.get(
         `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lng}` +
@@ -7345,7 +7358,7 @@ async function fetchEnvironmentalData(lat, lng, polygon = null, radius = 1000) {
             precipitation: `${rainfallResponse.data.daily.precipitation_sum[i]} mm`
           }))
         : [];
-    } catch (_) { /* non-critical — skip */ }
+    } catch (_) { /* non-critical â€” skip */ }
 
   } catch (error) {
     console.error('Error fetching environmental data:', error.message);
@@ -7406,7 +7419,7 @@ async function generateAISummary(environmentalData, projectName, address, polygo
   try {
     // Prepare environmental data summary
     const analysisType = polygon ? 'polygon-defined area' : 'radius-based analysis';
-    const areaInfo = (polygonAnalysis && polygonAnalysis.area != null) ? `Property area: ${polygonAnalysis.area.toLocaleString()} m² (${polygonAnalysis.areaAcres.toFixed(2)} acres). ` : '';
+    const areaInfo = (polygonAnalysis && polygonAnalysis.area != null) ? `Property area: ${polygonAnalysis.area.toLocaleString()} mÂ² (${polygonAnalysis.areaAcres.toFixed(2)} acres). ` : '';
 
     const dataText = `
       Project: ${projectName}
@@ -7760,9 +7773,9 @@ function buildExecutiveSummaryByDatabase(sites, subjectElevFt = null) {
         const total = Higher + Lower + Equal + Unknown;
         if (total === 0 || Unknown === total) return 'Elevation N/A';
         const parts = [];
-        if (Higher > 0) parts.push(`<span style="color:#b91c1c;font-weight:700;">${Higher} Higher ▲</span>`);
-        if (Lower > 0) parts.push(`<span style="color:#065f46;font-weight:700;">${Lower} Lower ▼</span>`);
-        if (Equal > 0) parts.push(`<span style="color:#334155;">${Equal} Equal →</span>`);
+        if (Higher > 0) parts.push(`<span style="color:#b91c1c;font-weight:700;">${Higher} Higher â–²</span>`);
+        if (Lower > 0) parts.push(`<span style="color:#065f46;font-weight:700;">${Lower} Lower â–¼</span>`);
+        if (Equal > 0) parts.push(`<span style="color:#334155;">${Equal} Equal â†’</span>`);
         return parts.join(' &nbsp;');
       })();
       const distProfile = `${entry.distBands.d250} / ${entry.distBands.d500} / ${entry.distBands.d1000} / ${entry.distBands.outer}`;
@@ -7802,7 +7815,7 @@ function buildExecutiveSummaryByDatabase(sites, subjectElevFt = null) {
     return `
       <div style="margin-bottom:16px;">
         <div style="background:${jurBg[group.label]}; color:${jurColor[group.label]}; font-weight:800; font-size:11px; padding:6px 12px; border-radius:6px 6px 0 0; letter-spacing:0.04em; text-transform:uppercase; border:1px solid rgba(0,0,0,0.08);">
-          ${escapeHtml(group.label)} Databases — ${group.entries.length} dataset type${group.entries.length !== 1 ? 's' : ''}
+          ${escapeHtml(group.label)} Databases â€” ${group.entries.length} dataset type${group.entries.length !== 1 ? 's' : ''}
         </div>
         <div style="border:1px solid #d7dfeb; border-top:none; padding:6px 10px; font-size:10px; color:#334155; background:#ffffff;">
           <strong>Summary:</strong> ${groupSiteCount} mapped record(s) in this jurisdiction group${Number.isFinite(groupNearest) ? `; nearest at ${groupNearest.toFixed(2)} mi` : ''}. Interpretation prioritizes closest and highest-risk records first.
@@ -7829,7 +7842,7 @@ function buildExecutiveSummaryByDatabase(sites, subjectElevFt = null) {
   return `
   <div style="margin-bottom:10px; border:1px solid #d7dfeb; border-radius:8px; background:#ffffff;">
     <div style="padding:8px 12px; background:#0c2340; color:#fff; border-radius:8px 8px 0 0; font-size:11px;">
-      <strong>Executive Summary by Database — ${Object.keys(dbMap).length} dataset type(s) | ${allSites.length} total records</strong>
+      <strong>Executive Summary by Database â€” ${Object.keys(dbMap).length} dataset type(s) | ${allSites.length} total records</strong>
       &nbsp;|&nbsp; Grouped by jurisdiction: Federal / State / Local
     </div>
     <div style="padding:8px 12px; font-size:10.5px; color:#334155;">
@@ -8513,7 +8526,7 @@ function buildLongFormConsultingAppendix(envData, projectName, address, minPages
       <h2>Consulting Appendix ${i + 1}: ${escapeHtml(dbName)}</h2>
       <p><strong>Project:</strong> ${escapeHtml(projectName || 'N/A')}</p>
       <p><strong>Address:</strong> ${escapeHtml(address || 'N/A')}</p>
-      <p><strong>Database Scope:</strong> ${escapeHtml(dbDesc.title || dbName)} — ${escapeHtml(dbDesc.meaning || 'Included in master records search coverage.')}</p>
+      <p><strong>Database Scope:</strong> ${escapeHtml(dbDesc.title || dbName)} â€” ${escapeHtml(dbDesc.meaning || 'Included in master records search coverage.')}</p>
       <p><strong>Matched Records:</strong> ${matches.length}</p>
       <h3>Database Findings</h3>
       ${findingsHtml}
@@ -9305,7 +9318,7 @@ async function notifyReportReadyForAdminReview(orderRef, reportDetails = {}) {
     <div style="margin:0;padding:24px;background:#eef3f8;font-family:Arial,Helvetica,sans-serif;color:#1f2937;">
       <div style="max-width:760px;margin:0 auto;background:#ffffff;border:1px solid #d8e1ec;border-radius:8px;padding:24px;">
         <h2 style="margin:0 0 10px;color:#1d4f91;">GEOSCOPE</h2>
-        <h3 style="margin:0 0 18px;color:#334155;">Report Notification — Ready for Admin Review</h3>
+        <h3 style="margin:0 0 18px;color:#334155;">Report Notification â€” Ready for Admin Review</h3>
         <p style="margin:0 0 14px;color:#1f2937;">Kindly click the link below for your report.</p>
         <p style="margin:0 0 6px;"><strong>Order Number:</strong> ${escapeHtml(String(orderNumber))}</p>
         <p style="margin:0 0 6px;"><strong>Project Name:</strong> ${escapeHtml(String(projectName))}</p>
@@ -9325,7 +9338,7 @@ async function notifyReportReadyForAdminReview(orderRef, reportDetails = {}) {
     </div>`;
 
   const text = [
-    `Report Notification — Ready for Admin Review (Order #${orderNumber})`,
+    `Report Notification â€” Ready for Admin Review (Order #${orderNumber})`,
     `Project Name: ${projectName}`,
     `Site Address: ${siteAddress}`,
     `Client Email: ${clientEmail}`,
@@ -9339,7 +9352,7 @@ async function notifyReportReadyForAdminReview(orderRef, reportDetails = {}) {
 
   await sendEmail({
     to: recipients,
-    subject: `Report Notification — Ready for Admin Review (Order #${orderNumber})`,
+    subject: `Report Notification â€” Ready for Admin Review (Order #${orderNumber})`,
     text,
     html,
     attachments: reportDetails.reportPath ? [{ path: reportDetails.reportPath }] : []
@@ -9436,7 +9449,7 @@ app.get('/public/stats', async (req, res) => {
       return reportStatuses.has(status) || !!o.report_url || !!o.report_path;
     }).length;
 
-    // Apply display floors — never show less than the published marketing figures
+    // Apply display floors â€” never show less than the published marketing figures
     const FLOOR_CLIENTS = 75;
     const FLOOR_REPORTS = 1000;
     const AVG_TURNAROUND_HOURS = 48;
@@ -10433,10 +10446,10 @@ app.put('/save-draft/:id', (req, res) => {
   res.json({ message: 'Draft saved' });
 });
 
-// ─── STAGE ADVANCE ───────────────────────────────────────────────────────────
+// â”€â”€â”€ STAGE ADVANCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // PUT /orders/:id/stage  { stage: 'GIS_REVIEW'|'ANALYST_REVIEW'|'ADMIN_REVIEW'|'COMPLETED', action:'', note:'', from:'' }
-// Maps stage → canonical status so downstream queues work automatically.
-// Supports bidirectional workflow (e.g., ADMIN_REVIEW → ANALYST_REVIEW for revision requests)
+// Maps stage â†’ canonical status so downstream queues work automatically.
+// Supports bidirectional workflow (e.g., ADMIN_REVIEW â†’ ANALYST_REVIEW for revision requests)
 const STAGE_STATUS_MAP = {
   GIS_REVIEW:      'pending',
   ANALYST_REVIEW:  'received',
@@ -10662,7 +10675,7 @@ app.post('/admin/orders/:orderId/send-back-to-analyst', requireAuth, requireRole
   return res.json({ success: true, message: 'Order sent back to analyst with correction notes.' });
 });
 
-// ─── ORDER MESSAGES ──────────────────────────────────────────────────────────
+// â”€â”€â”€ ORDER MESSAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // POST /orders/:id/messages  { from: 'GIS', message: '...' }
 app.post('/orders/:id/messages', (req, res) => {
   const orderId = req.params.id;
@@ -10736,7 +10749,7 @@ app.post('/send-to-client', async (req, res) => {
                 </td>
                 <td style="vertical-align:middle;">
                   <div style="font-size:24px;font-weight:900;letter-spacing:0.1em;color:#ffffff;line-height:1;">GEOSCOPE</div>
-                  <div style="font-size:9px;letter-spacing:0.22em;color:#e8b84b;border-top:1px solid rgba(232,184,75,0.5);border-bottom:1px solid rgba(232,184,75,0.5);padding:2px 0;margin:3px 0;font-weight:700;">— SOLUTIONS —</div>
+                  <div style="font-size:9px;letter-spacing:0.22em;color:#e8b84b;border-top:1px solid rgba(232,184,75,0.5);border-bottom:1px solid rgba(232,184,75,0.5);padding:2px 0;margin:3px 0;font-weight:700;">â€” SOLUTIONS â€”</div>
                   <div style="font-size:8px;color:#9dc4b4;letter-spacing:0.06em;text-transform:uppercase;">Environmental Intelligence. Real-World Insights.</div>
                 </td>
               </tr></table>
@@ -10880,7 +10893,7 @@ app.post('/order', async (req, res) => {
       text: JSON.stringify(data, null, 2)
     };
 
-    // Fire-and-forget the notification email — do NOT await so the HTTP
+    // Fire-and-forget the notification email â€” do NOT await so the HTTP
     // response is returned immediately (avoids Vercel 60-second timeout).
     if (hasEmailProvider) {
       sendEmail(mailOptions)
@@ -11122,7 +11135,7 @@ async function processOrderInBackground(orderId, orderData) {
 
         polygonAnalysis = {
           area: polygonArea,
-          areaAcres: polygonArea * 0.000247105, // Convert m² to acres
+          areaAcres: polygonArea * 0.000247105, // Convert mÂ² to acres
           perimeter: polygonPerimeterMeters(ring)
         };
       } catch (error) {
@@ -11247,7 +11260,7 @@ async function processOrderInBackground(orderId, orderData) {
  */
 
 /**
- * Format an order ID as a zero-padded 6-digit order number (e.g. 1000 → "001000").
+ * Format an order ID as a zero-padded 6-digit order number (e.g. 1000 â†’ "001000").
  * Non-numeric IDs (e.g. fallback timestamp strings) are returned as-is.
  */
 function formatOrderNumber(id) {
@@ -11586,7 +11599,7 @@ function generateAddressSummary(addressData) {
  * Returns true when an address entry matches the subject property.
  * Checks:
  *   1. Normalised text match between entry.address and subjectAddress
- *   2. Coordinate proximity ≤ 30 m (handles address-string mismatches)
+ *   2. Coordinate proximity â‰¤ 30 m (handles address-string mismatches)
  */
 function isSpAddress(entry, subjectLat, subjectLng, subjectAddress) {
   if (subjectAddress) {
@@ -11898,7 +11911,7 @@ async function generatePDFReportInternal(data) {
     ? Math.min(100, Math.round(((riskLevels.high * 3 + riskLevels.medium * 2 + riskLevels.low) / (totalRiskSites * 3)) * 100))
     : 0;
 
-  // ── Fetch real elevation and soil data in parallel (non-blocking)
+  // â”€â”€ Fetch real elevation and soil data in parallel (non-blocking)
   const [subjectElevFt, ssurgoSoil, dfirmPanels, ssurgoMapDataUri] = await Promise.all([
     fetchUSGSElevation(latitude, longitude).catch(() => null),
     fetchSSURGOSoilData(latitude, longitude).catch(() => null),
@@ -11908,7 +11921,7 @@ async function generatePDFReportInternal(data) {
   const elevAnalysis = analyzeElevationRelationships(subjectElevFt, envData.environmentalSites || []);
   logStage('elevation and soil data fetched');
 
-  // ── Classify RECs per ASTM E1527-21
+  // â”€â”€ Classify RECs per ASTM E1527-21
   const recData = classifyRECs(envData.environmentalSites || [], elevAnalysis);
   logStage('RECs classified');
 
@@ -12118,12 +12131,12 @@ async function generatePDFReportInternal(data) {
   const elevationApprox = (() => {
     const lat = toFiniteNumber(latitude);
     const lng = toFiniteNumber(longitude);
-    if (lat === null || lng === null) return 'N/A — consult USGS';
-    // Use rough elevation estimate: USGS topo suggests values typically vary 0–4000+ ft
+    if (lat === null || lng === null) return 'N/A â€” consult USGS';
+    // Use rough elevation estimate: USGS topo suggests values typically vary 0â€“4000+ ft
     // Return placeholder; Open-Meteo elevation may be in envData if fetched
     const openMeteoElevation = (envData.rainfall || []).length > 0 && envData.rainfall[0]?.elevation
       ? `${Math.round(envData.rainfall[0].elevation)} ft (approx)`
-      : 'N/A — consult USGS National Map';
+      : 'N/A â€” consult USGS National Map';
     return openMeteoElevation;
   })();
   const additionalData = {
@@ -12317,7 +12330,7 @@ async function generatePDFReportInternal(data) {
     aerial_image_html: buildAerialImageHtml(
       data.aerial_image_data || null,
       data.aerial_filters || {},
-      data.aerial_caption || `Aerial imagery — ${address || 'Subject Property'}`
+      data.aerial_caption || `Aerial imagery â€” ${address || 'Subject Property'}`
     ),
     aerial_historical_html: buildHistoricalAerialsHtml(resolvedHistoricalAerialImages),
     legal_compliance_language: legalComplianceLanguage,
@@ -12344,7 +12357,7 @@ async function generatePDFReportInternal(data) {
   if (polygonAnalysis && polygonAnalysis.area != null) {
     const polygonHtml = `
 <p><strong>Analysis Method:</strong> Polygon-defined boundary</p>
-<p><strong>Property Area:</strong> ${polygonAnalysis.area.toLocaleString()} m² (${polygonAnalysis.areaAcres.toFixed(2)} acres)</p>
+<p><strong>Property Area:</strong> ${polygonAnalysis.area.toLocaleString()} mÂ² (${polygonAnalysis.areaAcres.toFixed(2)} acres)</p>
 <p><strong>Perimeter:</strong> ${polygonAnalysis.perimeter.toFixed(0)} meters</p>
     `;
     htmlContent = htmlContent.replace(/{{#polygonAnalysis}}([\s\S]*?){{\/polygonAnalysis}}/, polygonHtml);
@@ -12613,7 +12626,7 @@ app.post('/generate-report', async (req, res) => {
       ? Math.min(100, Math.round(((riskLevels.high * 3 + riskLevels.medium * 2 + riskLevels.low) / (totalRiskSites * 3)) * 100))
       : 0;
 
-    // ── Fetch elevation + soil for this secondary path
+    // â”€â”€ Fetch elevation + soil for this secondary path
     const [subjectElevFt, ssurgoSoil, dfirmPanels] = await Promise.all([
       fetchUSGSElevation(latitude, longitude).catch(() => null),
       fetchSSURGOSoilData(latitude, longitude).catch(() => null),
@@ -12700,7 +12713,7 @@ app.post('/generate-report', async (req, res) => {
     const elevationApprox2 = (() => {
       const openMeteoElev = (envData.rainfall || []).length > 0 && envData.rainfall[0]?.elevation
         ? `${Math.round(envData.rainfall[0].elevation)} ft (approx)`
-        : 'N/A — consult USGS National Map';
+        : 'N/A â€” consult USGS National Map';
       return openMeteoElev;
     })();
     const additionalData = {
@@ -12857,7 +12870,7 @@ app.post('/generate-report', async (req, res) => {
       aerial_image_html: buildAerialImageHtml(
         data.aerial_image_data || null,
         data.aerial_filters || {},
-        data.aerial_caption || `Aerial imagery — ${address || 'Subject Property'}`
+        data.aerial_caption || `Aerial imagery â€” ${address || 'Subject Property'}`
       ),
       aerial_historical_html: buildHistoricalAerialsHtml(resolvedHistoricalAerialImages),
       legal_compliance_language: legalComplianceLanguage,
@@ -12883,7 +12896,7 @@ app.post('/generate-report', async (req, res) => {
     if (polygonAnalysis && polygonAnalysis.area != null) {
       const polygonHtml = `
   <p><strong>Analysis Method:</strong> Polygon-defined boundary</p>
-  <p><strong>Property Area:</strong> ${polygonAnalysis.area.toLocaleString()} m² (${polygonAnalysis.areaAcres.toFixed(2)} acres)</p>
+  <p><strong>Property Area:</strong> ${polygonAnalysis.area.toLocaleString()} mÂ² (${polygonAnalysis.areaAcres.toFixed(2)} acres)</p>
   <p><strong>Perimeter:</strong> ${polygonAnalysis.perimeter.toFixed(0)} meters</p>
       `;
       htmlContent = htmlContent.replace(/{{#polygonAnalysis}}([\s\S]*?){{\/polygonAnalysis}}/, polygonHtml);
@@ -13192,7 +13205,7 @@ app.post('/send-sample-report', async (req, res) => {
     await sendEmail({
       to: recipient,
       subject: 'Your GeoScope Sample Environmental Report',
-      text: `Hi ${senderName},\n\nThank you for your interest in GeoScope Solutions.\n\nAttached is your sample Government Records Report — a demonstration of our full environmental site assessment deliverable.\n\nThis sample includes:\n• AI-generated executive summary\n• Environmental database findings table\n• Geological landscape analysis\n• Flood zone, wetland, and sensitive receptor data\n\nReady to order a report for your property? Visit https://geoscope.com/request-report\n\nBest regards,\nThe GeoScope Team`,
+      text: `Hi ${senderName},\n\nThank you for your interest in GeoScope Solutions.\n\nAttached is your sample Government Records Report â€” a demonstration of our full environmental site assessment deliverable.\n\nThis sample includes:\nâ€¢ AI-generated executive summary\nâ€¢ Environmental database findings table\nâ€¢ Geological landscape analysis\nâ€¢ Flood zone, wetland, and sensitive receptor data\n\nReady to order a report for your property? Visit https://geoscope.com/request-report\n\nBest regards,\nThe GeoScope Team`,
       attachments: [{ path: reportResult.reportPath }]
     });
 
@@ -13805,7 +13818,7 @@ app.get('/invoices/:invoiceId/download', requireAuth, async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /api/aerial-image — proxy Esri World Imagery as base64 data URI
+// GET /api/aerial-image â€” proxy Esri World Imagery as base64 data URI
 // Returns: { dataUri, source, zoom, bbox } or 404 on failure
 // ---------------------------------------------------------------------------
 app.get('/api/aerial-image', async (req, res) => {
@@ -13832,7 +13845,7 @@ app.get('/api/aerial-image', async (req, res) => {
         east:  (lng + degPerMiLng * buf).toFixed(6),
         north: (lat + degPerMiLat * buf).toFixed(6),
       },
-      captionDefault: `Current aerial imagery — ${lat.toFixed(5)}, ${lng.toFixed(5)} — Source: USGS National Map`
+      captionDefault: `Current aerial imagery â€” ${lat.toFixed(5)}, ${lng.toFixed(5)} â€” Source: USGS National Map`
     });
   } catch (err) {
     console.error('GET /api/aerial-image error:', err.message);
@@ -13843,7 +13856,7 @@ app.get('/api/aerial-image', async (req, res) => {
 // ---------------------------------------------------------------------------
 // GET /api/aerial-images-historical
 // Returns array of { year, releaseId, date, dataUri, caption } for selected
-// target years using Esri Wayback (available 2014–present, ~5-year gaps).
+// target years using Esri Wayback (available 2014â€“present, ~5-year gaps).
 // Query params: lat, lng, zoom (default 17), years (comma-separated, default auto)
 // ---------------------------------------------------------------------------
 app.get('/api/aerial-images-historical', async (req, res) => {
@@ -13890,7 +13903,7 @@ app.get('/api/aerial-images-historical', async (req, res) => {
         date: release.date,
         source: 'Esri World Imagery (Wayback)',
         dataUri: dataUri || null,
-        caption: `Aerial imagery ${release.date} — ${lat.toFixed(5)}, ${lng.toFixed(5)} — Source: Esri World Imagery (Wayback)`,
+        caption: `Aerial imagery ${release.date} â€” ${lat.toFixed(5)}, ${lng.toFixed(5)} â€” Source: Esri World Imagery (Wayback)`,
       };
     }));
 
@@ -13903,7 +13916,7 @@ app.get('/api/aerial-images-historical', async (req, res) => {
     return res.json({
       images: results,
       source: 'Esri Wayback + USGS TNM imagery services',
-      availableRange: '2014–present (+ supplemental USGS imagery sources)',
+      availableRange: '2014â€“present (+ supplemental USGS imagery sources)',
     });
   } catch (err) {
     console.error('GET /api/aerial-images-historical error:', err.message);
@@ -13912,7 +13925,7 @@ app.get('/api/aerial-images-historical', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /nearby-search — environmental spatial search around a subject point
+// GET /nearby-search â€” environmental spatial search around a subject point
 // ---------------------------------------------------------------------------
 const gisSearch = require('./gis-search');
 const globalDataStore = require('./services/globalDataStore');
@@ -14269,7 +14282,7 @@ app.get('/nearby-search', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /database-catalog — full configured database inventory (158+)
+// GET /database-catalog â€” full configured database inventory (158+)
 // Optional query: lat, lng, radius => attach in-area match counts
 // ---------------------------------------------------------------------------
 app.get('/database-catalog', async (req, res) => {
@@ -14439,7 +14452,7 @@ app.get('/database-catalog', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /database-catalog/us-states — grouped USA state catalog with useful info
+// GET /database-catalog/us-states â€” grouped USA state catalog with useful info
 // ---------------------------------------------------------------------------
 app.get('/database-catalog/us-states', requireAuth, requireRole('admin', 'analyst', 'gis'), (req, res) => {
   try {
@@ -14498,7 +14511,7 @@ app.get('/database-catalog/us-states', requireAuth, requireRole('admin', 'analys
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/store/stats — local DB counts for stored datasets/features
+// GET /data/store/stats â€” local DB counts for stored datasets/features
 // ---------------------------------------------------------------------------
 app.get('/data/store/stats', requireAuth, requireRole('admin', 'analyst', 'gis'), (req, res) => {
   try {
@@ -14510,7 +14523,7 @@ app.get('/data/store/stats', requireAuth, requireRole('admin', 'analyst', 'gis')
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/high-priority/summary — analyst-facing high-priority class visibility
+// GET /data/high-priority/summary â€” analyst-facing high-priority class visibility
 // ---------------------------------------------------------------------------
 app.get('/data/high-priority/summary', requireAuth, requireRole('admin', 'analyst', 'gis'), async (req, res) => {
   try {
@@ -14577,7 +14590,7 @@ app.get('/data/high-priority/summary', requireAuth, requireRole('admin', 'analys
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/catalog/sync-status — current auto-sync configuration and last run
+// GET /data/catalog/sync-status â€” current auto-sync configuration and last run
 // ---------------------------------------------------------------------------
 app.get('/data/catalog/sync-status', requireAuth, requireRole('admin', 'analyst', 'gis'), (req, res) => {
   try {
@@ -14592,7 +14605,7 @@ app.get('/data/catalog/sync-status', requireAuth, requireRole('admin', 'analyst'
 });
 
 // ---------------------------------------------------------------------------
-// POST /data/catalog/sync-now — force immediate EPA/UST/state catalog sync
+// POST /data/catalog/sync-now â€” force immediate EPA/UST/state catalog sync
 // ---------------------------------------------------------------------------
 app.post('/data/catalog/sync-now', requireAuth, requireRole('admin', 'gis'), (req, res) => {
   try {
@@ -14633,7 +14646,7 @@ function normalizeName(value) {
 }
 
 // ---------------------------------------------------------------------------
-// GET /data/missing-databases/suggestions — AI-style guidance for missing DBs
+// GET /data/missing-databases/suggestions â€” AI-style guidance for missing DBs
 // ---------------------------------------------------------------------------
 app.get('/data/missing-databases/suggestions', requireAuth, requireRole('admin', 'analyst', 'gis'), async (req, res) => {
   try {
@@ -14697,7 +14710,7 @@ app.get('/data/missing-databases/suggestions', requireAuth, requireRole('admin',
 });
 
 // ---------------------------------------------------------------------------
-// POST /data/missing-databases/register — store analyst missing DB requests
+// POST /data/missing-databases/register â€” store analyst missing DB requests
 // ---------------------------------------------------------------------------
 app.post('/data/missing-databases/register', requireAuth, requireRole('admin', 'analyst', 'gis'), (req, res) => {
   try {
@@ -14732,7 +14745,7 @@ app.post('/data/missing-databases/register', requireAuth, requireRole('admin', '
 });
 
 // ---------------------------------------------------------------------------
-// POST /data/import/geo-points — bulk import stored environmental points
+// POST /data/import/geo-points â€” bulk import stored environmental points
 // ---------------------------------------------------------------------------
 app.post('/data/import/geo-points', requireAuth, requireRole('admin', 'analyst', 'gis'), (req, res) => {
   try {
@@ -14750,7 +14763,7 @@ app.post('/data/import/geo-points', requireAuth, requireRole('admin', 'analyst',
 });
 
 // ---------------------------------------------------------------------------
-// POST /data/import/features — bulk import address/building features
+// POST /data/import/features â€” bulk import address/building features
 // ---------------------------------------------------------------------------
 app.post('/data/import/features', requireAuth, requireRole('admin'), (req, res) => {
   try {
@@ -14768,7 +14781,7 @@ app.post('/data/import/features', requireAuth, requireRole('admin'), (req, res) 
 });
 
 // ---------------------------------------------------------------------------
-// POST /data/ingest/nearby-sites — fetch live nearby sites and store locally
+// POST /data/ingest/nearby-sites â€” fetch live nearby sites and store locally
 // ---------------------------------------------------------------------------
 app.post('/data/ingest/nearby-sites', requireAuth, requireRole('admin', 'gis'), async (req, res) => {
   try {
@@ -14811,7 +14824,7 @@ app.post('/data/ingest/nearby-sites', requireAuth, requireRole('admin', 'gis'), 
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/export/dbeaver/environmental-sites.sql — SQL for DBeaver import
+// GET /data/export/dbeaver/environmental-sites.sql â€” SQL for DBeaver import
 // ---------------------------------------------------------------------------
 app.get('/data/export/dbeaver/environmental-sites.sql', requireAuth, requireRole('admin', 'gis'), (req, res) => {
   try {
@@ -14827,7 +14840,7 @@ app.get('/data/export/dbeaver/environmental-sites.sql', requireAuth, requireRole
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/export/dbeaver/environmental-sites.csv — CSV for DBeaver import
+// GET /data/export/dbeaver/environmental-sites.csv â€” CSV for DBeaver import
 // ---------------------------------------------------------------------------
 app.get('/data/export/dbeaver/environmental-sites.csv', requireAuth, requireRole('admin', 'gis'), (req, res) => {
   try {
@@ -14916,7 +14929,7 @@ app.post('/data/import/analyst-corrections/environmental-sites.csv', requireAuth
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/export/postgres/environmental-sites-copy.sql — COPY-ready script
+// GET /data/export/postgres/environmental-sites-copy.sql â€” COPY-ready script
 // ---------------------------------------------------------------------------
 app.get('/data/export/postgres/environmental-sites-copy.sql', requireAuth, requireRole('admin', 'gis'), (req, res) => {
   try {
@@ -14933,7 +14946,7 @@ app.get('/data/export/postgres/environmental-sites-copy.sql', requireAuth, requi
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/address-matches — address-level matching from stored DB
+// GET /data/address-matches â€” address-level matching from stored DB
 // ---------------------------------------------------------------------------
 app.get('/data/address-matches', requireAuth, requireRole('admin', 'analyst', 'gis'), (req, res) => {
   try {
@@ -14958,7 +14971,7 @@ app.get('/data/address-matches', requireAuth, requireRole('admin', 'analyst', 'g
 });
 
 // ---------------------------------------------------------------------------
-// GET /data/report/address-level — detailed location-by-location risk output
+// GET /data/report/address-level â€” detailed location-by-location risk output
 // ---------------------------------------------------------------------------
 app.get('/data/report/address-level', async (req, res) => {
   try {
@@ -15051,7 +15064,7 @@ app.get('/data/report/address-level', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /features — extract area features from OSM and link to nearby risks
+// GET /features â€” extract area features from OSM and link to nearby risks
 // ---------------------------------------------------------------------------
 app.get('/features', async (req, res) => {
   try {
@@ -15105,7 +15118,7 @@ app.get('/features', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /datasets — extract area features from OSM and link to nearby risks
+// GET /datasets â€” extract area features from OSM and link to nearby risks
 // Alias for /features, returns same data but optimized for datasets display
 // ---------------------------------------------------------------------------
 app.get('/datasets', async (req, res) => {
@@ -15125,7 +15138,7 @@ app.get('/datasets', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /analyze-point — analyze environmental risks at a specific point
+// GET /analyze-point â€” analyze environmental risks at a specific point
 // Returns datasets and features within radius of the point
 // ---------------------------------------------------------------------------
 app.get('/analyze-point', async (req, res) => {
@@ -15188,7 +15201,7 @@ app.get('/analyze-point', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// POST /save-work — save analyst's drawn shapes and work state
+// POST /save-work â€” save analyst's drawn shapes and work state
 // Stores geometry and state for later resume
 // ---------------------------------------------------------------------------
 const savedWork = {}; // In-memory storage for work sessions
@@ -15222,7 +15235,7 @@ app.post('/save-work', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// GET /resume-work/:sessionId — resume a previously saved work session
+// GET /resume-work/:sessionId â€” resume a previously saved work session
 // ---------------------------------------------------------------------------
 app.get('/resume-work/:sessionId', (req, res) => {
   try {
@@ -15366,7 +15379,7 @@ app.post('/admin/orders/:orderId/send-to-client', requireAuth, requireRole('admi
                       </td>
                       <td style="vertical-align:middle;">
                         <div style="font-size:26px;font-weight:900;letter-spacing:0.1em;color:#ffffff;line-height:1;">GEOSCOPE</div>
-                        <div style="font-size:10px;letter-spacing:0.22em;color:#e8b84b;border-top:1px solid rgba(232,184,75,0.5);border-bottom:1px solid rgba(232,184,75,0.5);padding:2px 0;margin:3px 0;font-weight:700;">— SOLUTIONS —</div>
+                        <div style="font-size:10px;letter-spacing:0.22em;color:#e8b84b;border-top:1px solid rgba(232,184,75,0.5);border-bottom:1px solid rgba(232,184,75,0.5);padding:2px 0;margin:3px 0;font-weight:700;">â€” SOLUTIONS â€”</div>
                         <div style="font-size:9px;color:#9dc4b4;letter-spacing:0.06em;text-transform:uppercase;">Environmental Intelligence. Real-World Insights.</div>
                       </td>
                     </tr>
@@ -15417,7 +15430,7 @@ app.post('/admin/orders/:orderId/send-to-client', requireAuth, requireRole('admi
     await sendEmail({
       to: clientEmail,
       cc: normalizedCc.length > 0 ? normalizedCc : undefined,
-      subject: `Your GeoScope Report is Ready — ${order.project_name || `Order #${orderId}`}`,
+      subject: `Your GeoScope Report is Ready â€” ${order.project_name || `Order #${orderId}`}`,
       html: brandedClientHtml,
       attachments
     });
