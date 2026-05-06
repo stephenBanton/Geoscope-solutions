@@ -8940,6 +8940,21 @@ app.get('/platform/readiness', async (req, res) => {
 });
 
 // GET /health - Lightweight service health status for uptime checks
+// Debug: preview cover page HTML (no auth required, for visual testing)
+app.get('/preview-cover', (req, res) => {
+  try {
+    const templatePath = path.join(__dirname, 'reportTemplate.html');
+    let html = fs.readFileSync(templatePath, 'utf8');
+    html = html.replace(/\{\{[^}]+\}\}/g, 'PREVIEW_VALUE');
+    const hasNewCover = html.includes('cover-right');
+    res.setHeader('X-Template-Version', hasNewCover ? 'NEW' : 'OLD');
+    res.setHeader('X-Template-Size', String(html.length));
+    res.send(html);
+  } catch (e) {
+    res.status(500).send('Error: ' + e.message);
+  }
+});
+
 app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
