@@ -2089,6 +2089,210 @@ function buildDatasetIntelligenceHtml(envData = {}, groupedAddresses = [], subje
   return cards;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SVG PROXIMITY MAP GENERATOR — EDR-style map with concentric rings, labeled
+// site markers colored by elevation, north arrow, scale bar.
+// Used for both "Property Proximity Map" and "Area Map" exhibit pages.
+// ─────────────────────────────────────────────────────────────────────────────
+function buildProximityMapSVGHtml(sites = [], subjectLat, subjectLng, radiusMeters = 1609, subjectElevFt = null, baseMapDataUri = null, opts = {}) {
+  const W = 1000, H = 530;
+  const cx = W / 2, cy = H / 2;
+  const { areaZoom = false } = opts;
+
+  const latN = toFiniteNumber(subjectLat) || 0;
+  const lngN = toFiniteNumber(subjectLng) || 0;
+  const cosLat = Math.cos(latN * Math.PI / 180) || 1;
+
+  const displayRadiusM = areaZoom ? radiusMeters * 0.35 : radiusMeters;
+  const outerSvgR = Math.min(cx, cy) - 20;
+  const pxPerMeter = outerSvgR / displayRadiusM;
+
+  function toSVG(lat, lng) {
+    const dLat = (Number(lat) - latN) * 111320;
+    const dLng = (Number(lng) - lngN) * 111320 * cosLat;
+    return { x: cx + dLng * pxPerMeter, y: cy - dLat * pxPerMeter };
+  }
+
+  const ringDefs = areaZoom
+    ? [
+        { r: outerSvgR * 0.5, label: `${(displayRadiusM * 0.5 / 1609.34).toFixed(2)} mi` },
+        { r: outerSvgR,       label: `${(displayRadiusM / 1609.34).toFixed(2)} mi` },
+      ]
+    : [
+        { r: outerSvgR * 0.25, label: `${(radiusMeters * 0.25 / 1609.34).toFixed(2)} mi` },
+        { r: outerSvgR * 0.5,  label: `${(radiusMeters * 0.5  / 1609.34).toFixed(2)} mi` },
+        { r: outerSvgR,        label: `${(radiusMeters        / 1609.34).toFixed(2)} mi` },
+      ];
+
+  const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let letterIdx = 0, numIdx = 62;
+  const plotted = [];
+
+  (sites || []).forEach((site) => {
+    const lat = toFiniteNumber(site.lat || site.latitude);
+    const lng = toFiniteNumber(site.lng || site.longitude);
+    if (!lat || !lng) return;
+    const pos = toSVG(lat, lng);
+    if (pos.x < 4 || pos.x > W - 4 || pos.y < 4 || pos.y > H - 4) return;
+    const elevFt = toFiniteNumber(site.elevation_ft || site.elevation);
+    const isHigher = (elevFt !== null && Number.isFinite(Number(subjectElevFt)))
+      ? Number(elevFt) >= Number(subjectElevFt) - 3 : false;
+    const risk = getRiskLevel(site);
+    const label = letterIdx < 26 ? LETTERS[letterIdx++] : String(numIdx++);
+    const fill = isHigher ? '#8b1a1a' : '#d4a017';
+    const shape = risk === 'High' ? 'square' : 'circle';
+    plotted.push({ pos, label, fill, shape });
+  });
+
+  const gridSVG = !baseMapDataUri ? [40,80,120,160,200,240,280,320,360,400,440,480,520,560,600,640,680,720,760,800,840,880,920,960].map(x => {
+    const major = x % 160 === 0;
+    return `<line x1="${x}" y1="0" x2="${x}" y2="${H}" stroke="#94a3b8" stroke-width="${major?1.4:0.5}" stroke-opacity="${major?0.4:0.15}"/>`;
+  }).concat([40,80,120,160,200,240,280,320,360,400,440,480].map(y => {
+    const major = y % 160 === 0;
+    return `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="#94a3b8" stroke-width="${major?1.4:0.5}" stroke-opacity="${major?0.4:0.15}"/>`;
+  })).join('') : '';
+
+  const waterSVG = !baseMapDataUri
+    ? `<path d="M ${W*0.55},${H} C ${W*0.58},${H*0.75} ${W*0.62},${H*0.68} ${W*0.68},${H*0.72} S ${W*0.85},${H*0.7} ${W},${H*0.65} L ${W},${H} Z" fill="#b3d4e8" fill-opacity="0.45"/>
+       <path d="M 0,${H*0.78} C ${W*0.08},${H*0.72} ${W*0.22},${H*0.8} ${W*0.35},${H*0.74} S ${W*0.42},${H*0.72} ${W*0.42},${H} L 0,${H} Z" fill="#b3d4e8" fill-opacity="0.35"/>`
+    : '';
+
+  const ringSVG = ringDefs.map(({ r, label }, i) => {
+    const last = i === ringDefs.length - 1;
+    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#cc0000" stroke-width="${last?2.2:1.6}" stroke-dasharray="${last?'9,6':'6,4'}"/>
+  <text x="${cx+r-3}" y="${cy-6}" font-size="8" font-family="Arial,sans-serif" fill="#cc0000" font-weight="bold">${label}</text>`;
+  }).join('\n  ');
+
+  const markerSVG = plotted.map(({ pos, label, fill, shape }) => {
+    const { x, y } = pos; const sz = 6;
+    const body = shape === 'square'
+      ? `<rect x="${x-sz}" y="${y-sz}" width="${sz*2}" height="${sz*2}" fill="${fill}" stroke="#fff" stroke-width="1.2"/>`
+      : `<circle cx="${x}" cy="${y}" r="${sz}" fill="${fill}" stroke="#fff" stroke-width="1.2"/>`;
+    return `${body}<text x="${x+sz+2}" y="${y+4}" font-size="7.5" font-family="Arial,sans-serif" font-weight="bold" fill="#000" style="paint-order:stroke;stroke:#fff;stroke-width:2;">${label}</text>`;
+  }).join('');
+
+  const scaleBarM = Math.max(100, Math.round(displayRadiusM / 4 / 100) * 100);
+  const sbPx = Math.min(200, scaleBarM * pxPerMeter);
+  const sbX = W - 24 - sbPx, sbY = H - 18;
+  const scaleSVG = `<rect x="${sbX}" y="${sbY-3}" width="${sbPx/2}" height="4" fill="#333"/>
+  <rect x="${sbX+sbPx/2}" y="${sbY-3}" width="${sbPx/2}" height="4" fill="#fff" stroke="#333" stroke-width="0.5"/>
+  <line x1="${sbX}" y1="${sbY-7}" x2="${sbX}" y2="${sbY+1}" stroke="#333" stroke-width="1.5"/>
+  <line x1="${sbX+sbPx}" y1="${sbY-7}" x2="${sbX+sbPx}" y2="${sbY+1}" stroke="#333" stroke-width="1.5"/>
+  <text x="${sbX}" y="${sbY+10}" text-anchor="middle" font-size="7.5" font-family="Arial" fill="#333">0</text>
+  <text x="${sbX+sbPx}" y="${sbY+10}" text-anchor="middle" font-size="7.5" font-family="Arial" fill="#333">${scaleBarM}m</text>`;
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" style="display:block;width:100%;height:100%;max-height:530px;">
+  <rect width="${W}" height="${H}" fill="#e4ecf3"/>
+  ${baseMapDataUri ? `<image href="${baseMapDataUri}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice" opacity="0.88"/>` : `${gridSVG}${waterSVG}`}
+  ${ringSVG}
+  <path d="M 0,${H*0.62} C ${W*0.12},${H*0.58} ${W*0.3},${H*0.63} ${W*0.5},${H*0.67}" fill="none" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
+  ${markerSVG}
+  <polygon points="${cx},${cy-12} ${cx+4},${cy-3} ${cx+12},${cy-3} ${cx+6},${cy+3} ${cx+8},${cy+11} ${cx},${cy+6} ${cx-8},${cy+11} ${cx-6},${cy+3} ${cx-12},${cy-3} ${cx-4},${cy-3}" fill="#ccc" stroke="#333" stroke-width="1.2"/>
+  <g transform="translate(${W-28},30)"><line x1="0" y1="14" x2="0" y2="-14" stroke="#333" stroke-width="1.8"/><polygon points="0,-14 -5,-2 5,-2" fill="#333"/><polygon points="0,14 -5,2 5,2" fill="#aaa"/><text x="0" y="26" text-anchor="middle" font-size="10" font-family="Arial" font-weight="bold" fill="#222">N</text></g>
+  ${scaleSVG}
+</svg>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// GEOLOGICAL SOIL MAP SVG — mimics EDR soil map with SSURGO boundary lines,
+// numbered soil units, concentric rings, subject property marker.
+// ─────────────────────────────────────────────────────────────────────────────
+function buildGeologicalSoilMapHtml(subjectLat, subjectLng, radiusMeters = 1609, ssurgoSoil = null, baseMapDataUri = null, reportYear = '2026') {
+  const W = 1000, H = 530;
+  const cx = W / 2, cy = H / 2;
+  const outerSvgR = Math.min(cx, cy) - 20;
+
+  const ringDefs = [
+    { r: outerSvgR * 0.35, dashes: '6,4', sw: 1.5 },
+    { r: outerSvgR * 0.65, dashes: '6,4', sw: 1.5 },
+    { r: outerSvgR,        dashes: '9,6', sw: 2.2 },
+  ];
+
+  // Schematic soil unit label positions
+  const soilUnits = [
+    { id: 1,  x: cx-120, y: cy+180 }, { id: 2,  x: cx+260, y: cy+60  },
+    { id: 3,  x: cx+30,  y: cy-150 }, { id: 4,  x: cx-280, y: cy-130 },
+    { id: 5,  x: cx+60,  y: cy-220 }, { id: 6,  x: cx-40,  y: cy-240 },
+    { id: 7,  x: cx-280, y: cy+100 }, { id: 8,  x: cx+240, y: cy+220 },
+    { id: 9,  x: cx-180, y: cy+20  }, { id: 10, x: cx+200, y: cy+260 },
+    { id: 11, x: cx+60,  y: cy+140 }, { id: 12, x: cx+280, y: cy-170 },
+    { id: 13, x: cx-130, y: cy-80  }, { id: 14, x: cx-220, y: cy-200 },
+  ].filter(u => u.x > 10 && u.x < W-10 && u.y > 10 && u.y < H-10);
+
+  // SSURGO boundary paths (thick brown)
+  const ssurgoPaths = [
+    `M ${cx-180},0 C ${cx-160},${H*0.2} ${cx-200},${H*0.4} ${cx-170},${H*0.6} S ${cx-140},${H*0.85} ${cx-160},${H}`,
+    `M ${cx+120},0 C ${cx+100},${H*0.25} ${cx+130},${H*0.5} ${cx+110},${H*0.75} S ${cx+90},${H} ${cx+90},${H}`,
+    `M 0,${cy-80} C ${W*0.2},${cy-100} ${W*0.4},${cy-60} ${W*0.6},${cy-90} S ${W*0.85},${cy-70} ${W},${cy-80}`,
+    `M 0,${cy+120} C ${W*0.15},${cy+100} ${W*0.3},${cy+140} ${W*0.5},${cy+120} S ${W*0.75},${cy+110} ${W},${cy+130}`,
+    `M 0,${H*0.4} C ${W*0.25},${H*0.35} ${W*0.5},${H*0.45} ${W*0.75},${H*0.42} S ${W},${H*0.38} ${W},${H*0.4}`,
+    `M ${W*0.6},0 C ${W*0.58},${H*0.3} ${W*0.65},${H*0.55} ${W*0.62},${H}`,
+  ];
+  const ssurgoSVG = ssurgoPaths.map(d => `<path d="${d}" fill="none" stroke="#5c3a1e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`).join('');
+  const statsgoSVG = `<path d="M ${W*0.05},${H*0.55} C ${W*0.3},${H*0.52} ${W*0.6},${H*0.58} ${W*0.9},${H*0.54}" fill="none" stroke="#8b6914" stroke-width="1.5" stroke-dasharray="5,3"/>`;
+  const riverSVG = `<path d="M ${cx-20},0 C ${cx+10},${H*0.15} ${cx-30},${H*0.35} ${cx+20},${H*0.5} S ${cx-10},${H*0.75} ${cx+5},${H}" fill="none" stroke="#2980b9" stroke-width="3.5" opacity="0.6"/>`;
+
+  const ringSVG = ringDefs.map(({ r, dashes, sw }) =>
+    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#cc0000" stroke-width="${sw}" stroke-dasharray="${dashes}"/>`
+  ).join('\n  ');
+
+  const unitLabelsSVG = soilUnits.map(({ id, x, y }) =>
+    `<text x="${x}" y="${y}" text-anchor="middle" font-size="18" font-family="Arial,sans-serif" font-weight="bold" fill="#1a3a6e" opacity="0.85">${id}</text>`
+  ).join('');
+
+  const muname = ssurgoSoil?.muname || 'Urban Land';
+  const hydgrp = ssurgoSoil?.hydgrp || 'B';
+  const drainagecl = ssurgoSoil?.drainagecl || 'Well drained';
+
+  const soilAnnotation = `<rect x="10" y="10" width="210" height="52" rx="4" fill="white" fill-opacity="0.87" stroke="#5c3a1e" stroke-width="1.2"/>
+  <text x="17" y="27" font-size="9" font-family="Arial" font-weight="bold" fill="#5c3a1e">Subject Soil Unit:</text>
+  <text x="17" y="40" font-size="8.5" font-family="Arial" fill="#333">${escapeHtml(muname.substring(0, 34))}</text>
+  <text x="17" y="54" font-size="8" font-family="Arial" fill="#555">Hyd. Group: ${escapeHtml(hydgrp)} | ${escapeHtml(drainagecl)}</text>`;
+
+  const pxPerMeter = outerSvgR / radiusMeters;
+  const scaleBarM = Math.max(100, Math.round(radiusMeters / 4 / 100) * 100);
+  const sbPx = Math.min(200, scaleBarM * pxPerMeter);
+  const sbX = W - 24 - sbPx, sbY = H - 18;
+  const scaleSVG = `<rect x="${sbX}" y="${sbY-3}" width="${sbPx/2}" height="4" fill="#333"/>
+  <rect x="${sbX+sbPx/2}" y="${sbY-3}" width="${sbPx/2}" height="4" fill="#fff" stroke="#333" stroke-width="0.5"/>
+  <line x1="${sbX}" y1="${sbY-7}" x2="${sbX}" y2="${sbY+1}" stroke="#333" stroke-width="1.5"/>
+  <line x1="${sbX+sbPx}" y1="${sbY-7}" x2="${sbX+sbPx}" y2="${sbY+1}" stroke="#333" stroke-width="1.5"/>
+  <text x="${sbX}" y="${sbY+10}" text-anchor="middle" font-size="7.5" font-family="Arial" fill="#333">0</text>
+  <text x="${sbX+sbPx}" y="${sbY+10}" text-anchor="middle" font-size="7.5" font-family="Arial" fill="#333">${scaleBarM}m</text>`;
+
+  const mapSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" style="display:block;width:100%;height:100%;max-height:530px;">
+  <rect width="${W}" height="${H}" fill="#f2ede4"/>
+  ${baseMapDataUri ? `<image href="${baseMapDataUri}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice" opacity="0.35"/>` : ''}
+  ${ssurgoSVG}
+  ${statsgoSVG}
+  ${riverSVG}
+  ${ringSVG}
+  ${unitLabelsSVG}
+  <rect x="${cx-8}" y="${cy-8}" width="16" height="16" fill="#f5c518" stroke="#5c3a1e" stroke-width="1.5"/>
+  <text x="${cx+14}" y="${cy+5}" font-size="9" font-family="Arial" font-weight="bold" fill="#222">B</text>
+  ${soilAnnotation}
+  <g transform="translate(${W-28},30)"><line x1="0" y1="14" x2="0" y2="-14" stroke="#333" stroke-width="1.8"/><polygon points="0,-14 -5,-2 5,-2" fill="#333"/><polygon points="0,14 -5,2 5,2" fill="#aaa"/><text x="0" y="26" text-anchor="middle" font-size="10" font-family="Arial" font-weight="bold" fill="#222">N</text></g>
+  ${scaleSVG}
+</svg>`;
+
+  return `<div class="prox-map-page" style="margin-bottom:14px;">
+    <div class="prox-map-header">
+      <span class="prox-map-header-title">Geological Landscape Section Soil Map</span>
+      <span class="prox-map-header-year">${reportYear}</span>
+    </div>
+    <div class="prox-map-image-wrap" style="background:#f2ede4;height:530px;">
+      ${mapSvg}
+    </div>
+    <div class="prox-map-legend" style="padding:6px 10px;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px 10px;margin-top:3px;">
+        <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><span style="color:#999;font-size:12px;">☆</span> Subject Property</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><svg width="20" height="10"><line x1="0" y1="5" x2="20" y2="5" stroke="#5c3a1e" stroke-width="2.5"/></svg> SSURGO</div>
+        <div style="display:flex;align-items:center;gap:5px;font-size:8.5px;"><svg width="20" height="10"><line x1="0" y1="5" x2="20" y2="5" stroke="#8b6914" stroke-width="1.5" stroke-dasharray="5,3"/></svg> STATSGO</div>
+      </div>
+    </div>
+  </div>`;
+}
+
 function buildAdvancedMapAnalysisHtml(envData = {}, groupedAddresses = [], radiusMeters = DEFAULT_REPORT_RADIUS_METERS, subjectLat = null, subjectLng = null, subjectElevFt = null) {
   const sites = envData.environmentalSites || [];
   const baseLat = toFiniteNumber(subjectLat);
@@ -12585,6 +12789,9 @@ app.post('/generate-report', async (req, res) => {
       areaMapImage: resolvedMapImages.areaMap || resolvedMapImages.satellite,
       historicalImage: resolvedMapImages.satellite,
       logoImage: getLogoDataUri(),
+      proximity_map_svg_html: buildProximityMapSVGHtml(envData.environmentalSites || [], toFiniteNumber(latitude), toFiniteNumber(longitude), effectiveRadiusMeters, subjectElevFt, resolvedMapImages.overview),
+      area_map_svg_html: buildProximityMapSVGHtml(envData.environmentalSites || [], toFiniteNumber(latitude), toFiniteNumber(longitude), effectiveRadiusMeters, subjectElevFt, resolvedMapImages.areaMap || resolvedMapImages.satellite, { areaZoom: true }),
+      geological_soil_map_html: buildGeologicalSoilMapHtml(toFiniteNumber(latitude), toFiniteNumber(longitude), effectiveRadiusMeters, ssurgoSoil, ssurgoMapDataUri, new Date().getFullYear().toString()),
 
       recommendations: buildDynamicRecommendationsHtml(riskLevels, areaFeatures.length > 0 ? areaFeatures : [], envData),
       proximity_analysis: `${envData.environmentalSites.length} mapped records were evaluated around the subject property, grouped by database source, distance, and operational context.`,
